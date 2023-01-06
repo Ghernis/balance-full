@@ -21,7 +21,6 @@ export const appRouter = router({
         })
     )
     .mutation(({input})=>{
-        console.log(input)
         return {
             empresa: {
                 nombre:input.nombre

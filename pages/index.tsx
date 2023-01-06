@@ -8,8 +8,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     const hello = trpc.empresas.useQuery()
+    const mutation = trpc.put_empresas.useMutation()
     if(!hello.data){
         return <div>loading</div>
+    }
+    const handler=()=>{
+        mutation.mutate({nombre:'hernan'})
     }
     return (
         <>
@@ -22,6 +26,7 @@ export default function Home() {
             <div>
                 {hello.data.empresa[0].tipo}
             </div>
+            <button onClick={handler}>test</button>
         </>
     )
 }

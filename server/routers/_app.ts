@@ -11,9 +11,24 @@ export const appRouter = router({
             where: { tipo: 'Distribuidora'}
         })
         return {
-            datos:empresa
+            empresa
         }
     }),
+    put_empresas: procedure
+    .input(
+        z.object({
+            nombre: z.string()
+        })
+    )
+    .mutation(({input})=>{
+        console.log(input)
+        return {
+            empresa: {
+                nombre:input.nombre
+            }
+        }
+    })
+    ,
     hello: procedure
     .input(
         z.object({

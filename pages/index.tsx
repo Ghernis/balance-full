@@ -20,7 +20,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div>
-                {hello.data.datos[0].nombre}
+                {hello.data.empresa[0].tipo}
             </div>
         </>
     )

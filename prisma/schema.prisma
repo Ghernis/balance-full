@@ -1,0 +1,285 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//generator erd {
+//    provider = "prisma-erd-generator"
+//    theme="default"
+//    output = "erd.svg"
+//}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Empresa {
+    id Int @id @default(autoincrement())
+    nombre String
+    nombreId String @unique
+    tipo TipoEmpresa
+    nemo String?
+    direccion String?
+    tel String?
+    localidad String?
+    departamentoLeg String?
+    provincia String?
+    cp String?
+    mail String?
+    contacto String?
+    sistema TipoSistema?
+    destino TipoDestino?
+    personal Personal?
+
+    departamento Departamento? @relation(fields:[departamentoId],references:[id])
+    departamentoId Int?
+
+    centrales Central[]
+    variable Variable[]
+}
+
+enum TipoSistema {
+    Conectado
+    Aislado
+}
+
+enum TipoDestino {
+    VentaUsuarios
+    Resguardo
+    ConsumoPropio
+}
+
+enum TipoEmpresa {
+    Distribuidora
+    Cooperativa
+    Autoproductor
+}
+
+model Variable {
+    anio Int
+    empresa Empresa @relation(fields:[empresaId],references:[id])
+    empresaId Int
+    enComprada Intercambio[]
+    balEnergia Balance[]
+    facturado Facturado[]
+
+    @@id([anio,empresaId])
+}
+
+model VariableCentral {
+    anio Int
+    central Central @relation(fields:[centralId],references:[id])
+    centralId Int
+
+    combustible Combustible[]
+    //energiaPropia Energia
+    energiaBruto Energia?
+
+    @@id([anio,centralId])
+}
+
+model Personal {
+    id Int @id @default(autoincrement())
+    profesionales Int
+    tecnicos Int
+    administrativos Int
+    obreros Int
+    profesionalesM Int
+    tecnicosM Int
+    administrativosM Int
+    obrerosM Int
+    profesionalesF Int
+    tecnicosF Int
+    administrativosF Int
+    obrerosF Int
+    obsProfesionales String
+    obsTecnicos String
+    obsAdministrativos String
+    obsObreros String
+    empresa Empresa @relation(fields:[empresaId],references:[id])
+    empresaId Int @unique
+}
+
+model Central {
+    id Int @id @default(autoincrement())
+    nombre String
+    nemo String
+    direccion String
+    localidad String
+    partido String
+    provincia String
+    sistema TipoSistema
+    notas String
+    destino TipoDestino
+    actividad String
+
+    empresa Empresa @relation(fields:[empresaId],references:[id])
+    empresaId Int
+
+    maquinas Maquina[]
+
+    departamento Departamento @relation(fields:[departamentoId],references:[id])
+    departamentoId Int
+
+    variable VariableCentral[]
+}
+
+model Energia {
+    id Int @default(autoincrement())
+    solar Float
+    diesel Float
+    hidro Float
+    tv Float
+    tg Float
+    eolico Float
+
+    variableCentral VariableCentral @relation(fields:[anio,centralId],references:[anio,centralId])
+    centralId Int
+    anio Int
+
+    @@id([anio,centralId])
+}
+
+model Combustible {
+    id Int @id @default(autoincrement())
+    anio Int
+    cmb String
+    unidad String
+    vol Float
+    claseProd String
+
+    variableCentral VariableCentral @relation(fields:[anio,centralId],references:[anio,centralId])
+    centralId Int
+}
+
+model Maquina {
+    id Int @id @default(autoincrement())
+    numero String
+    tecnologia String
+    marca String
+    tension Float
+    kva Float
+    fp Float
+    kw Float
+    potenciaEf Float
+    potenciaHP Float
+    fechaPS String
+    tipoCte String
+
+    central Central @relation(fields:[centralId],references:[id])
+    centralId Int
+}
+
+model Intercambio {
+    id Int @default(autoincrement())
+    anio Int
+    ente String
+    quien String
+    energia Float
+    tension Float
+    tipo TipoIntercambio
+
+    variable Variable @relation(fields:[anio,empresaId],references:[anio,empresaId])
+    empresaId Int
+    @@id([id,anio,tipo,empresaId])
+}
+
+enum TipoIntercambio {
+    Venta
+    Compra
+}
+
+model Balance {
+    id Int @default(autoincrement())
+    anio Int
+    enProd Float
+    comprada Float
+    consumoPropio Float
+    disp Float
+    vendida Float
+    red Float
+    facturada Float
+    perdidas Float
+
+    variable Variable @relation(fields:[empresaId,anio],references:[empresaId,anio])
+    empresaId Int
+    @@id([id,anio])
+}
+
+model Facturado {
+    id Int @default(autoincrement())
+    concepto Concepto[]
+
+    variable Variable @relation(fields:[empresaId,anio],references:[empresaId,anio])
+    empresaId Int
+    anio Int
+
+    departamentos FacturadoDepartamento[]
+
+    @@id([empresaId,anio])
+}
+
+enum TipoConcepto {
+    Residencial
+    Comercial
+    Industrial
+    ServicioSanitario
+    Alumbrado
+    Riego
+    Oficial
+    Rural
+    Otros
+    Traccion
+}
+
+model Concepto {
+    id Int @id @default(autoincrement())
+    cantUsr Int
+    kwh Float
+    facSin Float
+    facCon Float
+    precioMedCon Float
+    tipo TipoConcepto
+
+    facturado Facturado @relation(fields:[empresaId,anio],references:[empresaId,anio])
+    empresaId Int
+    anio Int
+}
+
+model FacturadoDepartamento {
+    facturado Facturado @relation(fields:[empresaId,anio],references:[empresaId,anio])
+    empresaId Int
+    anio Int
+    departamento Departamento @relation(fields:[departamentoId],references:[id])
+    departamentoId Int
+
+    @@id([empresaId,anio,departamentoId])
+
+}
+
+
+
+model Provincia {
+    id Int @id @default(autoincrement())
+    nombre String @unique
+    departamentos Departamento[]
+}
+model Departamento {
+    id Int @id @default(autoincrement())
+    nombre String
+    codigo_depto Int?
+    lon Float?
+    lat Float?
+
+    provincia Provincia @relation(fields:[provinciaId],references:[id])
+    provinciaId Int
+
+    empresas Empresa[]
+    centrales Central[]
+
+    facturados FacturadoDepartamento[]
+}

@@ -7,7 +7,7 @@ import { Inter } from '@next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const hello = trpc.hello.useQuery({text:'her'});
+    const hello = trpc.empresas.useQuery()
     if(!hello.data){
         return <div>loading</div>
     }
@@ -20,7 +20,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div>
-                {hello.data.greeting}
+                {hello.data.datos[0].nombre}
             </div>
         </>
     )

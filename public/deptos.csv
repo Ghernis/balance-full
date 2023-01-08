@@ -1,0 +1,526 @@
+"codigo_depto";"nombre_depto";"nombre_pcia";"habtot";"lon";"lat"
+"02001";"Comuna 01";"Ciudad Autonoma de Buenos Aires";205886;-58.37;-34.61
+"02002";"Comuna 02";"Ciudad Autonoma de Buenos Aires";157932;-58.39;-34.59
+"02003";"Comuna 03";"Ciudad Autonoma de Buenos Aires";187537;-58.40;-34.61
+"02004";"Comuna 04";"Ciudad Autonoma de Buenos Aires";218245;-58.39;-34.64
+"02005";"Comuna 05";"Ciudad Autonoma de Buenos Aires";179005;-58.42;-34.62
+"02006";"Comuna 06";"Ciudad Autonoma de Buenos Aires";176076;-58.44;-34.62
+"02007";"Comuna 07";"Ciudad Autonoma de Buenos Aires";220591;-58.45;-34.64
+"02008";"Comuna 08";"Ciudad Autonoma de Buenos Aires";187237;-58.46;-34.67
+"02009";"Comuna 09";"Ciudad Autonoma de Buenos Aires";161797;-58.50;-34.65
+"02010";"Comuna 10";"Ciudad Autonoma de Buenos Aires";166022;-58.50;-34.63
+"02011";"Comuna 11";"Ciudad Autonoma de Buenos Aires";189832;-58.50;-34.61
+"02012";"Comuna 12";"Ciudad Autonoma de Buenos Aires";200116;-58.49;-34.57
+"02013";"Comuna 13";"Ciudad Autonoma de Buenos Aires";231331;-58.45;-34.55
+"02014";"Comuna 14";"Ciudad Autonoma de Buenos Aires";225970;-58.42;-34.57
+"02015";"Comuna 15";"Ciudad Autonoma de Buenos Aires";182574;-58.46;-34.59
+"06007";"Adolfo Alsina";"Buenos Aires";17072;-63.06;-37.20
+"06014";"Adolfo Gonzales Chaves";"Buenos Aires";12047;-60.25;-37.96
+"06021";"Alberti";"Buenos Aires";10654;-60.28;-35.04
+"06028";"Almirante Brown";"Buenos Aires";552902;-58.37;-34.84
+"06035";"Avellaneda";"Buenos Aires";342677;-58.34;-34.68
+"06042";"Ayacucho";"Buenos Aires";20337;-58.44;-37.04
+"06049";"Azul";"Buenos Aires";65280;-59.70;-36.79
+"06056";"Bahia Blanca";"Buenos Aires";301572;-62.17;-38.58
+"06063";"Balcarce";"Buenos Aires";43823;-58.27;-37.71
+"06070";"Baradero";"Buenos Aires";32761;-59.49;-33.93
+"06077";"Arrecifes";"Buenos Aires";29044;-60.06;-34.01
+"06084";"Benito Juarez";"Buenos Aires";20239;-59.89;-37.59
+"06091";"Berazategui";"Buenos Aires";324244;-58.16;-34.82
+"06098";"Berisso";"Buenos Aires";88470;-57.83;-34.91
+"06105";"Bolivar";"Buenos Aires";34190;-61.15;-36.30
+"06112";"Bragado";"Buenos Aires";41336;-60.60;-35.06
+"06119";"Brandsen";"Buenos Aires";26367;-58.18;-35.22
+"06126";"Campana";"Buenos Aires";94461;-58.88;-34.14
+"06134";"CaÃ±uelas";"Buenos Aires";51892;-58.69;-35.15
+"06140";"Capitan Sarmiento";"Buenos Aires";14494;-59.85;-34.15
+"06147";"Carlos Casares";"Buenos Aires";22237;-61.37;-35.75
+"06154";"Carlos Tejedor";"Buenos Aires";11570;-62.43;-35.38
+"06161";"Carmen de Areco";"Buenos Aires";14692;-59.88;-34.41
+"06168";"Castelli";"Buenos Aires";8205;-57.66;-36.04
+"06175";"Colon";"Buenos Aires";24890;-61.06;-33.89
+"06182";"Coronel de Marina L. Rosales";"Buenos Aires";62152;-61.84;-38.85
+"06189";"Coronel Dorrego";"Buenos Aires";15825;-61.09;-38.67
+"06196";"Coronel Pringles";"Buenos Aires";22933;-61.26;-38.15
+"06203";"Coronel Suarez";"Buenos Aires";38320;-61.89;-37.54
+"06210";"Chacabuco";"Buenos Aires";48703;-60.35;-34.62
+"06217";"Chascomus";"Buenos Aires";42277;-57.90;-35.68
+"06224";"Chivilcoy";"Buenos Aires";64185;-59.96;-34.92
+"06231";"Daireaux";"Buenos Aires";16889;-61.89;-36.64
+"06238";"Dolores";"Buenos Aires";27042;-57.63;-36.40
+"06245";"Ensenada";"Buenos Aires";56729;-57.98;-34.84
+"06252";"Escobar";"Buenos Aires";213619;-58.77;-34.33
+"06260";"Esteban Echeverria";"Buenos Aires";300959;-58.48;-34.83
+"06266";"Exaltacion de la Cruz";"Buenos Aires";29805;-59.16;-34.30
+"06270";"Ezeiza";"Buenos Aires";163722;-58.56;-34.88
+"06274";"Florencio Varela";"Buenos Aires";426005;-58.26;-34.88
+"06277";"Florentino Ameghino";"Buenos Aires";8869;-62.40;-34.87
+"06280";"General Alvarado";"Buenos Aires";39594;-58.07;-38.20
+"06287";"General Alvear";"Buenos Aires";11130;-60.13;-36.04
+"06294";"General Arenales";"Buenos Aires";14903;-61.28;-34.24
+"06301";"General Belgrano";"Buenos Aires";17365;-58.70;-35.83
+"06308";"General Guido";"Buenos Aires";2816;-58.00;-36.67
+"06315";"General Juan Madariaga";"Buenos Aires";19747;-57.23;-37.15
+"06322";"General La Madrid";"Buenos Aires";10783;-61.34;-37.36
+"06329";"General Las Heras";"Buenos Aires";14889;-59.00;-34.91
+"06336";"General Lavalle";"Buenos Aires";3700;-56.94;-36.65
+"06343";"General Paz";"Buenos Aires";11202;-58.39;-35.47
+"06351";"General Pinto";"Buenos Aires";11261;-62.04;-34.67
+"06357";"General Pueyrredon";"Buenos Aires";618989;-57.74;-37.97
+"06364";"General Rodriguez";"Buenos Aires";87185;-58.99;-34.65
+"06371";"General San Martin";"Buenos Aires";414196;-58.56;-34.55
+"06385";"General Viamonte";"Buenos Aires";18078;-61.05;-35.00
+"06392";"General Villegas";"Buenos Aires";30864;-62.95;-34.77
+"06399";"Guamini";"Buenos Aires";11826;-62.42;-36.89
+"06406";"Hipolito Yrigoyen";"Buenos Aires";9585;-61.66;-36.26
+"06408";"Hurlingham";"Buenos Aires";181241;-58.65;-34.60
+"06410";"Ituzaingo";"Buenos Aires";167824;-58.69;-34.64
+"06412";"Jose C. Paz";"Buenos Aires";265981;-58.78;-34.51
+"06413";"Junin";"Buenos Aires";90305;-61.00;-34.55
+"06420";"La Costa";"Buenos Aires";69633;-56.71;-36.71
+"06427";"La Matanza";"Buenos Aires";1775816;-58.63;-34.77
+"06434";"Lanus";"Buenos Aires";459263;-58.39;-34.71
+"06441";"La Plata";"Buenos Aires";654324;-58.02;-35.00
+"06448";"Laprida";"Buenos Aires";10210;-60.77;-37.52
+"06455";"Las Flores";"Buenos Aires";23871;-59.18;-36.02
+"06462";"Leandro N. Alem";"Buenos Aires";16799;-61.61;-34.50
+"06469";"Lincoln";"Buenos Aires";41808;-61.68;-35.07
+"06476";"Loberia";"Buenos Aires";17523;-58.69;-38.09
+"06483";"Lobos";"Buenos Aires";36172;-59.15;-35.22
+"06490";"Lomas de Zamora";"Buenos Aires";616279;-58.42;-34.75
+"06497";"Lujan";"Buenos Aires";106273;-59.16;-34.57
+"06505";"Magdalena";"Buenos Aires";19301;-57.69;-35.19
+"06511";"Maipu";"Buenos Aires";10188;-57.59;-36.89
+"06515";"Malvinas Argentinas";"Buenos Aires";322375;-58.71;-34.49
+"06518";"Mar Chiquita";"Buenos Aires";21279;-57.64;-37.50
+"06525";"Marcos Paz";"Buenos Aires";54181;-58.85;-34.81
+"06532";"Mercedes";"Buenos Aires";63284;-59.42;-34.70
+"06539";"Merlo";"Buenos Aires";528494;-58.74;-34.71
+"06547";"Monte";"Buenos Aires";21034;-58.77;-35.51
+"06553";"Monte Hermoso";"Buenos Aires";6499;-61.29;-38.96
+"06560";"Moreno";"Buenos Aires";452505;-58.81;-34.61
+"06568";"Moron";"Buenos Aires";321109;-58.62;-34.65
+"06574";"Navarro";"Buenos Aires";17054;-59.43;-35.03
+"06581";"Necochea";"Buenos Aires";92933;-59.17;-38.26
+"06588";"9 de Julio";"Buenos Aires";47722;-60.97;-35.48
+"06595";"Olavarria";"Buenos Aires";111708;-60.67;-36.86
+"06602";"Patagones";"Buenos Aires";30207;-62.85;-40.20
+"06609";"Pehuajo";"Buenos Aires";39776;-61.93;-35.88
+"06616";"Pellegrini";"Buenos Aires";5887;-63.23;-36.27
+"06623";"Pergamino";"Buenos Aires";104590;-60.54;-33.84
+"06630";"Pila";"Buenos Aires";3640;-58.34;-36.20
+"06638";"Pilar";"Buenos Aires";299077;-58.90;-34.45
+"06644";"Pinamar";"Buenos Aires";25728;-56.87;-37.11
+"06648";"Presidente Peron";"Buenos Aires";81141;-58.40;-34.93
+"06651";"Puan";"Buenos Aires";15743;-63.06;-38.08
+"06655";"Punta Indio";"Buenos Aires";9888;-57.40;-35.43
+"06658";"Quilmes";"Buenos Aires";582943;-58.28;-34.73
+"06665";"Ramallo";"Buenos Aires";33042;-60.06;-33.59
+"06672";"Rauch";"Buenos Aires";15176;-58.94;-36.57
+"06679";"Rivadavia";"Buenos Aires";17143;-63.09;-35.58
+"06686";"Rojas";"Buenos Aires";23432;-60.79;-34.19
+"06693";"Roque Perez";"Buenos Aires";12513;-59.36;-35.48
+"06700";"Saavedra";"Buenos Aires";20749;-62.43;-37.77
+"06707";"Saladillo";"Buenos Aires";32103;-59.70;-35.68
+"06714";"Salto";"Buenos Aires";32653;-60.30;-34.27
+"06721";"Salliquelo";"Buenos Aires";8644;-63.05;-36.67
+"06728";"San Andres de Giles";"Buenos Aires";23027;-59.47;-34.44
+"06735";"San Antonio de Areco";"Buenos Aires";23138;-59.52;-34.22
+"06742";"San Cayetano";"Buenos Aires";8399;-59.59;-38.39
+"06749";"San Fernando";"Buenos Aires";163240;-58.55;-34.15
+"06756";"San Isidro";"Buenos Aires";292878;-58.54;-34.49
+"06760";"San Miguel";"Buenos Aires";276190;-58.69;-34.55
+"06763";"San Nicolas";"Buenos Aires";145857;-60.29;-33.49
+"06770";"San Pedro";"Buenos Aires";59036;-59.78;-33.78
+"06778";"San Vicente";"Buenos Aires";59478;-58.43;-35.07
+"06784";"Suipacha";"Buenos Aires";10081;-59.70;-34.75
+"06791";"Tandil";"Buenos Aires";123871;-59.18;-37.34
+"06798";"Tapalque";"Buenos Aires";9178;-60.13;-36.35
+"06805";"Tigre";"Buenos Aires";376381;-58.60;-34.38
+"06812";"Tordillo";"Buenos Aires";1764;-57.27;-36.39
+"06819";"Tornquist";"Buenos Aires";12723;-62.29;-38.26
+"06826";"Trenque Lauquen";"Buenos Aires";43021;-62.63;-36.06
+"06833";"Tres Arroyos";"Buenos Aires";57110;-60.24;-38.51
+"06840";"Tres de Febrero";"Buenos Aires";340071;-58.58;-34.60
+"06847";"Tres Lomas";"Buenos Aires";8700;-62.86;-36.50
+"06854";"25 de Mayo";"Buenos Aires";35842;-60.23;-35.53
+"06861";"Vicente Lopez";"Buenos Aires";269420;-58.50;-34.53
+"06868";"Villa Gesell";"Buenos Aires";31730;-57.06;-37.37
+"06875";"Villarino";"Buenos Aires";31014;-62.71;-39.13
+"06882";"Zarate";"Buenos Aires";114269;-59.13;-34.00
+"10007";"Ambato";"Catamarca";4463;-65.91;-28.02
+"10014";"Ancasti";"Catamarca";2917;-65.49;-28.93
+"10021";"Andalgala";"Catamarca";18132;-66.36;-27.59
+"10028";"Antofagasta de la Sierra";"Catamarca";1436;-67.70;-25.95
+"10035";"Belen";"Catamarca";27843;-66.91;-27.10
+"10042";"Capayan";"Catamarca";16085;-65.90;-28.93
+"10049";"Capital";"Catamarca";159703;-65.84;-28.40
+"10056";"El Alto";"Catamarca";3570;-65.36;-28.43
+"10063";"Fray Mamerto Esquiu";"Catamarca";11896;-65.73;-28.33
+"10070";"La Paz";"Catamarca";22638;-65.20;-29.43
+"10077";"Paclin";"Catamarca";4185;-65.67;-28.11
+"10084";"Poman";"Catamarca";10776;-66.38;-28.21
+"10091";"Santa Maria";"Catamarca";22548;-66.27;-26.79
+"10098";"Santa Rosa";"Catamarca";12034;-65.34;-28.08
+"10105";"Tinogasta";"Catamarca";22360;-67.92;-27.54
+"10112";"Valle Viejo";"Catamarca";27242;-65.71;-28.59
+"14007";"Calamuchita";"Cordoba";54730;-64.62;-32.21
+"14014";"Capital";"Cordoba";1329604;-64.18;-31.42
+"14021";"Colon";"Cordoba";225151;-64.15;-31.14
+"14028";"Cruz del Eje";"Cordoba";58759;-65.07;-30.68
+"14035";"General Roca";"Cordoba";35645;-64.37;-34.62
+"14042";"General San Martin";"Cordoba";127454;-63.26;-32.51
+"14049";"Ischilin";"Cordoba";31312;-64.61;-30.40
+"14056";"Juarez Celman";"Cordoba";61078;-63.61;-33.33
+"14063";"Marcos Juarez";"Cordoba";104205;-62.28;-33.03
+"14070";"Minas";"Cordoba";4727;-65.41;-31.04
+"14077";"Pocho";"Cordoba";5380;-65.44;-31.46
+"14084";"Presidente Roque Saenz Peï¿½a";"Cordoba";36282;-63.42;-34.14
+"14091";"Punilla";"Cordoba";178401;-64.59;-31.22
+"14098";"Rio Cuarto";"Cordoba";246393;-64.49;-33.33
+"14105";"Rio Primero";"Cordoba";46675;-63.44;-31.03
+"14112";"Rio Seco";"Cordoba";13242;-63.19;-30.05
+"14119";"Rio Segundo";"Cordoba";103718;-63.48;-31.73
+"14126";"San Alberto";"Cordoba";37004;-65.16;-31.71
+"14133";"San Javier";"Cordoba";53520;-65.14;-32.08
+"14140";"San Justo";"Cordoba";206307;-62.53;-31.24
+"14147";"Santa Maria";"Cordoba";98188;-64.31;-31.71
+"14154";"Sobremonte";"Cordoba";4591;-64.14;-29.76
+"14161";"Tercero Arriba";"Cordoba";109554;-63.78;-32.29
+"14168";"Totoral";"Cordoba";18556;-63.98;-30.73
+"14175";"Tulumba";"Cordoba";12673;-63.80;-30.23
+"14182";"Union";"Cordoba";105727;-62.79;-32.88
+"18007";"Bella Vista";"Corrientes";37181;-58.93;-28.50
+"18014";"Beron de Astrada";"Corrientes";2461;-57.61;-27.47
+"18021";"Capital";"Corrientes";358223;-58.76;-27.52
+"18028";"Concepcion";"Corrientes";21113;-58.03;-28.41
+"18035";"Curuzu Cuatia";"Corrientes";44384;-58.32;-29.70
+"18042";"Empedrado";"Corrientes";15109;-58.67;-27.90
+"18049";"Esquina";"Corrientes";30802;-59.24;-29.98
+"18056";"General Alvear";"Corrientes";7926;-56.51;-28.77
+"18063";"General Paz";"Corrientes";14836;-57.79;-27.72
+"18070";"Goya";"Corrientes";89959;-59.26;-29.45
+"18077";"Itati";"Corrientes";9171;-58.07;-27.35
+"18084";"Ituzaingo";"Corrientes";31150;-56.79;-27.91
+"18091";"Lavalle";"Corrientes";28759;-58.93;-28.99
+"18098";"Mburucuya";"Corrientes";9252;-58.19;-28.02
+"18105";"Mercedes";"Corrientes";40667;-57.82;-29.06
+"18112";"Monte Caseros";"Corrientes";36338;-57.87;-30.23
+"18119";"Paso de los Libres";"Corrientes";48642;-57.30;-29.59
+"18126";"Saladas";"Corrientes";22244;-58.62;-28.21
+"18133";"San Cosme";"Corrientes";14381;-58.52;-27.38
+"18140";"San Luis del Palmar";"Corrientes";17590;-58.27;-27.60
+"18147";"San Martin";"Corrientes";13140;-56.93;-28.83
+"18154";"San Miguel";"Corrientes";10572;-57.41;-27.88
+"18161";"San Roque";"Corrientes";18366;-58.61;-28.71
+"18168";"Santo Tome";"Corrientes";61297;-56.22;-28.23
+"18175";"Sauce";"Corrientes";9032;-58.80;-30.00
+"22007";"Almirante Brown";"Chaco";34075;-61.96;-25.74
+"22014";"Bermejo";"Chaco";25052;-58.71;-26.95
+"22021";"Comandante Fernandez";"Chaco";96944;-60.46;-26.79
+"22140";"San Fernando";"Chaco";390874;-59.11;-27.72
+"22028";"Chacabuco";"Chaco";30590;-61.31;-27.12
+"22036";"12 de Octubre";"Chaco";22281;-61.47;-27.33
+"22039";"2 de Abril";"Chaco";7432;-61.33;-27.62
+"22043";"Fray Justo Santa Maria de Oro";"Chaco";11826;-61.30;-27.87
+"22049";"General Belgrano";"Chaco";11988;-61.07;-26.85
+"26042";"Gaiman";"Chubut";11141;-66.17;-43.27
+"22056";"General Donovan";"Chaco";13490;-59.36;-27.14
+"22063";"General Guemes";"Chaco";67132;-61.33;-25.21
+"22070";"Independencia";"Chaco";22411;-60.76;-26.74
+"22077";"Libertad";"Chaco";12158;-59.26;-27.35
+"22084";"Libertador General San Martin";"Chaco";59147;-59.49;-26.38
+"22091";"Maipu";"Chaco";25288;-60.46;-26.32
+"22147";"San Lorenzo";"Chaco";14702;-60.36;-27.39
+"22098";"Mayor Luis J. Fontana";"Chaco";55080;-60.66;-27.74
+"22105";"9 de Julio";"Chaco";28555;-61.27;-26.95
+"22112";"O'Higgins";"Chaco";20131;-60.68;-27.26
+"22119";"Presidencia de la Plaza";"Chaco";12499;-59.77;-27.05
+"22126";"1Âº de Mayo";"Chaco";10322;-58.96;-27.17
+"22133";"Quitilipi";"Chaco";34081;-60.17;-26.67
+"22154";"Sargento Cabral";"Chaco";15889;-59.53;-26.80
+"22161";"Tapenaga";"Chaco";4097;-59.83;-27.66
+"22168";"25 de Mayo";"Chaco";29215;-60.02;-26.83
+"26007";"Biedma";"Chubut";82883;-64.93;-42.44
+"26014";"Cushamen";"Chubut";20919;-70.70;-42.37
+"26021";"Escalante";"Chubut";186583;-67.71;-45.28
+"26028";"Florentino Ameghino";"Chubut";1627;-66.13;-44.42
+"26035";"Futaleufu";"Chubut";43076;-71.47;-43.07
+"26049";"Gastre";"Chubut";1427;-68.80;-42.75
+"26056";"Languiï¿½eo";"Chubut";3085;-70.35;-43.32
+"26063";"Martires";"Chubut";778;-67.24;-43.81
+"26070";"Paso de los Indios";"Chubut";1867;-68.69;-44.03
+"26077";"Rawson";"Chubut";131313;-65.07;-43.14
+"26084";"Rio Senguer";"Chubut";5979;-70.64;-45.34
+"26091";"Sarmiento";"Chubut";11396;-69.00;-45.35
+"26098";"Tehuelches";"Chubut";5390;-70.58;-44.20
+"26105";"Telsen";"Chubut";1644;-67.18;-42.44
+"30008";"Colon";"Entre Rios";62160;-58.37;-32.01
+"30015";"Concordia";"Entre Rios";170033;-58.24;-31.29
+"30021";"Diamante";"Entre Rios";46361;-60.53;-32.23
+"30028";"Federacion";"Entre Rios";68736;-58.16;-30.73
+"30035";"Federal";"Entre Rios";25863;-58.89;-30.99
+"30042";"Feliciano";"Entre Rios";15079;-58.73;-30.41
+"30049";"Gualeguay";"Entre Rios";51883;-59.60;-33.12
+"30056";"Gualeguaychu";"Entre Rios";109461;-58.79;-33.02
+"30063";"Islas del Ibicuy";"Entre Rios";12077;-58.94;-33.62
+"30070";"La Paz";"Entre Rios";66903;-59.50;-30.90
+"30077";"Nogoya";"Entre Rios";39026;-59.77;-32.22
+"30084";"Parana";"Entre Rios";339930;-60.04;-31.70
+"30088";"San Salvador";"Entre Rios";17357;-58.49;-31.58
+"30091";"Tala";"Entre Rios";25665;-59.27;-32.32
+"30098";"Uruguay";"Entre Rios";100728;-58.58;-32.45
+"30105";"Victoria";"Entre Rios";35767;-60.22;-32.78
+"30113";"Villaguay";"Entre Rios";48965;-59.06;-31.65
+"34007";"Bermejo";"Formosa";14046;-61.27;-24.03
+"34014";"Formosa";"Formosa";234354;-58.38;-25.94
+"34021";"Laishi";"Formosa";17063;-58.57;-26.46
+"34028";"Matacos";"Formosa";14375;-62.06;-23.86
+"34035";"PatiÃ±o";"Formosa";68581;-59.98;-24.86
+"34042";"Pilagas";"Formosa";18399;-58.66;-25.10
+"34049";"Pilcomayo";"Formosa";85024;-58.06;-25.37
+"34056";"Pirane";"Formosa";64566;-59.17;-25.76
+"34063";"Ramon Lista";"Formosa";13754;-62.13;-23.13
+"38007";"Cochinoca";"Jujuy";12656;-65.93;-22.94
+"38014";"El Carmen";"Jujuy";97039;-65.10;-24.45
+"38021";"Dr. Manuel Belgrano";"Jujuy";265249;-65.45;-24.08
+"38028";"Humahuaca";"Jujuy";17366;-65.40;-23.08
+"38035";"Ledesma";"Jujuy";81790;-64.82;-23.78
+"38042";"Palpala";"Jujuy";52631;-65.13;-24.19
+"38049";"Rinconada";"Jujuy";2488;-66.54;-22.62
+"38056";"San Antonio";"Jujuy";4466;-65.45;-24.35
+"38063";"San Pedro";"Jujuy";75037;-64.81;-24.30
+"38070";"Santa Barbara";"Jujuy";17730;-64.40;-24.01
+"38077";"Santa Catalina";"Jujuy";2800;-66.23;-22.14
+"38084";"Susques";"Jujuy";3791;-66.66;-23.52
+"38094";"Tilcara";"Jujuy";12349;-65.32;-23.56
+"38098";"Tumbaya";"Jujuy";4658;-65.70;-23.74
+"38105";"Valle Grande";"Jujuy";2451;-65.01;-23.47
+"38112";"Yavi";"Jujuy";20806;-65.57;-22.29
+"42007";"Atreuco";"La Pampa";10153;-63.78;-37.03
+"42014";"Caleu Caleu";"La Pampa";2313;-63.90;-38.67
+"42021";"Capital";"La Pampa";105312;-64.20;-36.50
+"42028";"Catrilo";"La Pampa";7293;-63.66;-36.58
+"42035";"Conhelo";"La Pampa";14077;-64.51;-36.03
+"42042";"Curaco";"La Pampa";1040;-66.33;-38.18
+"42049";"Chalileo";"La Pampa";2985;-66.57;-36.40
+"42056";"Chapaleufu";"La Pampa";11620;-63.66;-35.23
+"42063";"Chical Co";"La Pampa";1502;-67.68;-36.40
+"42070";"Guatrache";"La Pampa";8831;-63.78;-37.48
+"42077";"Hucal";"La Pampa";7540;-63.95;-37.98
+"42084";"Lihuel Calel";"La Pampa";439;-65.10;-38.26
+"42091";"Limay Mahuida";"La Pampa";503;-66.56;-37.24
+"42098";"Loventue";"La Pampa";8619;-65.54;-36.48
+"42105";"Maraco";"La Pampa";59024;-63.66;-35.68
+"42112";"Puelen";"La Pampa";9468;-67.60;-37.43
+"42119";"Quemu Quemu";"La Pampa";8663;-63.66;-36.13
+"42126";"Rancul";"La Pampa";10668;-64.80;-35.41
+"42133";"Realico";"La Pampa";16227;-64.21;-35.23
+"42140";"Toay";"La Pampa";12409;-64.70;-36.66
+"42147";"Trenel";"La Pampa";5426;-64.21;-35.63
+"42154";"Utracan";"La Pampa";14839;-65.09;-37.34
+"46007";"Arauco";"La Rioja";15418;-66.73;-28.55
+"46014";"Capital";"La Rioja";180995;-66.37;-29.46
+"46021";"Castro Barros";"La Rioja";4268;-66.93;-28.87
+"46028";"Coronel Felipe Varela";"La Rioja";9648;-68.28;-29.47
+"46035";"Chamical";"La Rioja";14160;-65.98;-30.18
+"46042";"Chilecito";"La Rioja";49432;-67.43;-29.40
+"46049";"Famatina";"La Rioja";5863;-67.56;-28.69
+"46056";"General Angel V. Peï¿½aloza";"La Rioja";3073;-66.74;-30.35
+"46063";"General Belgrano";"La Rioja";7370;-65.95;-30.60
+"46070";"General Juan F.Quiroga";"La Rioja";4108;-66.79;-30.86
+"46077";"General Lamadrid";"La Rioja";1734;-68.71;-28.77
+"46084";"General Ocampo";"La Rioja";7145;-66.08;-31.02
+"46091";"General San Martin";"La Rioja";4944;-66.18;-31.65
+"46098";"Vinchina";"La Rioja";2731;-68.53;-28.29
+"46105";"Independencia";"La Rioja";2427;-67.30;-30.14
+"46112";"Rosario Vera PeÃ±aloza";"La Rioja";14054;-66.69;-31.42
+"46119";"San Blas de los Sauces";"La Rioja";3927;-67.16;-28.55
+"46126";"Sanagasta";"La Rioja";2345;-67.07;-29.15
+"50007";"Capital";"Mendoza";115041;-68.90;-32.88
+"50014";"General Alvear";"Mendoza";46429;-67.08;-35.21
+"50021";"Godoy Cruz";"Mendoza";191903;-68.90;-32.93
+"50028";"Guaymallen";"Mendoza";283803;-68.74;-32.89
+"50035";"Junin";"Mendoza";37859;-68.49;-33.15
+"50042";"La Paz";"Mendoza";10012;-67.25;-33.70
+"50049";"Las Heras";"Mendoza";203666;-69.28;-32.52
+"50056";"Lavalle";"Mendoza";36738;-67.89;-32.58
+"50063";"Lujan de Cuyo";"Mendoza";119888;-69.47;-33.04
+"50070";"Maipu";"Mendoza";172332;-68.67;-32.99
+"50077";"Malargue";"Mendoza";27660;-69.32;-36.15
+"50084";"Rivadavia";"Mendoza";56373;-68.61;-33.41
+"50091";"San Carlos";"Mendoza";32631;-69.09;-34.07
+"50098";"San Martin";"Mendoza";118220;-68.29;-32.91
+"50105";"San Rafael";"Mendoza";188018;-68.35;-34.95
+"50112";"Santa Rosa";"Mendoza";16374;-67.96;-33.60
+"50119";"Tunuyan";"Mendoza";49458;-69.52;-33.62
+"50126";"Tupungato";"Mendoza";32524;-69.30;-33.28
+"54007";"Apostoles";"Misiones";42249;-55.68;-27.88
+"54014";"Cainguas";"Misiones";53403;-54.80;-27.14
+"54021";"Candelaria";"Misiones";27040;-55.58;-27.46
+"54028";"Capital";"Misiones";324756;-55.86;-27.55
+"54035";"Concepcion";"Misiones";9577;-55.47;-27.93
+"54042";"El Dorado";"Misiones";78221;-54.42;-26.32
+"54049";"General Manuel Belgrano";"Misiones";42902;-53.96;-26.01
+"54056";"Guarani";"Misiones";67897;-54.27;-27.02
+"54063";"Iguazu";"Misiones";82227;-54.40;-25.87
+"54070";"Leandro N. Alem";"Misiones";45075;-55.39;-27.63
+"54077";"Libertador General San Martin";"Misiones";46561;-54.92;-26.89
+"54084";"Montecarlo";"Misiones";36745;-54.57;-26.66
+"54091";"Obera";"Misiones";107501;-55.07;-27.47
+"54098";"San Ignacio";"Misiones";57728;-55.34;-27.17
+"54105";"San Javier";"Misiones";20906;-55.17;-27.77
+"54112";"San Pedro";"Misiones";31051;-53.95;-26.67
+"54119";"25 de Mayo";"Misiones";27754;-54.63;-27.37
+"58007";"Alumine";"Neuquen";8306;-71.05;-39.13
+"58014";"AÃ±elo";"Neuquen";10786;-69.02;-38.10
+"58021";"Catan Lil";"Neuquen";2155;-70.43;-39.49
+"58028";"Collon Cura";"Neuquen";4532;-70.28;-40.05
+"58035";"Confluencia";"Neuquen";362673;-68.79;-38.83
+"58042";"Chos Malal";"Neuquen";15256;-70.29;-36.88
+"58049";"Huiliches";"Neuquen";14725;-71.26;-39.79
+"58056";"Lacar";"Neuquen";29748;-71.18;-40.31
+"58063";"Loncopue";"Neuquen";6925;-70.31;-38.07
+"58070";"Los Lagos";"Neuquen";11998;-71.49;-40.77
+"58077";"Minas";"Neuquen";7234;-70.78;-36.86
+"58084";"Ãorquin";"Neuquen";4692;-70.68;-37.64
+"58091";"Pehuenches";"Neuquen";24087;-69.40;-37.40
+"58098";"Picun Leufu";"Neuquen";4578;-69.43;-39.40
+"58105";"Picunches";"Neuquen";7022;-70.37;-38.57
+"58112";"Zapala";"Neuquen";36549;-69.84;-38.93
+"62007";"Adolfo Alsina";"Rio negro";57678;-63.77;-40.79
+"62014";"Avellaneda";"Rio negro";35323;-66.22;-39.42
+"62021";"Bariloche";"Rio negro";133500;-71.56;-41.39
+"62028";"Conesa";"Rio negro";7069;-64.31;-40.15
+"62035";"El Cuy";"Rio negro";5280;-68.50;-39.70
+"62042";"General Roca";"Rio negro";320921;-67.63;-38.49
+"66014";"Cachi";"Salta";7315;-66.20;-25.05
+"62049";"9 de Julio";"Rio negro";3475;-67.46;-40.92
+"62056";"Ãorquinco";"Rio negro";1736;-70.40;-41.74
+"62063";"Pichi Mahuida";"Rio negro";14107;-64.40;-39.41
+"62070";"Pilcaniyeu";"Rio negro";7428;-70.47;-40.89
+"62077";"San Antonio";"Rio negro";29284;-65.37;-40.96
+"62084";"Valcheta";"Rio negro";7101;-66.31;-40.98
+"62091";"25 de Mayo";"Rio negro";15743;-68.91;-41.13
+"66007";"Anta";"Salta";57411;-63.84;-24.87
+"66021";"Cafayate";"Salta";14850;-65.89;-26.12
+"66028";"Capital";"Salta";536113;-65.27;-24.89
+"66035";"Cerrillos";"Salta";35789;-65.40;-24.99
+"66042";"Chicoana";"Salta";20710;-65.60;-25.15
+"66049";"General Guemes";"Salta";47226;-64.96;-24.76
+"66056";"General Jose de San Martin";"Salta";156910;-63.66;-22.71
+"66063";"Guachipas";"Salta";3187;-65.45;-25.71
+"66070";"Iruya";"Salta";5987;-64.90;-22.80
+"66077";"La Caldera";"Salta";7763;-65.45;-24.56
+"66084";"La Candelaria";"Salta";5704;-65.21;-26.05
+"66091";"La Poma";"Salta";1738;-66.21;-24.15
+"66098";"La ViÃ±a";"Salta";7435;-65.58;-25.44
+"66105";"Los Andes";"Salta";6050;-67.35;-24.64
+"66112";"Metan";"Salta";40351;-64.60;-25.43
+"66119";"Molinos";"Salta";5652;-66.46;-25.61
+"74049";"Junin";"San Luis";28933;-65.39;-32.21
+"66126";"Oran";"Salta";138838;-64.15;-23.49
+"66133";"Rivadavia";"Salta";30357;-62.83;-23.52
+"66140";"Rosario de la Frontera";"Salta";28993;-64.73;-25.88
+"66147";"Rosario de Lerma";"Salta";38702;-65.85;-24.53
+"66154";"San Carlos";"Salta";7016;-66.15;-25.82
+"66161";"Santa Victoria";"Salta";10344;-64.89;-22.36
+"70007";"Albardon";"San Juan";23888;-68.45;-31.21
+"70014";"Angaco";"San Juan";8125;-68.13;-31.19
+"70021";"Calingasta";"San Juan";8588;-69.85;-31.47
+"70028";"Capital";"San Juan";109123;-68.53;-31.53
+"70035";"Caucete";"San Juan";38343;-67.54;-31.51
+"70042";"Chimbas";"San Juan";87258;-68.52;-31.49
+"70049";"Iglesia";"San Juan";9099;-69.44;-29.62
+"70056";"Jachal";"San Juan";21730;-68.44;-30.35
+"70063";"9 de julio";"San Juan";9307;-68.39;-31.65
+"70070";"Pocito";"San Juan";53162;-68.58;-31.75
+"70077";"Rawson";"San Juan";114368;-68.47;-31.68
+"70084";"Rivadavia";"San Juan";82641;-68.64;-31.55
+"70091";"San Martin";"San Juan";11115;-68.19;-31.53
+"70098";"Santa Lucia";"San Juan";48087;-68.45;-31.53
+"70105";"Sarmiento";"San Juan";22131;-68.69;-32.07
+"70112";"Ullum";"San Juan";4886;-68.89;-31.09
+"70119";"Valle Fertil";"San Juan";7222;-67.53;-30.69
+"70126";"25 de Mayo";"San Juan";17119;-67.83;-31.99
+"70133";"Zonda";"San Juan";4863;-68.96;-31.63
+"74007";"Ayacucho";"San Luis";19087;-66.58;-32.19
+"74014";"Belgrano";"San Luis";3985;-66.71;-32.78
+"74021";"Coronel Pringles";"San Luis";13157;-65.92;-33.18
+"74028";"Chacabuco";"San Luis";20744;-65.20;-32.73
+"74035";"General Pedernera";"San Luis";125899;-65.54;-33.93
+"74042";"Gobernador Dupuy";"San Luis";11779;-65.84;-35.34
+"74056";"La Capital";"San Luis";204019;-66.51;-33.82
+"74063";"Libertador General San Martin";"San Luis";4707;-65.71;-32.60
+"78007";"Corpen Aike";"Santa Cruz";11093;-69.45;-49.95
+"78014";"Deseado";"Santa Cruz";107630;-68.03;-47.33
+"78021";"Guer Aike";"Santa Cruz";113267;-70.56;-51.41
+"78028";"Lago Argentino";"Santa Cruz";18864;-72.07;-49.84
+"78035";"Lago Buenos Aires";"Santa Cruz";8750;-70.64;-46.84
+"78042";"Magallanes";"Santa Cruz";9202;-68.47;-48.84
+"78049";"Rio Chico";"Santa Cruz";5158;-71.12;-48.29
+"82007";"Belgrano";"Santa Fe";44788;-61.70;-32.61
+"82014";"Caseros";"Santa Fe";82100;-61.53;-33.22
+"82021";"Castellanos";"Santa Fe";178092;-61.66;-31.23
+"82028";"Constitucion";"Santa Fe";86910;-60.88;-33.49
+"82035";"Garay";"Santa Fe";20890;-60.13;-31.06
+"82042";"General Lopez";"Santa Fe";191024;-61.95;-33.93
+"82049";"General Obligado";"Santa Fe";176410;-59.53;-28.67
+"82056";"Iriondo";"Santa Fe";66675;-61.27;-32.71
+"82063";"La Capital";"Santa Fe";525093;-60.67;-31.47
+"82070";"Las Colonias";"Santa Fe";104946;-61.11;-31.32
+"82077";"9 de Julio";"Santa Fe";29832;-61.40;-28.85
+"82084";"Rosario";"Santa Fe";1193605;-60.71;-33.13
+"82091";"San Cristobal";"Santa Fe";68878;-61.36;-30.23
+"82098";"San Javier";"Santa Fe";30959;-59.90;-30.10
+"82105";"San Jeronimo";"Santa Fe";80840;-61.05;-32.15
+"82112";"San Justo";"Santa Fe";40904;-60.49;-30.53
+"82119";"San Lorenzo";"Santa Fe";157255;-60.96;-32.94
+"82126";"San Martin";"Santa Fe";63842;-61.81;-32.01
+"82133";"Vera";"Santa Fe";51494;-60.41;-28.97
+"86007";"Aguirre";"Santiago del Estero";7610;-62.51;-29.29
+"86014";"Alberdi";"Santiago del Estero";17252;-62.73;-26.54
+"86021";"Atamisqui";"Santiago del Estero";10923;-63.87;-28.68
+"86028";"Avellaneda";"Santiago del Estero";20763;-63.21;-28.55
+"86035";"Banda";"Santiago del Estero";142279;-64.18;-27.45
+"86042";"Belgrano";"Santiago del Estero";9243;-62.22;-29.08
+"86049";"Capital";"Santiago del Estero";267125;-64.43;-27.89
+"86056";"Copo";"Santiago del Estero";31404;-62.74;-25.95
+"86063";"Choya";"Santiago del Estero";34667;-64.76;-28.76
+"86070";"Figueroa";"Santiago del Estero";17820;-63.57;-27.31
+"86077";"General Taboada";"Santiago del Estero";38105;-62.34;-28.57
+"86084";"Guasayan";"Santiago del Estero";7602;-64.87;-27.97
+"86091";"Jimenez";"Santiago del Estero";14352;-64.27;-26.90
+"86098";"Juan F. Ibarra";"Santiago del Estero";18051;-62.55;-28.04
+"86105";"Loreto";"Santiago del Estero";20036;-64.31;-28.61
+"86112";"Mitre";"Santiago del Estero";1890;-62.73;-29.58
+"86119";"Moreno";"Santiago del Estero";32130;-62.46;-27.31
+"86126";"Ojo de agua";"Santiago del Estero";14008;-63.99;-29.30
+"86133";"Pelegrini";"Santiago del Estero";20514;-64.09;-26.21
+"86140";"Quebrachos";"Santiago del Estero";10568;-63.35;-29.37
+"86147";"Rio Hondo";"Santiago del Estero";54867;-64.76;-27.48
+"86154";"Rivadavia";"Santiago del Estero";5015;-62.29;-29.98
+"86161";"Robles";"Santiago del Estero";44415;-63.91;-27.85
+"86168";"Salavina";"Santiago del Estero";11217;-63.30;-28.92
+"86175";"San Martin";"Santiago del Estero";9831;-63.86;-28.19
+"86182";"Sarmiento";"Santiago del Estero";4607;-63.46;-28.09
+"86189";"Silipica";"Santiago del Estero";7712;-64.28;-28.18
+"90007";"Burruyacu";"Tucuman";36951;-64.82;-26.52
+"90014";"Cruz Alta";"Tucuman";180499;-64.98;-26.92
+"90021";"Chicligasta";"Tucuman";80735;-65.81;-27.27
+"90028";"Famalla";"Tucuman";34542;-65.47;-26.98
+"90035";"Graneros";"Tucuman";13551;-65.25;-27.71
+"90042";"Juan B. Alberdi";"Tucuman";30237;-65.78;-27.61
+"90049";"La Cocha";"Tucuman";19002;-65.60;-27.79
+"90056";"Leales";"Tucuman";54949;-65.09;-27.19
+"90063";"Lules";"Tucuman";68474;-65.42;-26.86
+"90070";"Monteros";"Tucuman";63641;-65.64;-27.11
+"90077";"Rio Chico";"Tucuman";56847;-65.76;-27.46
+"90084";"Capital";"Tucuman";548866;-65.22;-26.83
+"90091";"Simoca";"Tucuman";30876;-65.29;-27.42
+"90098";"Tafi del Valle";"Tucuman";14933;-65.88;-26.60
+"90105";"Tafi Viejo";"Tucuman";121638;-65.45;-26.66
+"90112";"Trancas";"Tucuman";17371;-65.41;-26.34
+"90119";"Yerba Buena";"Tucuman";75076;-65.35;-26.79
+"94007";"Rio Grande";"Tierra del Fuego";70042;-67.90;-54.03
+"94014";"Ushuaia";"Tierra del Fuego";56956;-66.74;-54.75

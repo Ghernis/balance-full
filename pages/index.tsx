@@ -1,4 +1,5 @@
 import { trpc } from '../utils/trpc'
+import Head from 'next/head'
 import Accordion from 'react-bootstrap/Accordion'
 
 //import Image from 'next/image'
@@ -76,37 +77,37 @@ export default function Home() {
 
 
                 <div className='row'>
-                    <div className='col'>
-                        <a className="panel panel-default" href="#">
-                              <div className="panel-body">
-                                    <div className="media">
-                                          <div className="media-left padding-5">
-                                                <i className="fa fa-phone fa-fw fa-3x text-secondary"></i>
-                                              </div>
-                                          <div className="media-body">
-                                                <h3>El estado del estado</h3>
-                                                <p className="text-muted">Diagnóstico de la Administración Pública Nacional en diciembre de 2019</p>
-                                              </div>
-                                        </div>
-                                  </div>
-                        </a>
-                    </div>
-                    <div className='col'>
+                <div className='col'>
+                <a className="panel panel-default" href="#">
+                      <div className="panel-body">
+                            <div className="media">
+                                  <div className="media-left padding-5">
+                                        <i className="fa fa-phone fa-fw fa-3x text-secondary"></i>
+                                      </div>
+                                  <div className="media-body">
+                                        <h3>El estado del estado</h3>
+                                        <p className="text-muted">Diagnóstico de la Administración Pública Nacional en diciembre de 2019</p>
+                                      </div>
+                                </div>
+                          </div>
+                </a>
+                </div>
+                <div className='col'>
 
 
-                        <a className="panel panel-default" href="#">
-                              <div className="panel-body">
-                                    <h3>Ministerio de Economía</h3>
-                                  </div>
-                        </a>
+<a className="panel panel-default" href="#">
+  <div className="panel-body">
+    <h3>Ministerio de Economía</h3>
+  </div>
+</a>
 
-                    </div>
+</div>
                 </div>
 
 
-                <div className="alert alert-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit iure quod, quae architecto animi corporis dolorum odio? Assumenda itaque eos laboriosam at? Voluptatem maxime quam quas error possimus tempore ullam!</p>
-                </div>
+<div className="alert alert-info">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit iure quod, quae architecto animi corporis dolorum odio? Assumenda itaque eos laboriosam at? Voluptatem maxime quam quas error possimus tempore ullam!</p>
+</div>
 
 
 

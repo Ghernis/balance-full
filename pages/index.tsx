@@ -9,8 +9,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     const hello = trpc.empresas.useQuery()
+    const deptos = trpc.departamentos.useQuery()
     const mutation = trpc.departamento_bulk.useMutation()
     if(!hello.data){
+        return <div>loading</div>
+    }
+    if(!deptos.data){
         return <div>loading</div>
     }
     const handler=()=>{
@@ -86,7 +90,16 @@ export default function Home() {
                 hello.data.empresa.map(m=>{
                     return (
                         <div key={m.nombreId}>
-                        {m.tipo}
+                        {m.nombre} - {m.tipo}
+                    </div>)
+                })
+
+            }
+                {
+                deptos.data.resp.map(m=>{
+                    return (
+                        <div key={m.id}>
+                        {m.nombre} - {m.provincia} - {m.lon} - {m.lat}
                     </div>)
                 })
 

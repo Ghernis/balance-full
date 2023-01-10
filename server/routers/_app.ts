@@ -107,8 +107,44 @@ export const appRouter = router({
         return {
             resp
         }
-    })
-    ,
+    }),
+    central: procedure
+    .input(
+        z.object({
+            id:z.number(),
+            nombre: z.string(),
+            nemo: z.string(),
+            direccion: z.string(),
+            localidad: z.string(),
+            partido: z.string(),
+            provincia: z.string(),
+            notas: z.string(),
+            sistema: z.enum(SistemaEnums),
+            destino: z.enum(DestinoEnums),
+            actividad: z.string(),
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.central.upsert({
+            where:{
+                id:input.id
+            },
+            update:input,
+            create:{
+                    nombre:input.nombre,
+                    nemo:input.nemo,
+                    direccion:input.direccion,
+                    localidad:input.localidad,
+                    partido:input.partido,
+                    provincia:input.provincia,
+                    notas:input.notas,
+                    sistema:input.sistema,
+                    destino:input.destino,
+                    actividad:input.actividad,
+            }
+        })
+        return {resp}
+    }),
     hello: procedure
     .input(
         z.object({

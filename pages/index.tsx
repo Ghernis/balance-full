@@ -14,24 +14,24 @@ export default function Home() {
         return <div>loading</div>
     }
     const handler=()=>{
-        mutation.mutate(
-            [
-            {
-            codigo_depto:1,
-            nombre:'nombre1',
-            provincia:'provincia1',
-            lon:1.0,
-            lat:1.0,
-            },
-            {
-            codigo_depto:2,
-            nombre:'nombre2',
-            provincia:'provincia2',
-            lon:2.0,
-            lat:2.0,
-            }
-            ]
-        )
+       // mutation.mutate(
+       //     [
+       //     {
+       //     codigo_depto:1,
+       //     nombre:'nombre1',
+       //     provincia:'provincia1',
+       //     lon:1.0,
+       //     lat:1.0,
+       //     },
+       //     {
+       //     codigo_depto:2,
+       //     nombre:'nombre2',
+       //     provincia:'provincia2',
+       //     lon:2.0,
+       //     lat:2.0,
+       //     }
+       //     ]
+       // )
         //mutation.mutate({
         //    nombre:'empresa test',
         //    nombreId:'test1',

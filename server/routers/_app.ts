@@ -77,8 +77,32 @@ export const appRouter = router({
             where:{
                 nombreId:input.nombreId
             },
-            update: input,
-            create: input
+            update:input,
+            create:input
+        })
+        return {
+            resp
+        }
+    }),
+    set_depto_empresa: procedure
+    .input(
+        z.object({
+            nombreId: z.string(),
+            codigo_depto: z.number().optional()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.empresa.update({
+            where:{
+                nombreId:input.nombreId
+            },
+            data:{
+                departamento:{
+                    connect:{
+                        codigo_depto:input.codigo_depto
+                    }
+                }
+            }
         })
         return {
             resp

@@ -9,28 +9,46 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     const hello = trpc.empresas.useQuery()
-    const mutation = trpc.put_empresas.useMutation()
+    const mutation = trpc.departamento_bulk.useMutation()
     if(!hello.data){
         return <div>loading</div>
     }
     const handler=()=>{
-        mutation.mutate({
-            nombre:'empresa test',
-            nombreId:'test1',
-            tipo:'Autoproductor',
-            nemo:'hernan',
-            direccion:'hernan',
-            tel:'hernan',
-            localidad:'hernan',
-            departamentoLeg:'hernan',
-            provincia:'provincia',
-            cp:'hernan',
-            mail:'hernan',
-            contacto:'hernan',
-            sistema:'Conectado',
-            destino:'Resguardo',
+        mutation.mutate(
+            [
+            {
+            codigo_depto:1,
+            nombre:'nombre1',
+            provincia:'provincia1',
+            lon:1.0,
+            lat:1.0,
+            },
+            {
+            codigo_depto:2,
+            nombre:'nombre2',
+            provincia:'provincia2',
+            lon:2.0,
+            lat:2.0,
+            }
+            ]
+        )
+        //mutation.mutate({
+        //    nombre:'empresa test',
+        //    nombreId:'test1',
+        //    tipo:'Autoproductor',
+        //    nemo:'hernan',
+        //    direccion:'hernan',
+        //    tel:'hernan',
+        //    localidad:'hernan',
+        //    departamentoLeg:'hernan',
+        //    provincia:'provincia',
+        //    cp:'hernan',
+        //    mail:'hernan',
+        //    contacto:'hernan',
+        //    sistema:'Conectado',
+        //    destino:'Resguardo',
 
-        })
+        //})
     }
     return (
         <>

@@ -7,6 +7,44 @@ const SistemaEnums=['Conectado','Aislado'] as const;
 const DestinoEnums=['VentaUsuarios','Resguardo','ConsumoPropio'] as const;
 const TipoEnums=['Distribuidora','Cooperativa','Autoproductor'] as const;
 export const appRouter = router({
+    departamento_bulk: procedure
+    .input(
+        z.array(
+            z.object({
+                codigo_depto: z.number(),
+                nombre: z.string(),
+                provincia: z.string(),
+                lon: z.number(),
+                lat: z.number()
+            })
+        )
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.departamento.createMany({
+            data: input
+        })
+        return { resp }
+    }),
+    departamentos: procedure
+    .query(async()=>{
+        const resp = await prisma.departamento.findMany()
+        return { resp }
+
+    }),
+    del_departamento: procedure
+    .input(
+        z.object({
+            id:z.number()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.departamento.delete({
+            where:{
+                id:input.id
+            }
+        })
+        return { resp }
+    }),
     empresas: procedure
     .query(async()=>{
         const empresa = await prisma.empresa.findMany({

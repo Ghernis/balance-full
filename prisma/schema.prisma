@@ -272,20 +272,13 @@ model FacturadoDepartamento {
 
 
 
-model Provincia {
-    id Int @id @default(autoincrement())
-    nombre String @unique
-    departamentos Departamento[]
-}
 model Departamento {
     id Int @id @default(autoincrement())
     nombre String
-    codigo_depto Int?
+    codigo_depto Int @unique
     lon Float?
     lat Float?
-
-    provincia Provincia @relation(fields:[provinciaId],references:[id])
-    provinciaId Int
+    provincia String
 
     empresas Empresa[]
     centrales Central[]

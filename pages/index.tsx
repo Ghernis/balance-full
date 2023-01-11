@@ -10,7 +10,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     const hello = trpc.empresas.useQuery()
     const deptos = trpc.departamentos.useQuery()
-    const mutation = trpc.departamento_bulk.useMutation()
+    //const mutation = trpc.departamento_bulk.useMutation()
+    const empresa_id = trpc.empresa_id.useQuery({nombreId:'test1'})
+
     if(!hello.data){
         return <div>loading</div>
     }

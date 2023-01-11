@@ -62,8 +62,8 @@ enum TipoEmpresa {
 model Variable {
     anio Int
     mes Int
-    empresa Empresa @relation(fields:[empresaId],references:[id])
-    empresaId Int
+    empresa Empresa @relation(fields:[empresaId],references:[nombreId])
+    empresaId String
     enComprada Intercambio[]
     balEnergia Balance[]
     facturado Facturado[]
@@ -109,7 +109,7 @@ model Personal {
 model Central {
     id Int @id @default(autoincrement())
     nombre String
-    nemo String
+    nemo String @unique
     direccion String
     localidad String
     partido String
@@ -124,8 +124,8 @@ model Central {
 
     maquinas Maquina[]
 
-    departamento Departamento @relation(fields:[departamentoId],references:[id])
-    departamentoId Int
+    departamento Departamento? @relation(fields:[departamentoId],references:[id])
+    departamentoId Int?
 
     variable VariableCentral[]
 }
@@ -189,7 +189,7 @@ model Intercambio {
     tipo TipoIntercambio
 
     variable Variable @relation(fields:[anio,mes,empresaId],references:[anio,mes,empresaId])
-    empresaId Int
+    empresaId String
     @@id([id,anio,mes,tipo,empresaId])
 }
 
@@ -212,7 +212,7 @@ model Balance {
     perdidas Float
 
     variable Variable @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId Int
+    empresaId String
     @@id([id,mes,anio])
 }
 
@@ -221,7 +221,7 @@ model Facturado {
     concepto Concepto[]
 
     variable Variable @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId Int
+    empresaId String
     anio Int
     mes Int
 
@@ -253,14 +253,14 @@ model Concepto {
     tipo TipoConcepto
 
     facturado Facturado @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId Int
+    empresaId String
     anio Int
     mes Int
 }
 
 model FacturadoDepartamento {
     facturado Facturado @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId Int
+    empresaId String
     anio Int
     mes Int
     departamento Departamento @relation(fields:[departamentoId],references:[id])

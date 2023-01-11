@@ -53,6 +53,26 @@ export const appRouter = router({
             empresa
         }
     }),
+    empresa_id: procedure
+    .input(
+        z.object({
+            nombreId: z.string()
+        })
+    )
+    .query(async({input})=>{
+        const resp = await prisma.empresa.findFirst({
+            where:{
+                nombreId: input.nombreId
+            },
+            select:{
+                nombre: true,
+                nombreId: true,
+                centrales: true,
+                variable: true
+            }
+        })
+        return { resp }
+    }),
     put_empresas: procedure
     .input(
         z.object({
@@ -111,7 +131,6 @@ export const appRouter = router({
     central: procedure
     .input(
         z.object({
-            id:z.number(),
             nombre: z.string(),
             nemo: z.string(),
             direccion: z.string(),
@@ -122,12 +141,13 @@ export const appRouter = router({
             sistema: z.enum(SistemaEnums),
             destino: z.enum(DestinoEnums),
             actividad: z.string(),
+            empresaId: z.number(),
         })
     )
     .mutation(async({input})=>{
         const resp = await prisma.central.upsert({
             where:{
-                id:input.id
+                nemo:input.nemo
             },
             update:input,
             create:{
@@ -141,9 +161,35 @@ export const appRouter = router({
                     sistema:input.sistema,
                     destino:input.destino,
                     actividad:input.actividad,
+                    empresaId: input.empresaId
             }
         })
         return {resp}
+    }),
+    centrales: procedure
+    .query(async()=>{
+        const resp = await prisma.central.findMany()
+        return { resp }
+    }),
+    new_variable: procedure
+    .input(
+        z.object({
+            anio:z.number(),
+            mes: z.number(),
+            empresaId: z.string()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.variable.create({
+            data: input
+        })
+        return { resp }
+
+    }),
+    variables: procedure
+    .query(async()=>{
+        const resp = await prisma.variable.findMany()
+        return { resp }
     }),
     hello: procedure
     .input(

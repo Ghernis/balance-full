@@ -161,8 +161,7 @@ model Combustible {
 }
 
 model Maquina {
-    id Int @id @default(autoincrement())
-    numero String
+    numero String @unique
     tecnologia String
     marca String
     tension Float
@@ -174,8 +173,9 @@ model Maquina {
     fechaPS String
     tipoCte String
 
-    central Central @relation(fields:[centralId],references:[id])
-    centralId Int
+    central Central @relation(fields:[centralId],references:[nemo])
+    centralId String
+    @@id([numero,centralId])
 }
 
 model Intercambio {
@@ -244,7 +244,6 @@ enum TipoConcepto {
 }
 
 model Concepto {
-    id Int @id @default(autoincrement())
     cantUsr Int
     kwh Float
     facSin Float
@@ -256,6 +255,7 @@ model Concepto {
     empresaId String
     anio Int
     mes Int
+    @@id([tipo,anio,mes,empresaId])
 }
 
 model FacturadoDepartamento {
@@ -263,14 +263,12 @@ model FacturadoDepartamento {
     empresaId String
     anio Int
     mes Int
-    departamento Departamento @relation(fields:[departamentoId],references:[id])
+    departamento Departamento @relation(fields:[departamentoId],references:[codigo_depto])
     departamentoId Int
 
     @@id([empresaId,anio,mes,departamentoId])
 
 }
-
-
 
 model Departamento {
     id Int @id @default(autoincrement())

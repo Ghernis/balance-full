@@ -5,7 +5,9 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 const SistemaEnums=['Conectado','Aislado'] as const;
 const DestinoEnums=['VentaUsuarios','Resguardo','ConsumoPropio'] as const;
+const ConceptoEnums=['Residencial','Comercial','Industrial','ServicioSanitario','Alumbrado','Riego','Oficial','Rural','Otros','Traccion'] as const;
 const TipoEnums=['Distribuidora','Cooperativa','Autoproductor'] as const;
+const TipoIntercambio=['Compra','Venta'] as const;
 export const appRouter = router({
     departamento_bulk: procedure
     .input(
@@ -68,7 +70,7 @@ export const appRouter = router({
                 nombre: true,
                 nombreId: true,
                 centrales: true,
-                variable: true
+                variable: true,
             }
         })
         return { resp }
@@ -168,7 +170,14 @@ export const appRouter = router({
     }),
     centrales: procedure
     .query(async()=>{
-        const resp = await prisma.central.findMany()
+        const resp = await prisma.central.findMany({
+            select:{
+                nombre:true,
+                nemo:true,
+                sistema:true,
+                maquinas:true
+            }
+        })
         return { resp }
     }),
     new_variable: procedure
@@ -188,7 +197,136 @@ export const appRouter = router({
     }),
     variables: procedure
     .query(async()=>{
-        const resp = await prisma.variable.findMany()
+        const resp = await prisma.variable.findMany({
+            select:{
+                anio:true,
+                mes: true,
+                empresaId: true,
+                enComprada:true,
+                balEnergia:true,
+                facturado:{
+                    select:{
+                        departamentos:true
+                    }
+
+                }
+
+            }
+        })
+        return { resp }
+    }),
+    intercambio: procedure
+    .input(
+        z.object({
+            anio:z.number(),
+            mes:z.number(),
+            ente:z.string(),
+            quien:z.string(),
+            energia:z.number(),
+            tension:z.number(),
+            empresaId:z.string(),
+            tipo:z.enum(TipoIntercambio),
+        })
+    )
+    .mutation(async({input}) =>{
+        const resp = await prisma.intercambio.create({
+            data: input
+        })
+        
+        return { resp }
+    }),
+    balance: procedure
+    .input(
+        z.object({
+            anio: z.number(),
+            mes: z.number(),
+            enProd: z.number(),
+            comprada: z.number(),
+            consumoPropio: z.number(),
+            disp: z.number(),
+            vendida: z.number(),
+            red: z.number(),
+            facturada: z.number(),
+            perdidas: z.number(),
+            empresaId: z.string()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.balance.create({
+            data: input
+        })
+        return { resp }
+    }),
+    facturado: procedure
+    .input(
+        z.object({
+            empresaId: z.string(),
+            anio:z.number(),
+            mes:z.number(),
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.facturado.create({
+            data: input
+        })
+        return { resp }
+    }),
+    facturadoDepto: procedure
+    .input(
+        z.object({
+            empresaId:z.string(),
+            anio:z.number(),
+            mes:z.number(),
+            departamentoId:z.number()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.facturadoDepartamento.create({
+            data:input
+        })
+        return { resp }
+    }),
+    concepto: procedure
+    .input(
+        z.object({
+            cantUsr: z.number(),
+            kwh: z.number(),
+            facSin: z.number(),
+            facCon: z.number(),
+            precioMedCon: z.number(),
+            tipo: z.enum(ConceptoEnums),
+            empresaId: z.string(),
+            anio: z.number(),
+            mes: z.number()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.concepto.create({
+            data:input
+        })
+        return { resp }
+    }),
+    post_maquina: procedure
+    .input(
+        z.object({
+            numero: z.string(),
+            tecnologia: z.string(),
+            marca: z.string(),
+            tension: z.number(),
+            kva: z.number(),
+            fp: z.number(),
+            kw: z.number(),
+            potenciaEf: z.number(),
+            potenciaHP: z.number(),
+            fechaPS: z.string(),
+            tipoCte: z.string(),
+            centralId: z.string()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.maquina.create({
+            data: input
+        })
         return { resp }
     }),
     hello: procedure

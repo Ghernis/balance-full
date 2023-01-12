@@ -14,7 +14,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  //shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model Empresa {
@@ -65,7 +65,7 @@ model Variable {
     empresa Empresa @relation(fields:[empresaId],references:[nombreId])
     empresaId String
     enComprada Intercambio[]
-    balEnergia Balance[]
+    balEnergia Balance?
     facturado Facturado[]
 
     @@id([anio,mes,empresaId])
@@ -226,7 +226,7 @@ model Balance {
 
     variable Variable @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
     empresaId String
-    @@id([id,mes,anio])
+    @@unique([empresaId,anio,mes])
 }
 
 model Facturado {

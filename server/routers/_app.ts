@@ -339,6 +339,71 @@ export const appRouter = router({
         })
         return { resp }
     }),
+    variable_central: procedure
+    .input(
+        z.object({
+            anio: z.number(),
+            mes: z.number(),
+            centralId: z.number()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.variableCentral.create({
+            data:input
+        })
+        return { resp }
+    }),
+    combustible: procedure
+    .input(
+        z.object({
+            anio: z.number(),
+            mes: z.number(),
+            cmb: z.string(),
+            unidad:z.string(),
+            vol: z.number(),
+            claseProd: z.string(),
+            centralId: z.number()
+
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.combustible.create({
+            data:input
+        })
+        return { resp }
+    }),
+    energia_bruto: procedure
+    .input(
+        z.object({
+            anio: z.number(),
+            mes: z.number(),
+            centralId: z.number(),
+            solar: z.number(),
+            diesel: z.number(),
+            hidro: z.number(),
+            tv: z.number(),
+            tg: z.number(),
+            eolico: z.number()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.energia.create({
+            data: input
+        })
+        return { resp }
+    }),
+    get_variable_central: procedure
+    .query(async()=>{
+        const resp = await prisma.variableCentral.findMany({
+            select:{
+                anio: true,
+                mes: true,
+                combustible: true,
+                energiaBruto: true
+            }
+        })
+        return {resp}
+    }),
     hello: procedure
     .input(
         z.object({

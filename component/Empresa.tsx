@@ -2,6 +2,7 @@ import { trpc } from '../utils/trpc'
 import CartaLista from '../component/CartaList'
 import FormDatosBasicos from '../component/FormDatosBasicos'
 import Cuadro from '../component/Cuadro';
+import Spider from '../component/Spider';
 
 import Accordion from 'react-bootstrap/Accordion';
 import Alert from 'react-bootstrap/Alert';
@@ -69,6 +70,7 @@ const Empresa =(props:any)=>{
                 <label>Datos Basicos</label>
                 <FormDatosBasicos />
                 <Cuadro />
+                <Spider />
 
                 <Alert variant='warning' className='my-4'>
                     <strong>A definir: </strong>Esto puede quedar siempre modificable, o deshabilitado y con un boton editable

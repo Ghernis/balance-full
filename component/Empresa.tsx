@@ -1,8 +1,10 @@
 import { trpc } from '../utils/trpc'
 import CartaLista from '../component/CartaList'
 import FormDatosBasicos from '../component/FormDatosBasicos'
+import Cuadro from '../component/Cuadro';
 
-import Accordion from 'react-bootstrap/Accordion'
+import Accordion from 'react-bootstrap/Accordion';
+import Alert from 'react-bootstrap/Alert';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 
@@ -60,11 +62,17 @@ const Empresa =(props:any)=>{
     return (
         <div>
             <div className='container'>
-                <div className="alert alert-info">
-                      <p>Aca puede ir un recordatorio para que actualicen la informacion estatica cada tanto</p>
-                </div>
-                    <FormDatosBasicos />
+                <Alert variant='info' className='my-4'>
+                    <strong>Nota: </strong>Aca puede ir un recordatorio para que actualicen la informacion estatica cada tanto
 
+                </Alert>
+                <label>Datos Basicos</label>
+                <FormDatosBasicos />
+                <Cuadro />
+
+                <Alert variant='warning' className='my-4'>
+                    <strong>A definir: </strong>Esto puede quedar siempre modificable, o deshabilitado y con un boton editable
+                </Alert>
 
                 <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
@@ -72,14 +80,15 @@ const Empresa =(props:any)=>{
                         <Accordion.Body>
                             <ListGroup as="ol">
                                 {
-                                    hello.data.empresa.map((emp:any)=>{
-                                        return <CartaLista
-                                        titulo={emp.nombre} 
-                                        subtitulo={emp.nombreId} 
+                                hello.data.empresa.map((emp:any)=>{
+                                    return <CartaLista
+                                        key={emp.nombreId}
+                                        titulo={emp.nombre}
+                                        subtitulo={emp.nombreId}
                                         badge={emp.tipo}
-                                    />
-                                    })
-                                }
+                                        />
+                                })
+                            }
                             </ListGroup>
                             <Button className='my-4' variant='primary'>Agregar</Button>
                         </Accordion.Body>

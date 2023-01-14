@@ -30,7 +30,7 @@ export const appRouter = router({
     departamentos: procedure
     .query(async()=>{
         const resp = await prisma.departamento.findMany()
-        return { resp }
+        return resp
 
     }),
     del_departamento: procedure
@@ -73,7 +73,7 @@ export const appRouter = router({
                 variable: true,
             }
         })
-        return { resp }
+        return resp
     }),
     put_empresas: procedure
     .input(

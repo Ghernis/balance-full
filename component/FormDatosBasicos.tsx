@@ -73,11 +73,23 @@ const FormDatosBasicos=(props)=>{
                             />
                     </InputGroup>
                 </Col>
-                <Col>
+                    <Col>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">CP</InputGroup.Text>
+                        <Form.Control
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            disabled={disabled}
+                            />
+                    </InputGroup>
+                    </Col>
+                </Row>
+                <Row>
 
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Departamento</InputGroup.Text>
-                        <Form.Select aria-label="Destino">
+                        <Form.Select aria-label="Destino" disabled={disabled}>
                             <option>Seleccionar...</option>
                             {
                             deptos.data.resp.map(dep=>{
@@ -89,7 +101,6 @@ const FormDatosBasicos=(props)=>{
                             }
                         </Form.Select>
                     </InputGroup>
-                </Col>
             </Row>
             <Row>
                 <Col>

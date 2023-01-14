@@ -12,7 +12,7 @@ const CartaLista = (props:any)=>{
                 <div className="fw-bold">{titulo}</div>
                 {subtitulo}
             </div>
-            <Badge bg="primary" pill>
+            <Badge bg="info" pill>
                 {badge}
             </Badge>
         </ListGroup.Item>

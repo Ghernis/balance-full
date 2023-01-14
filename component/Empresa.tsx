@@ -4,6 +4,9 @@ import FormDatosBasicos from '../component/FormDatosBasicos'
 import Cuadro from '../component/Cuadro';
 import Spider from '../component/Spider';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import Alert from 'react-bootstrap/Alert';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -69,8 +72,17 @@ const Empresa =(props:any)=>{
                 </Alert>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos />
-                <Cuadro />
-                <Spider />
+                <Container>
+                    <Row>
+
+                        <Col xs={9}>
+                            <Cuadro />
+                        </Col>
+                        <Col xs={3}>
+                            <Spider />
+                        </Col>
+                    </Row>
+                </Container>
 
                 <Alert variant='warning' className='my-4'>
                     <strong>A definir: </strong>Esto puede quedar siempre modificable, o deshabilitado y con un boton editable

@@ -8,6 +8,7 @@ const DestinoEnums=['VentaUsuarios','Resguardo','ConsumoPropio'] as const;
 const ConceptoEnums=['Residencial','Comercial','Industrial','ServicioSanitario','Alumbrado','Riego','Oficial','Rural','Otros','Traccion'] as const;
 const TipoEnums=['Distribuidora','Cooperativa','Autoproductor'] as const;
 const TipoIntercambio=['Compra','Venta'] as const;
+const TecnologiaEnums=['TV','TG','CC','HID','EO','SOL','FV','BG','BM'] as const;
 export const appRouter = router({
     departamento_bulk: procedure
     .input(
@@ -232,7 +233,7 @@ export const appRouter = router({
         const resp = await prisma.intercambio.create({
             data: input
         })
-        
+
         return { resp }
     }),
     balance: procedure
@@ -310,7 +311,7 @@ export const appRouter = router({
     .input(
         z.object({
             numero: z.string(),
-            tecnologia: z.string(),
+            tecnologia: z.enum(TecnologiaEnums),
             marca: z.string(),
             tension: z.number(),
             kva: z.number(),

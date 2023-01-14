@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
     const {nombreId} = props
-    const [empresa_id,setEmpresa] = useState('test1')
+    const [empresa_id,setEmpresa] = useState('distri2')
 
     const empresas = trpc.empresas.useQuery()
     const deptos = trpc.departamentos.useQuery()
@@ -84,16 +84,16 @@ const Empresa =(props:any)=>{
                         })
                     }
                 </Form.Select>
-                <Alert variant='info' className='my-4'>
-                    <strong>Nota: </strong>Aca puede ir un recordatorio para que actualicen la informacion estatica cada tanto
+                <Alert variant='warning' className='my-4'>
+                    <strong>Nota: </strong>^Este selector de empresa no estara en la version final. Todavia no tengo claro como sera el registro, ni si es mi responsabilidad o ya hay otro sistema
 
                 </Alert>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos empresa={empresa.data}/>
                 <Cuadro />
 
-                <Alert variant='warning' className='my-4'>
-                    <strong>A definir: </strong>Estos datos pueden quedar siempre modificable, o deshabilitado y con un boton hacerlos editables(ejemplo tel)
+                <Alert variant='info' className='my-4'>
+                    <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
                 </Alert>
 
                 <Accordion defaultActiveKey="0">
@@ -102,12 +102,12 @@ const Empresa =(props:any)=>{
                         <Accordion.Body>
                             <ListGroup as="ol">
                                 {
-                                empresas.data.map((emp:any)=>{
+                                empresa.data.centrales.map((emp:any)=>{
                                     return <CartaLista
-                                        key={emp.nombreId}
+                                        key={emp.id}
                                         titulo={emp.nombre}
-                                        subtitulo={emp.nombreId}
-                                        badge={emp.tipo}
+                                        subtitulo={emp.nemo}
+                                        badge={emp.destino}
                                         />
                                 })
                             }

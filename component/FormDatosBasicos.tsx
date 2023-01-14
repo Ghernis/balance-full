@@ -10,7 +10,7 @@ import {EmpresaType} from '../models/empresa.model';
 
 const FormDatosBasicos=(props)=>{
     //const {empresa} = props
-    const empresaInit= props.empresa.resp
+    const empresaInit= props.empresa
     const [disabled,setDisabled] = useState(true)
     const [empresa,setEmpresa]=useState(empresaInit)
     const [nombre,setNombre] = useState(empresaInit.nombre)
@@ -92,7 +92,7 @@ const FormDatosBasicos=(props)=>{
                         <Form.Select aria-label="Destino" disabled={disabled}>
                             <option>Seleccionar...</option>
                             {
-                            deptos.data.resp.map(dep=>{
+                            deptos.data.map((dep:any)=>{
                                 return (
                                     <option key={dep.id} value={dep.id}>{dep.nombre} - {dep.provincia}</option>
 

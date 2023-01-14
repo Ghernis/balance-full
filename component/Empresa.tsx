@@ -100,18 +100,21 @@ const Empresa =(props:any)=>{
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Listado Centrales</Accordion.Header>
                         <Accordion.Body>
-                            <ListGroup as="ol">
-                                {
-                                empresa.data.centrales.map((emp:any)=>{
-                                    return <CartaLista
-                                        key={emp.id}
-                                        titulo={emp.nombre}
-                                        subtitulo={emp.nemo}
-                                        badge={emp.destino}
-                                        />
-                                })
+                            {
+                                empresa.data.centrales.length!=0 &&
+                                <ListGroup as="ol">
+                                    {
+                                    empresa.data.centrales.map((emp:any)=>{
+                                        return <CartaLista
+                                            key={emp.id}
+                                            titulo={emp.nombre}
+                                            subtitulo={emp.nemo}
+                                            badge={emp.destino}
+                                            />
+                                    })
+                                }
+                                </ListGroup>
                             }
-                            </ListGroup>
                             <Button className='my-4' variant='primary'>Agregar</Button>
                         </Accordion.Body>
                     </Accordion.Item>
@@ -128,41 +131,6 @@ const Empresa =(props:any)=>{
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <button type='button' className='btn btn-primary my-4' onClick={handler}>test</button>
-
-
-                <div className='row'>
-                    <div className='col'>
-                        <a className="panel panel-default" href="#">
-                              <div className="panel-body">
-                                    <div className="media">
-                                          <div className="media-left padding-5">
-                                                <i className="fa fa-phone fa-fw fa-3x text-secondary"></i>
-                                              </div>
-                                          <div className="media-body">
-                                                <h3>El estado del estado</h3>
-                                                <p className="text-muted">Diagnóstico de la Administración Pública Nacional en diciembre de 2019</p>
-                                              </div>
-                                        </div>
-                                  </div>
-                        </a>
-                    </div>
-                    <div className='col'>
-
-
-                        <a className="panel panel-default" href="#">
-                              <div className="panel-body">
-                                    <h3>Ministerio de Economía</h3>
-                                  </div>
-                        </a>
-
-                    </div>
-                </div>
-
-
-
-
-
 
             </div>
         </div>

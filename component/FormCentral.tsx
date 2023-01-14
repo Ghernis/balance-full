@@ -1,3 +1,5 @@
+import { trpc } from '../utils/trpc';
+
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -5,12 +7,14 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const FormCentral=()=>{
+    const deptos = trpc.departamentos.useQuery()
+    if(!deptos.data){
+        return <div>loading...</div>
+    }
     return (
         <>
-            <Row>
-                <Button size='sm'>Volver a Empresa</Button>
-            </Row>
             <label>Datos Basicos Central</label>
+            <Button size='sm' className='mx-4'>Volver a Empresa</Button>
             <Row>
                 <Col>
                     <InputGroup className="mb-3">
@@ -35,49 +39,73 @@ const FormCentral=()=>{
                 </Col>
             </Row>
 
-            <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">Direccion</InputGroup.Text>
-                <Form.Control
-                    placeholder="Username"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    disabled
-                    />
-            </InputGroup>
-            <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">Localidad</InputGroup.Text>
-                <Form.Control
-                    placeholder="Username"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    disabled
-                    />
-            </InputGroup>
-            <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">Partido</InputGroup.Text>
-                <Form.Control
-                    placeholder="Username"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    disabled
-                    />
-            </InputGroup>
-            <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">Sistema</InputGroup.Text>
-                <Form.Control
-                    placeholder="Username"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    />
-            </InputGroup>
-            <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
-                <Form.Control
-                    placeholder="Username"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    />
-            </InputGroup>
+            <Row>
+
+                <InputGroup className="mb-3">
+                    <InputGroup.Text id="basic-addon1">Departamento</InputGroup.Text>
+                    <Form.Select aria-label="Destino">
+                        <option>Seleccionar...</option>
+                        {
+                        deptos.data.map((dep:any)=>{
+                            return (
+                                <option key={dep.id} value={dep.id}>{dep.nombre} - {dep.provincia}</option>
+
+                            )
+                        })
+                    }
+                    </Form.Select>
+                </InputGroup>
+            </Row>
+            <Row>
+                <Col>
+
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">Direccion</InputGroup.Text>
+                        <Form.Control
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            disabled
+                            />
+                    </InputGroup>
+                </Col>
+                <Col>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">Localidad</InputGroup.Text>
+                        <Form.Control
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            disabled
+                            />
+                    </InputGroup>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
+                        <Form.Select aria-label="Destino">
+                            <option>Seleccionar...</option>
+                            <option value="1">VentaUsuarios</option>
+                            <option value="2">Resguardo</option>
+                            <option value="3">ConsumoPropio</option>
+                        </Form.Select>
+                    </InputGroup>
+                </Col>
+                <Col>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">Tipo de Sistema</InputGroup.Text>
+                        <Form.Select aria-label="Sistema">
+                            <option>Seleccionar...</option>
+                            <option value="1">Conectado</option>
+                            <option value="2">Aislado</option>
+                        </Form.Select>
+                    </InputGroup>
+                </Col>
+            </Row>
             <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1">Actividad</InputGroup.Text>
                 <Form.Control

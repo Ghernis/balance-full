@@ -113,6 +113,7 @@ const Empresa =(props:any)=>{
                                             titulo={emp.nombre}
                                             subtitulo={emp.nemo}
                                             badge={emp.destino}
+                                            link={'/central/'+emp.nemo}
                                             />
                                     })
                                 }

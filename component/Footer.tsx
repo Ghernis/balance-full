@@ -5,7 +5,7 @@ const Footer=()=>{
                 <div className="row sub-footer">
                     <div className="container">
                         <div className="col-sm-6 m-y-1 p-x-0">
-                            <img className="image-responsive" height="80" src="primerolagente.svg" alt="Primero la gente"/>
+                            <img className="image-responsive" height="80" src="/primerolagente.svg" alt="Primero la gente"/>
 
                         </div>
                     </div>

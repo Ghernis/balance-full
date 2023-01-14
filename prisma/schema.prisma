@@ -162,7 +162,7 @@ model Combustible {
 
 model Maquina {
     numero String @unique
-    tecnologia String
+    tecnologia TipoTecnologia
     marca String
     tension Float
     kva Float
@@ -176,6 +176,19 @@ model Maquina {
     central Central @relation(fields:[centralId],references:[nemo])
     centralId String
     @@id([numero,centralId])
+}
+
+
+enum TipoTecnologia {
+    TV
+    TG
+    CC
+    HID
+    EO
+    SOL
+    FV
+    BG
+    BM
 }
 
 model Intercambio {

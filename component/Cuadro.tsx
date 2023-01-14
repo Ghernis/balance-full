@@ -1,41 +1,36 @@
 import Table from 'react-bootstrap/Table';
 
-const Cuadro=()=>{
+const Cuadro=(props)=>{
+    const {titulos, data}=props
     return (
         <>
             <label>Tabla de personal permanente</label>
             <Table striped bordered size='sm'>
                 <thead>
                     <tr className='text-center'>
-                        <th></th>
-                        <th>Profesionales</th>
-                        <th>Obreros</th>
-                        <th>Administrativos</th>
-                        <th>Tecnicos</th>
+                        {
+                            titulos.map(t=>{
+                                return <th key={t}>{t}</th>
+                            })
+                        }
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className='text-center'>
-                        <td>Hombres</td>
-                        <td>10</td>
-                        <td>20</td>
-                        <td>30</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className='text-center'>
-                        <td>Mujeres</td>
-                        <td>10</td>
-                        <td>20</td>
-                        <td>30</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className='text-center'>
-                        <td><strong>Total</strong></td>
-                        <td>20</td>
-                        <td>40</td>
-                        <td>60</td>
-                        <td>80</td>
-                    </tr>
+                    {
+                        data.map(r=>{
+                            return (
+                                <tr key={r[0]} className='text-center'>
+                                {
+                                    r.map((c,i)=>{
+                                        return (
+                                            <td key={r[0]+'-'+i}>{c}</td>
+                                        )
+                                    })
+                            }
+                                </tr>
+                            )
+                        })
+                    }
                 </tbody>
             </Table>
             </>

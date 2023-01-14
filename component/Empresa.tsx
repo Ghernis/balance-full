@@ -18,6 +18,9 @@ const Empresa =(props:any)=>{
     const empresas = trpc.empresas.useQuery()
     const deptos = trpc.departamentos.useQuery()
     const empresa = trpc.empresa_id.useQuery({nombreId:empresa_id})
+
+    const titulos=['','Profesionales','Obreros','Administrativos','Tecnicos']
+    const data=[['Hombres',10,20,30,40],['Mujeres',20,30,40,10],['Total',30,50,70,50]]
     //const mutation = trpc.departamento_bulk.useMutation()
     //useEffect(()=>{
     //    trpc.empresa_id.useQuery({nombreId:empresa_id})
@@ -90,7 +93,7 @@ const Empresa =(props:any)=>{
                 </Alert>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos empresa={empresa.data}/>
-                <Cuadro />
+                <Cuadro data={data} titulos={titulos} />
 
                 <Alert variant='info' className='my-4'>
                     <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)

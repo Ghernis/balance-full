@@ -1,15 +1,15 @@
 import Table from 'react-bootstrap/Table';
 
 const Cuadro=(props)=>{
-    const {titulos, data}=props
+    const {headers, data, titulo}=props
     return (
         <>
-            <label>Tabla de personal permanente</label>
+            <label>{titulo}</label>
             <Table striped bordered size='sm'>
                 <thead>
                     <tr className='text-center'>
                         {
-                            titulos.map(t=>{
+                            headers.map(t=>{
                                 return <th key={t}>{t}</th>
                             })
                         }

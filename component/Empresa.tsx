@@ -93,7 +93,7 @@ const Empresa =(props:any)=>{
                 </Alert>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos empresa={empresa.data}/>
-                <Cuadro data={data} titulos={titulos} />
+                <Cuadro data={data} headers={titulos} titulo='Tabla de Personal Permanente' />
 
                 <Alert variant='info' className='my-4'>
                     <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)

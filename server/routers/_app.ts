@@ -1,8 +1,9 @@
 import { z } from 'zod';
 import { procedure, router } from '../trpc'
-import { PrismaClient } from '@prisma/client'
+//import { PrismaClient } from '@prisma/client'
+import prisma from '../prisma-cliet';
 
-const prisma = new PrismaClient()
+//const prisma = new PrismaClient()
 const SistemaEnums=['Conectado','Aislado'] as const;
 const DestinoEnums=['VentaUsuarios','Resguardo','ConsumoPropio'] as const;
 const TipoEnums=['Distribuidora','Cooperativa','Autoproductor'] as const;

@@ -106,25 +106,7 @@ const Empresa =(props:any)=>{
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                {
-                hello.data.empresa.map(m=>{
-                    return (
-                        <div key={m.nombreId}>
-                            {m.nombre} - {m.tipo}
-                        </div>)
-                })
-
-            }
-                {
-                deptos.data.resp.map(m=>{
-                    return (
-                        <div key={m.id}>
-                            {m.nombre} - {m.provincia} - {m.lon} - {m.lat}
-                        </div>)
-                })
-
-            }
-                <button type='button' className='btn btn-primary' onClick={handler}>test</button>
+                <button type='button' className='btn btn-primary my-4' onClick={handler}>test</button>
 
 
                 <div className='row'>

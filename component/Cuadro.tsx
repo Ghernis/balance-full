@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 const Cuadro=()=>{
     return (
         <>
-            <label>Tabla personal</label>
+            <label>Tabla de personal</label>
             <Table striped bordered size='sm'>
                 <thead>
                     <tr className='text-center'>

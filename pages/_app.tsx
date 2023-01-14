@@ -4,6 +4,7 @@ import 'ar-poncho/dist/css/poncho.min.css';
 import { trpc } from '../utils/trpc';
 import NavBar from '../component/nav';
 import Footer from '../component/Footer';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 //import { SessionProvider } from 'next-auth/react';
 
 const MyApp: AppType = ({
@@ -14,6 +15,7 @@ const MyApp: AppType = ({
             <NavBar />
             <Component {...pageProps} />
             <Footer />
+            <ReactQueryDevtools initialIsOpen={false} />
         </>
     )
 };

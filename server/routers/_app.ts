@@ -53,9 +53,7 @@ export const appRouter = router({
     .query(async()=>{
         const empresa = await prisma.empresa.findMany({
         })
-        return {
-            empresa
-        }
+        return empresa
     }),
     empresa_id: procedure
     .input(

@@ -1,8 +1,11 @@
+import { useState, useEffect } from 'react'
 import { trpc } from '../utils/trpc'
+
 import CartaLista from '../component/CartaList'
 import FormDatosBasicos from '../component/FormDatosBasicos'
 import Cuadro from '../component/Cuadro';
 
+import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import Alert from 'react-bootstrap/Alert';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -10,13 +13,20 @@ import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
     const {nombreId} = props
+    const [empresa_id,setEmpresa] = useState('test1')
 
-    const hello = trpc.empresas.useQuery()
+    const empresas = trpc.empresas.useQuery()
     const deptos = trpc.departamentos.useQuery()
+    const empresa = trpc.empresa_id.useQuery({nombreId:empresa_id})
     //const mutation = trpc.departamento_bulk.useMutation()
-    const empresa_id = trpc.empresa_id.useQuery({nombreId:'test1'})
+    //useEffect(()=>{
+    //    trpc.empresa_id.useQuery({nombreId:empresa_id})
+    //},[empresa_id])
+    if(empresa.isFetching){
+        return <div>loading</div>
+    }
 
-    if(!hello.data){
+    if(!empresas.data){
         return <div>loading</div>
     }
     if(!deptos.data){
@@ -59,19 +69,31 @@ const Empresa =(props:any)=>{
 
         //})
     }
+    function selectEmpresa(name:React.ChangeEvent<HTMLSelectElement>){
+        console.log(name.target.value)
+        setEmpresa(name.target.value)
+    }
     return (
         <div>
-            <div className='container'>
+            <div className='container my-4'>
+                <label>Selecciona Empresa(esto es para testeo solamente)</label>
+                <Form.Select size="lg" onChange={selectEmpresa}>
+                    {
+                        empresas.data.map((emp:any)=>{
+                            return <option key={emp.id} value={emp.nombreId}>{emp.nombre}</option>
+                        })
+                    }
+                </Form.Select>
                 <Alert variant='info' className='my-4'>
                     <strong>Nota: </strong>Aca puede ir un recordatorio para que actualicen la informacion estatica cada tanto
 
                 </Alert>
                 <label>Datos Basicos</label>
-                <FormDatosBasicos />
+                <FormDatosBasicos empresa={empresa.data}/>
                 <Cuadro />
 
                 <Alert variant='warning' className='my-4'>
-                    <strong>A definir: </strong>Esto puede quedar siempre modificable, o deshabilitado y con un boton editable
+                    <strong>A definir: </strong>Estos datos pueden quedar siempre modificable, o deshabilitado y con un boton hacerlos editables(ejemplo tel)
                 </Alert>
 
                 <Accordion defaultActiveKey="0">
@@ -80,7 +102,7 @@ const Empresa =(props:any)=>{
                         <Accordion.Body>
                             <ListGroup as="ol">
                                 {
-                                hello.data.empresa.map((emp:any)=>{
+                                empresas.data.map((emp:any)=>{
                                     return <CartaLista
                                         key={emp.nombreId}
                                         titulo={emp.nombre}

@@ -4,10 +4,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-const FormDatosBasicos=()=>{
+const FormDatosBasicos=(props)=>{
+    const {empresa} = props
     const deptos = trpc.departamentos.useQuery()
     if(!deptos.data){
         return <div>loading...</div>
+    }
+    const cambio=(name)=>{
+        console.log(name)
     }
     return (
         <>
@@ -16,6 +20,8 @@ const FormDatosBasicos=()=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Razon Social</InputGroup.Text>
                         <Form.Control
+                            onChange={cambio}
+                            value={empresa.resp.nombre}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -26,6 +32,8 @@ const FormDatosBasicos=()=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Nemo CAMMESA</InputGroup.Text>
                         <Form.Control
+                            onChange={cambio}
+                            value={empresa.resp.nombreId}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"

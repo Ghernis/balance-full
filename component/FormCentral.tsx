@@ -1,4 +1,5 @@
 import { trpc } from '../utils/trpc';
+import Link from 'next/link';
 
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +15,10 @@ const FormCentral=()=>{
     return (
         <>
             <label>Datos Basicos Central</label>
+
+        <Link href='/' legacyBehavior passHref>
             <Button size='sm' className='mx-4'>Volver a Empresa</Button>
+            </Link>
             <Row>
                 <Col>
                     <InputGroup className="mb-3">

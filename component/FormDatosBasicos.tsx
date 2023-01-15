@@ -14,22 +14,43 @@ const FormDatosBasicos=(props)=>{
     const [disabled,setDisabled] = useState(true)
     const [empresa,setEmpresa]=useState(empresaInit)
     const [nombre,setNombre] = useState(empresaInit.nombre)
+    const [direccion,setDireccion] = useState(empresaInit.direccion)
+    const [cp,setCp] = useState(empresaInit.cp)
+    const [tel,setTel] = useState(empresaInit.tel)
+    const [mail,setMail] = useState(empresaInit.mail)
+    const [contacto,setContacto] = useState(empresaInit.contacto)
+    const [sistema,setSistema] = useState(empresaInit.sistema)
+    const [destino,setDestino] = useState(empresaInit.destino)
     const deptos = trpc.departamentos.useQuery()
     const put_emp= trpc.put_empresas.useMutation()
 
     useEffect(()=>{
-        empresa.nombre=nombre
-        empresa.tipo='Distribuidora'
-        setEmpresa(empresa)
+        const empresaU={
+            nombreId:empresa.nombreId,
+            nombre,
+            direccion,
+            cp,
+            tel,
+            mail,
+            contacto,
+            sistema:'Conectado',
+            destino:'Resguardo',
+            tipo:'Distribuidora',
+
+        }
+        setEmpresa(empresaU)
         //put_emp.mutate(empresa)
 
-    },[nombre])
+    },[nombre,direccion,cp,tel,mail,contacto,sistema,destino])
 
     if(!deptos.data){
         return <div>loading...</div>
     }
     const cambio=(name)=>{
-        console.log(empresa)
+        //console.log(empresa)
+    }
+    const saveChanges=()=>{
+        put_emp.mutate(empresa)
     }
     return (
         <>
@@ -66,6 +87,8 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Direccion</InputGroup.Text>
                         <Form.Control
+                            onChange={(e)=>setDireccion(e.target.value)}
+                            value={direccion}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -77,6 +100,8 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">CP</InputGroup.Text>
                         <Form.Control
+                            onChange={(e)=>setCp(e.target.value)}
+                            value={cp}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -107,7 +132,8 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Tel</InputGroup.Text>
                         <Form.Control
-                            value='texto'
+                            onChange={(e)=>setTel(e.target.value)}
+                            value={tel}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -119,6 +145,8 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Mail</InputGroup.Text>
                         <Form.Control
+                            value={mail}
+                            onChange={(e)=>setMail(e.target.value)}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -130,6 +158,8 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Contacto</InputGroup.Text>
                         <Form.Control
+                            onChange={(e)=>setContacto(e.target.value)}
+                            value={contacto}
                             placeholder="Username"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -144,8 +174,8 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon1">Tipo de Sistema</InputGroup.Text>
                         <Form.Select aria-label="Destino" disabled={disabled}>
                             <option>Seleccionar...</option>
-                            <option value="1">Conectado</option>
-                            <option value="2">Aislado</option>
+                            <option value="Conectado">Conectado</option>
+                            <option value="Aislado">Aislado</option>
                         </Form.Select>
                     </InputGroup>
                 </Col>
@@ -154,9 +184,9 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
                         <Form.Select aria-label="Destino" disabled={disabled}>
                             <option>Seleccionar...</option>
-                            <option value="1">VentaUsuarios</option>
-                            <option value="2">Resguardo</option>
-                            <option value="3">ConsumoPropio</option>
+                            <option value="VentaUsuarios">VentaUsuarios</option>
+                            <option value="Resguardo">Resguardo</option>
+                            <option value="ConsumoPropio">ConsumoPropio</option>
                         </Form.Select>
                     </InputGroup>
                 </Col>
@@ -168,7 +198,7 @@ const FormDatosBasicos=(props)=>{
                     {
                 !disabled &&
                 <Col className='text-end'>
-                <Button className='my-4 btn btn-success' onClick={()=>setDisabled(!disabled)}>Guardar cambios</Button>
+                <Button className='my-4 btn btn-success' onClick={saveChanges}>Guardar cambios</Button>
                 </Col>
             }
                 </Row>

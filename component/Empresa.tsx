@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { trpc } from '../utils/trpc'
+import Link from 'next/link'
 
 import CartaLista from '../component/CartaList'
 import FormDatosBasicos from '../component/FormDatosBasicos'
@@ -82,13 +83,9 @@ const Empresa =(props:any)=>{
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>Declaraciones Variable</Accordion.Header>
                         <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
+                            <Link href='/variable' legacyBehavior>
+                            <Button className='my-4' variant='primary'>Nueva declaracion</Button>
+                            </Link>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

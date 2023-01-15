@@ -25,53 +25,10 @@ const Empresa =(props:any)=>{
     //useEffect(()=>{
     //    trpc.empresa_id.useQuery({nombreId:empresa_id})
     //},[empresa_id])
-    if(empresa.isFetching){
+    if(empresa.isLoading || empresas.isLoading || deptos.isLoading){
         return <div>loading</div>
     }
 
-    if(!empresas.data){
-        return <div>loading</div>
-    }
-    if(!deptos.data){
-        return <div>loading</div>
-    }
-    const handler=()=>{
-        // mutation.mutate(
-        //     [
-        //     {
-        //     codigo_depto:1,
-        //     nombre:'nombre1',
-        //     provincia:'provincia1',
-        //     lon:1.0,
-        //     lat:1.0,
-        //     },
-        //     {
-        //     codigo_depto:2,
-        //     nombre:'nombre2',
-        //     provincia:'provincia2',
-        //     lon:2.0,
-        //     lat:2.0,
-        //     }
-        //     ]
-        // )
-        //mutation.mutate({
-        //    nombre:'empresa test',
-        //    nombreId:'test1',
-        //    tipo:'Autoproductor',
-        //    nemo:'hernan',
-        //    direccion:'hernan',
-        //    tel:'hernan',
-        //    localidad:'hernan',
-        //    departamentoLeg:'hernan',
-        //    provincia:'provincia',
-        //    cp:'hernan',
-        //    mail:'hernan',
-        //    contacto:'hernan',
-        //    sistema:'Conectado',
-        //    destino:'Resguardo',
-
-        //})
-    }
     function selectEmpresa(name:React.ChangeEvent<HTMLSelectElement>){
         console.log(name.target.value)
         setEmpresa(name.target.value)

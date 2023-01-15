@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 
 const FormCentral=()=>{
     const deptos = trpc.departamentos.useQuery()
-    if(!deptos.data){
+    if(deptos.isLoading){
         return <div>loading...</div>
     }
     return (

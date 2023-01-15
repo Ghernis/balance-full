@@ -30,14 +30,14 @@ const Empresa =(props:any)=>{
     }
 
     function selectEmpresa(name:React.ChangeEvent<HTMLSelectElement>){
-        console.log(name.target.value)
+        //console.log(name.target.value)
         setEmpresa(name.target.value)
     }
     return (
         <div>
             <div className='container my-4'>
                 <label>Selecciona Empresa(esto es para testeo solamente)</label>
-                <Form.Select size="lg" onChange={selectEmpresa}>
+                <Form.Select size="lg" onChange={selectEmpresa} value={empresa_id}>
                     {
                         empresas.data.map((emp:any)=>{
                             return <option key={emp.id} value={emp.nombreId}>{emp.nombre}</option>
@@ -48,13 +48,13 @@ const Empresa =(props:any)=>{
                     <strong>Nota: </strong>^Este selector de empresa no estara en la version final. Todavia no tengo claro como sera el registro, ni si es mi responsabilidad o ya hay otro sistema
 
                 </Alert>
+                <Alert variant='info' className='my-4'>
+                    <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
+                </Alert>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos empresa={empresa.data}/>
                 <Cuadro data={data} headers={titulos} titulo='Tabla de Personal Permanente' />
 
-                <Alert variant='info' className='my-4'>
-                    <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
-                </Alert>
 
                 <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">

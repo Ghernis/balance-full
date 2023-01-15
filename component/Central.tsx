@@ -16,7 +16,7 @@ const Central=(props)=>{
     return (
         <>
             <div className='container'>
-                <div>comp central {nemo}</div>
+                <h3>Central: {nemo}</h3>
                 <FormCentral />
                 <Cuadro data={data} headers={titulos} titulo='Tabla de Maquinas' />
                 <Button variant='success' size='sm' className='me-4'>Agregar Maquina</Button>

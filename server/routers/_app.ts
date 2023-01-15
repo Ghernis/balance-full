@@ -70,8 +70,16 @@ export const appRouter = router({
             select:{
                 nombre: true,
                 nombreId: true,
+                direccion:true,
+                cp:true,
+                tel:true,
+                mail:true,
+                contacto:true,
                 centrales: true,
                 variable: true,
+                sistema: true,
+                destino: true,
+                tipo: true,
             }
         })
         return resp

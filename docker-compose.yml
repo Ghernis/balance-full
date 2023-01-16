@@ -1,7 +1,7 @@
 version: '3'
 services:
   balance:
-    image: 'balance-fs'
+    image: 'gherni/balance-fs:1'
     environment:
       - DATABASE_URL=postgres://twokbwjt:vdl1jelypChjLSwU0bUbowkHz5XAHm3C@tuffi.db.elephantsql.com/twokbwjt
       - NODE_ENV=development

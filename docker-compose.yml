@@ -1,0 +1,9 @@
+version: '3'
+services:
+  balance:
+    image: 'balance-fs'
+    environment:
+      - DATABASE_URL=postgres://twokbwjt:vdl1jelypChjLSwU0bUbowkHz5XAHm3C@tuffi.db.elephantsql.com/twokbwjt
+      - NODE_ENV=development
+    ports:
+      - 3000:3000

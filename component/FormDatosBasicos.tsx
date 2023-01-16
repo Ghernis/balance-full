@@ -43,7 +43,7 @@ const FormDatosBasicos=(props)=>{
 
     },[nombre,direccion,cp,tel,mail,contacto,sistema,destino])
 
-    if(!deptos.data){
+    if(deptos.isLoading){
         return <div>loading...</div>
     }
     const cambio=(name)=>{

@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
-const FormFacturado=()=>{
+const FormFacturado=(props)=>{
+    const {departamentos}=props
+    const [depaCargando, setDepaCargando]=useState(departamentos[0])
+    const [indexDepa, setIndexDepa]=useState(0)
     const conceptos=[
         'Residencial',
         'Comercial',
@@ -14,9 +19,19 @@ const FormFacturado=()=>{
         'Otros',
         'Traccion'
     ]
+    const nextDepa=()=>{
+        if(indexDepa<departamentos.length-1){
+            setIndexDepa(indexDepa+1)
+        }
+    }
+    const prevDepa=()=>{
+        if(indexDepa>0){
+            setIndexDepa(indexDepa-1)
+        }
+    }
     return (
         <div className='container'>
-            <h4 className='my-4'>Facturado en departamento: x</h4>
+            <h4 className='my-4'>Facturado en departamento: {departamentos[indexDepa]} {indexDepa+1}/{departamentos.length}</h4>
             <Table bordered hover size="sm">
                 <thead>
                     <tr>
@@ -45,6 +60,14 @@ const FormFacturado=()=>{
                 }
                 </tbody>
             </Table>
+            <div className='row'>
+                <div className='col'>
+                    <Button onClick={()=>prevDepa()}>Anterior</Button>
+                </div>
+                <div className='col'>
+                    <Button onClick={()=>nextDepa()}>Siguiente</Button>
+                </div>
+            </div>
         </div>
 
     )

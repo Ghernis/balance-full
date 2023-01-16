@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Link from 'next/link';
 
-import FormFacturado from './FormFacturado';
+import ListaDeptos from './ListaDeptos';
 
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
@@ -24,7 +24,7 @@ const Variable=()=>{
                     fill
                 >
                     <Tab eventKey="facturado" title="Facturado">
-                        <FormFacturado />
+                        <ListaDeptos />
                     </Tab>
                     <Tab eventKey="intercambio" title="Intercambio">
                         <div>intercambio</div>

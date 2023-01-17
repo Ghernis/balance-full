@@ -5,12 +5,105 @@ import Cuadro from './Cuadro';
 
 const Central=(props)=>{
     const {nemo}=props
-    const titulos=['ID','Tecnologia','Marca','Tension','kva','fp','kw','Pontencia Ef','Potencia HP', 'Fecha PS', 'Tipo Cte']
+    const headers=[
+        {
+            label:'ID',
+            attr:'id'
+        },
+        {
+            label:'Tecnologia',
+            attr:'tec'
+        },
+        {
+            label:'Marca',
+            attr:'marca'
+        },
+        {
+            label:'Tension',
+            attr:'tension'
+        },
+        {
+            label:'kva',
+            attr:'kva'
+        },
+        {
+            label:'fp',
+            attr:'fp'
+        },
+        {
+            label:'kw',
+            attr:'kw'
+        },
+        {
+            label:'Potencia Ef',
+            attr:'potEf'
+        },
+        {
+            label:'Potencia HP',
+            attr:'potHp'
+        },
+        {
+            label:'Fecha PS',
+            attr:'fecha'
+        },
+        {
+            label:'Cte',
+            attr:'cte'
+        },
+
+
+    ]
     const data=[
-        ['Maquina1','TV','Siemmens',220,16,0.8,200,200,200,'hoy','no se que es esto'],
-        ['Maquina2','TV','Siemmens',220,16,0.8,200,200,200,'hoy','no se que es esto'],
-        ['Maquina3','TG','GE',220,16,0.8,200,200,200,'maniana','no se que es esto'],
-        ['Maquina4','CI','GE',220,16,0.8,200,200,200,'ayer','no se que es esto'],
+        {
+            id:'Maquina1',
+            tec:'TV',
+            marca:'Siemmens',
+            tension:'220',
+            kva:16,
+            fp:0.8,
+            kw:299,
+            potEf:300,
+            potHp:301,
+            fecha:'hoy',
+            cte:'cte1',
+        },
+        {
+            id:'Maquina2',
+            tec:'TV',
+            marca:'Siemmens',
+            tension:'220',
+            kva:16,
+            fp:0.8,
+            kw:299,
+            potEf:300,
+            potHp:301,
+            fecha:'hoy',
+            cte:'cte1',
+        },{
+            id:'Maquina3',
+            tec:'TG',
+            marca:'GE',
+            tension:'220',
+            kva:16,
+            fp:0.8,
+            kw:299,
+            potEf:300,
+            potHp:301,
+            fecha:'hoy',
+            cte:'cte1',
+        },{
+            id:'Maquina4',
+            tec:'CI',
+            marca:'GE',
+            tension:'220',
+            kva:16,
+            fp:0.8,
+            kw:299,
+            potEf:300,
+            potHp:301,
+            fecha:'hoy',
+            cte:'cte1',
+        }
     ]
 
     return (
@@ -18,7 +111,7 @@ const Central=(props)=>{
             <div className='container'>
                 <h3>Central: {nemo}</h3>
                 <FormCentral />
-                <Cuadro data={data} headers={titulos} titulo='Tabla de Maquinas' />
+                <Cuadro data={data} headers={headers} titulo='Tabla de Maquinas' />
                 <Button variant='success' size='sm' className='me-4'>Agregar Maquina</Button>
                 <Button variant='secondary' size='sm'>Editar</Button>
             </div>

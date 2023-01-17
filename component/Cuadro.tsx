@@ -10,20 +10,20 @@ const Cuadro=(props)=>{
                     <tr className='text-center'>
                         {
                             headers.map(t=>{
-                                return <th key={t}>{t}</th>
+                                return <th key={t.attr}>{t.label}</th>
                             })
                         }
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        data.map(r=>{
+                        data.map((r,i)=>{
                             return (
-                                <tr key={r[0]} className='text-center'>
+                                <tr key={i} className='text-center'>
                                 {
-                                    r.map((c,i)=>{
+                                    headers.map((c,i)=>{
                                         return (
-                                            <td key={r[0]+'-'+i}>{c}</td>
+                                            <td key={c.attr+' - '+i}>{r[c.attr]}</td>
                                         )
                                     })
                             }

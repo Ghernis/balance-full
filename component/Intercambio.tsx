@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import Cuadro from './Cuadro';
+
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
@@ -24,6 +26,28 @@ const Intercambio=()=>{
         }
         setInterList([...interLista,aux])
     }
+    const headers=[
+        {
+            label:'Ente',
+            attr:'ente'
+        },
+        {
+            label:'Quien',
+            attr:'quien'
+        },
+        {
+            label:'Energia',
+            attr:'energia'
+        },
+        {
+            label:'Tension',
+            attr:'tension'
+        },
+        {
+            label:'Tipo de Intercambio',
+            attr:'tipo'
+        },
+    ]
     return (
         <>
 
@@ -68,9 +92,7 @@ const Intercambio=()=>{
             <Button onClick={()=>addRegistro()}>Agregar</Button>
             {
                 interLista.length!=0 &&
-                interLista.map(il=>{
-                    return <div>{il.ente} - {il.quien} - {il.energia} - {il.tension} - {il.tipo}</div>
-                })
+                    <Cuadro data={interLista} headers={headers}/>
             }
 
 

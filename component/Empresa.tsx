@@ -20,8 +20,51 @@ const Empresa =(props:any)=>{
     const deptos = trpc.departamentos.useQuery()
     const empresa = trpc.empresa_id.useQuery({nombreId:empresa_id})
 
-    const titulos=['','Profesionales','Obreros','Administrativos','Tecnicos']
-    const data=[['Hombres',10,20,30,40],['Mujeres',20,30,40,10],['Total',30,50,70,50]]
+    const headers=[
+        {
+            label:'',
+            attr:'tipo'
+        },
+        {
+            label:'Profesionales',
+            attr:'prof'
+        },
+        {
+            label:'Obreros',
+            attr:'obreros'
+        },
+        {
+            label:'Administrativos',
+            attr:'admin'
+        },
+        {
+            label:'Tecnicos',
+            attr:'tec'
+        },
+    ]
+    const datao=[
+        {
+            tipo:'Hombres',
+            prof:10,
+            obreros:20,
+            admin:30,
+            tec:40
+        },
+        {
+            tipo:'Mujeres',
+            prof:20,
+            obreros:30,
+            admin:40,
+            tec:10
+        },
+        {
+            tipo:'Total',
+            prof:30,
+            obreros:50,
+            admin:70,
+            tec:50
+        },
+    ]
     //const mutation = trpc.departamento_bulk.useMutation()
     //useEffect(()=>{
     //    trpc.empresa_id.useQuery({nombreId:empresa_id})
@@ -54,7 +97,7 @@ const Empresa =(props:any)=>{
                 </Alert>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos empresa={empresa.data}/>
-                <Cuadro data={data} headers={titulos} titulo='Tabla de Personal Permanente' />
+                <Cuadro data={datao} headers={headers} titulo='Tabla de Personal Permanente' />
 
 
                 <Accordion defaultActiveKey="0">

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ListaDeptos from './ListaDeptos';
 import Intercambio from './Intercambio';
 import Balance from './Balance';
+import CentralVariable from './CentralVariable';
 
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
@@ -32,7 +33,7 @@ const Variable=()=>{
                         <Intercambio />
                     </Tab>
                     <Tab eventKey="centrales" title="Centrales">
-                        <div>centrales</div>
+                        <CentralVariable />
                     </Tab>
                     <Tab eventKey="balance" title="Balance">
                         <Balance />

@@ -31,7 +31,7 @@ const FormFacturado=(props)=>{
     }
     return (
         <div className='container'>
-            <h4 className='my-4'>Facturado en departamento: {departamentos[indexDepa]} {indexDepa+1}/{departamentos.length}</h4>
+            <h4 className='my-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa]}</h4>
             <Table bordered hover size="sm">
                 <thead>
                     <tr>

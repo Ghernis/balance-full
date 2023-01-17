@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import ListaDeptos from './ListaDeptos';
 import Intercambio from './Intercambio';
+import Balance from './Balance';
 
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
@@ -34,7 +35,7 @@ const Variable=()=>{
                         <div>centrales</div>
                     </Tab>
                     <Tab eventKey="balance" title="Balance">
-                        <div>Balance</div>
+                        <Balance />
                     </Tab>
                 </Tabs>
             </div>

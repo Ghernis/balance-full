@@ -89,14 +89,11 @@ const Intercambio=()=>{
                     </Form.Select>
                 </FloatingLabel>
             </InputGroup>
-            <Button onClick={()=>addRegistro()}>Agregar</Button>
+            <Button size='sm' onClick={()=>addRegistro()}>Agregar</Button>
             {
                 interLista.length!=0 &&
                     <Cuadro data={interLista} headers={headers}/>
             }
-
-
-
             </>
 
     )

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     return (
         <>
-            <Empresa nombreId='nombre' />
+            <Empresa nombreId='distri2' />
         </>
     )
 }

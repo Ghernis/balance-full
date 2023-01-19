@@ -14,7 +14,7 @@ import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
     const {nombreId} = props
-    const [empresa_id,setEmpresa] = useState('distri2')
+    const [empresa_id,setEmpresa] = useState(nombreId)
 
     const empresas = trpc.empresas.useQuery()
     const deptos = trpc.departamentos.useQuery()

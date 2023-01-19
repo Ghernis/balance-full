@@ -5,13 +5,15 @@ import TextCSV from './TextCSV';
 
 const Cmb=()=>{
     const tipos=['Gas Oil','Fuel Oil','Gas Natural','Carbon','Otros 1','Otros 2']
-    const [csv,setCsv]=useState()
+    const [csv,setCsv]=useState([['','',''],['','',''],['','',''],['','',''],['','',''],['','','']])
     const hand=(data)=>{
         //console.log(data)
         setCsv(data)
     }
-    const changeHandler=(a)=>{
-        console.log(a)
+    const changeHandler=(e,col:number,row:number)=>{
+        let aux = [...csv]
+        aux[row][col]=e.target.value
+        setCsv(aux)
     }
     return (
         <>
@@ -33,18 +35,9 @@ const Cmb=()=>{
                     return (
                 <tr key={c}>
                     <td>{c}</td>
-                    <td><Form.Control
-                                onChange={changeHandler}
-                                plaintext 
-                                value={
-                                    csv ? csv[i][0] : ''
-                                }
-                                className='text-center'
-                                type='text'
-                                placeholder='algo'
-                                /></td>
-                    <td><Form.Control onChange={changeHandler} plaintext value={csv ? csv[i][1] : ''} className='text-center' type='text' placeholder='algo' /></td>
-                    <td><Form.Control onChange={changeHandler} plaintext value={csv ? csv[i][2] : ''} className='text-center' type='text' placeholder='algo' /></td>
+                    <td><Form.Control onChange={(e)=>changeHandler(e,0,i)} plaintext value={csv[i][0]} className='text-center' type='text' placeholder='algo' /></td>
+                    <td><Form.Control onChange={(e)=>changeHandler(e,1,i)} plaintext value={csv[i][1]} className='text-center' type='text' placeholder='algo' /></td>
+                    <td><Form.Control onChange={(e)=>changeHandler(e,2,i)} plaintext value={csv[i][2]} className='text-center' type='text' placeholder='algo' /></td>
                 </tr>)
                     })
                 }

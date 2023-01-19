@@ -1,10 +1,14 @@
 import { useState } from 'react'
+
+import TextCSV from './TextCSV';
+
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 const FormFacturado=(props)=>{
     const {departamentos}=props
+    const [csv,setCsv]=useState()
     const [depaCargando, setDepaCargando]=useState(departamentos[0])
     const [indexDepa, setIndexDepa]=useState(0)
     const conceptos=[
@@ -29,8 +33,12 @@ const FormFacturado=(props)=>{
             setIndexDepa(indexDepa-1)
         }
     }
+    const hand=(data)=>{
+        setCsv(data)
+    }
     return (
         <div className='container'>
+            <TextCSV x={5} y={10} handler={hand} />
             <h4 className='my-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa]}</h4>
             <Table bordered hover size="sm">
                 <thead>
@@ -45,15 +53,15 @@ const FormFacturado=(props)=>{
                 </thead>
                 <tbody>
                     {
-                    conceptos.map(c=>{
+                    conceptos.map((c,i)=>{
                         return(
                             <tr key={c}>
                                 <td>{c}</td>
-                                <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                                <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                                <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                                <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                                <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                <td><Form.Control value={csv && csv[i][0]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                <td><Form.Control value={csv && csv[i][1]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                <td><Form.Control value={csv && csv[i][2]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                <td><Form.Control value={csv && csv[i][3]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                <td><Form.Control value={csv && csv[i][4]} plaintext className='text-center' type='text' placeholder='algo' /></td>
                             </tr>
                         )
                     })

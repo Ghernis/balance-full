@@ -5,17 +5,24 @@ import { trpc } from '../utils/trpc';
 import NavBar from '../component/nav';
 import Footer from '../component/Footer';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-//import { SessionProvider } from 'next-auth/react';
+import { SessionProvider } from 'next-auth/react';
+import { Session } from 'next-auth'
+import type { AppProps } from 'next/app'
+
 
 const MyApp: AppType = ({
     Component,
-    pageProps}) => {
+    pageProps}: AppProps<{
+        session: Session;
+    }>) => {
     return(
         <>
+            <SessionProvider session={pageProps.session}>
             <NavBar />
             <Component {...pageProps} />
             <Footer />
             <ReactQueryDevtools initialIsOpen={false} />
+            </SessionProvider>
         </>
     )
 };

@@ -16,10 +16,17 @@ datasource db {
   url      = env("DATABASE_URL")
   //shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+ model Usuario{
+     usuario String @id
+     password String
+     role String
+     empresa Empresa?
+ }
 
 model Empresa {
     id Int @id @default(autoincrement())
     nombre String
+    usuario Usuario @relation(fields:[nombreId],references:[usuario])
     nombreId String @unique
     tipo TipoEmpresa
     nemo String?

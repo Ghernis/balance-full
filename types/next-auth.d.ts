@@ -10,6 +10,12 @@ declare module "next-auth/jwt" {
         role?: string
     }
 }
-interface User{
-    role: string
+declare module "next-auth" {
+  interface Session {
+    role: string;
+  }
+
+  interface User {
+    role: string;
+  }
 }

@@ -1,11 +1,14 @@
 import { FormEventHandler, useState } from 'react'
 import { NextPage } from 'next';
 import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/router';
 
 interface Props {}
 
 const SignIn: NextPage = (props):JSX.Element =>{
+    const router = useRouter();
     const [userInfo,setUserInfo] = useState({email:'',password:''})
+    const callbackUrl = (router.query?.callbackUrl as string) ?? '/empresa/'+userInfo.email;
     const handleSubmit:FormEventHandler<HTMLFormElement>=async(e)=>{
         //validations
         e.preventDefault()
@@ -14,7 +17,14 @@ const SignIn: NextPage = (props):JSX.Element =>{
             password:userInfo.password,
             redirect: false
         })
-        console.log(res)
+        if(res?.error){
+            console.log(res.error)
+        }
+        else{
+            router.push(callbackUrl)
+        }
+
+
     }
     return (
     <div className='sign-in-form'>

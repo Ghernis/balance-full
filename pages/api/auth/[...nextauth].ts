@@ -18,7 +18,7 @@ export const authOptions:NextAuthOptions = {
                 }
                 //login logic
                 //find user from db
-                if(email !== 'herni' || password !== '123'){
+                if(email !== 'distri2' || password !== '123'){
                     return null;
                 }
                 return {

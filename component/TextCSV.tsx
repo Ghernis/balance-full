@@ -7,7 +7,7 @@ const TextCSV=(props)=>{
     const [data,setData]=useState('')
     const [pros, setPros]=useState('')
     useEffect(()=>{
-        const lines = data.split(/\r?\n/);
+        const lines = data.trimEnd().split(/\r?\n/);
         let res:any[] = []
         lines.forEach(l=>{
             const cols =l.split('\t') 
@@ -28,8 +28,8 @@ const TextCSV=(props)=>{
     return (
         <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Pega desde excel</Form.Label>
-                <Form.Control as="textarea" rows={3} onChange={(e)=>setData(e.target.value)}/>
+                <Form.Label>Copia y Pega desde excel</Form.Label>
+                <Form.Control as="textarea" rows={3} className='h-100' onChange={(e)=>setData(e.target.value)}/>
             </Form.Group>
         </Form>
     )

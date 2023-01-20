@@ -1,0 +1,3677 @@
+[
+  {
+    "codigo_depto": 2001,
+    "nombre": "Comuna 01",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.37,
+    "lat": -34.61
+  },
+  {
+    "codigo_depto": 2002,
+    "nombre": "Comuna 02",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.39,
+    "lat": -34.59
+  },
+  {
+    "codigo_depto": 2003,
+    "nombre": "Comuna 03",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.4,
+    "lat": -34.61
+  },
+  {
+    "codigo_depto": 2004,
+    "nombre": "Comuna 04",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.39,
+    "lat": -34.64
+  },
+  {
+    "codigo_depto": 2005,
+    "nombre": "Comuna 05",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.42,
+    "lat": -34.62
+  },
+  {
+    "codigo_depto": 2006,
+    "nombre": "Comuna 06",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.44,
+    "lat": -34.62
+  },
+  {
+    "codigo_depto": 2007,
+    "nombre": "Comuna 07",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.45,
+    "lat": -34.64
+  },
+  {
+    "codigo_depto": 2008,
+    "nombre": "Comuna 08",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.46,
+    "lat": -34.67
+  },
+  {
+    "codigo_depto": 2009,
+    "nombre": "Comuna 09",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.5,
+    "lat": -34.65
+  },
+  {
+    "codigo_depto": 2010,
+    "nombre": "Comuna 10",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.5,
+    "lat": -34.63
+  },
+  {
+    "codigo_depto": 2011,
+    "nombre": "Comuna 11",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.5,
+    "lat": -34.61
+  },
+  {
+    "codigo_depto": 2012,
+    "nombre": "Comuna 12",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.49,
+    "lat": -34.57
+  },
+  {
+    "codigo_depto": 2013,
+    "nombre": "Comuna 13",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.45,
+    "lat": -34.55
+  },
+  {
+    "codigo_depto": 2014,
+    "nombre": "Comuna 14",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.42,
+    "lat": -34.57
+  },
+  {
+    "codigo_depto": 2015,
+    "nombre": "Comuna 15",
+    "provincia": "Ciudad Autonoma de Buenos Aires",
+    "lon": -58.46,
+    "lat": -34.59
+  },
+  {
+    "codigo_depto": 6007,
+    "nombre": "Adolfo Alsina",
+    "provincia": "Buenos Aires",
+    "lon": -63.06,
+    "lat": -37.2
+  },
+  {
+    "codigo_depto": 6014,
+    "nombre": "Adolfo Gonzales Chaves",
+    "provincia": "Buenos Aires",
+    "lon": -60.25,
+    "lat": -37.96
+  },
+  {
+    "codigo_depto": 6021,
+    "nombre": "Alberti",
+    "provincia": "Buenos Aires",
+    "lon": -60.28,
+    "lat": -35.04
+  },
+  {
+    "codigo_depto": 6028,
+    "nombre": "Almirante Brown",
+    "provincia": "Buenos Aires",
+    "lon": -58.37,
+    "lat": -34.84
+  },
+  {
+    "codigo_depto": 6035,
+    "nombre": "Avellaneda",
+    "provincia": "Buenos Aires",
+    "lon": -58.34,
+    "lat": -34.68
+  },
+  {
+    "codigo_depto": 6042,
+    "nombre": "Ayacucho",
+    "provincia": "Buenos Aires",
+    "lon": -58.44,
+    "lat": -37.04
+  },
+  {
+    "codigo_depto": 6049,
+    "nombre": "Azul",
+    "provincia": "Buenos Aires",
+    "lon": -59.7,
+    "lat": -36.79
+  },
+  {
+    "codigo_depto": 6056,
+    "nombre": "Bahia Blanca",
+    "provincia": "Buenos Aires",
+    "lon": -62.17,
+    "lat": -38.58
+  },
+  {
+    "codigo_depto": 6063,
+    "nombre": "Balcarce",
+    "provincia": "Buenos Aires",
+    "lon": -58.27,
+    "lat": -37.71
+  },
+  {
+    "codigo_depto": 6070,
+    "nombre": "Baradero",
+    "provincia": "Buenos Aires",
+    "lon": -59.49,
+    "lat": -33.93
+  },
+  {
+    "codigo_depto": 6077,
+    "nombre": "Arrecifes",
+    "provincia": "Buenos Aires",
+    "lon": -60.06,
+    "lat": -34.01
+  },
+  {
+    "codigo_depto": 6084,
+    "nombre": "Benito Juarez",
+    "provincia": "Buenos Aires",
+    "lon": -59.89,
+    "lat": -37.59
+  },
+  {
+    "codigo_depto": 6091,
+    "nombre": "Berazategui",
+    "provincia": "Buenos Aires",
+    "lon": -58.16,
+    "lat": -34.82
+  },
+  {
+    "codigo_depto": 6098,
+    "nombre": "Berisso",
+    "provincia": "Buenos Aires",
+    "lon": -57.83,
+    "lat": -34.91
+  },
+  {
+    "codigo_depto": 6105,
+    "nombre": "Bolivar",
+    "provincia": "Buenos Aires",
+    "lon": -61.15,
+    "lat": -36.3
+  },
+  {
+    "codigo_depto": 6112,
+    "nombre": "Bragado",
+    "provincia": "Buenos Aires",
+    "lon": -60.6,
+    "lat": -35.06
+  },
+  {
+    "codigo_depto": 6119,
+    "nombre": "Brandsen",
+    "provincia": "Buenos Aires",
+    "lon": -58.18,
+    "lat": -35.22
+  },
+  {
+    "codigo_depto": 6126,
+    "nombre": "Campana",
+    "provincia": "Buenos Aires",
+    "lon": -58.88,
+    "lat": -34.14
+  },
+  {
+    "codigo_depto": 6134,
+    "nombre": "CaÃ±uelas",
+    "provincia": "Buenos Aires",
+    "lon": -58.69,
+    "lat": -35.15
+  },
+  {
+    "codigo_depto": 6140,
+    "nombre": "Capitan Sarmiento",
+    "provincia": "Buenos Aires",
+    "lon": -59.85,
+    "lat": -34.15
+  },
+  {
+    "codigo_depto": 6147,
+    "nombre": "Carlos Casares",
+    "provincia": "Buenos Aires",
+    "lon": -61.37,
+    "lat": -35.75
+  },
+  {
+    "codigo_depto": 6154,
+    "nombre": "Carlos Tejedor",
+    "provincia": "Buenos Aires",
+    "lon": -62.43,
+    "lat": -35.38
+  },
+  {
+    "codigo_depto": 6161,
+    "nombre": "Carmen de Areco",
+    "provincia": "Buenos Aires",
+    "lon": -59.88,
+    "lat": -34.41
+  },
+  {
+    "codigo_depto": 6168,
+    "nombre": "Castelli",
+    "provincia": "Buenos Aires",
+    "lon": -57.66,
+    "lat": -36.04
+  },
+  {
+    "codigo_depto": 6175,
+    "nombre": "Colon",
+    "provincia": "Buenos Aires",
+    "lon": -61.06,
+    "lat": -33.89
+  },
+  {
+    "codigo_depto": 6182,
+    "nombre": "Coronel de Marina L. Rosales",
+    "provincia": "Buenos Aires",
+    "lon": -61.84,
+    "lat": -38.85
+  },
+  {
+    "codigo_depto": 6189,
+    "nombre": "Coronel Dorrego",
+    "provincia": "Buenos Aires",
+    "lon": -61.09,
+    "lat": -38.67
+  },
+  {
+    "codigo_depto": 6196,
+    "nombre": "Coronel Pringles",
+    "provincia": "Buenos Aires",
+    "lon": -61.26,
+    "lat": -38.15
+  },
+  {
+    "codigo_depto": 6203,
+    "nombre": "Coronel Suarez",
+    "provincia": "Buenos Aires",
+    "lon": -61.89,
+    "lat": -37.54
+  },
+  {
+    "codigo_depto": 6210,
+    "nombre": "Chacabuco",
+    "provincia": "Buenos Aires",
+    "lon": -60.35,
+    "lat": -34.62
+  },
+  {
+    "codigo_depto": 6217,
+    "nombre": "Chascomus",
+    "provincia": "Buenos Aires",
+    "lon": -57.9,
+    "lat": -35.68
+  },
+  {
+    "codigo_depto": 6224,
+    "nombre": "Chivilcoy",
+    "provincia": "Buenos Aires",
+    "lon": -59.96,
+    "lat": -34.92
+  },
+  {
+    "codigo_depto": 6231,
+    "nombre": "Daireaux",
+    "provincia": "Buenos Aires",
+    "lon": -61.89,
+    "lat": -36.64
+  },
+  {
+    "codigo_depto": 6238,
+    "nombre": "Dolores",
+    "provincia": "Buenos Aires",
+    "lon": -57.63,
+    "lat": -36.4
+  },
+  {
+    "codigo_depto": 6245,
+    "nombre": "Ensenada",
+    "provincia": "Buenos Aires",
+    "lon": -57.98,
+    "lat": -34.84
+  },
+  {
+    "codigo_depto": 6252,
+    "nombre": "Escobar",
+    "provincia": "Buenos Aires",
+    "lon": -58.77,
+    "lat": -34.33
+  },
+  {
+    "codigo_depto": 6260,
+    "nombre": "Esteban Echeverria",
+    "provincia": "Buenos Aires",
+    "lon": -58.48,
+    "lat": -34.83
+  },
+  {
+    "codigo_depto": 6266,
+    "nombre": "Exaltacion de la Cruz",
+    "provincia": "Buenos Aires",
+    "lon": -59.16,
+    "lat": -34.3
+  },
+  {
+    "codigo_depto": 6270,
+    "nombre": "Ezeiza",
+    "provincia": "Buenos Aires",
+    "lon": -58.56,
+    "lat": -34.88
+  },
+  {
+    "codigo_depto": 6274,
+    "nombre": "Florencio Varela",
+    "provincia": "Buenos Aires",
+    "lon": -58.26,
+    "lat": -34.88
+  },
+  {
+    "codigo_depto": 6277,
+    "nombre": "Florentino Ameghino",
+    "provincia": "Buenos Aires",
+    "lon": -62.4,
+    "lat": -34.87
+  },
+  {
+    "codigo_depto": 6280,
+    "nombre": "General Alvarado",
+    "provincia": "Buenos Aires",
+    "lon": -58.07,
+    "lat": -38.2
+  },
+  {
+    "codigo_depto": 6287,
+    "nombre": "General Alvear",
+    "provincia": "Buenos Aires",
+    "lon": -60.13,
+    "lat": -36.04
+  },
+  {
+    "codigo_depto": 6294,
+    "nombre": "General Arenales",
+    "provincia": "Buenos Aires",
+    "lon": -61.28,
+    "lat": -34.24
+  },
+  {
+    "codigo_depto": 6301,
+    "nombre": "General Belgrano",
+    "provincia": "Buenos Aires",
+    "lon": -58.7,
+    "lat": -35.83
+  },
+  {
+    "codigo_depto": 6308,
+    "nombre": "General Guido",
+    "provincia": "Buenos Aires",
+    "lon": -58,
+    "lat": -36.67
+  },
+  {
+    "codigo_depto": 6315,
+    "nombre": "General Juan Madariaga",
+    "provincia": "Buenos Aires",
+    "lon": -57.23,
+    "lat": -37.15
+  },
+  {
+    "codigo_depto": 6322,
+    "nombre": "General La Madrid",
+    "provincia": "Buenos Aires",
+    "lon": -61.34,
+    "lat": -37.36
+  },
+  {
+    "codigo_depto": 6329,
+    "nombre": "General Las Heras",
+    "provincia": "Buenos Aires",
+    "lon": -59,
+    "lat": -34.91
+  },
+  {
+    "codigo_depto": 6336,
+    "nombre": "General Lavalle",
+    "provincia": "Buenos Aires",
+    "lon": -56.94,
+    "lat": -36.65
+  },
+  {
+    "codigo_depto": 6343,
+    "nombre": "General Paz",
+    "provincia": "Buenos Aires",
+    "lon": -58.39,
+    "lat": -35.47
+  },
+  {
+    "codigo_depto": 6351,
+    "nombre": "General Pinto",
+    "provincia": "Buenos Aires",
+    "lon": -62.04,
+    "lat": -34.67
+  },
+  {
+    "codigo_depto": 6357,
+    "nombre": "General Pueyrredon",
+    "provincia": "Buenos Aires",
+    "lon": -57.74,
+    "lat": -37.97
+  },
+  {
+    "codigo_depto": 6364,
+    "nombre": "General Rodriguez",
+    "provincia": "Buenos Aires",
+    "lon": -58.99,
+    "lat": -34.65
+  },
+  {
+    "codigo_depto": 6371,
+    "nombre": "General San Martin",
+    "provincia": "Buenos Aires",
+    "lon": -58.56,
+    "lat": -34.55
+  },
+  {
+    "codigo_depto": 6385,
+    "nombre": "General Viamonte",
+    "provincia": "Buenos Aires",
+    "lon": -61.05,
+    "lat": -35
+  },
+  {
+    "codigo_depto": 6392,
+    "nombre": "General Villegas",
+    "provincia": "Buenos Aires",
+    "lon": -62.95,
+    "lat": -34.77
+  },
+  {
+    "codigo_depto": 6399,
+    "nombre": "Guamini",
+    "provincia": "Buenos Aires",
+    "lon": -62.42,
+    "lat": -36.89
+  },
+  {
+    "codigo_depto": 6406,
+    "nombre": "Hipolito Yrigoyen",
+    "provincia": "Buenos Aires",
+    "lon": -61.66,
+    "lat": -36.26
+  },
+  {
+    "codigo_depto": 6408,
+    "nombre": "Hurlingham",
+    "provincia": "Buenos Aires",
+    "lon": -58.65,
+    "lat": -34.6
+  },
+  {
+    "codigo_depto": 6410,
+    "nombre": "Ituzaingo",
+    "provincia": "Buenos Aires",
+    "lon": -58.69,
+    "lat": -34.64
+  },
+  {
+    "codigo_depto": 6412,
+    "nombre": "Jose C. Paz",
+    "provincia": "Buenos Aires",
+    "lon": -58.78,
+    "lat": -34.51
+  },
+  {
+    "codigo_depto": 6413,
+    "nombre": "Junin",
+    "provincia": "Buenos Aires",
+    "lon": -61,
+    "lat": -34.55
+  },
+  {
+    "codigo_depto": 6420,
+    "nombre": "La Costa",
+    "provincia": "Buenos Aires",
+    "lon": -56.71,
+    "lat": -36.71
+  },
+  {
+    "codigo_depto": 6427,
+    "nombre": "La Matanza",
+    "provincia": "Buenos Aires",
+    "lon": -58.63,
+    "lat": -34.77
+  },
+  {
+    "codigo_depto": 6434,
+    "nombre": "Lanus",
+    "provincia": "Buenos Aires",
+    "lon": -58.39,
+    "lat": -34.71
+  },
+  {
+    "codigo_depto": 6441,
+    "nombre": "La Plata",
+    "provincia": "Buenos Aires",
+    "lon": -58.02,
+    "lat": -35
+  },
+  {
+    "codigo_depto": 6448,
+    "nombre": "Laprida",
+    "provincia": "Buenos Aires",
+    "lon": -60.77,
+    "lat": -37.52
+  },
+  {
+    "codigo_depto": 6455,
+    "nombre": "Las Flores",
+    "provincia": "Buenos Aires",
+    "lon": -59.18,
+    "lat": -36.02
+  },
+  {
+    "codigo_depto": 6462,
+    "nombre": "Leandro N. Alem",
+    "provincia": "Buenos Aires",
+    "lon": -61.61,
+    "lat": -34.5
+  },
+  {
+    "codigo_depto": 6469,
+    "nombre": "Lincoln",
+    "provincia": "Buenos Aires",
+    "lon": -61.68,
+    "lat": -35.07
+  },
+  {
+    "codigo_depto": 6476,
+    "nombre": "Loberia",
+    "provincia": "Buenos Aires",
+    "lon": -58.69,
+    "lat": -38.09
+  },
+  {
+    "codigo_depto": 6483,
+    "nombre": "Lobos",
+    "provincia": "Buenos Aires",
+    "lon": -59.15,
+    "lat": -35.22
+  },
+  {
+    "codigo_depto": 6490,
+    "nombre": "Lomas de Zamora",
+    "provincia": "Buenos Aires",
+    "lon": -58.42,
+    "lat": -34.75
+  },
+  {
+    "codigo_depto": 6497,
+    "nombre": "Lujan",
+    "provincia": "Buenos Aires",
+    "lon": -59.16,
+    "lat": -34.57
+  },
+  {
+    "codigo_depto": 6505,
+    "nombre": "Magdalena",
+    "provincia": "Buenos Aires",
+    "lon": -57.69,
+    "lat": -35.19
+  },
+  {
+    "codigo_depto": 6511,
+    "nombre": "Maipu",
+    "provincia": "Buenos Aires",
+    "lon": -57.59,
+    "lat": -36.89
+  },
+  {
+    "codigo_depto": 6515,
+    "nombre": "Malvinas Argentinas",
+    "provincia": "Buenos Aires",
+    "lon": -58.71,
+    "lat": -34.49
+  },
+  {
+    "codigo_depto": 6518,
+    "nombre": "Mar Chiquita",
+    "provincia": "Buenos Aires",
+    "lon": -57.64,
+    "lat": -37.5
+  },
+  {
+    "codigo_depto": 6525,
+    "nombre": "Marcos Paz",
+    "provincia": "Buenos Aires",
+    "lon": -58.85,
+    "lat": -34.81
+  },
+  {
+    "codigo_depto": 6532,
+    "nombre": "Mercedes",
+    "provincia": "Buenos Aires",
+    "lon": -59.42,
+    "lat": -34.7
+  },
+  {
+    "codigo_depto": 6539,
+    "nombre": "Merlo",
+    "provincia": "Buenos Aires",
+    "lon": -58.74,
+    "lat": -34.71
+  },
+  {
+    "codigo_depto": 6547,
+    "nombre": "Monte",
+    "provincia": "Buenos Aires",
+    "lon": -58.77,
+    "lat": -35.51
+  },
+  {
+    "codigo_depto": 6553,
+    "nombre": "Monte Hermoso",
+    "provincia": "Buenos Aires",
+    "lon": -61.29,
+    "lat": -38.96
+  },
+  {
+    "codigo_depto": 6560,
+    "nombre": "Moreno",
+    "provincia": "Buenos Aires",
+    "lon": -58.81,
+    "lat": -34.61
+  },
+  {
+    "codigo_depto": 6568,
+    "nombre": "Moron",
+    "provincia": "Buenos Aires",
+    "lon": -58.62,
+    "lat": -34.65
+  },
+  {
+    "codigo_depto": 6574,
+    "nombre": "Navarro",
+    "provincia": "Buenos Aires",
+    "lon": -59.43,
+    "lat": -35.03
+  },
+  {
+    "codigo_depto": 6581,
+    "nombre": "Necochea",
+    "provincia": "Buenos Aires",
+    "lon": -59.17,
+    "lat": -38.26
+  },
+  {
+    "codigo_depto": 6588,
+    "nombre": "9 de Julio",
+    "provincia": "Buenos Aires",
+    "lon": -60.97,
+    "lat": -35.48
+  },
+  {
+    "codigo_depto": 6595,
+    "nombre": "Olavarria",
+    "provincia": "Buenos Aires",
+    "lon": -60.67,
+    "lat": -36.86
+  },
+  {
+    "codigo_depto": 6602,
+    "nombre": "Patagones",
+    "provincia": "Buenos Aires",
+    "lon": -62.85,
+    "lat": -40.2
+  },
+  {
+    "codigo_depto": 6609,
+    "nombre": "Pehuajo",
+    "provincia": "Buenos Aires",
+    "lon": -61.93,
+    "lat": -35.88
+  },
+  {
+    "codigo_depto": 6616,
+    "nombre": "Pellegrini",
+    "provincia": "Buenos Aires",
+    "lon": -63.23,
+    "lat": -36.27
+  },
+  {
+    "codigo_depto": 6623,
+    "nombre": "Pergamino",
+    "provincia": "Buenos Aires",
+    "lon": -60.54,
+    "lat": -33.84
+  },
+  {
+    "codigo_depto": 6630,
+    "nombre": "Pila",
+    "provincia": "Buenos Aires",
+    "lon": -58.34,
+    "lat": -36.2
+  },
+  {
+    "codigo_depto": 6638,
+    "nombre": "Pilar",
+    "provincia": "Buenos Aires",
+    "lon": -58.9,
+    "lat": -34.45
+  },
+  {
+    "codigo_depto": 6644,
+    "nombre": "Pinamar",
+    "provincia": "Buenos Aires",
+    "lon": -56.87,
+    "lat": -37.11
+  },
+  {
+    "codigo_depto": 6648,
+    "nombre": "Presidente Peron",
+    "provincia": "Buenos Aires",
+    "lon": -58.4,
+    "lat": -34.93
+  },
+  {
+    "codigo_depto": 6651,
+    "nombre": "Puan",
+    "provincia": "Buenos Aires",
+    "lon": -63.06,
+    "lat": -38.08
+  },
+  {
+    "codigo_depto": 6655,
+    "nombre": "Punta Indio",
+    "provincia": "Buenos Aires",
+    "lon": -57.4,
+    "lat": -35.43
+  },
+  {
+    "codigo_depto": 6658,
+    "nombre": "Quilmes",
+    "provincia": "Buenos Aires",
+    "lon": -58.28,
+    "lat": -34.73
+  },
+  {
+    "codigo_depto": 6665,
+    "nombre": "Ramallo",
+    "provincia": "Buenos Aires",
+    "lon": -60.06,
+    "lat": -33.59
+  },
+  {
+    "codigo_depto": 6672,
+    "nombre": "Rauch",
+    "provincia": "Buenos Aires",
+    "lon": -58.94,
+    "lat": -36.57
+  },
+  {
+    "codigo_depto": 6679,
+    "nombre": "Rivadavia",
+    "provincia": "Buenos Aires",
+    "lon": -63.09,
+    "lat": -35.58
+  },
+  {
+    "codigo_depto": 6686,
+    "nombre": "Rojas",
+    "provincia": "Buenos Aires",
+    "lon": -60.79,
+    "lat": -34.19
+  },
+  {
+    "codigo_depto": 6693,
+    "nombre": "Roque Perez",
+    "provincia": "Buenos Aires",
+    "lon": -59.36,
+    "lat": -35.48
+  },
+  {
+    "codigo_depto": 6700,
+    "nombre": "Saavedra",
+    "provincia": "Buenos Aires",
+    "lon": -62.43,
+    "lat": -37.77
+  },
+  {
+    "codigo_depto": 6707,
+    "nombre": "Saladillo",
+    "provincia": "Buenos Aires",
+    "lon": -59.7,
+    "lat": -35.68
+  },
+  {
+    "codigo_depto": 6714,
+    "nombre": "Salto",
+    "provincia": "Buenos Aires",
+    "lon": -60.3,
+    "lat": -34.27
+  },
+  {
+    "codigo_depto": 6721,
+    "nombre": "Salliquelo",
+    "provincia": "Buenos Aires",
+    "lon": -63.05,
+    "lat": -36.67
+  },
+  {
+    "codigo_depto": 6728,
+    "nombre": "San Andres de Giles",
+    "provincia": "Buenos Aires",
+    "lon": -59.47,
+    "lat": -34.44
+  },
+  {
+    "codigo_depto": 6735,
+    "nombre": "San Antonio de Areco",
+    "provincia": "Buenos Aires",
+    "lon": -59.52,
+    "lat": -34.22
+  },
+  {
+    "codigo_depto": 6742,
+    "nombre": "San Cayetano",
+    "provincia": "Buenos Aires",
+    "lon": -59.59,
+    "lat": -38.39
+  },
+  {
+    "codigo_depto": 6749,
+    "nombre": "San Fernando",
+    "provincia": "Buenos Aires",
+    "lon": -58.55,
+    "lat": -34.15
+  },
+  {
+    "codigo_depto": 6756,
+    "nombre": "San Isidro",
+    "provincia": "Buenos Aires",
+    "lon": -58.54,
+    "lat": -34.49
+  },
+  {
+    "codigo_depto": 6760,
+    "nombre": "San Miguel",
+    "provincia": "Buenos Aires",
+    "lon": -58.69,
+    "lat": -34.55
+  },
+  {
+    "codigo_depto": 6763,
+    "nombre": "San Nicolas",
+    "provincia": "Buenos Aires",
+    "lon": -60.29,
+    "lat": -33.49
+  },
+  {
+    "codigo_depto": 6770,
+    "nombre": "San Pedro",
+    "provincia": "Buenos Aires",
+    "lon": -59.78,
+    "lat": -33.78
+  },
+  {
+    "codigo_depto": 6778,
+    "nombre": "San Vicente",
+    "provincia": "Buenos Aires",
+    "lon": -58.43,
+    "lat": -35.07
+  },
+  {
+    "codigo_depto": 6784,
+    "nombre": "Suipacha",
+    "provincia": "Buenos Aires",
+    "lon": -59.7,
+    "lat": -34.75
+  },
+  {
+    "codigo_depto": 6791,
+    "nombre": "Tandil",
+    "provincia": "Buenos Aires",
+    "lon": -59.18,
+    "lat": -37.34
+  },
+  {
+    "codigo_depto": 6798,
+    "nombre": "Tapalque",
+    "provincia": "Buenos Aires",
+    "lon": -60.13,
+    "lat": -36.35
+  },
+  {
+    "codigo_depto": 6805,
+    "nombre": "Tigre",
+    "provincia": "Buenos Aires",
+    "lon": -58.6,
+    "lat": -34.38
+  },
+  {
+    "codigo_depto": 6812,
+    "nombre": "Tordillo",
+    "provincia": "Buenos Aires",
+    "lon": -57.27,
+    "lat": -36.39
+  },
+  {
+    "codigo_depto": 6819,
+    "nombre": "Tornquist",
+    "provincia": "Buenos Aires",
+    "lon": -62.29,
+    "lat": -38.26
+  },
+  {
+    "codigo_depto": 6826,
+    "nombre": "Trenque Lauquen",
+    "provincia": "Buenos Aires",
+    "lon": -62.63,
+    "lat": -36.06
+  },
+  {
+    "codigo_depto": 6833,
+    "nombre": "Tres Arroyos",
+    "provincia": "Buenos Aires",
+    "lon": -60.24,
+    "lat": -38.51
+  },
+  {
+    "codigo_depto": 6840,
+    "nombre": "Tres de Febrero",
+    "provincia": "Buenos Aires",
+    "lon": -58.58,
+    "lat": -34.6
+  },
+  {
+    "codigo_depto": 6847,
+    "nombre": "Tres Lomas",
+    "provincia": "Buenos Aires",
+    "lon": -62.86,
+    "lat": -36.5
+  },
+  {
+    "codigo_depto": 6854,
+    "nombre": "25 de Mayo",
+    "provincia": "Buenos Aires",
+    "lon": -60.23,
+    "lat": -35.53
+  },
+  {
+    "codigo_depto": 6861,
+    "nombre": "Vicente Lopez",
+    "provincia": "Buenos Aires",
+    "lon": -58.5,
+    "lat": -34.53
+  },
+  {
+    "codigo_depto": 6868,
+    "nombre": "Villa Gesell",
+    "provincia": "Buenos Aires",
+    "lon": -57.06,
+    "lat": -37.37
+  },
+  {
+    "codigo_depto": 6875,
+    "nombre": "Villarino",
+    "provincia": "Buenos Aires",
+    "lon": -62.71,
+    "lat": -39.13
+  },
+  {
+    "codigo_depto": 6882,
+    "nombre": "Zarate",
+    "provincia": "Buenos Aires",
+    "lon": -59.13,
+    "lat": -34
+  },
+  {
+    "codigo_depto": 10007,
+    "nombre": "Ambato",
+    "provincia": "Catamarca",
+    "lon": -65.91,
+    "lat": -28.02
+  },
+  {
+    "codigo_depto": 10014,
+    "nombre": "Ancasti",
+    "provincia": "Catamarca",
+    "lon": -65.49,
+    "lat": -28.93
+  },
+  {
+    "codigo_depto": 10021,
+    "nombre": "Andalgala",
+    "provincia": "Catamarca",
+    "lon": -66.36,
+    "lat": -27.59
+  },
+  {
+    "codigo_depto": 10028,
+    "nombre": "Antofagasta de la Sierra",
+    "provincia": "Catamarca",
+    "lon": -67.7,
+    "lat": -25.95
+  },
+  {
+    "codigo_depto": 10035,
+    "nombre": "Belen",
+    "provincia": "Catamarca",
+    "lon": -66.91,
+    "lat": -27.1
+  },
+  {
+    "codigo_depto": 10042,
+    "nombre": "Capayan",
+    "provincia": "Catamarca",
+    "lon": -65.9,
+    "lat": -28.93
+  },
+  {
+    "codigo_depto": 10049,
+    "nombre": "Capital",
+    "provincia": "Catamarca",
+    "lon": -65.84,
+    "lat": -28.4
+  },
+  {
+    "codigo_depto": 10056,
+    "nombre": "El Alto",
+    "provincia": "Catamarca",
+    "lon": -65.36,
+    "lat": -28.43
+  },
+  {
+    "codigo_depto": 10063,
+    "nombre": "Fray Mamerto Esquiu",
+    "provincia": "Catamarca",
+    "lon": -65.73,
+    "lat": -28.33
+  },
+  {
+    "codigo_depto": 10070,
+    "nombre": "La Paz",
+    "provincia": "Catamarca",
+    "lon": -65.2,
+    "lat": -29.43
+  },
+  {
+    "codigo_depto": 10077,
+    "nombre": "Paclin",
+    "provincia": "Catamarca",
+    "lon": -65.67,
+    "lat": -28.11
+  },
+  {
+    "codigo_depto": 10084,
+    "nombre": "Poman",
+    "provincia": "Catamarca",
+    "lon": -66.38,
+    "lat": -28.21
+  },
+  {
+    "codigo_depto": 10091,
+    "nombre": "Santa Maria",
+    "provincia": "Catamarca",
+    "lon": -66.27,
+    "lat": -26.79
+  },
+  {
+    "codigo_depto": 10098,
+    "nombre": "Santa Rosa",
+    "provincia": "Catamarca",
+    "lon": -65.34,
+    "lat": -28.08
+  },
+  {
+    "codigo_depto": 10105,
+    "nombre": "Tinogasta",
+    "provincia": "Catamarca",
+    "lon": -67.92,
+    "lat": -27.54
+  },
+  {
+    "codigo_depto": 10112,
+    "nombre": "Valle Viejo",
+    "provincia": "Catamarca",
+    "lon": -65.71,
+    "lat": -28.59
+  },
+  {
+    "codigo_depto": 14007,
+    "nombre": "Calamuchita",
+    "provincia": "Cordoba",
+    "lon": -64.62,
+    "lat": -32.21
+  },
+  {
+    "codigo_depto": 14014,
+    "nombre": "Capital",
+    "provincia": "Cordoba",
+    "lon": -64.18,
+    "lat": -31.42
+  },
+  {
+    "codigo_depto": 14021,
+    "nombre": "Colon",
+    "provincia": "Cordoba",
+    "lon": -64.15,
+    "lat": -31.14
+  },
+  {
+    "codigo_depto": 14028,
+    "nombre": "Cruz del Eje",
+    "provincia": "Cordoba",
+    "lon": -65.07,
+    "lat": -30.68
+  },
+  {
+    "codigo_depto": 14035,
+    "nombre": "General Roca",
+    "provincia": "Cordoba",
+    "lon": -64.37,
+    "lat": -34.62
+  },
+  {
+    "codigo_depto": 14042,
+    "nombre": "General San Martin",
+    "provincia": "Cordoba",
+    "lon": -63.26,
+    "lat": -32.51
+  },
+  {
+    "codigo_depto": 14049,
+    "nombre": "Ischilin",
+    "provincia": "Cordoba",
+    "lon": -64.61,
+    "lat": -30.4
+  },
+  {
+    "codigo_depto": 14056,
+    "nombre": "Juarez Celman",
+    "provincia": "Cordoba",
+    "lon": -63.61,
+    "lat": -33.33
+  },
+  {
+    "codigo_depto": 14063,
+    "nombre": "Marcos Juarez",
+    "provincia": "Cordoba",
+    "lon": -62.28,
+    "lat": -33.03
+  },
+  {
+    "codigo_depto": 14070,
+    "nombre": "Minas",
+    "provincia": "Cordoba",
+    "lon": -65.41,
+    "lat": -31.04
+  },
+  {
+    "codigo_depto": 14077,
+    "nombre": "Pocho",
+    "provincia": "Cordoba",
+    "lon": -65.44,
+    "lat": -31.46
+  },
+  {
+    "codigo_depto": 14084,
+    "nombre": "Presidente Roque Saenz Peï¿½a",
+    "provincia": "Cordoba",
+    "lon": -63.42,
+    "lat": -34.14
+  },
+  {
+    "codigo_depto": 14091,
+    "nombre": "Punilla",
+    "provincia": "Cordoba",
+    "lon": -64.59,
+    "lat": -31.22
+  },
+  {
+    "codigo_depto": 14098,
+    "nombre": "Rio Cuarto",
+    "provincia": "Cordoba",
+    "lon": -64.49,
+    "lat": -33.33
+  },
+  {
+    "codigo_depto": 14105,
+    "nombre": "Rio Primero",
+    "provincia": "Cordoba",
+    "lon": -63.44,
+    "lat": -31.03
+  },
+  {
+    "codigo_depto": 14112,
+    "nombre": "Rio Seco",
+    "provincia": "Cordoba",
+    "lon": -63.19,
+    "lat": -30.05
+  },
+  {
+    "codigo_depto": 14119,
+    "nombre": "Rio Segundo",
+    "provincia": "Cordoba",
+    "lon": -63.48,
+    "lat": -31.73
+  },
+  {
+    "codigo_depto": 14126,
+    "nombre": "San Alberto",
+    "provincia": "Cordoba",
+    "lon": -65.16,
+    "lat": -31.71
+  },
+  {
+    "codigo_depto": 14133,
+    "nombre": "San Javier",
+    "provincia": "Cordoba",
+    "lon": -65.14,
+    "lat": -32.08
+  },
+  {
+    "codigo_depto": 14140,
+    "nombre": "San Justo",
+    "provincia": "Cordoba",
+    "lon": -62.53,
+    "lat": -31.24
+  },
+  {
+    "codigo_depto": 14147,
+    "nombre": "Santa Maria",
+    "provincia": "Cordoba",
+    "lon": -64.31,
+    "lat": -31.71
+  },
+  {
+    "codigo_depto": 14154,
+    "nombre": "Sobremonte",
+    "provincia": "Cordoba",
+    "lon": -64.14,
+    "lat": -29.76
+  },
+  {
+    "codigo_depto": 14161,
+    "nombre": "Tercero Arriba",
+    "provincia": "Cordoba",
+    "lon": -63.78,
+    "lat": -32.29
+  },
+  {
+    "codigo_depto": 14168,
+    "nombre": "Totoral",
+    "provincia": "Cordoba",
+    "lon": -63.98,
+    "lat": -30.73
+  },
+  {
+    "codigo_depto": 14175,
+    "nombre": "Tulumba",
+    "provincia": "Cordoba",
+    "lon": -63.8,
+    "lat": -30.23
+  },
+  {
+    "codigo_depto": 14182,
+    "nombre": "Union",
+    "provincia": "Cordoba",
+    "lon": -62.79,
+    "lat": -32.88
+  },
+  {
+    "codigo_depto": 18007,
+    "nombre": "Bella Vista",
+    "provincia": "Corrientes",
+    "lon": -58.93,
+    "lat": -28.5
+  },
+  {
+    "codigo_depto": 18014,
+    "nombre": "Beron de Astrada",
+    "provincia": "Corrientes",
+    "lon": -57.61,
+    "lat": -27.47
+  },
+  {
+    "codigo_depto": 18021,
+    "nombre": "Capital",
+    "provincia": "Corrientes",
+    "lon": -58.76,
+    "lat": -27.52
+  },
+  {
+    "codigo_depto": 18028,
+    "nombre": "Concepcion",
+    "provincia": "Corrientes",
+    "lon": -58.03,
+    "lat": -28.41
+  },
+  {
+    "codigo_depto": 18035,
+    "nombre": "Curuzu Cuatia",
+    "provincia": "Corrientes",
+    "lon": -58.32,
+    "lat": -29.7
+  },
+  {
+    "codigo_depto": 18042,
+    "nombre": "Empedrado",
+    "provincia": "Corrientes",
+    "lon": -58.67,
+    "lat": -27.9
+  },
+  {
+    "codigo_depto": 18049,
+    "nombre": "Esquina",
+    "provincia": "Corrientes",
+    "lon": -59.24,
+    "lat": -29.98
+  },
+  {
+    "codigo_depto": 18056,
+    "nombre": "General Alvear",
+    "provincia": "Corrientes",
+    "lon": -56.51,
+    "lat": -28.77
+  },
+  {
+    "codigo_depto": 18063,
+    "nombre": "General Paz",
+    "provincia": "Corrientes",
+    "lon": -57.79,
+    "lat": -27.72
+  },
+  {
+    "codigo_depto": 18070,
+    "nombre": "Goya",
+    "provincia": "Corrientes",
+    "lon": -59.26,
+    "lat": -29.45
+  },
+  {
+    "codigo_depto": 18077,
+    "nombre": "Itati",
+    "provincia": "Corrientes",
+    "lon": -58.07,
+    "lat": -27.35
+  },
+  {
+    "codigo_depto": 18084,
+    "nombre": "Ituzaingo",
+    "provincia": "Corrientes",
+    "lon": -56.79,
+    "lat": -27.91
+  },
+  {
+    "codigo_depto": 18091,
+    "nombre": "Lavalle",
+    "provincia": "Corrientes",
+    "lon": -58.93,
+    "lat": -28.99
+  },
+  {
+    "codigo_depto": 18098,
+    "nombre": "Mburucuya",
+    "provincia": "Corrientes",
+    "lon": -58.19,
+    "lat": -28.02
+  },
+  {
+    "codigo_depto": 18105,
+    "nombre": "Mercedes",
+    "provincia": "Corrientes",
+    "lon": -57.82,
+    "lat": -29.06
+  },
+  {
+    "codigo_depto": 18112,
+    "nombre": "Monte Caseros",
+    "provincia": "Corrientes",
+    "lon": -57.87,
+    "lat": -30.23
+  },
+  {
+    "codigo_depto": 18119,
+    "nombre": "Paso de los Libres",
+    "provincia": "Corrientes",
+    "lon": -57.3,
+    "lat": -29.59
+  },
+  {
+    "codigo_depto": 18126,
+    "nombre": "Saladas",
+    "provincia": "Corrientes",
+    "lon": -58.62,
+    "lat": -28.21
+  },
+  {
+    "codigo_depto": 18133,
+    "nombre": "San Cosme",
+    "provincia": "Corrientes",
+    "lon": -58.52,
+    "lat": -27.38
+  },
+  {
+    "codigo_depto": 18140,
+    "nombre": "San Luis del Palmar",
+    "provincia": "Corrientes",
+    "lon": -58.27,
+    "lat": -27.6
+  },
+  {
+    "codigo_depto": 18147,
+    "nombre": "San Martin",
+    "provincia": "Corrientes",
+    "lon": -56.93,
+    "lat": -28.83
+  },
+  {
+    "codigo_depto": 18154,
+    "nombre": "San Miguel",
+    "provincia": "Corrientes",
+    "lon": -57.41,
+    "lat": -27.88
+  },
+  {
+    "codigo_depto": 18161,
+    "nombre": "San Roque",
+    "provincia": "Corrientes",
+    "lon": -58.61,
+    "lat": -28.71
+  },
+  {
+    "codigo_depto": 18168,
+    "nombre": "Santo Tome",
+    "provincia": "Corrientes",
+    "lon": -56.22,
+    "lat": -28.23
+  },
+  {
+    "codigo_depto": 18175,
+    "nombre": "Sauce",
+    "provincia": "Corrientes",
+    "lon": -58.8,
+    "lat": -30
+  },
+  {
+    "codigo_depto": 22007,
+    "nombre": "Almirante Brown",
+    "provincia": "Chaco",
+    "lon": -61.96,
+    "lat": -25.74
+  },
+  {
+    "codigo_depto": 22014,
+    "nombre": "Bermejo",
+    "provincia": "Chaco",
+    "lon": -58.71,
+    "lat": -26.95
+  },
+  {
+    "codigo_depto": 22021,
+    "nombre": "Comandante Fernandez",
+    "provincia": "Chaco",
+    "lon": -60.46,
+    "lat": -26.79
+  },
+  {
+    "codigo_depto": 22140,
+    "nombre": "San Fernando",
+    "provincia": "Chaco",
+    "lon": -59.11,
+    "lat": -27.72
+  },
+  {
+    "codigo_depto": 22028,
+    "nombre": "Chacabuco",
+    "provincia": "Chaco",
+    "lon": -61.31,
+    "lat": -27.12
+  },
+  {
+    "codigo_depto": 22036,
+    "nombre": "12 de Octubre",
+    "provincia": "Chaco",
+    "lon": -61.47,
+    "lat": -27.33
+  },
+  {
+    "codigo_depto": 22039,
+    "nombre": "2 de Abril",
+    "provincia": "Chaco",
+    "lon": -61.33,
+    "lat": -27.62
+  },
+  {
+    "codigo_depto": 22043,
+    "nombre": "Fray Justo Santa Maria de Oro",
+    "provincia": "Chaco",
+    "lon": -61.3,
+    "lat": -27.87
+  },
+  {
+    "codigo_depto": 22049,
+    "nombre": "General Belgrano",
+    "provincia": "Chaco",
+    "lon": -61.07,
+    "lat": -26.85
+  },
+  {
+    "codigo_depto": 26042,
+    "nombre": "Gaiman",
+    "provincia": "Chubut",
+    "lon": -66.17,
+    "lat": -43.27
+  },
+  {
+    "codigo_depto": 22056,
+    "nombre": "General Donovan",
+    "provincia": "Chaco",
+    "lon": -59.36,
+    "lat": -27.14
+  },
+  {
+    "codigo_depto": 22063,
+    "nombre": "General Guemes",
+    "provincia": "Chaco",
+    "lon": -61.33,
+    "lat": -25.21
+  },
+  {
+    "codigo_depto": 22070,
+    "nombre": "Independencia",
+    "provincia": "Chaco",
+    "lon": -60.76,
+    "lat": -26.74
+  },
+  {
+    "codigo_depto": 22077,
+    "nombre": "Libertad",
+    "provincia": "Chaco",
+    "lon": -59.26,
+    "lat": -27.35
+  },
+  {
+    "codigo_depto": 22084,
+    "nombre": "Libertador General San Martin",
+    "provincia": "Chaco",
+    "lon": -59.49,
+    "lat": -26.38
+  },
+  {
+    "codigo_depto": 22091,
+    "nombre": "Maipu",
+    "provincia": "Chaco",
+    "lon": -60.46,
+    "lat": -26.32
+  },
+  {
+    "codigo_depto": 22147,
+    "nombre": "San Lorenzo",
+    "provincia": "Chaco",
+    "lon": -60.36,
+    "lat": -27.39
+  },
+  {
+    "codigo_depto": 22098,
+    "nombre": "Mayor Luis J. Fontana",
+    "provincia": "Chaco",
+    "lon": -60.66,
+    "lat": -27.74
+  },
+  {
+    "codigo_depto": 22105,
+    "nombre": "9 de Julio",
+    "provincia": "Chaco",
+    "lon": -61.27,
+    "lat": -26.95
+  },
+  {
+    "codigo_depto": 22112,
+    "nombre": "O'Higgins",
+    "provincia": "Chaco",
+    "lon": -60.68,
+    "lat": -27.26
+  },
+  {
+    "codigo_depto": 22119,
+    "nombre": "Presidencia de la Plaza",
+    "provincia": "Chaco",
+    "lon": -59.77,
+    "lat": -27.05
+  },
+  {
+    "codigo_depto": 22126,
+    "nombre": "1Âº de Mayo",
+    "provincia": "Chaco",
+    "lon": -58.96,
+    "lat": -27.17
+  },
+  {
+    "codigo_depto": 22133,
+    "nombre": "Quitilipi",
+    "provincia": "Chaco",
+    "lon": -60.17,
+    "lat": -26.67
+  },
+  {
+    "codigo_depto": 22154,
+    "nombre": "Sargento Cabral",
+    "provincia": "Chaco",
+    "lon": -59.53,
+    "lat": -26.8
+  },
+  {
+    "codigo_depto": 22161,
+    "nombre": "Tapenaga",
+    "provincia": "Chaco",
+    "lon": -59.83,
+    "lat": -27.66
+  },
+  {
+    "codigo_depto": 22168,
+    "nombre": "25 de Mayo",
+    "provincia": "Chaco",
+    "lon": -60.02,
+    "lat": -26.83
+  },
+  {
+    "codigo_depto": 26007,
+    "nombre": "Biedma",
+    "provincia": "Chubut",
+    "lon": -64.93,
+    "lat": -42.44
+  },
+  {
+    "codigo_depto": 26014,
+    "nombre": "Cushamen",
+    "provincia": "Chubut",
+    "lon": -70.7,
+    "lat": -42.37
+  },
+  {
+    "codigo_depto": 26021,
+    "nombre": "Escalante",
+    "provincia": "Chubut",
+    "lon": -67.71,
+    "lat": -45.28
+  },
+  {
+    "codigo_depto": 26028,
+    "nombre": "Florentino Ameghino",
+    "provincia": "Chubut",
+    "lon": -66.13,
+    "lat": -44.42
+  },
+  {
+    "codigo_depto": 26035,
+    "nombre": "Futaleufu",
+    "provincia": "Chubut",
+    "lon": -71.47,
+    "lat": -43.07
+  },
+  {
+    "codigo_depto": 26049,
+    "nombre": "Gastre",
+    "provincia": "Chubut",
+    "lon": -68.8,
+    "lat": -42.75
+  },
+  {
+    "codigo_depto": 26056,
+    "nombre": "Languiï¿½eo",
+    "provincia": "Chubut",
+    "lon": -70.35,
+    "lat": -43.32
+  },
+  {
+    "codigo_depto": 26063,
+    "nombre": "Martires",
+    "provincia": "Chubut",
+    "lon": -67.24,
+    "lat": -43.81
+  },
+  {
+    "codigo_depto": 26070,
+    "nombre": "Paso de los Indios",
+    "provincia": "Chubut",
+    "lon": -68.69,
+    "lat": -44.03
+  },
+  {
+    "codigo_depto": 26077,
+    "nombre": "Rawson",
+    "provincia": "Chubut",
+    "lon": -65.07,
+    "lat": -43.14
+  },
+  {
+    "codigo_depto": 26084,
+    "nombre": "Rio Senguer",
+    "provincia": "Chubut",
+    "lon": -70.64,
+    "lat": -45.34
+  },
+  {
+    "codigo_depto": 26091,
+    "nombre": "Sarmiento",
+    "provincia": "Chubut",
+    "lon": -69,
+    "lat": -45.35
+  },
+  {
+    "codigo_depto": 26098,
+    "nombre": "Tehuelches",
+    "provincia": "Chubut",
+    "lon": -70.58,
+    "lat": -44.2
+  },
+  {
+    "codigo_depto": 26105,
+    "nombre": "Telsen",
+    "provincia": "Chubut",
+    "lon": -67.18,
+    "lat": -42.44
+  },
+  {
+    "codigo_depto": 30008,
+    "nombre": "Colon",
+    "provincia": "Entre Rios",
+    "lon": -58.37,
+    "lat": -32.01
+  },
+  {
+    "codigo_depto": 30015,
+    "nombre": "Concordia",
+    "provincia": "Entre Rios",
+    "lon": -58.24,
+    "lat": -31.29
+  },
+  {
+    "codigo_depto": 30021,
+    "nombre": "Diamante",
+    "provincia": "Entre Rios",
+    "lon": -60.53,
+    "lat": -32.23
+  },
+  {
+    "codigo_depto": 30028,
+    "nombre": "Federacion",
+    "provincia": "Entre Rios",
+    "lon": -58.16,
+    "lat": -30.73
+  },
+  {
+    "codigo_depto": 30035,
+    "nombre": "Federal",
+    "provincia": "Entre Rios",
+    "lon": -58.89,
+    "lat": -30.99
+  },
+  {
+    "codigo_depto": 30042,
+    "nombre": "Feliciano",
+    "provincia": "Entre Rios",
+    "lon": -58.73,
+    "lat": -30.41
+  },
+  {
+    "codigo_depto": 30049,
+    "nombre": "Gualeguay",
+    "provincia": "Entre Rios",
+    "lon": -59.6,
+    "lat": -33.12
+  },
+  {
+    "codigo_depto": 30056,
+    "nombre": "Gualeguaychu",
+    "provincia": "Entre Rios",
+    "lon": -58.79,
+    "lat": -33.02
+  },
+  {
+    "codigo_depto": 30063,
+    "nombre": "Islas del Ibicuy",
+    "provincia": "Entre Rios",
+    "lon": -58.94,
+    "lat": -33.62
+  },
+  {
+    "codigo_depto": 30070,
+    "nombre": "La Paz",
+    "provincia": "Entre Rios",
+    "lon": -59.5,
+    "lat": -30.9
+  },
+  {
+    "codigo_depto": 30077,
+    "nombre": "Nogoya",
+    "provincia": "Entre Rios",
+    "lon": -59.77,
+    "lat": -32.22
+  },
+  {
+    "codigo_depto": 30084,
+    "nombre": "Parana",
+    "provincia": "Entre Rios",
+    "lon": -60.04,
+    "lat": -31.7
+  },
+  {
+    "codigo_depto": 30088,
+    "nombre": "San Salvador",
+    "provincia": "Entre Rios",
+    "lon": -58.49,
+    "lat": -31.58
+  },
+  {
+    "codigo_depto": 30091,
+    "nombre": "Tala",
+    "provincia": "Entre Rios",
+    "lon": -59.27,
+    "lat": -32.32
+  },
+  {
+    "codigo_depto": 30098,
+    "nombre": "Uruguay",
+    "provincia": "Entre Rios",
+    "lon": -58.58,
+    "lat": -32.45
+  },
+  {
+    "codigo_depto": 30105,
+    "nombre": "Victoria",
+    "provincia": "Entre Rios",
+    "lon": -60.22,
+    "lat": -32.78
+  },
+  {
+    "codigo_depto": 30113,
+    "nombre": "Villaguay",
+    "provincia": "Entre Rios",
+    "lon": -59.06,
+    "lat": -31.65
+  },
+  {
+    "codigo_depto": 34007,
+    "nombre": "Bermejo",
+    "provincia": "Formosa",
+    "lon": -61.27,
+    "lat": -24.03
+  },
+  {
+    "codigo_depto": 34014,
+    "nombre": "Formosa",
+    "provincia": "Formosa",
+    "lon": -58.38,
+    "lat": -25.94
+  },
+  {
+    "codigo_depto": 34021,
+    "nombre": "Laishi",
+    "provincia": "Formosa",
+    "lon": -58.57,
+    "lat": -26.46
+  },
+  {
+    "codigo_depto": 34028,
+    "nombre": "Matacos",
+    "provincia": "Formosa",
+    "lon": -62.06,
+    "lat": -23.86
+  },
+  {
+    "codigo_depto": 34035,
+    "nombre": "PatiÃ±o",
+    "provincia": "Formosa",
+    "lon": -59.98,
+    "lat": -24.86
+  },
+  {
+    "codigo_depto": 34042,
+    "nombre": "Pilagas",
+    "provincia": "Formosa",
+    "lon": -58.66,
+    "lat": -25.1
+  },
+  {
+    "codigo_depto": 34049,
+    "nombre": "Pilcomayo",
+    "provincia": "Formosa",
+    "lon": -58.06,
+    "lat": -25.37
+  },
+  {
+    "codigo_depto": 34056,
+    "nombre": "Pirane",
+    "provincia": "Formosa",
+    "lon": -59.17,
+    "lat": -25.76
+  },
+  {
+    "codigo_depto": 34063,
+    "nombre": "Ramon Lista",
+    "provincia": "Formosa",
+    "lon": -62.13,
+    "lat": -23.13
+  },
+  {
+    "codigo_depto": 38007,
+    "nombre": "Cochinoca",
+    "provincia": "Jujuy",
+    "lon": -65.93,
+    "lat": -22.94
+  },
+  {
+    "codigo_depto": 38014,
+    "nombre": "El Carmen",
+    "provincia": "Jujuy",
+    "lon": -65.1,
+    "lat": -24.45
+  },
+  {
+    "codigo_depto": 38021,
+    "nombre": "Dr. Manuel Belgrano",
+    "provincia": "Jujuy",
+    "lon": -65.45,
+    "lat": -24.08
+  },
+  {
+    "codigo_depto": 38028,
+    "nombre": "Humahuaca",
+    "provincia": "Jujuy",
+    "lon": -65.4,
+    "lat": -23.08
+  },
+  {
+    "codigo_depto": 38035,
+    "nombre": "Ledesma",
+    "provincia": "Jujuy",
+    "lon": -64.82,
+    "lat": -23.78
+  },
+  {
+    "codigo_depto": 38042,
+    "nombre": "Palpala",
+    "provincia": "Jujuy",
+    "lon": -65.13,
+    "lat": -24.19
+  },
+  {
+    "codigo_depto": 38049,
+    "nombre": "Rinconada",
+    "provincia": "Jujuy",
+    "lon": -66.54,
+    "lat": -22.62
+  },
+  {
+    "codigo_depto": 38056,
+    "nombre": "San Antonio",
+    "provincia": "Jujuy",
+    "lon": -65.45,
+    "lat": -24.35
+  },
+  {
+    "codigo_depto": 38063,
+    "nombre": "San Pedro",
+    "provincia": "Jujuy",
+    "lon": -64.81,
+    "lat": -24.3
+  },
+  {
+    "codigo_depto": 38070,
+    "nombre": "Santa Barbara",
+    "provincia": "Jujuy",
+    "lon": -64.4,
+    "lat": -24.01
+  },
+  {
+    "codigo_depto": 38077,
+    "nombre": "Santa Catalina",
+    "provincia": "Jujuy",
+    "lon": -66.23,
+    "lat": -22.14
+  },
+  {
+    "codigo_depto": 38084,
+    "nombre": "Susques",
+    "provincia": "Jujuy",
+    "lon": -66.66,
+    "lat": -23.52
+  },
+  {
+    "codigo_depto": 38094,
+    "nombre": "Tilcara",
+    "provincia": "Jujuy",
+    "lon": -65.32,
+    "lat": -23.56
+  },
+  {
+    "codigo_depto": 38098,
+    "nombre": "Tumbaya",
+    "provincia": "Jujuy",
+    "lon": -65.7,
+    "lat": -23.74
+  },
+  {
+    "codigo_depto": 38105,
+    "nombre": "Valle Grande",
+    "provincia": "Jujuy",
+    "lon": -65.01,
+    "lat": -23.47
+  },
+  {
+    "codigo_depto": 38112,
+    "nombre": "Yavi",
+    "provincia": "Jujuy",
+    "lon": -65.57,
+    "lat": -22.29
+  },
+  {
+    "codigo_depto": 42007,
+    "nombre": "Atreuco",
+    "provincia": "La Pampa",
+    "lon": -63.78,
+    "lat": -37.03
+  },
+  {
+    "codigo_depto": 42014,
+    "nombre": "Caleu Caleu",
+    "provincia": "La Pampa",
+    "lon": -63.9,
+    "lat": -38.67
+  },
+  {
+    "codigo_depto": 42021,
+    "nombre": "Capital",
+    "provincia": "La Pampa",
+    "lon": -64.2,
+    "lat": -36.5
+  },
+  {
+    "codigo_depto": 42028,
+    "nombre": "Catrilo",
+    "provincia": "La Pampa",
+    "lon": -63.66,
+    "lat": -36.58
+  },
+  {
+    "codigo_depto": 42035,
+    "nombre": "Conhelo",
+    "provincia": "La Pampa",
+    "lon": -64.51,
+    "lat": -36.03
+  },
+  {
+    "codigo_depto": 42042,
+    "nombre": "Curaco",
+    "provincia": "La Pampa",
+    "lon": -66.33,
+    "lat": -38.18
+  },
+  {
+    "codigo_depto": 42049,
+    "nombre": "Chalileo",
+    "provincia": "La Pampa",
+    "lon": -66.57,
+    "lat": -36.4
+  },
+  {
+    "codigo_depto": 42056,
+    "nombre": "Chapaleufu",
+    "provincia": "La Pampa",
+    "lon": -63.66,
+    "lat": -35.23
+  },
+  {
+    "codigo_depto": 42063,
+    "nombre": "Chical Co",
+    "provincia": "La Pampa",
+    "lon": -67.68,
+    "lat": -36.4
+  },
+  {
+    "codigo_depto": 42070,
+    "nombre": "Guatrache",
+    "provincia": "La Pampa",
+    "lon": -63.78,
+    "lat": -37.48
+  },
+  {
+    "codigo_depto": 42077,
+    "nombre": "Hucal",
+    "provincia": "La Pampa",
+    "lon": -63.95,
+    "lat": -37.98
+  },
+  {
+    "codigo_depto": 42084,
+    "nombre": "Lihuel Calel",
+    "provincia": "La Pampa",
+    "lon": -65.1,
+    "lat": -38.26
+  },
+  {
+    "codigo_depto": 42091,
+    "nombre": "Limay Mahuida",
+    "provincia": "La Pampa",
+    "lon": -66.56,
+    "lat": -37.24
+  },
+  {
+    "codigo_depto": 42098,
+    "nombre": "Loventue",
+    "provincia": "La Pampa",
+    "lon": -65.54,
+    "lat": -36.48
+  },
+  {
+    "codigo_depto": 42105,
+    "nombre": "Maraco",
+    "provincia": "La Pampa",
+    "lon": -63.66,
+    "lat": -35.68
+  },
+  {
+    "codigo_depto": 42112,
+    "nombre": "Puelen",
+    "provincia": "La Pampa",
+    "lon": -67.6,
+    "lat": -37.43
+  },
+  {
+    "codigo_depto": 42119,
+    "nombre": "Quemu Quemu",
+    "provincia": "La Pampa",
+    "lon": -63.66,
+    "lat": -36.13
+  },
+  {
+    "codigo_depto": 42126,
+    "nombre": "Rancul",
+    "provincia": "La Pampa",
+    "lon": -64.8,
+    "lat": -35.41
+  },
+  {
+    "codigo_depto": 42133,
+    "nombre": "Realico",
+    "provincia": "La Pampa",
+    "lon": -64.21,
+    "lat": -35.23
+  },
+  {
+    "codigo_depto": 42140,
+    "nombre": "Toay",
+    "provincia": "La Pampa",
+    "lon": -64.7,
+    "lat": -36.66
+  },
+  {
+    "codigo_depto": 42147,
+    "nombre": "Trenel",
+    "provincia": "La Pampa",
+    "lon": -64.21,
+    "lat": -35.63
+  },
+  {
+    "codigo_depto": 42154,
+    "nombre": "Utracan",
+    "provincia": "La Pampa",
+    "lon": -65.09,
+    "lat": -37.34
+  },
+  {
+    "codigo_depto": 46007,
+    "nombre": "Arauco",
+    "provincia": "La Rioja",
+    "lon": -66.73,
+    "lat": -28.55
+  },
+  {
+    "codigo_depto": 46014,
+    "nombre": "Capital",
+    "provincia": "La Rioja",
+    "lon": -66.37,
+    "lat": -29.46
+  },
+  {
+    "codigo_depto": 46021,
+    "nombre": "Castro Barros",
+    "provincia": "La Rioja",
+    "lon": -66.93,
+    "lat": -28.87
+  },
+  {
+    "codigo_depto": 46028,
+    "nombre": "Coronel Felipe Varela",
+    "provincia": "La Rioja",
+    "lon": -68.28,
+    "lat": -29.47
+  },
+  {
+    "codigo_depto": 46035,
+    "nombre": "Chamical",
+    "provincia": "La Rioja",
+    "lon": -65.98,
+    "lat": -30.18
+  },
+  {
+    "codigo_depto": 46042,
+    "nombre": "Chilecito",
+    "provincia": "La Rioja",
+    "lon": -67.43,
+    "lat": -29.4
+  },
+  {
+    "codigo_depto": 46049,
+    "nombre": "Famatina",
+    "provincia": "La Rioja",
+    "lon": -67.56,
+    "lat": -28.69
+  },
+  {
+    "codigo_depto": 46056,
+    "nombre": "General Angel V. Peï¿½aloza",
+    "provincia": "La Rioja",
+    "lon": -66.74,
+    "lat": -30.35
+  },
+  {
+    "codigo_depto": 46063,
+    "nombre": "General Belgrano",
+    "provincia": "La Rioja",
+    "lon": -65.95,
+    "lat": -30.6
+  },
+  {
+    "codigo_depto": 46070,
+    "nombre": "General Juan F.Quiroga",
+    "provincia": "La Rioja",
+    "lon": -66.79,
+    "lat": -30.86
+  },
+  {
+    "codigo_depto": 46077,
+    "nombre": "General Lamadrid",
+    "provincia": "La Rioja",
+    "lon": -68.71,
+    "lat": -28.77
+  },
+  {
+    "codigo_depto": 46084,
+    "nombre": "General Ocampo",
+    "provincia": "La Rioja",
+    "lon": -66.08,
+    "lat": -31.02
+  },
+  {
+    "codigo_depto": 46091,
+    "nombre": "General San Martin",
+    "provincia": "La Rioja",
+    "lon": -66.18,
+    "lat": -31.65
+  },
+  {
+    "codigo_depto": 46098,
+    "nombre": "Vinchina",
+    "provincia": "La Rioja",
+    "lon": -68.53,
+    "lat": -28.29
+  },
+  {
+    "codigo_depto": 46105,
+    "nombre": "Independencia",
+    "provincia": "La Rioja",
+    "lon": -67.3,
+    "lat": -30.14
+  },
+  {
+    "codigo_depto": 46112,
+    "nombre": "Rosario Vera PeÃ±aloza",
+    "provincia": "La Rioja",
+    "lon": -66.69,
+    "lat": -31.42
+  },
+  {
+    "codigo_depto": 46119,
+    "nombre": "San Blas de los Sauces",
+    "provincia": "La Rioja",
+    "lon": -67.16,
+    "lat": -28.55
+  },
+  {
+    "codigo_depto": 46126,
+    "nombre": "Sanagasta",
+    "provincia": "La Rioja",
+    "lon": -67.07,
+    "lat": -29.15
+  },
+  {
+    "codigo_depto": 50007,
+    "nombre": "Capital",
+    "provincia": "Mendoza",
+    "lon": -68.9,
+    "lat": -32.88
+  },
+  {
+    "codigo_depto": 50014,
+    "nombre": "General Alvear",
+    "provincia": "Mendoza",
+    "lon": -67.08,
+    "lat": -35.21
+  },
+  {
+    "codigo_depto": 50021,
+    "nombre": "Godoy Cruz",
+    "provincia": "Mendoza",
+    "lon": -68.9,
+    "lat": -32.93
+  },
+  {
+    "codigo_depto": 50028,
+    "nombre": "Guaymallen",
+    "provincia": "Mendoza",
+    "lon": -68.74,
+    "lat": -32.89
+  },
+  {
+    "codigo_depto": 50035,
+    "nombre": "Junin",
+    "provincia": "Mendoza",
+    "lon": -68.49,
+    "lat": -33.15
+  },
+  {
+    "codigo_depto": 50042,
+    "nombre": "La Paz",
+    "provincia": "Mendoza",
+    "lon": -67.25,
+    "lat": -33.7
+  },
+  {
+    "codigo_depto": 50049,
+    "nombre": "Las Heras",
+    "provincia": "Mendoza",
+    "lon": -69.28,
+    "lat": -32.52
+  },
+  {
+    "codigo_depto": 50056,
+    "nombre": "Lavalle",
+    "provincia": "Mendoza",
+    "lon": -67.89,
+    "lat": -32.58
+  },
+  {
+    "codigo_depto": 50063,
+    "nombre": "Lujan de Cuyo",
+    "provincia": "Mendoza",
+    "lon": -69.47,
+    "lat": -33.04
+  },
+  {
+    "codigo_depto": 50070,
+    "nombre": "Maipu",
+    "provincia": "Mendoza",
+    "lon": -68.67,
+    "lat": -32.99
+  },
+  {
+    "codigo_depto": 50077,
+    "nombre": "Malargue",
+    "provincia": "Mendoza",
+    "lon": -69.32,
+    "lat": -36.15
+  },
+  {
+    "codigo_depto": 50084,
+    "nombre": "Rivadavia",
+    "provincia": "Mendoza",
+    "lon": -68.61,
+    "lat": -33.41
+  },
+  {
+    "codigo_depto": 50091,
+    "nombre": "San Carlos",
+    "provincia": "Mendoza",
+    "lon": -69.09,
+    "lat": -34.07
+  },
+  {
+    "codigo_depto": 50098,
+    "nombre": "San Martin",
+    "provincia": "Mendoza",
+    "lon": -68.29,
+    "lat": -32.91
+  },
+  {
+    "codigo_depto": 50105,
+    "nombre": "San Rafael",
+    "provincia": "Mendoza",
+    "lon": -68.35,
+    "lat": -34.95
+  },
+  {
+    "codigo_depto": 50112,
+    "nombre": "Santa Rosa",
+    "provincia": "Mendoza",
+    "lon": -67.96,
+    "lat": -33.6
+  },
+  {
+    "codigo_depto": 50119,
+    "nombre": "Tunuyan",
+    "provincia": "Mendoza",
+    "lon": -69.52,
+    "lat": -33.62
+  },
+  {
+    "codigo_depto": 50126,
+    "nombre": "Tupungato",
+    "provincia": "Mendoza",
+    "lon": -69.3,
+    "lat": -33.28
+  },
+  {
+    "codigo_depto": 54007,
+    "nombre": "Apostoles",
+    "provincia": "Misiones",
+    "lon": -55.68,
+    "lat": -27.88
+  },
+  {
+    "codigo_depto": 54014,
+    "nombre": "Cainguas",
+    "provincia": "Misiones",
+    "lon": -54.8,
+    "lat": -27.14
+  },
+  {
+    "codigo_depto": 54021,
+    "nombre": "Candelaria",
+    "provincia": "Misiones",
+    "lon": -55.58,
+    "lat": -27.46
+  },
+  {
+    "codigo_depto": 54028,
+    "nombre": "Capital",
+    "provincia": "Misiones",
+    "lon": -55.86,
+    "lat": -27.55
+  },
+  {
+    "codigo_depto": 54035,
+    "nombre": "Concepcion",
+    "provincia": "Misiones",
+    "lon": -55.47,
+    "lat": -27.93
+  },
+  {
+    "codigo_depto": 54042,
+    "nombre": "El Dorado",
+    "provincia": "Misiones",
+    "lon": -54.42,
+    "lat": -26.32
+  },
+  {
+    "codigo_depto": 54049,
+    "nombre": "General Manuel Belgrano",
+    "provincia": "Misiones",
+    "lon": -53.96,
+    "lat": -26.01
+  },
+  {
+    "codigo_depto": 54056,
+    "nombre": "Guarani",
+    "provincia": "Misiones",
+    "lon": -54.27,
+    "lat": -27.02
+  },
+  {
+    "codigo_depto": 54063,
+    "nombre": "Iguazu",
+    "provincia": "Misiones",
+    "lon": -54.4,
+    "lat": -25.87
+  },
+  {
+    "codigo_depto": 54070,
+    "nombre": "Leandro N. Alem",
+    "provincia": "Misiones",
+    "lon": -55.39,
+    "lat": -27.63
+  },
+  {
+    "codigo_depto": 54077,
+    "nombre": "Libertador General San Martin",
+    "provincia": "Misiones",
+    "lon": -54.92,
+    "lat": -26.89
+  },
+  {
+    "codigo_depto": 54084,
+    "nombre": "Montecarlo",
+    "provincia": "Misiones",
+    "lon": -54.57,
+    "lat": -26.66
+  },
+  {
+    "codigo_depto": 54091,
+    "nombre": "Obera",
+    "provincia": "Misiones",
+    "lon": -55.07,
+    "lat": -27.47
+  },
+  {
+    "codigo_depto": 54098,
+    "nombre": "San Ignacio",
+    "provincia": "Misiones",
+    "lon": -55.34,
+    "lat": -27.17
+  },
+  {
+    "codigo_depto": 54105,
+    "nombre": "San Javier",
+    "provincia": "Misiones",
+    "lon": -55.17,
+    "lat": -27.77
+  },
+  {
+    "codigo_depto": 54112,
+    "nombre": "San Pedro",
+    "provincia": "Misiones",
+    "lon": -53.95,
+    "lat": -26.67
+  },
+  {
+    "codigo_depto": 54119,
+    "nombre": "25 de Mayo",
+    "provincia": "Misiones",
+    "lon": -54.63,
+    "lat": -27.37
+  },
+  {
+    "codigo_depto": 58007,
+    "nombre": "Alumine",
+    "provincia": "Neuquen",
+    "lon": -71.05,
+    "lat": -39.13
+  },
+  {
+    "codigo_depto": 58014,
+    "nombre": "AÃ±elo",
+    "provincia": "Neuquen",
+    "lon": -69.02,
+    "lat": -38.1
+  },
+  {
+    "codigo_depto": 58021,
+    "nombre": "Catan Lil",
+    "provincia": "Neuquen",
+    "lon": -70.43,
+    "lat": -39.49
+  },
+  {
+    "codigo_depto": 58028,
+    "nombre": "Collon Cura",
+    "provincia": "Neuquen",
+    "lon": -70.28,
+    "lat": -40.05
+  },
+  {
+    "codigo_depto": 58035,
+    "nombre": "Confluencia",
+    "provincia": "Neuquen",
+    "lon": -68.79,
+    "lat": -38.83
+  },
+  {
+    "codigo_depto": 58042,
+    "nombre": "Chos Malal",
+    "provincia": "Neuquen",
+    "lon": -70.29,
+    "lat": -36.88
+  },
+  {
+    "codigo_depto": 58049,
+    "nombre": "Huiliches",
+    "provincia": "Neuquen",
+    "lon": -71.26,
+    "lat": -39.79
+  },
+  {
+    "codigo_depto": 58056,
+    "nombre": "Lacar",
+    "provincia": "Neuquen",
+    "lon": -71.18,
+    "lat": -40.31
+  },
+  {
+    "codigo_depto": 58063,
+    "nombre": "Loncopue",
+    "provincia": "Neuquen",
+    "lon": -70.31,
+    "lat": -38.07
+  },
+  {
+    "codigo_depto": 58070,
+    "nombre": "Los Lagos",
+    "provincia": "Neuquen",
+    "lon": -71.49,
+    "lat": -40.77
+  },
+  {
+    "codigo_depto": 58077,
+    "nombre": "Minas",
+    "provincia": "Neuquen",
+    "lon": -70.78,
+    "lat": -36.86
+  },
+  {
+    "codigo_depto": 58084,
+    "nombre": "Ãorquin",
+    "provincia": "Neuquen",
+    "lon": -70.68,
+    "lat": -37.64
+  },
+  {
+    "codigo_depto": 58091,
+    "nombre": "Pehuenches",
+    "provincia": "Neuquen",
+    "lon": -69.4,
+    "lat": -37.4
+  },
+  {
+    "codigo_depto": 58098,
+    "nombre": "Picun Leufu",
+    "provincia": "Neuquen",
+    "lon": -69.43,
+    "lat": -39.4
+  },
+  {
+    "codigo_depto": 58105,
+    "nombre": "Picunches",
+    "provincia": "Neuquen",
+    "lon": -70.37,
+    "lat": -38.57
+  },
+  {
+    "codigo_depto": 58112,
+    "nombre": "Zapala",
+    "provincia": "Neuquen",
+    "lon": -69.84,
+    "lat": -38.93
+  },
+  {
+    "codigo_depto": 62007,
+    "nombre": "Adolfo Alsina",
+    "provincia": "Rio negro",
+    "lon": -63.77,
+    "lat": -40.79
+  },
+  {
+    "codigo_depto": 62014,
+    "nombre": "Avellaneda",
+    "provincia": "Rio negro",
+    "lon": -66.22,
+    "lat": -39.42
+  },
+  {
+    "codigo_depto": 62021,
+    "nombre": "Bariloche",
+    "provincia": "Rio negro",
+    "lon": -71.56,
+    "lat": -41.39
+  },
+  {
+    "codigo_depto": 62028,
+    "nombre": "Conesa",
+    "provincia": "Rio negro",
+    "lon": -64.31,
+    "lat": -40.15
+  },
+  {
+    "codigo_depto": 62035,
+    "nombre": "El Cuy",
+    "provincia": "Rio negro",
+    "lon": -68.5,
+    "lat": -39.7
+  },
+  {
+    "codigo_depto": 62042,
+    "nombre": "General Roca",
+    "provincia": "Rio negro",
+    "lon": -67.63,
+    "lat": -38.49
+  },
+  {
+    "codigo_depto": 66014,
+    "nombre": "Cachi",
+    "provincia": "Salta",
+    "lon": -66.2,
+    "lat": -25.05
+  },
+  {
+    "codigo_depto": 62049,
+    "nombre": "9 de Julio",
+    "provincia": "Rio negro",
+    "lon": -67.46,
+    "lat": -40.92
+  },
+  {
+    "codigo_depto": 62056,
+    "nombre": "Ãorquinco",
+    "provincia": "Rio negro",
+    "lon": -70.4,
+    "lat": -41.74
+  },
+  {
+    "codigo_depto": 62063,
+    "nombre": "Pichi Mahuida",
+    "provincia": "Rio negro",
+    "lon": -64.4,
+    "lat": -39.41
+  },
+  {
+    "codigo_depto": 62070,
+    "nombre": "Pilcaniyeu",
+    "provincia": "Rio negro",
+    "lon": -70.47,
+    "lat": -40.89
+  },
+  {
+    "codigo_depto": 62077,
+    "nombre": "San Antonio",
+    "provincia": "Rio negro",
+    "lon": -65.37,
+    "lat": -40.96
+  },
+  {
+    "codigo_depto": 62084,
+    "nombre": "Valcheta",
+    "provincia": "Rio negro",
+    "lon": -66.31,
+    "lat": -40.98
+  },
+  {
+    "codigo_depto": 62091,
+    "nombre": "25 de Mayo",
+    "provincia": "Rio negro",
+    "lon": -68.91,
+    "lat": -41.13
+  },
+  {
+    "codigo_depto": 66007,
+    "nombre": "Anta",
+    "provincia": "Salta",
+    "lon": -63.84,
+    "lat": -24.87
+  },
+  {
+    "codigo_depto": 66021,
+    "nombre": "Cafayate",
+    "provincia": "Salta",
+    "lon": -65.89,
+    "lat": -26.12
+  },
+  {
+    "codigo_depto": 66028,
+    "nombre": "Capital",
+    "provincia": "Salta",
+    "lon": -65.27,
+    "lat": -24.89
+  },
+  {
+    "codigo_depto": 66035,
+    "nombre": "Cerrillos",
+    "provincia": "Salta",
+    "lon": -65.4,
+    "lat": -24.99
+  },
+  {
+    "codigo_depto": 66042,
+    "nombre": "Chicoana",
+    "provincia": "Salta",
+    "lon": -65.6,
+    "lat": -25.15
+  },
+  {
+    "codigo_depto": 66049,
+    "nombre": "General Guemes",
+    "provincia": "Salta",
+    "lon": -64.96,
+    "lat": -24.76
+  },
+  {
+    "codigo_depto": 66056,
+    "nombre": "General Jose de San Martin",
+    "provincia": "Salta",
+    "lon": -63.66,
+    "lat": -22.71
+  },
+  {
+    "codigo_depto": 66063,
+    "nombre": "Guachipas",
+    "provincia": "Salta",
+    "lon": -65.45,
+    "lat": -25.71
+  },
+  {
+    "codigo_depto": 66070,
+    "nombre": "Iruya",
+    "provincia": "Salta",
+    "lon": -64.9,
+    "lat": -22.8
+  },
+  {
+    "codigo_depto": 66077,
+    "nombre": "La Caldera",
+    "provincia": "Salta",
+    "lon": -65.45,
+    "lat": -24.56
+  },
+  {
+    "codigo_depto": 66084,
+    "nombre": "La Candelaria",
+    "provincia": "Salta",
+    "lon": -65.21,
+    "lat": -26.05
+  },
+  {
+    "codigo_depto": 66091,
+    "nombre": "La Poma",
+    "provincia": "Salta",
+    "lon": -66.21,
+    "lat": -24.15
+  },
+  {
+    "codigo_depto": 66098,
+    "nombre": "La ViÃ±a",
+    "provincia": "Salta",
+    "lon": -65.58,
+    "lat": -25.44
+  },
+  {
+    "codigo_depto": 66105,
+    "nombre": "Los Andes",
+    "provincia": "Salta",
+    "lon": -67.35,
+    "lat": -24.64
+  },
+  {
+    "codigo_depto": 66112,
+    "nombre": "Metan",
+    "provincia": "Salta",
+    "lon": -64.6,
+    "lat": -25.43
+  },
+  {
+    "codigo_depto": 66119,
+    "nombre": "Molinos",
+    "provincia": "Salta",
+    "lon": -66.46,
+    "lat": -25.61
+  },
+  {
+    "codigo_depto": 74049,
+    "nombre": "Junin",
+    "provincia": "San Luis",
+    "lon": -65.39,
+    "lat": -32.21
+  },
+  {
+    "codigo_depto": 66126,
+    "nombre": "Oran",
+    "provincia": "Salta",
+    "lon": -64.15,
+    "lat": -23.49
+  },
+  {
+    "codigo_depto": 66133,
+    "nombre": "Rivadavia",
+    "provincia": "Salta",
+    "lon": -62.83,
+    "lat": -23.52
+  },
+  {
+    "codigo_depto": 66140,
+    "nombre": "Rosario de la Frontera",
+    "provincia": "Salta",
+    "lon": -64.73,
+    "lat": -25.88
+  },
+  {
+    "codigo_depto": 66147,
+    "nombre": "Rosario de Lerma",
+    "provincia": "Salta",
+    "lon": -65.85,
+    "lat": -24.53
+  },
+  {
+    "codigo_depto": 66154,
+    "nombre": "San Carlos",
+    "provincia": "Salta",
+    "lon": -66.15,
+    "lat": -25.82
+  },
+  {
+    "codigo_depto": 66161,
+    "nombre": "Santa Victoria",
+    "provincia": "Salta",
+    "lon": -64.89,
+    "lat": -22.36
+  },
+  {
+    "codigo_depto": 70007,
+    "nombre": "Albardon",
+    "provincia": "San Juan",
+    "lon": -68.45,
+    "lat": -31.21
+  },
+  {
+    "codigo_depto": 70014,
+    "nombre": "Angaco",
+    "provincia": "San Juan",
+    "lon": -68.13,
+    "lat": -31.19
+  },
+  {
+    "codigo_depto": 70021,
+    "nombre": "Calingasta",
+    "provincia": "San Juan",
+    "lon": -69.85,
+    "lat": -31.47
+  },
+  {
+    "codigo_depto": 70028,
+    "nombre": "Capital",
+    "provincia": "San Juan",
+    "lon": -68.53,
+    "lat": -31.53
+  },
+  {
+    "codigo_depto": 70035,
+    "nombre": "Caucete",
+    "provincia": "San Juan",
+    "lon": -67.54,
+    "lat": -31.51
+  },
+  {
+    "codigo_depto": 70042,
+    "nombre": "Chimbas",
+    "provincia": "San Juan",
+    "lon": -68.52,
+    "lat": -31.49
+  },
+  {
+    "codigo_depto": 70049,
+    "nombre": "Iglesia",
+    "provincia": "San Juan",
+    "lon": -69.44,
+    "lat": -29.62
+  },
+  {
+    "codigo_depto": 70056,
+    "nombre": "Jachal",
+    "provincia": "San Juan",
+    "lon": -68.44,
+    "lat": -30.35
+  },
+  {
+    "codigo_depto": 70063,
+    "nombre": "9 de julio",
+    "provincia": "San Juan",
+    "lon": -68.39,
+    "lat": -31.65
+  },
+  {
+    "codigo_depto": 70070,
+    "nombre": "Pocito",
+    "provincia": "San Juan",
+    "lon": -68.58,
+    "lat": -31.75
+  },
+  {
+    "codigo_depto": 70077,
+    "nombre": "Rawson",
+    "provincia": "San Juan",
+    "lon": -68.47,
+    "lat": -31.68
+  },
+  {
+    "codigo_depto": 70084,
+    "nombre": "Rivadavia",
+    "provincia": "San Juan",
+    "lon": -68.64,
+    "lat": -31.55
+  },
+  {
+    "codigo_depto": 70091,
+    "nombre": "San Martin",
+    "provincia": "San Juan",
+    "lon": -68.19,
+    "lat": -31.53
+  },
+  {
+    "codigo_depto": 70098,
+    "nombre": "Santa Lucia",
+    "provincia": "San Juan",
+    "lon": -68.45,
+    "lat": -31.53
+  },
+  {
+    "codigo_depto": 70105,
+    "nombre": "Sarmiento",
+    "provincia": "San Juan",
+    "lon": -68.69,
+    "lat": -32.07
+  },
+  {
+    "codigo_depto": 70112,
+    "nombre": "Ullum",
+    "provincia": "San Juan",
+    "lon": -68.89,
+    "lat": -31.09
+  },
+  {
+    "codigo_depto": 70119,
+    "nombre": "Valle Fertil",
+    "provincia": "San Juan",
+    "lon": -67.53,
+    "lat": -30.69
+  },
+  {
+    "codigo_depto": 70126,
+    "nombre": "25 de Mayo",
+    "provincia": "San Juan",
+    "lon": -67.83,
+    "lat": -31.99
+  },
+  {
+    "codigo_depto": 70133,
+    "nombre": "Zonda",
+    "provincia": "San Juan",
+    "lon": -68.96,
+    "lat": -31.63
+  },
+  {
+    "codigo_depto": 74007,
+    "nombre": "Ayacucho",
+    "provincia": "San Luis",
+    "lon": -66.58,
+    "lat": -32.19
+  },
+  {
+    "codigo_depto": 74014,
+    "nombre": "Belgrano",
+    "provincia": "San Luis",
+    "lon": -66.71,
+    "lat": -32.78
+  },
+  {
+    "codigo_depto": 74021,
+    "nombre": "Coronel Pringles",
+    "provincia": "San Luis",
+    "lon": -65.92,
+    "lat": -33.18
+  },
+  {
+    "codigo_depto": 74028,
+    "nombre": "Chacabuco",
+    "provincia": "San Luis",
+    "lon": -65.2,
+    "lat": -32.73
+  },
+  {
+    "codigo_depto": 74035,
+    "nombre": "General Pedernera",
+    "provincia": "San Luis",
+    "lon": -65.54,
+    "lat": -33.93
+  },
+  {
+    "codigo_depto": 74042,
+    "nombre": "Gobernador Dupuy",
+    "provincia": "San Luis",
+    "lon": -65.84,
+    "lat": -35.34
+  },
+  {
+    "codigo_depto": 74056,
+    "nombre": "La Capital",
+    "provincia": "San Luis",
+    "lon": -66.51,
+    "lat": -33.82
+  },
+  {
+    "codigo_depto": 74063,
+    "nombre": "Libertador General San Martin",
+    "provincia": "San Luis",
+    "lon": -65.71,
+    "lat": -32.6
+  },
+  {
+    "codigo_depto": 78007,
+    "nombre": "Corpen Aike",
+    "provincia": "Santa Cruz",
+    "lon": -69.45,
+    "lat": -49.95
+  },
+  {
+    "codigo_depto": 78014,
+    "nombre": "Deseado",
+    "provincia": "Santa Cruz",
+    "lon": -68.03,
+    "lat": -47.33
+  },
+  {
+    "codigo_depto": 78021,
+    "nombre": "Guer Aike",
+    "provincia": "Santa Cruz",
+    "lon": -70.56,
+    "lat": -51.41
+  },
+  {
+    "codigo_depto": 78028,
+    "nombre": "Lago Argentino",
+    "provincia": "Santa Cruz",
+    "lon": -72.07,
+    "lat": -49.84
+  },
+  {
+    "codigo_depto": 78035,
+    "nombre": "Lago Buenos Aires",
+    "provincia": "Santa Cruz",
+    "lon": -70.64,
+    "lat": -46.84
+  },
+  {
+    "codigo_depto": 78042,
+    "nombre": "Magallanes",
+    "provincia": "Santa Cruz",
+    "lon": -68.47,
+    "lat": -48.84
+  },
+  {
+    "codigo_depto": 78049,
+    "nombre": "Rio Chico",
+    "provincia": "Santa Cruz",
+    "lon": -71.12,
+    "lat": -48.29
+  },
+  {
+    "codigo_depto": 82007,
+    "nombre": "Belgrano",
+    "provincia": "Santa Fe",
+    "lon": -61.7,
+    "lat": -32.61
+  },
+  {
+    "codigo_depto": 82014,
+    "nombre": "Caseros",
+    "provincia": "Santa Fe",
+    "lon": -61.53,
+    "lat": -33.22
+  },
+  {
+    "codigo_depto": 82021,
+    "nombre": "Castellanos",
+    "provincia": "Santa Fe",
+    "lon": -61.66,
+    "lat": -31.23
+  },
+  {
+    "codigo_depto": 82028,
+    "nombre": "Constitucion",
+    "provincia": "Santa Fe",
+    "lon": -60.88,
+    "lat": -33.49
+  },
+  {
+    "codigo_depto": 82035,
+    "nombre": "Garay",
+    "provincia": "Santa Fe",
+    "lon": -60.13,
+    "lat": -31.06
+  },
+  {
+    "codigo_depto": 82042,
+    "nombre": "General Lopez",
+    "provincia": "Santa Fe",
+    "lon": -61.95,
+    "lat": -33.93
+  },
+  {
+    "codigo_depto": 82049,
+    "nombre": "General Obligado",
+    "provincia": "Santa Fe",
+    "lon": -59.53,
+    "lat": -28.67
+  },
+  {
+    "codigo_depto": 82056,
+    "nombre": "Iriondo",
+    "provincia": "Santa Fe",
+    "lon": -61.27,
+    "lat": -32.71
+  },
+  {
+    "codigo_depto": 82063,
+    "nombre": "La Capital",
+    "provincia": "Santa Fe",
+    "lon": -60.67,
+    "lat": -31.47
+  },
+  {
+    "codigo_depto": 82070,
+    "nombre": "Las Colonias",
+    "provincia": "Santa Fe",
+    "lon": -61.11,
+    "lat": -31.32
+  },
+  {
+    "codigo_depto": 82077,
+    "nombre": "9 de Julio",
+    "provincia": "Santa Fe",
+    "lon": -61.4,
+    "lat": -28.85
+  },
+  {
+    "codigo_depto": 82084,
+    "nombre": "Rosario",
+    "provincia": "Santa Fe",
+    "lon": -60.71,
+    "lat": -33.13
+  },
+  {
+    "codigo_depto": 82091,
+    "nombre": "San Cristobal",
+    "provincia": "Santa Fe",
+    "lon": -61.36,
+    "lat": -30.23
+  },
+  {
+    "codigo_depto": 82098,
+    "nombre": "San Javier",
+    "provincia": "Santa Fe",
+    "lon": -59.9,
+    "lat": -30.1
+  },
+  {
+    "codigo_depto": 82105,
+    "nombre": "San Jeronimo",
+    "provincia": "Santa Fe",
+    "lon": -61.05,
+    "lat": -32.15
+  },
+  {
+    "codigo_depto": 82112,
+    "nombre": "San Justo",
+    "provincia": "Santa Fe",
+    "lon": -60.49,
+    "lat": -30.53
+  },
+  {
+    "codigo_depto": 82119,
+    "nombre": "San Lorenzo",
+    "provincia": "Santa Fe",
+    "lon": -60.96,
+    "lat": -32.94
+  },
+  {
+    "codigo_depto": 82126,
+    "nombre": "San Martin",
+    "provincia": "Santa Fe",
+    "lon": -61.81,
+    "lat": -32.01
+  },
+  {
+    "codigo_depto": 82133,
+    "nombre": "Vera",
+    "provincia": "Santa Fe",
+    "lon": -60.41,
+    "lat": -28.97
+  },
+  {
+    "codigo_depto": 86007,
+    "nombre": "Aguirre",
+    "provincia": "Santiago del Estero",
+    "lon": -62.51,
+    "lat": -29.29
+  },
+  {
+    "codigo_depto": 86014,
+    "nombre": "Alberdi",
+    "provincia": "Santiago del Estero",
+    "lon": -62.73,
+    "lat": -26.54
+  },
+  {
+    "codigo_depto": 86021,
+    "nombre": "Atamisqui",
+    "provincia": "Santiago del Estero",
+    "lon": -63.87,
+    "lat": -28.68
+  },
+  {
+    "codigo_depto": 86028,
+    "nombre": "Avellaneda",
+    "provincia": "Santiago del Estero",
+    "lon": -63.21,
+    "lat": -28.55
+  },
+  {
+    "codigo_depto": 86035,
+    "nombre": "Banda",
+    "provincia": "Santiago del Estero",
+    "lon": -64.18,
+    "lat": -27.45
+  },
+  {
+    "codigo_depto": 86042,
+    "nombre": "Belgrano",
+    "provincia": "Santiago del Estero",
+    "lon": -62.22,
+    "lat": -29.08
+  },
+  {
+    "codigo_depto": 86049,
+    "nombre": "Capital",
+    "provincia": "Santiago del Estero",
+    "lon": -64.43,
+    "lat": -27.89
+  },
+  {
+    "codigo_depto": 86056,
+    "nombre": "Copo",
+    "provincia": "Santiago del Estero",
+    "lon": -62.74,
+    "lat": -25.95
+  },
+  {
+    "codigo_depto": 86063,
+    "nombre": "Choya",
+    "provincia": "Santiago del Estero",
+    "lon": -64.76,
+    "lat": -28.76
+  },
+  {
+    "codigo_depto": 86070,
+    "nombre": "Figueroa",
+    "provincia": "Santiago del Estero",
+    "lon": -63.57,
+    "lat": -27.31
+  },
+  {
+    "codigo_depto": 86077,
+    "nombre": "General Taboada",
+    "provincia": "Santiago del Estero",
+    "lon": -62.34,
+    "lat": -28.57
+  },
+  {
+    "codigo_depto": 86084,
+    "nombre": "Guasayan",
+    "provincia": "Santiago del Estero",
+    "lon": -64.87,
+    "lat": -27.97
+  },
+  {
+    "codigo_depto": 86091,
+    "nombre": "Jimenez",
+    "provincia": "Santiago del Estero",
+    "lon": -64.27,
+    "lat": -26.9
+  },
+  {
+    "codigo_depto": 86098,
+    "nombre": "Juan F. Ibarra",
+    "provincia": "Santiago del Estero",
+    "lon": -62.55,
+    "lat": -28.04
+  },
+  {
+    "codigo_depto": 86105,
+    "nombre": "Loreto",
+    "provincia": "Santiago del Estero",
+    "lon": -64.31,
+    "lat": -28.61
+  },
+  {
+    "codigo_depto": 86112,
+    "nombre": "Mitre",
+    "provincia": "Santiago del Estero",
+    "lon": -62.73,
+    "lat": -29.58
+  },
+  {
+    "codigo_depto": 86119,
+    "nombre": "Moreno",
+    "provincia": "Santiago del Estero",
+    "lon": -62.46,
+    "lat": -27.31
+  },
+  {
+    "codigo_depto": 86126,
+    "nombre": "Ojo de agua",
+    "provincia": "Santiago del Estero",
+    "lon": -63.99,
+    "lat": -29.3
+  },
+  {
+    "codigo_depto": 86133,
+    "nombre": "Pelegrini",
+    "provincia": "Santiago del Estero",
+    "lon": -64.09,
+    "lat": -26.21
+  },
+  {
+    "codigo_depto": 86140,
+    "nombre": "Quebrachos",
+    "provincia": "Santiago del Estero",
+    "lon": -63.35,
+    "lat": -29.37
+  },
+  {
+    "codigo_depto": 86147,
+    "nombre": "Rio Hondo",
+    "provincia": "Santiago del Estero",
+    "lon": -64.76,
+    "lat": -27.48
+  },
+  {
+    "codigo_depto": 86154,
+    "nombre": "Rivadavia",
+    "provincia": "Santiago del Estero",
+    "lon": -62.29,
+    "lat": -29.98
+  },
+  {
+    "codigo_depto": 86161,
+    "nombre": "Robles",
+    "provincia": "Santiago del Estero",
+    "lon": -63.91,
+    "lat": -27.85
+  },
+  {
+    "codigo_depto": 86168,
+    "nombre": "Salavina",
+    "provincia": "Santiago del Estero",
+    "lon": -63.3,
+    "lat": -28.92
+  },
+  {
+    "codigo_depto": 86175,
+    "nombre": "San Martin",
+    "provincia": "Santiago del Estero",
+    "lon": -63.86,
+    "lat": -28.19
+  },
+  {
+    "codigo_depto": 86182,
+    "nombre": "Sarmiento",
+    "provincia": "Santiago del Estero",
+    "lon": -63.46,
+    "lat": -28.09
+  },
+  {
+    "codigo_depto": 86189,
+    "nombre": "Silipica",
+    "provincia": "Santiago del Estero",
+    "lon": -64.28,
+    "lat": -28.18
+  },
+  {
+    "codigo_depto": 90007,
+    "nombre": "Burruyacu",
+    "provincia": "Tucuman",
+    "lon": -64.82,
+    "lat": -26.52
+  },
+  {
+    "codigo_depto": 90014,
+    "nombre": "Cruz Alta",
+    "provincia": "Tucuman",
+    "lon": -64.98,
+    "lat": -26.92
+  },
+  {
+    "codigo_depto": 90021,
+    "nombre": "Chicligasta",
+    "provincia": "Tucuman",
+    "lon": -65.81,
+    "lat": -27.27
+  },
+  {
+    "codigo_depto": 90028,
+    "nombre": "Famalla",
+    "provincia": "Tucuman",
+    "lon": -65.47,
+    "lat": -26.98
+  },
+  {
+    "codigo_depto": 90035,
+    "nombre": "Graneros",
+    "provincia": "Tucuman",
+    "lon": -65.25,
+    "lat": -27.71
+  },
+  {
+    "codigo_depto": 90042,
+    "nombre": "Juan B. Alberdi",
+    "provincia": "Tucuman",
+    "lon": -65.78,
+    "lat": -27.61
+  },
+  {
+    "codigo_depto": 90049,
+    "nombre": "La Cocha",
+    "provincia": "Tucuman",
+    "lon": -65.6,
+    "lat": -27.79
+  },
+  {
+    "codigo_depto": 90056,
+    "nombre": "Leales",
+    "provincia": "Tucuman",
+    "lon": -65.09,
+    "lat": -27.19
+  },
+  {
+    "codigo_depto": 90063,
+    "nombre": "Lules",
+    "provincia": "Tucuman",
+    "lon": -65.42,
+    "lat": -26.86
+  },
+  {
+    "codigo_depto": 90070,
+    "nombre": "Monteros",
+    "provincia": "Tucuman",
+    "lon": -65.64,
+    "lat": -27.11
+  },
+  {
+    "codigo_depto": 90077,
+    "nombre": "Rio Chico",
+    "provincia": "Tucuman",
+    "lon": -65.76,
+    "lat": -27.46
+  },
+  {
+    "codigo_depto": 90084,
+    "nombre": "Capital",
+    "provincia": "Tucuman",
+    "lon": -65.22,
+    "lat": -26.83
+  },
+  {
+    "codigo_depto": 90091,
+    "nombre": "Simoca",
+    "provincia": "Tucuman",
+    "lon": -65.29,
+    "lat": -27.42
+  },
+  {
+    "codigo_depto": 90098,
+    "nombre": "Tafi del Valle",
+    "provincia": "Tucuman",
+    "lon": -65.88,
+    "lat": -26.6
+  },
+  {
+    "codigo_depto": 90105,
+    "nombre": "Tafi Viejo",
+    "provincia": "Tucuman",
+    "lon": -65.45,
+    "lat": -26.66
+  },
+  {
+    "codigo_depto": 90112,
+    "nombre": "Trancas",
+    "provincia": "Tucuman",
+    "lon": -65.41,
+    "lat": -26.34
+  },
+  {
+    "codigo_depto": 90119,
+    "nombre": "Yerba Buena",
+    "provincia": "Tucuman",
+    "lon": -65.35,
+    "lat": -26.79
+  },
+  {
+    "codigo_depto": 94007,
+    "nombre": "Rio Grande",
+    "provincia": "Tierra del Fuego",
+    "lon": -67.9,
+    "lat": -54.03
+  },
+  {
+    "codigo_depto": 94014,
+    "nombre": "Ushuaia",
+    "provincia": "Tierra del Fuego",
+    "lon": -66.74,
+    "lat": -54.75
+  }
+]

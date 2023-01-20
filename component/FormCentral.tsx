@@ -1,6 +1,8 @@
 import { trpc } from '../utils/trpc';
 import Link from 'next/link';
 
+import {useSession} from 'next-auth/react'
+
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,6 +10,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const FormCentral=()=>{
+    const {status,data} = useSession()
     const deptos = trpc.departamentos.useQuery()
     if(deptos.isLoading){
         return <div>loading...</div>
@@ -16,7 +19,7 @@ const FormCentral=()=>{
         <>
             <label>Datos Basicos Central</label>
 
-        <Link href='/' legacyBehavior passHref>
+        <Link href={('/empresa/'+data?.user?.name) ?? '/'} legacyBehavior passHref>
             <Button size='sm' className='mx-4'>Volver a Empresa</Button>
             </Link>
             <Row>

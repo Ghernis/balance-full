@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Link from 'next/link';
+import {useSession} from 'next-auth/react'
 
 import ListaDeptos from './ListaDeptos';
 import Intercambio from './Intercambio';
@@ -11,11 +12,12 @@ import Tabs from 'react-bootstrap/Tabs'
 import Button from 'react-bootstrap/Button'
 
 const Variable=()=>{
+    const {status,data} = useSession()
     const [key,setKey] = useState('facturado')
     return (
         <>
             <div className='container'>
-                <Link href='/' legacyBehavior>
+                <Link href={('/empresa/'+data?.user?.name) ?? '/'} legacyBehavior>
                     <Button size='sm' className='my-3'>Volver atras</Button>
                 </Link>
                 <h3>Declaracion Variable</h3>

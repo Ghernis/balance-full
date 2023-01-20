@@ -1,0 +1,190 @@
+"afdf79d","gherni","Fri, 20 Jan 2023 13:11:03 -0300","add ruta empresa con empresaid",
+ 3 files changed, 28 insertions(+), 3 deletions(-)
+
+"c8046ca","gherni","Fri, 20 Jan 2023 10:20:27 -0300","comit de merge?",
+"4ee2ea0","gherni","Fri, 20 Jan 2023 10:17:53 -0300","fix esteticos y trim last line",
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+"fd72d10","gherni","Fri, 20 Jan 2023 10:08:15 -0300","update prisma",
+ 2 files changed, 32 insertions(+), 32 deletions(-)
+
+"0216a28","gherni","Thu, 19 Jan 2023 15:58:15 -0300","semi implementado en facturado",
+ 2 files changed, 22 insertions(+), 21 deletions(-)
+
+"5934220","gherni","Thu, 19 Jan 2023 14:22:38 -0300","implementado con handler local, falta guardar estado de los inputs",
+ 2 files changed, 63 insertions(+), 4 deletions(-)
+
+"88c746e","gherni","Thu, 19 Jan 2023 12:50:41 -0300","fix props comp empresa",
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+"ae8e162","gherni","Thu, 19 Jan 2023 12:09:09 -0300","delete hello.ts example",
+ 1 file changed, 13 deletions(-)
+
+"4c48a76","gherni","Thu, 19 Jan 2023 12:00:49 -0300","fix interface user de jwt",
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+"f4038c3","Hernan Gomez","Wed, 18 Jan 2023 22:40:19 -0300","add middleware para roles y pagina protegida por rol admin",
+ 6 files changed, 83 insertions(+), 20 deletions(-)
+
+"1228c26","Hernan Gomez","Wed, 18 Jan 2023 21:34:27 -0300","add nextauth con credenciales, no se conecta a bd todavia, solo implementacion",
+ 6 files changed, 111 insertions(+), 11 deletions(-)
+
+"65eaaf3","gherni","Tue, 17 Jan 2023 14:40:59 -0300","fix cuadro cmb multiples cmbs",
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+"b8c06c3","gherni","Tue, 17 Jan 2023 14:26:15 -0300","update version in dockerfile",
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+"9f3b698","gherni","Tue, 17 Jan 2023 13:40:01 -0300","centrales variable con componentes para combustible y energia",
+ 4 files changed, 108 insertions(+), 1 deletion(-)
+
+"06eacd6","gherni","Tue, 17 Jan 2023 12:54:49 -0300","add component balance vacio",
+ 3 files changed, 18 insertions(+), 5 deletions(-)
+
+"83af144","gherni","Tue, 17 Jan 2023 12:33:16 -0300","fix cuadro para que tenga input objects",
+ 4 files changed, 175 insertions(+), 17 deletions(-)
+
+"dd53f13","gherni","Tue, 17 Jan 2023 12:03:34 -0300","dev componente intercambio",
+ 3 files changed, 86 insertions(+), 2 deletions(-)
+
+"45ec730","gherni","Mon, 16 Jan 2023 15:35:07 -0300","add lista de deptos para tabla de facturacion",
+ 4 files changed, 101 insertions(+), 5 deletions(-)
+
+"e43f4e9","gherni","Mon, 16 Jan 2023 10:37:17 -0300","fix docker compose",
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+"9f58983","gherni","Mon, 16 Jan 2023 09:53:08 -0300","fix docker files",
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+"ec81cdf","Hernan Gomez","Sun, 15 Jan 2023 21:48:59 -0300","add docker-compose",
+ 1 file changed, 9 insertions(+)
+
+"d237186","Hernan Gomez","Sun, 15 Jan 2023 21:48:24 -0300","add dockerfile docker ignore y config para hacer standalone app nextjs",
+ 3 files changed, 66 insertions(+), 1 deletion(-)
+
+"8394083","Hernan Gomez","Sun, 15 Jan 2023 20:14:29 -0300","mods a pagina variable",
+ 4 files changed, 110 insertions(+), 7 deletions(-)
+
+"97c6439","Hernan Gomez","Sun, 15 Jan 2023 17:16:13 -0300","fix select que siempre quedaba en primera",
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+"27d1206","Hernan Gomez","Sun, 15 Jan 2023 16:50:53 -0300","cambie existe data por isLoading, saque handler que no hace nada",
+ 2 files changed, 2 insertions(+), 45 deletions(-)
+
+"a4c5ac7","Hernan Gomez","Sun, 15 Jan 2023 00:52:05 -0300","add conections to main form with api",
+ 2 files changed, 46 insertions(+), 12 deletions(-)
+
+"4f7c3df","Hernan Gomez","Sat, 14 Jan 2023 20:46:05 -0300","add link element to card elements, format to central form",
+ 3 files changed, 92 insertions(+), 59 deletions(-)
+
+"a9bd7de","Hernan Gomez","Sat, 14 Jan 2023 18:27:40 -0300","add data para cuadro de maquinas",
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+"df6c02a","Hernan Gomez","Sat, 14 Jan 2023 17:24:36 -0300","fix cuadro admite titulo, titulos pasa a ser headers",
+ 3 files changed, 9 insertions(+), 4 deletions(-)
+
+"b79f338","Hernan Gomez","Sat, 14 Jan 2023 17:13:56 -0300","fix cuadro dinamico pasando data y titulos",
+ 2 files changed, 26 insertions(+), 28 deletions(-)
+
+"c01e720","Hernan Gomez","Sat, 14 Jan 2023 16:59:37 -0300","add centrales component, page, relative page y inint form central",
+ 4 files changed, 137 insertions(+), 46 deletions(-)
+
+"797dccf","Hernan Gomez","Sat, 14 Jan 2023 16:58:45 -0300","fix imagenes en public para esten accesibles en todas las rutas",
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+"b424f87","Hernan Gomez","Sat, 14 Jan 2023 15:12:35 -0300","update listado de centrales por el objeto que corresponde",
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+"b44ffae","Hernan Gomez","Sat, 14 Jan 2023 02:31:17 -0300","add disabled a form, cambie titulo cuadro personal",
+ 3 files changed, 16 insertions(+), 5 deletions(-)
+
+"6ce9762","Hernan Gomez","Sat, 14 Jan 2023 02:05:05 -0300","add botones para actualizar datos basicos y disableds para que tengan que tener intencion de modificarlos",
+ 2 files changed, 63 insertions(+), 10 deletions(-)
+
+"3706a15","Hernan Gomez","Fri, 13 Jan 2023 23:50:53 -0300","install react query devtools, poner valores en los inputs ya. falta ver que pasa cuando no hay data y como armar el usestate",
+ 6 files changed, 176 insertions(+), 25 deletions(-)
+
+"45fc23b","Hernan Gomez","Fri, 13 Jan 2023 22:24:03 -0300","add footer y nav bar basicos",
+ 7 files changed, 613 insertions(+), 20 deletions(-)
+
+"9ee292c","Hernan Gomez","Fri, 13 Jan 2023 17:51:50 -0300","add format al form de datos basicos, agrege comp cuadro para personal y cambie las alertas",
+ 3 files changed, 176 insertions(+), 80 deletions(-)
+
+"3806882","Hernan Gomez","Fri, 13 Jan 2023 17:51:00 -0300","add 100 and 200 font weight",
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+"f671c9d","gherni","Thu, 12 Jan 2023 16:30:22 -0300","add componentes para formularios y listas partes de la main page datos basicos",
+ 4 files changed, 267 insertions(+), 139 deletions(-)
+
+"5c97a45","gherni","Thu, 12 Jan 2023 13:35:47 -0300","agrege los imports de bootstrap poncho porque los saque en otro comit sin querer",
+ 1 file changed, 2 insertions(+)
+
+"3924fda","gherni","Thu, 12 Jan 2023 13:31:50 -0300","install next-aut sin config",
+ 4 files changed, 1365 insertions(+), 5 deletions(-)
+
+"6c91b2c","gherni","Thu, 12 Jan 2023 13:31:30 -0300","rebase fix prisma",
+ 3 files changed, 69 insertions(+), 3 deletions(-)
+
+"ebaf1cc","Hernan Gomez","Sun, 15 Jan 2023 00:52:54 -0300","Merge branch 'schema'",
+"2e02b4a","Hernan Gomez","Sun, 15 Jan 2023 00:52:38 -0300","fix empresa endpoint para llenar el form main",
+ 1 file changed, 8 insertions(+)
+
+"53ed20a","Hernan Gomez","Sat, 14 Jan 2023 18:44:51 -0300","Merge branch 'schema'",
+"006035b","Hernan Gomez","Sat, 14 Jan 2023 18:44:28 -0300","add enum para tecnologia de maquinas siguiendo guia de Pablo R",
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+
+"29ebea8","Hernan Gomez","Sat, 14 Jan 2023 15:27:24 -0300","Merge branch 'schema'",
+"0e7aa95","Hernan Gomez","Sat, 14 Jan 2023 15:14:26 -0300","change response api sin resp object. fastan mas enponits",
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+"9d97055","Hernan Gomez","Fri, 13 Jan 2023 21:59:31 -0300","add instancia de prisma al estado global de node para que no se llenen las conecciones",
+ 3 files changed, 18 insertions(+), 3 deletions(-)
+
+"a157666","gherni","Wed, 11 Jan 2023 16:11:07 -0300","fix typo",
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+"65f126c","gherni","Wed, 11 Jan 2023 16:10:23 -0300","endpoints para todo variable y array de maquinas. es esquema fue cambiando",
+ 2 files changed, 147 insertions(+), 11 deletions(-)
+
+"ccfa326","Hernan Gomez","Tue, 10 Jan 2023 23:59:14 -0300","departamentos en index",
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+"7f5ddeb","Hernan Gomez","Tue, 10 Jan 2023 23:58:43 -0300","add endpoints de centrales, empresa by id, variable. Checkear y unificar nobres de endpoints y tambien nombreId y empresaId",
+ 2 files changed, 58 insertions(+), 12 deletions(-)
+
+"95e5fc7","Hernan Gomez","Mon, 9 Jan 2023 22:54:46 -0300","comence con endpoint de centrales, ver opcionales e ids unicos para where",
+ 2 files changed, 52 insertions(+), 3 deletions(-)
+
+"3b18e51","Hernan Gomez","Mon, 9 Jan 2023 22:16:12 -0300","add endpoints upsert empresas y update depto empresa",
+ 2 files changed, 44 insertions(+), 20 deletions(-)
+
+"77ab268","Hernan Gomez","Mon, 9 Jan 2023 21:26:51 -0300","add enpoints departamentos modifique csv, hay una mutacion ejemplo de depto para postman",
+ 4 files changed, 602 insertions(+), 553 deletions(-)
+
+"7f5db23","Hernan Gomez","Mon, 9 Jan 2023 20:00:40 -0300","fix index",
+ 3 files changed, 44 insertions(+), 40 deletions(-)
+
+"c87879e","Hernan Gomez","Mon, 9 Jan 2023 19:27:12 -0300","merge conflicts",
+"ee6aba8","Hernan Gomez","Fri, 6 Jan 2023 18:27:17 -0300","bootstrap y react-bootstrap con algun comp react, tambien borre los css defaults",
+ 7 files changed, 462 insertions(+), 389 deletions(-)
+
+"579c84d","Hernan Gomez","Sat, 7 Jan 2023 23:50:57 -0300","add deptos del pais, enums para tabla empresa, pase fonts de google a _document",
+ 4 files changed, 647 insertions(+), 83 deletions(-)
+
+"473cf5a","Hernan Gomez","Fri, 6 Jan 2023 18:27:17 -0300","bootstrap y react-bootstrap con algun comp react",
+ 7 files changed, 462 insertions(+), 389 deletions(-)
+
+"a364853","gherni","Fri, 6 Jan 2023 16:32:42 -0300","test mutation button en index",
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+"fccf00d","gherni","Fri, 6 Jan 2023 16:19:54 -0300","mutation ejemplo en trpc",
+ 3 files changed, 40 insertions(+), 16 deletions(-)
+
+"c3291d0","gherni","Fri, 6 Jan 2023 15:10:05 -0300","agrege prisma a trpc",
+ 6 files changed, 393 insertions(+), 2 deletions(-)
+
+"d572e82","gherni","Fri, 6 Jan 2023 14:29:51 -0300","init con trpc configurado",
+ 9 files changed, 270 insertions(+), 124 deletions(-)
+
+"0b9de44","gherni","Fri, 6 Jan 2023 14:05:42 -0300","Initial commit from Create Next App",
+ 17 files changed, 6000 insertions(+)

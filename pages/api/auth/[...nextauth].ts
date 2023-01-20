@@ -23,7 +23,7 @@ export const authOptions:NextAuthOptions = {
                 }
                 return {
                     id: '123',
-                    name: 'hernan',
+                    name: 'distri2',
                     email: 'herni',
                     role: 'admin'
                 }

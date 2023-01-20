@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import {useSession} from 'next-auth/react'
 import Router,{ useRouter } from 'next/router'
 
+import Empresa from '../../component/Empresa';
+
 const EmpresaId=()=>{
     const router = useRouter()
     const {empresaid} = router.query
@@ -12,13 +14,13 @@ const EmpresaId=()=>{
 
     if(status ==='authenticated' && data.user?.name==empresaid){
         return (
-            <div>This page is protected.
-                {JSON.stringify(data.user,null,2)+','+empresaid}
-            </div>
+            <>
+                <Empresa nombreId={data.user?.name} />
+            </>
         )
     }
     return (
-    <div>loading</div>
+    <div>No estas autorizado</div>
     )
 }
 

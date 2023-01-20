@@ -16,7 +16,6 @@ const Empresa =(props:any)=>{
     const {nombreId} = props
     const [empresa_id,setEmpresa] = useState(nombreId)
 
-    const empresas = trpc.empresas.useQuery()
     const deptos = trpc.departamentos.useQuery()
     const empresa = trpc.empresa_id.useQuery({nombreId:empresa_id})
 
@@ -69,29 +68,13 @@ const Empresa =(props:any)=>{
     //useEffect(()=>{
     //    trpc.empresa_id.useQuery({nombreId:empresa_id})
     //},[empresa_id])
-    if(empresa.isLoading || empresas.isLoading || deptos.isLoading){
+    if(empresa.isLoading || deptos.isLoading){
         return <div>loading</div>
     }
 
-    function selectEmpresa(name:React.ChangeEvent<HTMLSelectElement>){
-        //console.log(name.target.value)
-        setEmpresa(name.target.value)
-    }
     return (
         <div>
             <div className='container my-4'>
-                <label>Selecciona Empresa(esto es para testeo solamente)</label>
-                <Form.Select size="lg" onChange={selectEmpresa} value={empresa_id}>
-                    {
-                        empresas.data.map((emp:any)=>{
-                            return <option key={emp.id} value={emp.nombreId}>{emp.nombre}</option>
-                        })
-                    }
-                </Form.Select>
-                <Alert variant='warning' className='my-4'>
-                    <strong>Nota: </strong>^Este selector de empresa no estara en la version final. Todavia no tengo claro como sera el registro, ni si es mi responsabilidad o ya hay otro sistema
-
-                </Alert>
                 <Alert variant='info' className='my-4'>
                     <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
                 </Alert>

@@ -10,7 +10,7 @@ import Empresa from '../component/Empresa'
 export default function Home() {
     return (
         <>
-            <Empresa nombreId='distri2' />
+            <div>pagina publica</div>
         </>
     )
 }

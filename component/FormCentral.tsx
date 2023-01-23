@@ -9,12 +9,14 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
-const FormCentral=()=>{
+const FormCentral=(props)=>{
     const {status,data} = useSession()
     const deptos = trpc.departamentos.useQuery()
-    if(deptos.isLoading){
+    const central = trpc.central_id.useQuery({empresaId:'distri2',nemo:'central1'})
+    if(deptos.isLoading || central.isLoading){
         return <div>loading...</div>
     }
+    console.log(central.data)
     return (
         <>
             <label>Datos Basicos Central</label>

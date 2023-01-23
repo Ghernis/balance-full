@@ -178,6 +178,35 @@ export const appRouter = router({
         })
         return {resp}
     }),
+    central_id: procedure
+    .input(
+        z.object({
+            nemo: z.string(),
+            empresaId: z.string()
+        })
+    )
+    .query(async({input})=>{
+        const resp = await prisma.central.findFirst({
+            where:{
+                nemo: input.nemo,
+                empresaId:input.empresaId
+            },
+            select:{
+                nombre:true,
+                nemo:true,
+                direccion:true,
+                localidad:true,
+                partido:true,
+                provincia:true,
+                sistema:true,
+                notas:true,
+                destino:true,
+                actividad:true,
+                departamentoId:true
+            }
+        })
+        return resp
+    }),
     centrales: procedure
     .query(async()=>{
         const resp = await prisma.central.findMany({

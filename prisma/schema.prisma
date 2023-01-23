@@ -74,14 +74,15 @@ model Variable {
 model VariableCentral {
     anio Int
     mes Int
-    central Central @relation(fields:[centralId],references:[id])
-    centralId Int
-
+    central Central @relation(fields:[centralId,empresaId],references:[nemo,empresaId])
+    centralId String
+    empresaId String
+ 
     combustible Combustible[]
     //energiaPropia Energia
     energiaBruto Energia?
 
-    @@id([anio,mes,centralId])
+    @@id([anio,mes,centralId,empresaId])
 }
 
 model Personal {
@@ -107,9 +108,8 @@ model Personal {
 }
 
 model Central {
-    id Int @id @default(autoincrement())
+    nemo String
     nombre String
-    nemo String @unique
     direccion String
     localidad String
     partido String
@@ -128,6 +128,8 @@ model Central {
     departamentoId Int?
 
     variable VariableCentral[]
+
+    @@unique([nemo,empresaId])
 }
 
 model Energia {
@@ -139,12 +141,13 @@ model Energia {
     tg Float
     eolico Float
 
-    variableCentral VariableCentral @relation(fields:[anio,mes,centralId],references:[anio,mes,centralId])
-    centralId Int
+    variableCentral VariableCentral @relation(fields:[anio,mes,centralId,empresaId],references:[anio,mes,centralId,empresaId])
+    centralId String
+    empresaId String
     anio Int
     mes Int
 
-    @@id([anio,mes,centralId])
+    @@id([anio,mes,centralId,empresaId])
 }
 
 model Combustible {
@@ -156,12 +159,13 @@ model Combustible {
     vol Float
     claseProd String
 
-    variableCentral VariableCentral @relation(fields:[anio,mes,centralId],references:[anio,mes,centralId])
-    centralId Int
+    variableCentral VariableCentral @relation(fields:[anio,mes,centralId,empresaId],references:[anio,mes,centralId,empresaId])
+    centralId String
+    empresaId String
 }
 
 model Maquina {
-    numero String @unique
+    numero String
     tecnologia TipoTecnologia
     marca String
     tension Float
@@ -173,9 +177,10 @@ model Maquina {
     fechaPS String
     tipoCte String
 
-    central Central @relation(fields:[centralId],references:[nemo])
+    central Central @relation(fields:[centralId,empresaId],references:[nemo,empresaId])
     centralId String
-    @@id([numero,centralId])
+    empresaId String
+    @@unique([numero,centralId,empresaId])
 }
 
 

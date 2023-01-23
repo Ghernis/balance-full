@@ -79,6 +79,7 @@ export const appRouter = router({
                 sistema: true,
                 destino: true,
                 tipo: true,
+                departamentoId:true
             }
         })
         return resp
@@ -100,6 +101,7 @@ export const appRouter = router({
             contacto: z.string().optional(),
             sistema: z.enum(SistemaEnums).optional(),
             destino: z.enum(DestinoEnums).optional(),
+            departamentoId: z.number().optional(),
         })
     )
     .mutation(async({input})=>{

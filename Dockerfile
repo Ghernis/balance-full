@@ -55,5 +55,6 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["yarn", "migrateDB"]
+RUN npx prisma migrate deploy
+
 CMD ["node", "server.js"]

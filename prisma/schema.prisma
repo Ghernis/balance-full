@@ -17,287 +17,307 @@ datasource db {
   //shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+model Usuario {
+  //id          Int     @id @default(autoincrement())
+  nombreId    String  @id
+  role        Role    @default(USER)
+  mail        String
+  password    String
+  habilitado  Boolean @default(false)
+  informacion Boolean @default(false)
+  verificada  Boolean @default(false)
+  empresa     Empresa? 
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
 model Empresa {
-    id Int @id @default(autoincrement())
-    nombre String
-    nombreId String @unique
-    tipo TipoEmpresa
-    nemo String?
-    direccion String?
-    tel String?
-    localidad String?
-    departamentoLeg String?
-    provincia String?
-    cp String?
-    mail String?
-    contacto String?
-    sistema TipoSistema?
-    destino TipoDestino?
-    personal Personal?
+  id              Int          @id @default(autoincrement())
+  nombre          String
+  nombreId        String       @unique
+  tipo            TipoEmpresa
+  nemo            String?
+  direccion       String?
+  tel             String?
+  localidad       String?
+  departamentoLeg String?
+  provincia       String?
+  cp              String?
+  mail            String?
+  contacto        String?
+  sistema         TipoSistema?
+  destino         TipoDestino?
+  personal        Personal?
 
-    departamento Departamento? @relation(fields:[departamentoId],references:[id])
-    departamentoId Int?
+  departamento   Departamento? @relation(fields: [departamentoId], references: [id])
+  departamentoId Int?
 
-    centrales Central[]
-    variable Variable[]
+  centrales Central[]
+  variable  Variable[]
+  usuario   Usuario @relation(fields:[nombreId],references:[nombreId])
 }
 
 enum TipoSistema {
-    Conectado
-    Aislado
+  Conectado
+  Aislado
 }
 
 enum TipoDestino {
-    VentaUsuarios
-    Resguardo
-    ConsumoPropio
+  VentaUsuarios
+  Resguardo
+  ConsumoPropio
 }
 
 enum TipoEmpresa {
-    Distribuidora
-    Cooperativa
-    Autoproductor
+  Distribuidora
+  Cooperativa
+  Autoproductor
 }
 
 model Variable {
-    anio Int
-    mes Int
-    empresa Empresa @relation(fields:[empresaId],references:[nombreId])
-    empresaId String
-    enComprada Intercambio[]
-    balEnergia Balance?
-    facturado Facturado[]
+  anio       Int
+  mes        Int
+  empresa    Empresa       @relation(fields: [empresaId], references: [nombreId])
+  empresaId  String
+  enComprada Intercambio[]
+  balEnergia Balance?
+  facturado  Facturado[]
 
-    @@id([anio,mes,empresaId])
+  @@id([anio, mes, empresaId])
 }
 
 model VariableCentral {
-    anio Int
-    mes Int
-    central Central @relation(fields:[centralId,empresaId],references:[nemo,empresaId])
-    centralId String
-    empresaId String
- 
-    combustible Combustible[]
-    //energiaPropia Energia
-    energiaBruto Energia?
+  anio      Int
+  mes       Int
+  central   Central @relation(fields: [centralId, empresaId], references: [nemo, empresaId])
+  centralId String
+  empresaId String
 
-    @@id([anio,mes,centralId,empresaId])
+  combustible  Combustible[]
+  //energiaPropia Energia
+  energiaBruto Energia?
+
+  @@id([anio, mes, centralId, empresaId])
 }
 
 model Personal {
-    id Int @id @default(autoincrement())
-    profesionales Int
-    tecnicos Int
-    administrativos Int
-    obreros Int
-    profesionalesM Int
-    tecnicosM Int
-    administrativosM Int
-    obrerosM Int
-    profesionalesF Int
-    tecnicosF Int
-    administrativosF Int
-    obrerosF Int
-    obsProfesionales String
-    obsTecnicos String
-    obsAdministrativos String
-    obsObreros String
-    empresa Empresa @relation(fields:[empresaId],references:[id])
-    empresaId Int @unique
+  id                 Int     @id @default(autoincrement())
+  profesionales      Int
+  tecnicos           Int
+  administrativos    Int
+  obreros            Int
+  profesionalesM     Int
+  tecnicosM          Int
+  administrativosM   Int
+  obrerosM           Int
+  profesionalesF     Int
+  tecnicosF          Int
+  administrativosF   Int
+  obrerosF           Int
+  obsProfesionales   String
+  obsTecnicos        String
+  obsAdministrativos String
+  obsObreros         String
+  empresa            Empresa @relation(fields: [empresaId], references: [id])
+  empresaId          Int     @unique
 }
 
 model Central {
-    nemo String
-    nombre String
-    direccion String
-    localidad String
-    partido String
-    provincia String
-    sistema TipoSistema
-    notas String
-    destino TipoDestino
-    actividad String
+  nemo      String
+  nombre    String
+  direccion String
+  localidad String
+  partido   String
+  provincia String
+  sistema   TipoSistema
+  notas     String
+  destino   TipoDestino
+  actividad String
 
-    empresa Empresa @relation(fields:[empresaId],references:[nombreId])
-    empresaId String
+  empresa   Empresa @relation(fields: [empresaId], references: [nombreId])
+  empresaId String
 
-    maquinas Maquina[]
+  maquinas Maquina[]
 
-    departamento Departamento? @relation(fields:[departamentoId],references:[id])
-    departamentoId Int?
+  departamento   Departamento? @relation(fields: [departamentoId], references: [id])
+  departamentoId Int?
 
-    variable VariableCentral[]
+  variable VariableCentral[]
 
-    @@unique([nemo,empresaId])
+  @@unique([nemo, empresaId])
 }
 
 model Energia {
-    id Int @default(autoincrement())
-    solar Float
-    diesel Float
-    hidro Float
-    tv Float
-    tg Float
-    eolico Float
+  id     Int   @default(autoincrement())
+  solar  Float
+  diesel Float
+  hidro  Float
+  tv     Float
+  tg     Float
+  eolico Float
 
-    variableCentral VariableCentral @relation(fields:[anio,mes,centralId,empresaId],references:[anio,mes,centralId,empresaId])
-    centralId String
-    empresaId String
-    anio Int
-    mes Int
+  variableCentral VariableCentral @relation(fields: [anio, mes, centralId, empresaId], references: [anio, mes, centralId, empresaId])
+  centralId       String
+  empresaId       String
+  anio            Int
+  mes             Int
 
-    @@id([anio,mes,centralId,empresaId])
+  @@id([anio, mes, centralId, empresaId])
 }
 
 model Combustible {
-    id Int @id @default(autoincrement())
-    anio Int
-    mes Int
-    cmb String
-    unidad String
-    vol Float
-    claseProd String
+  id        Int    @id @default(autoincrement())
+  anio      Int
+  mes       Int
+  cmb       String
+  unidad    String
+  vol       Float
+  claseProd String
 
-    variableCentral VariableCentral @relation(fields:[anio,mes,centralId,empresaId],references:[anio,mes,centralId,empresaId])
-    centralId String
-    empresaId String
+  variableCentral VariableCentral @relation(fields: [anio, mes, centralId, empresaId], references: [anio, mes, centralId, empresaId])
+  centralId       String
+  empresaId       String
 }
 
 model Maquina {
-    numero String
-    tecnologia TipoTecnologia
-    marca String
-    tension Float
-    kva Float
-    fp Float
-    kw Float
-    potenciaEf Float
-    potenciaHP Float
-    fechaPS String
-    tipoCte String
+  numero     String
+  tecnologia TipoTecnologia
+  marca      String
+  tension    Float
+  kva        Float
+  fp         Float
+  kw         Float
+  potenciaEf Float
+  potenciaHP Float
+  fechaPS    String
+  tipoCte    String
 
-    central Central @relation(fields:[centralId,empresaId],references:[nemo,empresaId])
-    centralId String
-    empresaId String
-    @@unique([numero,centralId,empresaId])
+  central   Central @relation(fields: [centralId, empresaId], references: [nemo, empresaId])
+  centralId String
+  empresaId String
+
+  @@unique([numero, centralId, empresaId])
 }
 
-
 enum TipoTecnologia {
-    TV
-    TG
-    CC
-    HID
-    EO
-    SOL
-    FV
-    BG
-    BM
+  TV
+  TG
+  CC
+  HID
+  EO
+  SOL
+  FV
+  BG
+  BM
 }
 
 model Intercambio {
-    id Int @default(autoincrement())
-    anio Int
-    mes Int
-    ente String
-    quien String
-    energia Float
-    tension Float
-    tipo TipoIntercambio
+  id      Int             @default(autoincrement())
+  anio    Int
+  mes     Int
+  ente    String
+  quien   String
+  energia Float
+  tension Float
+  tipo    TipoIntercambio
 
-    variable Variable @relation(fields:[anio,mes,empresaId],references:[anio,mes,empresaId])
-    empresaId String
-    @@id([id,anio,mes,tipo,empresaId])
+  variable  Variable @relation(fields: [anio, mes, empresaId], references: [anio, mes, empresaId])
+  empresaId String
+
+  @@id([id, anio, mes, tipo, empresaId])
 }
 
 enum TipoIntercambio {
-    Venta
-    Compra
+  Venta
+  Compra
 }
 
 model Balance {
-    id Int @default(autoincrement())
-    anio Int
-    mes Int
-    enProd Float
-    comprada Float
-    consumoPropio Float
-    disp Float
-    vendida Float
-    red Float
-    facturada Float
-    perdidas Float
+  id            Int   @default(autoincrement())
+  anio          Int
+  mes           Int
+  enProd        Float
+  comprada      Float
+  consumoPropio Float
+  disp          Float
+  vendida       Float
+  red           Float
+  facturada     Float
+  perdidas      Float
 
-    variable Variable @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId String
-    @@unique([empresaId,anio,mes])
+  variable  Variable @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
+  empresaId String
+
+  @@unique([empresaId, anio, mes])
 }
 
 model Facturado {
-    id Int @default(autoincrement())
-    concepto Concepto[]
+  id       Int        @default(autoincrement())
+  concepto Concepto[]
 
-    variable Variable @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId String
-    anio Int
-    mes Int
+  variable  Variable @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
+  empresaId String
+  anio      Int
+  mes       Int
 
-    departamentos FacturadoDepartamento[]
+  departamentos FacturadoDepartamento[]
 
-    @@id([empresaId,anio,mes])
+  @@id([empresaId, anio, mes])
 }
 
 enum TipoConcepto {
-    Residencial
-    Comercial
-    Industrial
-    ServicioSanitario
-    Alumbrado
-    Riego
-    Oficial
-    Rural
-    Otros
-    Traccion
+  Residencial
+  Comercial
+  Industrial
+  ServicioSanitario
+  Alumbrado
+  Riego
+  Oficial
+  Rural
+  Otros
+  Traccion
 }
 
 model Concepto {
-    cantUsr Int
-    kwh Float
-    facSin Float
-    facCon Float
-    precioMedCon Float
-    tipo TipoConcepto
+  cantUsr      Int
+  kwh          Float
+  facSin       Float
+  facCon       Float
+  precioMedCon Float
+  tipo         TipoConcepto
 
-    facturado Facturado @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId String
-    anio Int
-    mes Int
-    @@id([tipo,anio,mes,empresaId])
+  facturado Facturado @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
+  empresaId String
+  anio      Int
+  mes       Int
+
+  @@id([tipo, anio, mes, empresaId])
 }
 
 model FacturadoDepartamento {
-    facturado Facturado @relation(fields:[empresaId,anio,mes],references:[empresaId,anio,mes])
-    empresaId String
-    anio Int
-    mes Int
-    departamento Departamento @relation(fields:[departamentoId],references:[codigo_depto])
-    departamentoId Int
+  facturado      Facturado    @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
+  empresaId      String
+  anio           Int
+  mes            Int
+  departamento   Departamento @relation(fields: [departamentoId], references: [codigo_depto])
+  departamentoId Int
 
-    @@id([empresaId,anio,mes,departamentoId])
-
+  @@id([empresaId, anio, mes, departamentoId])
 }
 
 model Departamento {
-    id Int @id @default(autoincrement())
-    nombre String
-    codigo_depto Int @unique
-    lon Float?
-    lat Float?
-    provincia String
+  id           Int    @id @default(autoincrement())
+  nombre       String
+  codigo_depto Int    @unique
+  lon          Float?
+  lat          Float?
+  provincia    String
 
-    empresas Empresa[]
-    centrales Central[]
+  empresas  Empresa[]
+  centrales Central[]
 
-    facturados FacturadoDepartamento[]
+  facturados FacturadoDepartamento[]
 }

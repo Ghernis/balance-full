@@ -1,4 +1,7 @@
 -- CreateEnum
+CREATE TYPE "Role" AS ENUM ('USER', 'ADMIN');
+
+-- CreateEnum
 CREATE TYPE "TipoSistema" AS ENUM ('Conectado', 'Aislado');
 
 -- CreateEnum
@@ -17,8 +20,23 @@ CREATE TYPE "TipoIntercambio" AS ENUM ('Venta', 'Compra');
 CREATE TYPE "TipoConcepto" AS ENUM ('Residencial', 'Comercial', 'Industrial', 'ServicioSanitario', 'Alumbrado', 'Riego', 'Oficial', 'Rural', 'Otros', 'Traccion');
 
 -- CreateTable
-CREATE TABLE "Empresa" (
+CREATE TABLE "Usuario" (
     "id" SERIAL NOT NULL,
+    "nombreId" TEXT NOT NULL,
+    "role" "Role" NOT NULL DEFAULT 'USER',
+    "mail" TEXT NOT NULL,
+    "contacto" TEXT NOT NULL,
+    "tel" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "habilitado" BOOLEAN NOT NULL DEFAULT false,
+    "informacion" BOOLEAN NOT NULL DEFAULT false,
+    "verificada" BOOLEAN NOT NULL DEFAULT false,
+
+    CONSTRAINT "Usuario_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Empresa" (
     "nombre" TEXT NOT NULL,
     "nombreId" TEXT NOT NULL,
     "tipo" "TipoEmpresa" NOT NULL,
@@ -33,9 +51,7 @@ CREATE TABLE "Empresa" (
     "contacto" TEXT,
     "sistema" "TipoSistema",
     "destino" "TipoDestino",
-    "departamentoId" INTEGER,
-
-    CONSTRAINT "Empresa_pkey" PRIMARY KEY ("id")
+    "departamentoId" INTEGER
 );
 
 -- CreateTable
@@ -51,9 +67,10 @@ CREATE TABLE "Variable" (
 CREATE TABLE "VariableCentral" (
     "anio" INTEGER NOT NULL,
     "mes" INTEGER NOT NULL,
-    "centralId" INTEGER NOT NULL,
+    "centralId" TEXT NOT NULL,
+    "empresaId" TEXT NOT NULL,
 
-    CONSTRAINT "VariableCentral_pkey" PRIMARY KEY ("anio","mes","centralId")
+    CONSTRAINT "VariableCentral_pkey" PRIMARY KEY ("anio","mes","centralId","empresaId")
 );
 
 -- CreateTable
@@ -75,16 +92,15 @@ CREATE TABLE "Personal" (
     "obsTecnicos" TEXT NOT NULL,
     "obsAdministrativos" TEXT NOT NULL,
     "obsObreros" TEXT NOT NULL,
-    "empresaId" INTEGER NOT NULL,
+    "empresaId" TEXT NOT NULL,
 
     CONSTRAINT "Personal_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Central" (
-    "id" SERIAL NOT NULL,
-    "nombre" TEXT NOT NULL,
     "nemo" TEXT NOT NULL,
+    "nombre" TEXT NOT NULL,
     "direccion" TEXT NOT NULL,
     "localidad" TEXT NOT NULL,
     "partido" TEXT NOT NULL,
@@ -93,10 +109,8 @@ CREATE TABLE "Central" (
     "notas" TEXT NOT NULL,
     "destino" "TipoDestino" NOT NULL,
     "actividad" TEXT NOT NULL,
-    "empresaId" INTEGER NOT NULL,
-    "departamentoId" INTEGER,
-
-    CONSTRAINT "Central_pkey" PRIMARY KEY ("id")
+    "empresaId" TEXT NOT NULL,
+    "departamentoId" INTEGER
 );
 
 -- CreateTable
@@ -108,11 +122,12 @@ CREATE TABLE "Energia" (
     "tv" DOUBLE PRECISION NOT NULL,
     "tg" DOUBLE PRECISION NOT NULL,
     "eolico" DOUBLE PRECISION NOT NULL,
-    "centralId" INTEGER NOT NULL,
+    "centralId" TEXT NOT NULL,
+    "empresaId" TEXT NOT NULL,
     "anio" INTEGER NOT NULL,
     "mes" INTEGER NOT NULL,
 
-    CONSTRAINT "Energia_pkey" PRIMARY KEY ("anio","mes","centralId")
+    CONSTRAINT "Energia_pkey" PRIMARY KEY ("anio","mes","centralId","empresaId")
 );
 
 -- CreateTable
@@ -124,7 +139,8 @@ CREATE TABLE "Combustible" (
     "unidad" TEXT NOT NULL,
     "vol" DOUBLE PRECISION NOT NULL,
     "claseProd" TEXT NOT NULL,
-    "centralId" INTEGER NOT NULL,
+    "centralId" TEXT NOT NULL,
+    "empresaId" TEXT NOT NULL,
 
     CONSTRAINT "Combustible_pkey" PRIMARY KEY ("id")
 );
@@ -143,8 +159,7 @@ CREATE TABLE "Maquina" (
     "fechaPS" TEXT NOT NULL,
     "tipoCte" TEXT NOT NULL,
     "centralId" TEXT NOT NULL,
-
-    CONSTRAINT "Maquina_pkey" PRIMARY KEY ("numero","centralId")
+    "empresaId" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -226,16 +241,19 @@ CREATE TABLE "Departamento" (
 );
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Usuario_nombreId_key" ON "Usuario"("nombreId");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Empresa_nombreId_key" ON "Empresa"("nombreId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Personal_empresaId_key" ON "Personal"("empresaId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Central_nemo_key" ON "Central"("nemo");
+CREATE UNIQUE INDEX "Central_nemo_empresaId_key" ON "Central"("nemo", "empresaId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Maquina_numero_key" ON "Maquina"("numero");
+CREATE UNIQUE INDEX "Maquina_numero_centralId_empresaId_key" ON "Maquina"("numero", "centralId", "empresaId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Balance_empresaId_anio_mes_key" ON "Balance"("empresaId", "anio", "mes");
@@ -247,28 +265,31 @@ CREATE UNIQUE INDEX "Departamento_codigo_depto_key" ON "Departamento"("codigo_de
 ALTER TABLE "Empresa" ADD CONSTRAINT "Empresa_departamentoId_fkey" FOREIGN KEY ("departamentoId") REFERENCES "Departamento"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "Empresa" ADD CONSTRAINT "Empresa_nombreId_fkey" FOREIGN KEY ("nombreId") REFERENCES "Usuario"("nombreId") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "Variable" ADD CONSTRAINT "Variable_empresaId_fkey" FOREIGN KEY ("empresaId") REFERENCES "Empresa"("nombreId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "VariableCentral" ADD CONSTRAINT "VariableCentral_centralId_fkey" FOREIGN KEY ("centralId") REFERENCES "Central"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "VariableCentral" ADD CONSTRAINT "VariableCentral_centralId_empresaId_fkey" FOREIGN KEY ("centralId", "empresaId") REFERENCES "Central"("nemo", "empresaId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Personal" ADD CONSTRAINT "Personal_empresaId_fkey" FOREIGN KEY ("empresaId") REFERENCES "Empresa"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Personal" ADD CONSTRAINT "Personal_empresaId_fkey" FOREIGN KEY ("empresaId") REFERENCES "Empresa"("nombreId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Central" ADD CONSTRAINT "Central_empresaId_fkey" FOREIGN KEY ("empresaId") REFERENCES "Empresa"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Central" ADD CONSTRAINT "Central_empresaId_fkey" FOREIGN KEY ("empresaId") REFERENCES "Empresa"("nombreId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Central" ADD CONSTRAINT "Central_departamentoId_fkey" FOREIGN KEY ("departamentoId") REFERENCES "Departamento"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Energia" ADD CONSTRAINT "Energia_anio_mes_centralId_fkey" FOREIGN KEY ("anio", "mes", "centralId") REFERENCES "VariableCentral"("anio", "mes", "centralId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Energia" ADD CONSTRAINT "Energia_anio_mes_centralId_empresaId_fkey" FOREIGN KEY ("anio", "mes", "centralId", "empresaId") REFERENCES "VariableCentral"("anio", "mes", "centralId", "empresaId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Combustible" ADD CONSTRAINT "Combustible_anio_mes_centralId_fkey" FOREIGN KEY ("anio", "mes", "centralId") REFERENCES "VariableCentral"("anio", "mes", "centralId") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Combustible" ADD CONSTRAINT "Combustible_anio_mes_centralId_empresaId_fkey" FOREIGN KEY ("anio", "mes", "centralId", "empresaId") REFERENCES "VariableCentral"("anio", "mes", "centralId", "empresaId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Maquina" ADD CONSTRAINT "Maquina_centralId_fkey" FOREIGN KEY ("centralId") REFERENCES "Central"("nemo") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Maquina" ADD CONSTRAINT "Maquina_centralId_empresaId_fkey" FOREIGN KEY ("centralId", "empresaId") REFERENCES "Central"("nemo", "empresaId") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Intercambio" ADD CONSTRAINT "Intercambio_anio_mes_empresaId_fkey" FOREIGN KEY ("anio", "mes", "empresaId") REFERENCES "Variable"("anio", "mes", "empresaId") ON DELETE RESTRICT ON UPDATE CASCADE;

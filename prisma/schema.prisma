@@ -18,11 +18,14 @@ datasource db {
 }
 
 model Usuario {
-  //id          Int     @id @default(autoincrement())
-  nombreId    String  @id
+  id          Int     @id @default(autoincrement())
+  nombreId    String?  @unique
+  nombre    String  
   role        Role    @default(USER)
   mail        String
-  password    String
+  contacto    String
+  tel         String
+  password    String?
   habilitado  Boolean @default(false)
   informacion Boolean @default(false)
   verificada  Boolean @default(false)
@@ -35,7 +38,6 @@ enum Role {
 }
 
 model Empresa {
-  id              Int          @id @default(autoincrement())
   nombre          String
   nombreId        String       @unique
   tipo            TipoEmpresa
@@ -121,8 +123,8 @@ model Personal {
   obsTecnicos        String
   obsAdministrativos String
   obsObreros         String
-  empresa            Empresa @relation(fields: [empresaId], references: [id])
-  empresaId          Int     @unique
+  empresa            Empresa @relation(fields: [empresaId], references: [nombreId])
+  empresaId          String     @unique
 }
 
 model Central {

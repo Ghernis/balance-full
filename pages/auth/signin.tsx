@@ -1,7 +1,10 @@
 import { FormEventHandler, useState } from 'react'
 import { NextPage } from 'next';
+import Link from 'next/link'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router';
+
+import Button from 'react-bootstrap/Button';
 
 interface Props {}
 
@@ -41,6 +44,9 @@ const SignIn: NextPage = (props):JSX.Element =>{
                     />
                 <input type='submit' value='Login' />
             </form>
+                <Link href='/signup' legacyBehavior>
+            <Button variant='primary'>Registrarse</Button>
+            </Link>
 
     </div>
     )

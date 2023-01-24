@@ -11,6 +11,21 @@ const TipoEnums=['Distribuidora','Cooperativa','Autoproductor'] as const;
 const TipoIntercambio=['Compra','Venta'] as const;
 const TecnologiaEnums=['TV','TG','CC','HID','EO','SOL','FV','BG','BM'] as const;
 export const appRouter = router({
+    new_user: procedure
+    .input(
+        z.object({
+            nombre:z.string(),
+            contacto:z.string(),
+            tel:z.string(),
+            mail:z.string().email()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.usuario.create({
+            data:input
+        })
+        return resp
+    }),
     departamento_bulk: procedure
     .input(
         z.array(

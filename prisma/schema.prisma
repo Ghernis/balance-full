@@ -18,20 +18,20 @@ datasource db {
 }
 
 model Usuario {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   nombreId    String?  @unique
-  nombre    String  
-  role        Role    @default(USER)
+  nombre      String
+  role        Role     @default(USER)
   mail        String
   contacto    String
   tel         String
   password    String?
-  habilitado  Boolean @default(false)
-  informacion Boolean @default(false)
-  verificada  Boolean @default(false)
-  empresa     Empresa? 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  habilitado  Boolean  @default(false)
+  informacion Boolean  @default(false)
+  verificada  Boolean  @default(false)
+  empresa     Empresa?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 enum Role {
@@ -61,7 +61,7 @@ model Empresa {
 
   centrales Central[]
   variable  Variable[]
-  usuario   Usuario @relation(fields:[nombreId],references:[nombreId])
+  usuario   Usuario    @relation(fields: [nombreId], references: [nombreId])
 }
 
 enum TipoSistema {
@@ -126,7 +126,7 @@ model Personal {
   obsAdministrativos String
   obsObreros         String
   empresa            Empresa @relation(fields: [empresaId], references: [nombreId])
-  empresaId          String     @unique
+  empresaId          String  @unique
 }
 
 model Central {

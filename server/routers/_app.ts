@@ -26,28 +26,25 @@ export const appRouter = router({
         })
         return resp
     }),
-    login:procedure
+    usuarios_all: procedure
+    .query(async()=>{
+        const resp = await prisma.usuario.findMany({
+        })
+        return resp
+    }),
+    usuario: procedure
     .input(
         z.object({
-            nombreId:z.string(),
-            password:z.string()
+            nombreId:z.string()
         })
     )
     .query(async({input})=>{
-        const resp = await prisma.usuario.fintFirst({
-            where: {
+        const resp = await prisma.usuario.findFirst({
+            where:{
                 nombreId:input.nombreId
-            },
-            select:{
-                password:true,
-                role:true,
-                mail:true
             }
-
         })
-        if(resp.password===input.password){
-            return resp
-        }
+        return resp
     }),
     departamento_bulk: procedure
     .input(

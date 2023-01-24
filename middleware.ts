@@ -14,7 +14,7 @@ export default withAuth(
     {
     callbacks:{
             authorized:({token})=>{
-                return token?.role === 'admin'
+                return token?.role === 'ADMIN'
             }
         }
     }

@@ -35,7 +35,7 @@ export const appRouter = router({
     usuario: procedure
     .input(
         z.object({
-            nombreId:z.string()
+            nombreId: z.string()
         })
     )
     .query(async({input})=>{

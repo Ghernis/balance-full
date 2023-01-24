@@ -1,13 +1,19 @@
+import { useState,useEffect } from 'react'
+import FormUsuarios from '../../component/FormUsuarios'
+import Router,{ useRouter } from 'next/router'
+
 import { trpc } from '../../utils/trpc';
 
-const Registro=()=>{
-    const user = trpc.usuario.useQuery({nombreId:'distri1'})
+const Registro=async()=>{
+    const router = useRouter()
+    const {registro} = router.query
 
-    if(user.isLoading){
-        return <div>Loading..</div>
-    }
+    const user = trpc.usuario.useQuery({nombreId:registro})
+
+    console.log(user.data)
+
     return (
-    <div>{JSON.stringify(user.data)}</div>
+        <FormUsuarios empresa={user.data} />
     )
 }
 

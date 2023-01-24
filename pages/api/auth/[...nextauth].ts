@@ -1,5 +1,9 @@
 import NextAuth, {NextAuthOptions} from "next-auth"
 import CredentialProvider from 'next-auth/providers/credentials'
+import Credentials from 'next-auth/providers/credentials'
+
+import prisma from '../../../server/prisma-cliet';
+
 
 export const authOptions:NextAuthOptions = {
     // Configure one or more authentication providers
@@ -10,22 +14,35 @@ export const authOptions:NextAuthOptions = {
         CredentialProvider({
             type: 'credentials',
             credentials:{},
-            authorize(credentials,req){
-                const {email,password}=credentials as {
-                    email: string;
+            authorize: async (credentials,req)=>{
+                const {nombre,password}=credentials as {
+                    nombre: string;
                     password: string;
                     role: string;
                 }
-                //login logic
                 //find user from db
-                if(email !== 'distri2' || password !== '123'){
+                const resp = await prisma.usuario.findFirst({
+                    where:{
+                        nombreId:nombre
+                    },
+                    select:{
+                        password:true,
+                        mail:true,
+                        nombreId:true,
+                        role:true,
+                        nombre:true
+                    }
+
+                })
+                console.log(resp)
+                if(nombre !== resp.nombreId || password !== resp.password){
                     return null;
                 }
                 return {
-                    id: '123',
-                    name: 'distri2',
-                    email: 'herni',
-                    role: 'admin'
+                    id:resp.nombreId,
+                    name: resp.nombreId,
+                    email: resp.mail,
+                    role: resp.role
                 }
             }
         })

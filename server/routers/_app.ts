@@ -26,6 +26,29 @@ export const appRouter = router({
         })
         return resp
     }),
+    login:procedure
+    .input(
+        z.object({
+            nombreId:z.string(),
+            password:z.string()
+        })
+    )
+    .query(async({input})=>{
+        const resp = await prisma.usuario.fintFirst({
+            where: {
+                nombreId:input.nombreId
+            },
+            select:{
+                password:true,
+                role:true,
+                mail:true
+            }
+
+        })
+        if(resp.password===input.password){
+            return resp
+        }
+    }),
     departamento_bulk: procedure
     .input(
         z.array(

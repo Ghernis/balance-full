@@ -30,6 +30,8 @@ model Usuario {
   informacion Boolean @default(false)
   verificada  Boolean @default(false)
   empresa     Empresa? 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum Role {

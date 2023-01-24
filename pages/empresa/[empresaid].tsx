@@ -8,6 +8,7 @@ const EmpresaId=()=>{
     const router = useRouter()
     const {empresaid} = router.query
     const {status,data} = useSession()
+    console.log(data)
     useEffect(()=>{
         if(status==='unauthenticated') Router.replace('/auth/signin')
     },[status])

@@ -10,13 +10,13 @@ interface Props {}
 
 const SignIn: NextPage = (props):JSX.Element =>{
     const router = useRouter();
-    const [userInfo,setUserInfo] = useState({email:'',password:''})
-    const callbackUrl = (router.query?.callbackUrl as string) ?? '/empresa/'+userInfo.email;
+    const [userInfo,setUserInfo] = useState({nombre:'',password:''})
+    const callbackUrl = (router.query?.callbackUrl as string) ?? '/empresa/'+userInfo.nombre;
     const handleSubmit:FormEventHandler<HTMLFormElement>=async(e)=>{
         //validations
         e.preventDefault()
         const res = await signIn('credentials',{
-            email:userInfo.email,
+            nombre:userInfo.nombre,
             password:userInfo.password,
             redirect: false
         })
@@ -32,9 +32,9 @@ const SignIn: NextPage = (props):JSX.Element =>{
     return (
     <div className='sign-in-form'>
             <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='test@email.com' value={userInfo.email}
+                <input type='text' placeholder='test@email.com' value={userInfo.nombre}
                     onChange={({target})=>
-                    setUserInfo({...userInfo,email:target.value})
+                    setUserInfo({...userInfo,nombre:target.value})
                 }
                     />
                 <input type='password' placeholder='****' value={userInfo.password}

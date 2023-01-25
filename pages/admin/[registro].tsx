@@ -4,16 +4,23 @@ import Router,{ useRouter } from 'next/router'
 
 import { trpc } from '../../utils/trpc';
 
-const Registro=async()=>{
+const Registro=()=>{
     const router = useRouter()
     const {registro} = router.query
 
-    const user = trpc.usuario.useQuery({nombreId:registro})
+    type userReg={
+        nombreId:string
+    }
+    const user = trpc.usuario.useQuery({nombreId:registro || ''} as userReg)
 
-    console.log(user.data)
+    if(!router.isReady || user.isLoading){
+        return <div>loading...</div>
+    }
 
     return (
+        <>
         <FormUsuarios empresa={user.data} />
+        </>
     )
 }
 

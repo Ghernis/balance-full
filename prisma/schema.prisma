@@ -37,6 +37,7 @@ model Usuario {
 enum Role {
   USER
   ADMIN
+  MODERADOR
 }
 
 model Empresa {
@@ -55,6 +56,8 @@ model Empresa {
   sistema         TipoSistema?
   destino         TipoDestino?
   personal        Personal?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   departamento   Departamento? @relation(fields: [departamentoId], references: [id])
   departamentoId Int?

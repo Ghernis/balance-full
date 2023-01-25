@@ -24,18 +24,18 @@ const FormUsuarios=(props)=>{
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1">ID</InputGroup.Text>
                     <Form.Control
-                        value={usuario.nombreId}
+                        value={usuario.nombreId==null ? '' : usuario.nombreId}
                         onChange={(e)=>setUsuario({...usuario,nombreId:e.target.value})}
                         placeholder="ID"
                         aria-label="nombre"
                         aria-describedby="basic-addon1"
-                        disabled={empresa.nombreId != ''}
+                        disabled={empresa.nombreId != null}
                         />
                 </InputGroup>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1">Password</InputGroup.Text>
                     <Form.Control
-                        value={usuario.password}
+                        value={usuario.password==null ? '' : usuario.password}
                         onChange={(e)=>setUsuario({...usuario,password:e.target.value})}
                         placeholder="Password"
                         aria-label="Password"
@@ -92,8 +92,8 @@ const FormUsuarios=(props)=>{
                 <Form.Check 
                     type='checkbox'
                     label='Verificado'
-                    checked={usuario.verificado}
-                    onChange={()=>setUsuario({...usuario,verificado:toggleBools(usuario.verificado)})}
+                    checked={usuario.verificada}
+                    onChange={()=>setUsuario({...usuario,verificada:toggleBools(usuario.verificada)})}
                     />
                 <Form.Check 
                     type='checkbox'

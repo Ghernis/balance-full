@@ -35,13 +35,13 @@ export const appRouter = router({
     usuario: procedure
     .input(
         z.object({
-            nombreId: z.string()
+            id: z.number()
         })
     )
     .query(async({input})=>{
         const resp = await prisma.usuario.findFirst({
             where:{
-                nombreId:input.nombreId
+                id:input.id
             }
         })
         return resp

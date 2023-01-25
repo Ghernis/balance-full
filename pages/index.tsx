@@ -30,9 +30,9 @@ export default function Home() {
                         </Link>
                     </div>
                 </div>
-                    <div className='my-4'>
+                <div className='my-4'>
                     <p>viz y data</p>
-                    </div>
+                </div>
 
             </div>
             </>

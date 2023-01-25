@@ -78,9 +78,9 @@ const SignIn: NextPage = (props):JSX.Element =>{
                         <div className="col-xs-12">
 
                             <p><a href="#">Recuperar mi contraseña</a></p>
-                    <Link href='/signup' legacyBehavior passHref>
-                            <p><a href='/signup' >Crear una nueva cuenta para ingresar</a></p>
-                            </Link>
+                    
+                            <p><Link href='/signup' legacyBehavior passHref><a>Crear una nueva cuenta para ingresar</a></Link></p>
+                            
                         </div>
                     </div>
                 </div>

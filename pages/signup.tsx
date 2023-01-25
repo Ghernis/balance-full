@@ -26,6 +26,7 @@ const SignUp=()=>{
     }
     return (
         <div className='container'>
+            <h3 className='my-4'>Registrarse en el Sistema</h3>
 
             <Row className='mt-4'>
 

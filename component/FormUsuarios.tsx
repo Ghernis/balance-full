@@ -21,6 +21,10 @@ const FormUsuarios=(props)=>{
     const handleClick=()=>{
         updateUser.mutate(usuario)
     }
+    const crearEmpresa=()=>{
+        console.log('alta')
+
+    }
     return (
         <div className='container'>
             <Row className='my-4'>
@@ -106,7 +110,8 @@ const FormUsuarios=(props)=>{
                     onChange={()=>setUsuario({...usuario,habilitado:toggleBools(usuario.habilitado)})}
                     />
             </Row>
-                <Button onClick={()=>handleClick()}>Guardar Cambios</Button>
+                <Button onClick={()=>handleClick()}>Guardar Cambios a Usuario</Button>
+                <Button onClick={()=>crearEmpresa()}>Dar de alta Empresa</Button>
 
 
         </div>

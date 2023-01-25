@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 
 const FormUsuarios=(props)=>{
     const {empresa} = props
+    const updateUser = trpc.update_usuario.useMutation()
 
 
     const [usuario,setUsuario]=useState(empresa)
@@ -17,10 +18,13 @@ const FormUsuarios=(props)=>{
     const toggleBools=(val:Boolean)=>{
         return !val
     }
+    const handleClick=()=>{
+        updateUser.mutate(usuario)
+    }
     return (
         <div className='container'>
             <Row className='my-4'>
-                <label>Identificador unico. Una vez asignado no puede cambiarse</label>
+                <label>Identificador unico. Una vez asignado no puede cambiarse por ser clave primaria</label>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1">ID</InputGroup.Text>
                     <Form.Control
@@ -102,6 +106,7 @@ const FormUsuarios=(props)=>{
                     onChange={()=>setUsuario({...usuario,habilitado:toggleBools(usuario.habilitado)})}
                     />
             </Row>
+                <Button onClick={()=>handleClick()}>Guardar Cambios</Button>
 
 
         </div>

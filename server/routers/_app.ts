@@ -46,6 +46,30 @@ export const appRouter = router({
         })
         return resp
     }),
+    update_usuario: procedure
+    .input(
+        z.object({
+            id: z.number(),
+            nombreId: z.string(),
+            nombre: z.string(),
+            password: z.string(),
+            mail: z.string(),
+            contacto: z.string(),
+            tel: z.string(),
+            informacion: z.boolean(),
+            verificada: z.boolean(),
+            habilitado: z.boolean()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.usuario.update({
+            where:{
+                id: input.id
+            },
+            data:input
+        })
+        return resp
+    }),
     departamento_bulk: procedure
     .input(
         z.array(

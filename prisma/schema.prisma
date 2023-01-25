@@ -41,9 +41,9 @@ enum Role {
 }
 
 model Empresa {
-  nombre          String
   nombreId        String       @unique
   tipo            TipoEmpresa
+  nombre          String
   nemo            String?
   direccion       String?
   tel             String?
@@ -56,14 +56,14 @@ model Empresa {
   sistema         TipoSistema?
   destino         TipoDestino?
   personal        Personal?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime? @default(now())
 
   departamento   Departamento? @relation(fields: [departamentoId], references: [id])
   departamentoId Int?
 
   centrales Central[]
   variable  Variable[]
+
   usuario   Usuario    @relation(fields: [nombreId], references: [nombreId])
 }
 

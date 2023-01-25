@@ -108,6 +108,31 @@ export const appRouter = router({
         })
         return { resp }
     }),
+    alta_empresa:procedure
+    .input(
+        z.object({
+            nombreId: z.string(),
+            nombre: z.string(),
+            mail: z.string(),
+            contacto:z.string(),
+            tel:z.string(),
+            tipo: z.enum(TipoEnums)
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.empresa.create({
+            data:{
+                nombreId:input.nombreId,
+                nombre:input.nombre,
+                mail:input.mail,
+                contacto:input.contacto,
+                tel:input.tel,
+                tipo: input.tipo
+            }
+        })
+        return resp
+
+    }),
     empresas: procedure
     .query(async()=>{
         const empresa = await prisma.empresa.findMany({

@@ -30,12 +30,16 @@ export const authOptions:NextAuthOptions = {
                         mail:true,
                         nombreId:true,
                         role:true,
-                        nombre:true
+                        nombre:true,
+                        habilitado:true
                     }
 
                 })
                 console.log(resp)
                 if(nombre !== resp.nombreId || password !== resp.password){
+                    return null;
+                }
+                if(!resp.habilitado && resp.role!=='ADMIN'){
                     return null;
                 }
                 return {

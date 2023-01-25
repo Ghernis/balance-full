@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 const FormUsuarios=(props)=>{
     const {empresa} = props
     const updateUser = trpc.update_usuario.useMutation()
+    const altaEmpresa = trpc.alta_empresa.useMutation()
 
 
     const [usuario,setUsuario]=useState(empresa)
@@ -22,8 +23,10 @@ const FormUsuarios=(props)=>{
         updateUser.mutate(usuario)
     }
     const crearEmpresa=()=>{
-        console.log('alta')
 
+        console.log('alta')
+        //crea nueva empresa si no existe, no tendria que sobreestcribir nada por si la empresa ya cambio los datos
+        altaEmpresa.mutate(usuario)
     }
     return (
         <div className='container'>
@@ -91,6 +94,18 @@ const FormUsuarios=(props)=>{
                         aria-describedby="basic-addon1"
                         />
                 </InputGroup>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
+                        <Form.Select aria-label="Destino"
+                        value={usuario.tipo ?? 'select'}
+                        onChange={(e)=>setUsuario({...usuario,tipo:e.target.value})}
+                    >
+                            <option value='select'>Seleccionar...</option>
+                            <option value="Distribuidora">Distribuidora</option>
+                            <option value="Cooperativa">Cooperativa</option>
+                            <option value="Autoproductor">Autoproductor</option>
+                        </Form.Select>
+                    </InputGroup>
                 <Form.Check 
                     type='checkbox'
                     label='Informacion entregada'
@@ -105,15 +120,16 @@ const FormUsuarios=(props)=>{
                     />
                 <Form.Check 
                     type='checkbox'
-                    label='Habilitado para carga'
+                    label='Habilitar para carga'
                     checked={usuario.habilitado}
                     onChange={()=>setUsuario({...usuario,habilitado:toggleBools(usuario.habilitado)})}
                     />
             </Row>
-                <Button onClick={()=>handleClick()}>Guardar Cambios a Usuario</Button>
-                <Button onClick={()=>crearEmpresa()}>Dar de alta Empresa</Button>
-
-
+            <Button onClick={()=>handleClick()}>Guardar Cambios a Usuario</Button>
+            <Button 
+                disabled={!usuario.verificada}
+                onClick={()=>crearEmpresa()}
+            >Dar de alta Empresa</Button>
         </div>
     )
 }

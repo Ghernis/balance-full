@@ -78,6 +78,7 @@ const Empresa =(props:any)=>{
                 <Alert variant='info' className='my-4'>
                     <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
                 </Alert>
+                <h3>{empresa.data.tipo}</h3>
                 <label>Datos Basicos</label>
                 <FormDatosBasicos empresa={empresa.data}/>
                 <Cuadro data={datao} headers={headers} titulo='Tabla de Personal Permanente' />

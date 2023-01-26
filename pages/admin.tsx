@@ -21,6 +21,12 @@ const Admin=()=>{
                     <BoardItems lista={usuarios.data} title='Habilitados'/>
                 </div>
             </div>
+            <h3 className='md-4'>Configuracion</h3>
+            <p>Opciones de configuracion para el sistema</p>
+            <ul className='my-4'>
+                <li>Fecha de cierre</li>
+                <li>otros</li>
+            </ul>
 
 
         </div>

@@ -83,6 +83,9 @@ const SignUp=()=>{
                 </Col>
             </Row>
             <Button size='sm' onClick={onRegister}>Registrarse</Button>
+            <Row>
+                <p>A la brevedad se comunicaran con usted con su usuario y contrasena para poder logearse al sistema</p>
+            </Row>
         </div>
     )
 }

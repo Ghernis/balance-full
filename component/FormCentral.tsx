@@ -129,6 +129,14 @@ const FormCentral=(props)=>{
                     disabled={disa}
                     />
             </InputGroup>
+            <Row>
+                <Col>
+                    <Button size='sm' variant='secondary' onClick={()=>setDisabled(!disa)}>Modificar</Button>
+                </Col>
+                <Col>
+                    <Button size='sm'>Guardar Cambios</Button>
+                </Col>
+            </Row>
             </>
     )
 }

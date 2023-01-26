@@ -1,5 +1,4 @@
-import CartaList from '../component/CartaList'
-import ListGroup from 'react-bootstrap/ListGroup';
+import BoardItems from '../component/BoardItems';
 
 import { trpc } from '../utils/trpc';
 
@@ -11,15 +10,17 @@ const Admin=()=>{
     return (
         <div className='container'>
             <h3>Panel de Administrador</h3>
-            <ListGroup as='ol' className='my-4'>
-            {
-            usuarios.data.map(u=>{
-                return (
-                <CartaList key={u.nombreId} titulo={u.nombre} subtitulo={u.mail} link='' badge={u.createdAt}></CartaList>
-                )
-            })
-            }
-            </ListGroup>
+            <div className='row'>
+                <div className='col mb-4'>
+                    <BoardItems lista={usuarios.data} title='Sin ID asignado'/>
+                </div>
+                <div className='col mb-4'>
+                    <BoardItems lista={usuarios.data} title='Sin verificar'/>
+                </div>
+                <div className='col mb-4'>
+                    <BoardItems lista={usuarios.data} title='Habilitados'/>
+                </div>
+            </div>
 
 
         </div>

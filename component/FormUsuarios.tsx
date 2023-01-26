@@ -95,7 +95,7 @@ const FormUsuarios=(props)=>{
                         />
                 </InputGroup>
                     <InputGroup className="mb-3">
-                        <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
+                        <InputGroup.Text id="basic-addon1">Tipo de empresa</InputGroup.Text>
                         <Form.Select aria-label="Destino"
                         value={usuario.tipo ?? 'select'}
                         onChange={(e)=>setUsuario({...usuario,tipo:e.target.value})}

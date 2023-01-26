@@ -104,7 +104,9 @@ const Empresa =(props:any)=>{
                                 }
                                 </ListGroup>
                             }
+                            <Link legacyBehavior href='/central/new'>
                             <Button className='my-4' variant='primary'>Agregar</Button>
+                            </Link>
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">

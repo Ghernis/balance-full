@@ -38,6 +38,8 @@ enum Role {
   USER
   ADMIN
   MODERADOR
+  SUADMIN
+  CONSULTA
 }
 
 model Empresa {

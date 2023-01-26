@@ -110,7 +110,7 @@ const Central=(props)=>{
         <>
             <div className='container'>
                 <h3>Central: {nemo}</h3>
-                <FormCentral />
+                <FormCentral nemo={nemo}/>
                 <Cuadro data={data} headers={headers} titulo='Tabla de Maquinas' />
                 <Button variant='success' size='sm' className='me-4'>Agregar Maquina</Button>
                 <Button variant='secondary' size='sm'>Editar</Button>

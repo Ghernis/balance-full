@@ -38,7 +38,7 @@ const FormFacturado=(props)=>{
     }
     return (
         <div className='container'>
-            <TextCSV x={5} y={10} handler={hand} />
+            <TextCSV x={2} y={10} handler={hand} />
             <h4 className='my-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa]}</h4>
             <Table bordered hover size="sm">
                 <thead>
@@ -46,9 +46,11 @@ const FormFacturado=(props)=>{
                         <th>Concepto</th>
                         <th className='text-center'>Cantidad de Usuarios</th>
                         <th className='text-center'>kwh</th>
+                        {/*
                         <th className='text-center'>Facturado Sin Gravamen</th>
                         <th className='text-center'>Facturado Con Gravamen</th>
                         <th className='text-center'>Precio Medio</th>
+                    */}
                     </tr>
                 </thead>
                 <tbody>
@@ -59,9 +61,11 @@ const FormFacturado=(props)=>{
                                 <td>{c}</td>
                                 <td><Form.Control value={csv && csv[i][0]} plaintext className='text-center' type='text' placeholder='algo' /></td>
                                 <td><Form.Control value={csv && csv[i][1]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                {/*
                                 <td><Form.Control value={csv && csv[i][2]} plaintext className='text-center' type='text' placeholder='algo' /></td>
                                 <td><Form.Control value={csv && csv[i][3]} plaintext className='text-center' type='text' placeholder='algo' /></td>
                                 <td><Form.Control value={csv && csv[i][4]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                                */}
                             </tr>
                         )
                     })

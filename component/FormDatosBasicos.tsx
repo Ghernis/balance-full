@@ -25,7 +25,8 @@ const FormDatosBasicos=(props)=>{
         return <div>loading...</div>
     }
     const saveChanges=()=>{
-        put_emp.mutate(empresa)
+        console.log(empresa)
+        //put_emp.mutate(empresa)
         //if (!put_emp.isError){setDisabled(true)} 
         console.log(put_emp.isError)
         console.log(put_emp.error)

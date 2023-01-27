@@ -1,3 +1,7 @@
+import { useEffect } from 'react'
+import { trpc } from '../utils/trpc';
+import {useSession} from 'next-auth/react'
+
 import Button from 'react-bootstrap/Button';
 
 import FormCentral from './FormCentral';
@@ -5,6 +9,24 @@ import Cuadro from './Cuadro';
 
 const Central=(props)=>{
     const {nemo}=props
+    const {status,data} = useSession()
+    const central = trpc.central_id.useQuery({empresaId:data?.user?.name as string,nemo:nemo})
+
+    if(central.isLoading){
+        return <div>Loanding...</div>
+    }
+    const centralN={
+        nombre:'',
+        nemo:'',
+        direccion:'',
+        localidad:'',
+        partido:'',
+        sistema:'-1',
+        destino:'-1',
+        actividad:'',
+        notas:'',
+        departamentoId:-1,
+    }
     const headers=[
         {
             label:'ID',
@@ -53,7 +75,8 @@ const Central=(props)=>{
 
 
     ]
-    const data=[
+    const datos=[
+
         {
             id:'Maquina1',
             tec:'TV',
@@ -110,8 +133,8 @@ const Central=(props)=>{
         <>
             <div className='container'>
                 <h3>Central: {nemo}</h3>
-                <FormCentral nemo={nemo}/>
-                <Cuadro data={data} headers={headers} titulo='Tabla de Maquinas' />
+                <FormCentral empresaId={data.user.name} central={nemo=='new'? centralN :central.data}/>
+                <Cuadro data={datos} headers={headers} titulo='Tabla de Maquinas' />
                 <Button variant='success' size='sm' className='me-4'>Agregar Maquina</Button>
                 <Button variant='secondary' size='sm'>Editar</Button>
             </div>

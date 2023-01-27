@@ -140,7 +140,6 @@ model Central {
   direccion String
   localidad String
   partido   String
-  provincia String
   sistema   TipoSistema
   notas     String
   destino   TipoDestino

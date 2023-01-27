@@ -28,7 +28,7 @@ const FormCentral=(props)=>{
         <>
             <label>Datos Basicos Central</label>
 
-            <Link href={('/empresa/'+central.nombreId) ?? '/'} legacyBehavior passHref>
+            <Link href={('/empresa/'+central.empresaId) ?? '/'} legacyBehavior passHref>
                 <Button size='sm' className='mx-4'>Volver a Empresa</Button>
             </Link>
             <Row>

@@ -26,7 +26,7 @@ const FormDatosBasicos=(props)=>{
     }
     const saveChanges=()=>{
         put_emp.mutate(empresa)
-        //if (!put_emp.isError){setDisabled(true)} 
+        //if (!put_emp.isError){setDisabled(true)}
         console.log(put_emp.isError)
         console.log(put_emp.error)
     }
@@ -38,7 +38,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon1">Razon Social</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,nombre:e.target.value})}
-                            value={empresa.nombre}
+                            value={empresa.nombre ? '' : empresa.nombre}
                             placeholder="Razon Social"
                             aria-label="nombre"
                             aria-describedby="basic-addon1"
@@ -50,7 +50,7 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon2">Identificador</InputGroup.Text>
                         <Form.Control
-                            value={empresa.nombreId}
+                            value={empresa.nombreId ? '' : empresa.nombreId}
                             placeholder="ID"
                             aria-label="id"
                             aria-describedby="basic-addon2"
@@ -65,7 +65,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon3">Direccion</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,direccion:e.target.value})}
-                            value={empresa.direccion}
+                            value={empresa.direccion==null ? '' : empresa.direccion}
                             placeholder="Direccion"
                             aria-label="direccion"
                             aria-describedby="basic-addon3"
@@ -78,7 +78,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon4">CP</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,cp:e.target.value})}
-                            value={empresa.cp}
+                            value={empresa.cp==null ? '' : empresa.cp}
                             placeholder="CP"
                             aria-label="cp"
                             aria-describedby="basic-addon4"
@@ -91,8 +91,8 @@ const FormDatosBasicos=(props)=>{
 
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon5">Departamento</InputGroup.Text>
-                        <Form.Select aria-label="Departamento" 
-                        value={empresa.departamentoId ?? 'val'}
+                        <Form.Select aria-label="Departamento"
+                        value={empresa.departamentoId==null ? '' : empresa.departamentoId ?? 'val'}
                         onChange={(e)=>setEmpresa({...empresa,departamentoId:parseInt(e.target.value)})}
                         disabled={disabled}>
                             <option>Seleccionar...</option>
@@ -112,7 +112,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon6">Tel</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,tel:e.target.value})}
-                            value={empresa.tel}
+                            value={empresa.tel ? '' : empresa.tel}
                             placeholder="Telefono"
                             aria-label="tel"
                             aria-describedby="basic-addon6"
@@ -124,7 +124,7 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-7">
                         <InputGroup.Text id="basic-addon7">Mail</InputGroup.Text>
                         <Form.Control
-                            value={empresa.mail}
+                            value={empresa.mail ? '' : empresa.mail}
                             onChange={(e)=>setEmpresa({...empresa,mail:e.target.value})}
                             placeholder="Mail"
                             aria-label="mail"
@@ -138,7 +138,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon8">Contacto</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,contacto:e.target.value})}
-                            value={empresa.contacto}
+                            value={empresa.contacto ? '' : empresa.contacto}
                             placeholder="Contacto"
                             aria-label="contacto"
                             aria-describedby="basic-addon8"
@@ -151,9 +151,9 @@ const FormDatosBasicos=(props)=>{
                 <Col>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Tipo de Sistema</InputGroup.Text>
-                        <Form.Select aria-label="Destino" 
-                            disabled={disabled} 
-                            value={empresa.sistema}
+                        <Form.Select aria-label="Destino"
+                            disabled={disabled}
+                            value={empresa.sistema==null ? '' : empresa.sistema}
                             onChange={(e)=>setEmpresa({...empresa,sistema:e.target.value})}
                         >
                             <option>Seleccionar...</option>
@@ -165,9 +165,9 @@ const FormDatosBasicos=(props)=>{
                 <Col>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
-                        <Form.Select aria-label="Destino" 
+                        <Form.Select aria-label="Destino"
                             disabled={disabled}
-                            value={empresa.destino}
+                            value={empresa.destino==null ? '' : empresa.destino}
                             onChange={(e)=>setEmpresa({...empresa,destino:e.target.value})}
                         >
                             <option>Seleccionar...</option>

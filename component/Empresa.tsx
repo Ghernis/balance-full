@@ -14,10 +14,10 @@ import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
     const {nombreId} = props
-    const [empresa_id,setEmpresa] = useState(nombreId)
+    //const [empresa_id,setEmpresa] = useState(nombreId)
 
     const deptos = trpc.departamentos.useQuery()
-    const empresa = trpc.empresa_id.useQuery({nombreId:empresa_id})
+    const empresa = trpc.empresa_id.useQuery({nombreId:nombreId})
 
     const headers=[
         {

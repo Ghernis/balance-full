@@ -5,6 +5,8 @@ import { trpc } from '../utils/trpc';
 import Link from 'next/link';
 
 
+import ToastContainer from 'react-bootstrap/ToastContainer'
+import Toast from 'react-bootstrap/Toast'
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,14 +20,34 @@ const FormCentral=(props)=>{
     const update_central = trpc.central.useMutation()
     const [cent,setCent] = useState(central)
 
+    const [showA,setShowA] = useState(false)
+    const toggleShowA = () => setShowA(!showA);
+    const handleGuardar=()=>{
+        update_central.mutate(cent)
+
+        if(update_central.isError){
+            toggleShowA()
+        }
+    }
     if(deptos.isLoading){
         return <div>loading...</div>
     }
-    const handleGuardar=()=>{
-        update_central.mutate(cent)
-    }
     return (
         <>
+            <ToastContainer className="p-3" position='middle-end'>
+                <Toast show={showA} onClose={toggleShowA} delay={3000} autohide>
+                    <Toast.Header>
+                        <img
+                            src="holder.js/20x20?text=%20"
+                            className="rounded me-2"
+                            alt=""
+                            />
+                        <strong className="me-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                    </Toast.Header>
+                    <Toast.Body> mensaje error</Toast.Body>
+                </Toast>
+            </ToastContainer>
             <label>Datos Basicos Central</label>
 
             <Link href={('/empresa/'+central.empresaId) ?? '/'} legacyBehavior passHref>

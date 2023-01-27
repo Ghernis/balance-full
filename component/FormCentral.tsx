@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react'
+import {useSession} from 'next-auth/react'
 
 import { trpc } from '../utils/trpc';
 import Link from 'next/link';
@@ -11,11 +12,28 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const FormCentral=(props)=>{
-    const {central,empresaId} = props
-    const [cent,setCent] = useState({...central,empresaId:empresaId})
+    const {nemo,empresaId} = props
+    const central = trpc.central_id.useQuery({empresaId:empresaId,nemo:nemo})
     const [disa ,setDisabled] = useState(true)
     const deptos = trpc.departamentos.useQuery()
     const update_central = trpc.central.useMutation()
+    const centralN={
+        nombre:'',
+        nemo:'',
+        direccion:'',
+        localidad:'',
+        partido:'',
+        sistema:'-1',
+        destino:'-1',
+        actividad:'',
+        notas:'',
+        departamentoId:-1,
+        empresaId:empresaId
+    }
+    const [cent,setCent] = useState(centralN)
+    useEffect(()=>{
+        setCent(central.data)
+    },[central.status])
 
     if(deptos.isLoading || central.isLoading){
         return <div>loading...</div>
@@ -53,7 +71,7 @@ const FormCentral=(props)=>{
                             placeholder="ID"
                             aria-label="id"
                             aria-describedby="basic-addon2"
-                            disabled={ central.nemo == '' ? disa : true }
+                            disabled={ central.data.nemo == '' ? disa : true }
                             />
                     </InputGroup>
                 </Col>

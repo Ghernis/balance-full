@@ -10,11 +10,11 @@ import Cuadro from './Cuadro';
 const Central=(props)=>{
     const {nemo}=props
     const {status,data} = useSession()
-    const central = trpc.central_id.useQuery({empresaId:data?.user?.name as string,nemo:nemo})
 
-    if(central.isLoading){
-        return <div>Loanding...</div>
+    if(status=='loading'){
+        return <div>loading...</div>
     }
+
     const centralN={
         nombre:'',
         nemo:'',
@@ -133,7 +133,7 @@ const Central=(props)=>{
         <>
             <div className='container'>
                 <h3>Central: {nemo}</h3>
-                <FormCentral empresaId={data.user.name} central={nemo=='new'? centralN :central.data}/>
+                <FormCentral empresaId={data?.user?.name} nemo={nemo}/>
                 <Cuadro data={datos} headers={headers} titulo='Tabla de Maquinas' />
                 <Button variant='success' size='sm' className='me-4'>Agregar Maquina</Button>
                 <Button variant='secondary' size='sm'>Editar</Button>

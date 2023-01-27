@@ -286,7 +286,8 @@ export const appRouter = router({
                 notas:true,
                 destino:true,
                 actividad:true,
-                departamentoId:true
+                departamentoId:true,
+                empresaId:true
             }
         })
         return resp

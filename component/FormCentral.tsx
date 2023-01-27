@@ -12,30 +12,13 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const FormCentral=(props)=>{
-    const {nemo,empresaId} = props
-    const central = trpc.central_id.useQuery({empresaId:empresaId,nemo:nemo})
+    const {central} = props
     const [disa ,setDisabled] = useState(true)
     const deptos = trpc.departamentos.useQuery()
     const update_central = trpc.central.useMutation()
-    const centralN={
-        nombre:'',
-        nemo:'',
-        direccion:'',
-        localidad:'',
-        partido:'',
-        sistema:'-1',
-        destino:'-1',
-        actividad:'',
-        notas:'',
-        departamentoId:-1,
-        empresaId:empresaId
-    }
-    const [cent,setCent] = useState(centralN)
-    useEffect(()=>{
-        setCent(central.data)
-    },[central.status])
+    const [cent,setCent] = useState(central)
 
-    if(deptos.isLoading || central.isLoading){
+    if(deptos.isLoading){
         return <div>loading...</div>
     }
     const handleGuardar=()=>{
@@ -45,7 +28,7 @@ const FormCentral=(props)=>{
         <>
             <label>Datos Basicos Central</label>
 
-            <Link href={('/empresa/'+empresaId) ?? '/'} legacyBehavior passHref>
+            <Link href={('/empresa/'+central.nombreId) ?? '/'} legacyBehavior passHref>
                 <Button size='sm' className='mx-4'>Volver a Empresa</Button>
             </Link>
             <Row>
@@ -71,7 +54,7 @@ const FormCentral=(props)=>{
                             placeholder="ID"
                             aria-label="id"
                             aria-describedby="basic-addon2"
-                            disabled={ central.data.nemo == '' ? disa : true }
+                            disabled={ central.nemo == '' ? disa : true }
                             />
                     </InputGroup>
                 </Col>
@@ -80,7 +63,7 @@ const FormCentral=(props)=>{
             <Row>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon3">Departamento</InputGroup.Text>
-                    <Form.Select 
+                    <Form.Select
                         value={cent.departamentoId}
                         onChange={(e)=>setCent({...cent,departamentoId:parseInt(e.target.value)})}
                         aria-label="Destino"
@@ -133,10 +116,10 @@ const FormCentral=(props)=>{
 
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon6">Destino</InputGroup.Text>
-                        <Form.Select 
+                        <Form.Select
                             value={cent.destino}
                             onChange={(e)=>setCent({...cent,destino:e.target.value})}
-                            aria-label="Destino" 
+                            aria-label="Destino"
                             disabled={disa}
                         >
                             <option value="-1">Seleccionar...</option>
@@ -149,10 +132,10 @@ const FormCentral=(props)=>{
                 <Col>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon7">Tipo de Sistema</InputGroup.Text>
-                        <Form.Select 
+                        <Form.Select
                             value={cent.sistema}
                             onChange={(e)=>setCent({...cent,sistema:e.target.value})}
-                            aria-label="Sistema" 
+                            aria-label="Sistema"
                             disabled={disa}
                         >
                             <option value="-1">Seleccionar...</option>

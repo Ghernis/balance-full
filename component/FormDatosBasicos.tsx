@@ -1,42 +1,60 @@
-import {useState,useContext} from 'react';
+import {useState,useEffect} from 'react';
 import { trpc } from '../utils/trpc';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import { AlertaContext } from '../context/alert.context'
+import {toast} from 'react-toastify'
 
 //import {EmpresaType} from '../models/empresa.model';
 
 const FormDatosBasicos=(props)=>{
     //const {empresa} = props
-    const {setAlerta,alerta} = useContext(AlertaContext)
+
     const empresaInit= props.empresa
     const [disabled,setDisabled] = useState(true)
     const [empresa,setEmpresa]=useState(empresaInit)
     const deptos = trpc.departamentos.useQuery()
     const put_emp= trpc.put_empresas.useMutation()
 
-    //useEffect(()=>{
-    //    console.log(empresa)
-    //    //put_emp.mutate(empresa)
-    //},[empresa])
+    useEffect(()=>{
+        if(put_emp.isError){
+            const errorObj=JSON.parse(put_emp.error.message)[0]
+            const errorMes=errorObj.message+' en campo: '+errorObj.path
+            //console.log(errorMes)
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        if(put_emp.isSuccess){
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+    },[put_emp.status])
 
     if(deptos.isLoading){
         return <div>loading...</div>
     }
     const testalerta=()=>{
-        setAlerta(!alerta)
-        console.log(alerta)
+        toast.error('wow dogi',{
+            position: toast.POSITION.TOP_RIGHT
+        })
+
 
     }
     const saveChanges=()=>{
-
-        put_emp.mutate(empresa)
-        //if (!put_emp.isError){setDisabled(true)}
-        console.log(put_emp.isError)
-        console.log(put_emp.error)
+        if(empresa.direccion==null || empresa.cp==null || empresa.tipo==null || empresa.destino==null || empresa.tipo==null || empresa.sistema==null || empresa.departamentoId ==null){
+            console.log(empresa)
+        toast.error('Formulario incompleto',{
+            position: toast.POSITION.TOP_RIGHT
+        })
+        }
+        else{
+            console.log('update')
+            put_emp.mutate(empresa)
+        }
     }
     return (
         <>

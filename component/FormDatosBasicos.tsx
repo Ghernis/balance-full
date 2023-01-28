@@ -1,15 +1,17 @@
-import {useState,useEffect} from 'react';
+import {useState,useContext} from 'react';
 import { trpc } from '../utils/trpc';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import { AlertaContext } from '../context/alert.context'
 
 //import {EmpresaType} from '../models/empresa.model';
 
 const FormDatosBasicos=(props)=>{
     //const {empresa} = props
+    const {setAlerta,alerta} = useContext(AlertaContext)
     const empresaInit= props.empresa
     const [disabled,setDisabled] = useState(true)
     const [empresa,setEmpresa]=useState(empresaInit)
@@ -24,7 +26,13 @@ const FormDatosBasicos=(props)=>{
     if(deptos.isLoading){
         return <div>loading...</div>
     }
+    const testalerta=()=>{
+        setAlerta(!alerta)
+        console.log(alerta)
+
+    }
     const saveChanges=()=>{
+
         put_emp.mutate(empresa)
         //if (!put_emp.isError){setDisabled(true)}
         console.log(put_emp.isError)
@@ -38,7 +46,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon1">Razon Social</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,nombre:e.target.value})}
-                            value={empresa.nombre ? '' : empresa.nombre}
+                            value={empresa.nombre==null ? '' : empresa.nombre}
                             placeholder="Razon Social"
                             aria-label="nombre"
                             aria-describedby="basic-addon1"
@@ -50,7 +58,7 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon2">Identificador</InputGroup.Text>
                         <Form.Control
-                            value={empresa.nombreId ? '' : empresa.nombreId}
+                            value={empresa.nombreId==null ? '' : empresa.nombreId}
                             placeholder="ID"
                             aria-label="id"
                             aria-describedby="basic-addon2"
@@ -112,7 +120,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon6">Tel</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,tel:e.target.value})}
-                            value={empresa.tel ? '' : empresa.tel}
+                            value={empresa.tel==null ? '' : empresa.tel}
                             placeholder="Telefono"
                             aria-label="tel"
                             aria-describedby="basic-addon6"
@@ -124,7 +132,7 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-7">
                         <InputGroup.Text id="basic-addon7">Mail</InputGroup.Text>
                         <Form.Control
-                            value={empresa.mail ? '' : empresa.mail}
+                            value={empresa.mail==null ? '' : empresa.mail}
                             onChange={(e)=>setEmpresa({...empresa,mail:e.target.value})}
                             placeholder="Mail"
                             aria-label="mail"
@@ -138,7 +146,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon8">Contacto</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,contacto:e.target.value})}
-                            value={empresa.contacto ? '' : empresa.contacto}
+                            value={empresa.contacto==null ? '' : empresa.contacto}
                             placeholder="Contacto"
                             aria-label="contacto"
                             aria-describedby="basic-addon8"
@@ -186,6 +194,7 @@ const FormDatosBasicos=(props)=>{
                 !disabled &&
                 <Col className='text-end'>
                 <Button className='my-4 btn btn-success' onClick={saveChanges}>Guardar cambios</Button>
+                <Button className='my-4 btn btn-success' onClick={testalerta}>alerta</Button>
                 </Col>
             }
                 </Row>

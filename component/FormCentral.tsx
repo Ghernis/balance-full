@@ -1,5 +1,4 @@
 import { useState,useEffect } from 'react'
-import {useSession} from 'next-auth/react'
 
 import { trpc } from '../utils/trpc';
 import Link from 'next/link';

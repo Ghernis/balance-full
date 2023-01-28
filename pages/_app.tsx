@@ -1,4 +1,8 @@
 import type { AppType } from 'next/app';
+import { useRouter } from 'next/router';
+import type { AppProps } from 'next/app'
+import { SessionProvider } from 'next-auth/react';
+import { Session } from 'next-auth'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'ar-poncho/dist/css/poncho.min.css';
@@ -11,9 +15,6 @@ import { AlertaProvider } from '../context/alert.context'
 import Toaster from '../component/Toaster'
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { SessionProvider } from 'next-auth/react';
-import { Session } from 'next-auth'
-import type { AppProps } from 'next/app'
 
 
 const MyApp: AppType = ({
@@ -21,6 +22,7 @@ const MyApp: AppType = ({
     pageProps}: AppProps<{
         session: Session;
     }>) => {
+    const router=useRouter()
     return(
         <>
             <SessionProvider session={pageProps.session}>

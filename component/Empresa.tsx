@@ -14,10 +14,17 @@ import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
     const {nombreId} = props
-    //const [empresa_id,setEmpresa] = useState(nombreId)
 
     const deptos = trpc.departamentos.useQuery()
     const empresa = trpc.empresa_id.useQuery({nombreId:nombreId})
+    //const [empresa_id,setEmpresa] = useState(empresa.data)
+
+    //useEffect(()=>{
+
+    //    setEmpresa(empresa.data)
+    //    console.log(empresa_id)
+
+    //},[empresa.isFetched])
 
     const headers=[
         {
@@ -71,6 +78,7 @@ const Empresa =(props:any)=>{
     if(empresa.isLoading || deptos.isLoading){
         return <div>loading</div>
     }
+    if(!empresa.data || empresa.data==undefined) return <div>loading...</div>
 
     return (
         <div>

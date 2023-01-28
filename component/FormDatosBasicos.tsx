@@ -11,12 +11,17 @@ import {toast} from 'react-toastify'
 
 const FormDatosBasicos=(props)=>{
     //const {empresa} = props
+    const utils = trpc.useContext()
 
-    const empresaInit= props.empresa
+    //const empresaInit= props.empresa
     const [disabled,setDisabled] = useState(true)
-    const [empresa,setEmpresa]=useState(empresaInit)
+    const [empresa,setEmpresa]=useState(props.empresa)
     const deptos = trpc.departamentos.useQuery()
-    const put_emp= trpc.put_empresas.useMutation()
+    const put_emp= trpc.put_empresas.useMutation({
+        onSuccess(){
+            utils.empresa_id.invalidate()
+        }
+    })
 
     useEffect(()=>{
         if(put_emp.isError){
@@ -31,28 +36,21 @@ const FormDatosBasicos=(props)=>{
             toast.success('Se actualizo la informacion',{
                 position: toast.POSITION.TOP_RIGHT
             })
+            setDisabled(!disabled)
         }
+        //setEmpresa(props.empresa)
     },[put_emp.status])
 
     if(deptos.isLoading){
         return <div>loading...</div>
     }
-    const testalerta=()=>{
-        toast.error('wow dogi',{
-            position: toast.POSITION.TOP_RIGHT
-        })
-
-
-    }
     const saveChanges=()=>{
         if(empresa.direccion==null || empresa.cp==null || empresa.tipo==null || empresa.destino==null || empresa.tipo==null || empresa.sistema==null || empresa.departamentoId ==null){
-            console.log(empresa)
         toast.error('Formulario incompleto',{
             position: toast.POSITION.TOP_RIGHT
         })
         }
         else{
-            console.log('update')
             put_emp.mutate(empresa)
         }
     }
@@ -212,7 +210,6 @@ const FormDatosBasicos=(props)=>{
                 !disabled &&
                 <Col className='text-end'>
                 <Button className='my-4 btn btn-success' onClick={saveChanges}>Guardar cambios</Button>
-                <Button className='my-4 btn btn-success' onClick={testalerta}>alerta</Button>
                 </Col>
             }
                 </Row>

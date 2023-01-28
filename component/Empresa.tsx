@@ -75,16 +75,16 @@ const Empresa =(props:any)=>{
     //useEffect(()=>{
     //    trpc.empresa_id.useQuery({nombreId:empresa_id})
     //},[empresa_id])
-    if(empresa.isLoading || deptos.isLoading){
-        return <div>loading</div>
-    }
-    if(!empresa.data || empresa.data==undefined) return <div>loading...</div>
+    //if(empresa.isLoading || deptos.isLoading){
+    //    return <div>loading</div>
+    //}
+    if(!empresa.data || !deptos.data) return <div>loading...</div>
 
     return (
         <div>
             <div className='container my-4'>
                 <Alert variant='info' className='my-4'>
-                    <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
+                    <strong>Recordar: </strong>Verificar y actualizar estos datos periodicamente
                 </Alert>
                 <h3>{empresa.data.tipo}</h3>
                 <label>Datos Basicos</label>

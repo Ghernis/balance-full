@@ -232,7 +232,6 @@ export const appRouter = router({
             direccion: z.string(),
             localidad: z.string(),
             partido: z.string(),
-            provincia: z.string(),
             notas: z.string(),
             sistema: z.enum(SistemaEnums),
             destino: z.enum(DestinoEnums),
@@ -243,7 +242,10 @@ export const appRouter = router({
     .mutation(async({input})=>{
         const resp = await prisma.central.upsert({
             where:{
-                nemo:input.nemo
+                nemo_empresaId:{
+                    empresaId:input.empresaId,
+                    nemo:input.nemo
+                }
             },
             update:input,
             create:{
@@ -252,7 +254,6 @@ export const appRouter = router({
                     direccion:input.direccion,
                     localidad:input.localidad,
                     partido:input.partido,
-                    provincia:input.provincia,
                     notas:input.notas,
                     sistema:input.sistema,
                     destino:input.destino,
@@ -260,7 +261,7 @@ export const appRouter = router({
                     empresaId: input.empresaId
             }
         })
-        return {resp}
+        return resp
     }),
     central_id: procedure
     .input(
@@ -281,12 +282,12 @@ export const appRouter = router({
                 direccion:true,
                 localidad:true,
                 partido:true,
-                provincia:true,
                 sistema:true,
                 notas:true,
                 destino:true,
                 actividad:true,
-                departamentoId:true
+                departamentoId:true,
+                empresaId:true
             }
         })
         return resp

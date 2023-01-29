@@ -1,10 +1,15 @@
+import { useEffect } from 'react'
+import { trpc } from '../utils/trpc';
+import {useSession} from 'next-auth/react'
+
 import Button from 'react-bootstrap/Button';
 
 import FormCentral from './FormCentral';
 import Cuadro from './Cuadro';
 
 const Central=(props)=>{
-    const {nemo}=props
+    const {central}=props
+
     const headers=[
         {
             label:'ID',
@@ -53,7 +58,8 @@ const Central=(props)=>{
 
 
     ]
-    const data=[
+    const datos=[
+
         {
             id:'Maquina1',
             tec:'TV',
@@ -109,9 +115,9 @@ const Central=(props)=>{
     return (
         <>
             <div className='container'>
-                <h3>Central: {nemo}</h3>
-                <FormCentral />
-                <Cuadro data={data} headers={headers} titulo='Tabla de Maquinas' />
+                <h3>Central: {central.nemo}</h3>
+                <FormCentral central={central}/>
+                <Cuadro data={datos} headers={headers} titulo='Tabla de Maquinas' />
                 <Button variant='success' size='sm' className='me-4'>Agregar Maquina</Button>
                 <Button variant='secondary' size='sm'>Editar</Button>
             </div>

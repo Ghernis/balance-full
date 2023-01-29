@@ -5,31 +5,54 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import {toast} from 'react-toastify'
 
 //import {EmpresaType} from '../models/empresa.model';
 
 const FormDatosBasicos=(props)=>{
     //const {empresa} = props
-    const empresaInit= props.empresa
-    const [disabled,setDisabled] = useState(true)
-    const [empresa,setEmpresa]=useState(empresaInit)
-    const deptos = trpc.departamentos.useQuery()
-    const put_emp= trpc.put_empresas.useMutation()
+    const utils = trpc.useContext()
 
-    //useEffect(()=>{
-    //    console.log(empresa)
-    //    //put_emp.mutate(empresa)
-    //},[empresa])
+    //const empresaInit= props.empresa
+    const [disabled,setDisabled] = useState(true)
+    const [empresa,setEmpresa]=useState(props.empresa)
+    const deptos = trpc.departamentos.useQuery()
+    const put_emp= trpc.put_empresas.useMutation({
+        onSuccess(){
+            utils.empresa_id.invalidate()
+        }
+    })
+
+    useEffect(()=>{
+        if(put_emp.isError){
+            const errorObj=JSON.parse(put_emp.error.message)[0]
+            const errorMes=errorObj.message+' en campo: '+errorObj.path
+            //console.log(errorMes)
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        if(put_emp.isSuccess){
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+            setDisabled(!disabled)
+        }
+        //setEmpresa(props.empresa)
+    },[put_emp.status])
 
     if(deptos.isLoading){
         return <div>loading...</div>
     }
     const saveChanges=()=>{
-        console.log(empresa)
-        //put_emp.mutate(empresa)
-        //if (!put_emp.isError){setDisabled(true)} 
-        console.log(put_emp.isError)
-        console.log(put_emp.error)
+        if(empresa.direccion==null || empresa.cp==null || empresa.tipo==null || empresa.destino==null || empresa.tipo==null || empresa.sistema==null || empresa.departamentoId ==null){
+        toast.error('Formulario incompleto',{
+            position: toast.POSITION.TOP_RIGHT
+        })
+        }
+        else{
+            put_emp.mutate(empresa)
+        }
     }
     return (
         <>
@@ -39,7 +62,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon1">Razon Social</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,nombre:e.target.value})}
-                            value={empresa.nombre}
+                            value={empresa.nombre==null ? '' : empresa.nombre}
                             placeholder="Razon Social"
                             aria-label="nombre"
                             aria-describedby="basic-addon1"
@@ -51,7 +74,7 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon2">Identificador</InputGroup.Text>
                         <Form.Control
-                            value={empresa.nombreId}
+                            value={empresa.nombreId==null ? '' : empresa.nombreId}
                             placeholder="ID"
                             aria-label="id"
                             aria-describedby="basic-addon2"
@@ -66,7 +89,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon3">Direccion</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,direccion:e.target.value})}
-                            value={empresa.direccion}
+                            value={empresa.direccion==null ? '' : empresa.direccion}
                             placeholder="Direccion"
                             aria-label="direccion"
                             aria-describedby="basic-addon3"
@@ -79,7 +102,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon4">CP</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,cp:e.target.value})}
-                            value={empresa.cp}
+                            value={empresa.cp==null ? '' : empresa.cp}
                             placeholder="CP"
                             aria-label="cp"
                             aria-describedby="basic-addon4"
@@ -92,8 +115,8 @@ const FormDatosBasicos=(props)=>{
 
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon5">Departamento</InputGroup.Text>
-                        <Form.Select aria-label="Departamento" 
-                        value={empresa.departamentoId ?? 'val'}
+                        <Form.Select aria-label="Departamento"
+                        value={empresa.departamentoId==null ? '' : empresa.departamentoId ?? 'val'}
                         onChange={(e)=>setEmpresa({...empresa,departamentoId:parseInt(e.target.value)})}
                         disabled={disabled}>
                             <option>Seleccionar...</option>
@@ -113,7 +136,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon6">Tel</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,tel:e.target.value})}
-                            value={empresa.tel}
+                            value={empresa.tel==null ? '' : empresa.tel}
                             placeholder="Telefono"
                             aria-label="tel"
                             aria-describedby="basic-addon6"
@@ -125,7 +148,7 @@ const FormDatosBasicos=(props)=>{
                     <InputGroup className="mb-7">
                         <InputGroup.Text id="basic-addon7">Mail</InputGroup.Text>
                         <Form.Control
-                            value={empresa.mail}
+                            value={empresa.mail==null ? '' : empresa.mail}
                             onChange={(e)=>setEmpresa({...empresa,mail:e.target.value})}
                             placeholder="Mail"
                             aria-label="mail"
@@ -139,7 +162,7 @@ const FormDatosBasicos=(props)=>{
                         <InputGroup.Text id="basic-addon8">Contacto</InputGroup.Text>
                         <Form.Control
                             onChange={(e)=>setEmpresa({...empresa,contacto:e.target.value})}
-                            value={empresa.contacto}
+                            value={empresa.contacto==null ? '' : empresa.contacto}
                             placeholder="Contacto"
                             aria-label="contacto"
                             aria-describedby="basic-addon8"
@@ -152,9 +175,9 @@ const FormDatosBasicos=(props)=>{
                 <Col>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Tipo de Sistema</InputGroup.Text>
-                        <Form.Select aria-label="Destino" 
-                            disabled={disabled} 
-                            value={empresa.sistema}
+                        <Form.Select aria-label="Destino"
+                            disabled={disabled}
+                            value={empresa.sistema==null ? '' : empresa.sistema}
                             onChange={(e)=>setEmpresa({...empresa,sistema:e.target.value})}
                         >
                             <option>Seleccionar...</option>
@@ -166,9 +189,9 @@ const FormDatosBasicos=(props)=>{
                 <Col>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Destino</InputGroup.Text>
-                        <Form.Select aria-label="Destino" 
+                        <Form.Select aria-label="Destino"
                             disabled={disabled}
-                            value={empresa.destino}
+                            value={empresa.destino==null ? '' : empresa.destino}
                             onChange={(e)=>setEmpresa({...empresa,destino:e.target.value})}
                         >
                             <option>Seleccionar...</option>

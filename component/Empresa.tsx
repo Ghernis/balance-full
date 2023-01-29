@@ -14,10 +14,17 @@ import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
     const {nombreId} = props
-    const [empresa_id,setEmpresa] = useState(nombreId)
 
     const deptos = trpc.departamentos.useQuery()
-    const empresa = trpc.empresa_id.useQuery({nombreId:empresa_id})
+    const empresa = trpc.empresa_id.useQuery({nombreId:nombreId})
+    //const [empresa_id,setEmpresa] = useState(empresa.data)
+
+    //useEffect(()=>{
+
+    //    setEmpresa(empresa.data)
+    //    console.log(empresa_id)
+
+    //},[empresa.isFetched])
 
     const headers=[
         {
@@ -68,15 +75,16 @@ const Empresa =(props:any)=>{
     //useEffect(()=>{
     //    trpc.empresa_id.useQuery({nombreId:empresa_id})
     //},[empresa_id])
-    if(empresa.isLoading || deptos.isLoading){
-        return <div>loading</div>
-    }
+    //if(empresa.isLoading || deptos.isLoading){
+    //    return <div>loading</div>
+    //}
+    if(!empresa.data || !deptos.data) return <div>loading...</div>
 
     return (
         <div>
             <div className='container my-4'>
                 <Alert variant='info' className='my-4'>
-                    <strong>Recordar: </strong>Verificar y actualizar estos datos si cambian(o algo asi)
+                    <strong>Recordar: </strong>Verificar y actualizar estos datos periodicamente
                 </Alert>
                 <h3>{empresa.data.tipo}</h3>
                 <label>Datos Basicos</label>
@@ -104,7 +112,9 @@ const Empresa =(props:any)=>{
                                 }
                                 </ListGroup>
                             }
+                            <Link legacyBehavior href='/central/new'>
                             <Button className='my-4' variant='primary'>Agregar</Button>
+                            </Link>
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">

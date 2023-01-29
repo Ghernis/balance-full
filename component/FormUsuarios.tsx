@@ -9,8 +9,13 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const FormUsuarios=(props)=>{
+    const utils = trpc.useContext()
     const {empresa} = props
-    const updateUser = trpc.update_usuario.useMutation()
+    const updateUser = trpc.update_usuario.useMutation({
+        onSuccess(){
+            utils.usuario.invalidate({id:empresa.id})
+        }
+    })
     const altaEmpresa = trpc.alta_empresa.useMutation()
 
 
@@ -21,6 +26,7 @@ const FormUsuarios=(props)=>{
     }
     const handleClick=()=>{
         updateUser.mutate(usuario)
+        console.log(empresa)
     }
     const crearEmpresa=()=>{
 
@@ -106,6 +112,7 @@ const FormUsuarios=(props)=>{
                             <option value="Autoproductor">Autoproductor</option>
                         </Form.Select>
                     </InputGroup>
+            <Button onClick={()=>handleClick()}>Guardar Cambios a Usuario</Button>
                 <Form.Check 
                     type='checkbox'
                     label='Informacion entregada'
@@ -115,8 +122,8 @@ const FormUsuarios=(props)=>{
                 <Form.Check 
                     type='checkbox'
                     label='Verificado'
-                    checked={usuario.verificada}
-                    onChange={()=>setUsuario({...usuario,verificada:toggleBools(usuario.verificada)})}
+                    checked={empresa.verificada}
+                    onChange={()=>updateUser.mutate({...empresa,verificada:toggleBools(empresa.verificada)})}
                     />
                 <Form.Check 
                     type='checkbox'
@@ -125,7 +132,6 @@ const FormUsuarios=(props)=>{
                     onChange={()=>setUsuario({...usuario,habilitado:toggleBools(usuario.habilitado)})}
                     />
             </Row>
-            <Button onClick={()=>handleClick()}>Guardar Cambios a Usuario</Button>
             <Button 
                 disabled={!usuario.verificada}
                 onClick={()=>crearEmpresa()}

@@ -19,6 +19,7 @@ const FormCentral=(props)=>{
 
     const [showA,setShowA] = useState(false)
 
+    const nemos = trpc.list_nemos_central.useQuery({empresaId:central.empresaId})
     const deptos = trpc.departamentos.useQuery()
     const update_central = trpc.central.useMutation({
         onSuccess(){
@@ -28,15 +29,30 @@ const FormCentral=(props)=>{
 
     const toggleShowA = () => setShowA(!showA);
     const handleGuardar=()=>{
-        console.log(cent)
         if(cent.nombre==null || cent.departamentoId==null){
             toast.error('Formulario incompleto',{
                 position: toast.POSITION.TOP_RIGHT
             })
         }
         else{
-            update_central.mutate(cent)
-            toggleShowA()
+            if(central.new){
+                //console.log('check nemo')
+                //if(central.nemo in nemos) console.log('repe')
+                if (nemos.data.centrales.filter(e => e.nemo == cent.nemo).length > 0) {
+                    toast.error('Ya existe una central con ese identificador unico.',{
+                        position: toast.POSITION.TOP_RIGHT
+                    })
+                }
+                else{
+                    update_central.mutate(cent)
+                    toggleShowA()
+
+                }
+            }
+            else{
+                update_central.mutate(cent)
+                toggleShowA()
+            }
         }
     }
 
@@ -58,7 +74,7 @@ const FormCentral=(props)=>{
         //setEmpresa(props.empresa)
     },[update_central.status])
 
-    if(deptos.isLoading){
+    if(!deptos.data || !nemos.data){
         return <div>loading...</div>
     }
     return (

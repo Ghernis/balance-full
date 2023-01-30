@@ -224,6 +224,27 @@ export const appRouter = router({
             resp
         }
     }),
+    list_nemos_central: procedure
+    .input(
+        z.object({
+            empresaId: z.string()
+        })
+    )
+    .query(async({input})=>{
+        const resp = await prisma.empresa.findFirst({
+            where:{
+                nombreId:input.empresaId
+            },
+            select:{
+                centrales:{
+                    select:{
+                        nemo:true
+                    }
+                }
+            }
+        })
+        return resp
+    }),
     central: procedure
     .input(
         z.object({

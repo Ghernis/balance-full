@@ -1,6 +1,10 @@
 import { useState,useEffect } from 'react'
 
+import { useRouter } from 'next/router'
+
 import { trpc } from '../utils/trpc';
+
+import {toast} from 'react-toastify'
 
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -9,6 +13,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const SignUp=()=>{
+    const router = useRouter()
     const users = trpc.new_user.useMutation()
     const [user, setUser]=useState({
         nombre:'',
@@ -17,16 +22,36 @@ const SignUp=()=>{
         mail:''
     })
 
-    //useEffect(()=>{
-    //    console.log(user)
-    //},[user])
+    useEffect(()=>{
+        if(users.isError){
+            const errorObj=JSON.parse(users.error.message)[0]
+            const errorMes=errorObj.message+' en campo: '+errorObj.path
+            //console.log(errorMes)
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        if(users.isSuccess){
+            toast.success('Se genero un pedido de alta. A la brevedad se comunicaran con usted',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+            router.push('/')
+        }
+    },[users.status])
 
     const onRegister=()=>{
-        users.mutate(user)
+        if(user.nombre=='' || user.contacto=='' || user.tel=='' || user.mail==''){
+            toast.error('El formulario no esta completo',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        else{
+            users.mutate(user)
+        }
     }
     return (
         <div className='container'>
-            <h3 className='my-4'>Registrarse en el Sistema</h3>
+            <h3 className='my-4'>Solicitud de alta para el Sistema</h3>
 
             <Row className='mt-4'>
 

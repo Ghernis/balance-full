@@ -24,7 +24,8 @@ const CentralPagina=()=>{
         actividad:'',
         notas:'',
         departamentoId:-1,
-        empresaId:empresaId
+        empresaId:empresaId,
+        new:true
     }
 
     //useEffect(()=>{

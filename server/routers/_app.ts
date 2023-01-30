@@ -224,6 +224,27 @@ export const appRouter = router({
             resp
         }
     }),
+    list_nemos_central: procedure
+    .input(
+        z.object({
+            empresaId: z.string()
+        })
+    )
+    .query(async({input})=>{
+        const resp = await prisma.empresa.findFirst({
+            where:{
+                nombreId:input.empresaId
+            },
+            select:{
+                centrales:{
+                    select:{
+                        nemo:true
+                    }
+                }
+            }
+        })
+        return resp
+    }),
     central: procedure
     .input(
         z.object({
@@ -237,6 +258,7 @@ export const appRouter = router({
             destino: z.enum(DestinoEnums),
             actividad: z.string(),
             empresaId: z.string(),
+            departamentoId: z.number(),
         })
     )
     .mutation(async({input})=>{
@@ -258,7 +280,8 @@ export const appRouter = router({
                     sistema:input.sistema,
                     destino:input.destino,
                     actividad:input.actividad,
-                    empresaId: input.empresaId
+                    empresaId: input.empresaId,
+                    departamentoId: input.departamentoId
             }
         })
         return resp

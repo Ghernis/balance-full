@@ -102,7 +102,7 @@ const Empresa =(props:any)=>{
                                     {
                                     empresa.data.centrales.map((emp:any)=>{
                                         return <CartaLista
-                                            key={emp.id}
+                                            key={emp.nemo}
                                             titulo={emp.nombre}
                                             subtitulo={emp.nemo}
                                             badge={emp.destino}

@@ -29,15 +29,13 @@ const FormCentral=(props)=>{
 
     const toggleShowA = () => setShowA(!showA);
     const handleGuardar=()=>{
-        if(cent.nombre==null || cent.departamentoId==null){
+        if(cent.nombre=='' || cent.departamentoId=='-1' || cent.localidad=='' || cent.direccion=='' || cent.actividad==''){
             toast.error('Formulario incompleto',{
                 position: toast.POSITION.TOP_RIGHT
             })
         }
         else{
             if(central.new){
-                //console.log('check nemo')
-                //if(central.nemo in nemos) console.log('repe')
                 if (nemos.data.centrales.filter(e => e.nemo == cent.nemo).length > 0) {
                     toast.error('Ya existe una central con ese identificador unico.',{
                         position: toast.POSITION.TOP_RIGHT
@@ -46,7 +44,6 @@ const FormCentral=(props)=>{
                 else{
                     update_central.mutate(cent)
                     toggleShowA()
-
                 }
             }
             else{

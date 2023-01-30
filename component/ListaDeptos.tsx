@@ -31,7 +31,7 @@ const ListaDeptos=()=>{
                     <Row>
 
                 <Alert variant='info' className='my-4'>
-                    <strong>Nota: </strong>Seccion departamentos. Si existe declaracion previa, los departamentos seran los mismos que la anterior.
+                    <strong>Nota: </strong>Seccion departamentos. Si existe declaracion previa, los departamentos seran los mismos que la declaracion anterior.
 
                 </Alert>
                     </Row>

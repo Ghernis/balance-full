@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { trpc } from '../utils/trpc'
+import {useRouter} from 'next/router'
 import Link from 'next/link'
+
+import {toast} from 'react-toastify'
 
 import CartaLista from '../component/CartaList'
 import FormDatosBasicos from '../component/FormDatosBasicos'
@@ -13,18 +16,48 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
+    const router = useRouter()
+    const dia = new Date()
+    const fecha = {
+        dia:dia.getDate(),
+        mes:dia.getMonth()+1,
+        anio: dia.getFullYear()
+    }
+
+
     const {nombreId} = props
 
     const deptos = trpc.departamentos.useQuery()
     const empresa = trpc.empresa_id.useQuery({nombreId:nombreId})
+    const newVariable = trpc.new_variable.useMutation()
+
     //const [empresa_id,setEmpresa] = useState(empresa.data)
 
-    //useEffect(()=>{
+    useEffect(()=>{
+        if(newVariable.isError){
+            const errorObj=newVariable.error.message
+            //const errorMes=errorObj.message+' en campo: '+errorObj.path
+            //console.log(errorMes)
+            toast.error(errorObj,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        if(newVariable.isSuccess){
+            toast.success('Se creo una nueva declaracion vacia',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
 
-    //    setEmpresa(empresa.data)
-    //    console.log(empresa_id)
+    },[newVariable.status])
+    const nuevoVariable=()=>{
+        newVariable.mutate({
+            anio:fecha.anio,
+            mes:fecha.mes,
+            empresaId:nombreId
+        })
 
-    //},[empresa.isFetched])
+        router.push('/variable')
+    }
 
     const headers=[
         {
@@ -120,9 +153,7 @@ const Empresa =(props:any)=>{
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>Declaraciones Variable</Accordion.Header>
                         <Accordion.Body>
-                            <Link href='/variable' legacyBehavior>
-                            <Button className='my-4' variant='primary'>Nueva declaracion</Button>
-                            </Link>
+                            <Button onClick={nuevoVariable} className='my-4' variant='primary'>Nueva declaracion</Button>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

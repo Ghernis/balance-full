@@ -21,6 +21,9 @@ const Variable=()=>{
                     <Button size='sm' className='my-3'>Volver atras</Button>
                 </Link>
                 <h3>Declaracion Variable</h3>
+                {/*
+                <h4>Periodo: {fecha.mes + ' - '+ fecha.anio}</h4>
+                        */}
                 <Tabs
                     id="controlled-tab-example"
                     activeKey={key}

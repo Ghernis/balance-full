@@ -1,21 +1,23 @@
 import { JWT } from 'next-auth/jwt'
 import NextAuth from "next-auth"
+import { DefaultSession, DefaultUser } from "next-auth";
 
-declare module "next-auth/jwt" {
-    /**
-    * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
-    */
-    interface JWT {
-        /** The user's role . */
-        role?: string
-    }
+// Define a role enum
+export enum Role {
+  user = "USER",
+  admin = "ADMIN",
+  mod = "MOD",
+}
+// common interface for JWT and Session
+interface IUser extends DefaultUser {
+  role?: Role;
 }
 declare module "next-auth" {
+  interface User extends IUser {}
   interface Session {
-    role: string;
+    user?: User;
   }
-
-  interface User {
-    role: string;
-  }
+}
+declare module "next-auth/jwt" {
+  interface JWT extends IUser {}
 }

@@ -18,7 +18,6 @@ export const authOptions:NextAuthOptions = {
                 const {nombre,password}=credentials as {
                     nombre: string;
                     password: string;
-                    role: string;
                 }
                 //find user from db
                 const resp = await prisma.usuario.findFirst({
@@ -60,11 +59,17 @@ export const authOptions:NextAuthOptions = {
         jwt(params){
             //update token
             //return final_token
-            if(params.user?.role){
+            if(params.user){
                 params.token.role=params.user.role;
             }
             //return final_token
             return params.token
+        },
+        async session({session, token}){
+            if(token && session.user){
+                session.user.role = token.role
+            }
+            return session
         }
     }
 

@@ -11,7 +11,6 @@ import { trpc } from '../utils/trpc';
 
 import NavBar from '../component/nav';
 import Footer from '../component/Footer';
-import { AlertaProvider } from '../context/alert.context'
 import Toaster from '../component/Toaster'
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
@@ -27,10 +26,8 @@ const MyApp: AppType = ({
         <>
             <SessionProvider session={pageProps.session}>
             <NavBar />
-            <AlertaProvider>
             <Toaster />
             <Component {...pageProps} />
-            </AlertaProvider>
             <Footer />
             <ReactQueryDevtools initialIsOpen={false} />
             </SessionProvider>

@@ -1,11 +1,10 @@
 import { useState,useEffect } from 'react'
-
-import { trpc } from '../utils/trpc';
 import Link from 'next/link';
 
+import { trpc } from '../utils/trpc';
 
-import ToastContainer from 'react-bootstrap/ToastContainer'
-import Toast from 'react-bootstrap/Toast'
+import {toast} from 'react-toastify'
+
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,40 +12,57 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 const FormCentral=(props)=>{
+    const utils = trpc.useContext()
     const {central} = props
     const [disa ,setDisabled] = useState(true)
-    const deptos = trpc.departamentos.useQuery()
-    const update_central = trpc.central.useMutation()
     const [cent,setCent] = useState(central)
 
     const [showA,setShowA] = useState(false)
+
+    const deptos = trpc.departamentos.useQuery()
+    const update_central = trpc.central.useMutation({
+        onSuccess(){
+            utils.central_id.invalidate({empresaId:central.empresaId,nemo:central.nemo})
+        }
+    })
+
     const toggleShowA = () => setShowA(!showA);
     const handleGuardar=()=>{
-        update_central.mutate(cent)
-
-        if(update_central.isError){
+        console.log(cent)
+        if(cent.nombre==null || cent.departamentoId==null){
+            toast.error('Formulario incompleto',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        else{
+            update_central.mutate(cent)
             toggleShowA()
         }
     }
+
+    useEffect(()=>{
+        if(update_central.isError){
+            const errorObj=JSON.parse(update_central.error.message)[0]
+            const errorMes=errorObj.message+' en campo: '+errorObj.path
+            //console.log(errorMes)
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        if(update_central.isSuccess){
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+            setDisabled(!disa)
+        }
+        //setEmpresa(props.empresa)
+    },[update_central.status])
+
     if(deptos.isLoading){
         return <div>loading...</div>
     }
     return (
         <>
-            <ToastContainer className="p-3" position='middle-end'>
-                <Toast show={showA} onClose={toggleShowA} delay={3000} autohide>
-                    <Toast.Header>
-                        <img
-                            src="holder.js/20x20?text=%20"
-                            className="rounded me-2"
-                            alt=""
-                            />
-                        <strong className="me-auto">Bootstrap</strong>
-                        <small>11 mins ago</small>
-                    </Toast.Header>
-                    <Toast.Body> mensaje error</Toast.Body>
-                </Toast>
-            </ToastContainer>
             <label>Datos Basicos Central</label>
 
             <Link href={('/empresa/'+central.empresaId) ?? '/'} legacyBehavior passHref>
@@ -57,7 +73,7 @@ const FormCentral=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Nombre Central</InputGroup.Text>
                         <Form.Control
-                            value={cent.nombre}
+                            value={cent.nombre==null ? '' : cent.nombre}
                             onChange={(e)=>setCent({...cent,nombre:e.target.value})}
                             placeholder="Nombre Central"
                             aria-label="nombre"
@@ -70,7 +86,7 @@ const FormCentral=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon2">Identificador</InputGroup.Text>
                         <Form.Control
-                            value={cent.nemo}
+                            value={cent.nemo==null ? '' : cent.nemo}
                             onChange={(e)=>setCent({...cent,nemo:e.target.value})}
                             placeholder="ID"
                             aria-label="id"
@@ -85,7 +101,7 @@ const FormCentral=(props)=>{
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon3">Departamento</InputGroup.Text>
                     <Form.Select
-                        value={cent.departamentoId}
+                        value={cent.departamentoId==null ? '-1' : cent.departamentoId}
                         onChange={(e)=>setCent({...cent,departamentoId:parseInt(e.target.value)})}
                         aria-label="Destino"
                         disabled={disa}
@@ -108,7 +124,7 @@ const FormCentral=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon4">Direccion</InputGroup.Text>
                         <Form.Control
-                            value={cent.direccion}
+                            value={cent.direccion==null ? '' : cent.direccion}
                             onChange={(e)=>setCent({...cent,direccion:e.target.value})}
                             placeholder="Direccion"
                             aria-label="direccion"
@@ -121,7 +137,7 @@ const FormCentral=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon5">Localidad</InputGroup.Text>
                         <Form.Control
-                            value={cent.localidad}
+                            value={cent.localidad == null ? '' : cent.localidad}
                             onChange={(e)=>setCent({...cent,localidad:e.target.value})}
                             placeholder="Localidad"
                             aria-label="localidad"
@@ -138,7 +154,7 @@ const FormCentral=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon6">Destino</InputGroup.Text>
                         <Form.Select
-                            value={cent.destino}
+                            value={cent.destino==null ? '-1' : cent.destino}
                             onChange={(e)=>setCent({...cent,destino:e.target.value})}
                             aria-label="Destino"
                             disabled={disa}
@@ -154,7 +170,7 @@ const FormCentral=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon7">Tipo de Sistema</InputGroup.Text>
                         <Form.Select
-                            value={cent.sistema}
+                            value={cent.sistema== null ? '-1' : cent.sistema}
                             onChange={(e)=>setCent({...cent,sistema:e.target.value})}
                             aria-label="Sistema"
                             disabled={disa}
@@ -169,7 +185,7 @@ const FormCentral=(props)=>{
             <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon8">Actividad</InputGroup.Text>
                 <Form.Control
-                    value={cent.actividad}
+                    value={cent.actividad == null ? '' : cent.actividad}
                     onChange={(e)=>setCent({...cent,actividad:e.target.value})}
                     placeholder="Actividad"
                     aria-label="actividad"
@@ -180,7 +196,7 @@ const FormCentral=(props)=>{
             <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon9">Notas</InputGroup.Text>
                 <Form.Control
-                    value={cent.notas}
+                    value={cent.notas == null ? '' : cent.notas}
                     onChange={(e)=>setCent({...cent,notas:e.target.value})}
                     placeholder="Notas"
                     aria-label="notas"

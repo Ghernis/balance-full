@@ -237,6 +237,7 @@ export const appRouter = router({
             destino: z.enum(DestinoEnums),
             actividad: z.string(),
             empresaId: z.string(),
+            departamentoId: z.number(),
         })
     )
     .mutation(async({input})=>{
@@ -258,7 +259,8 @@ export const appRouter = router({
                     sistema:input.sistema,
                     destino:input.destino,
                     actividad:input.actividad,
-                    empresaId: input.empresaId
+                    empresaId: input.empresaId,
+                    departamentoId: input.departamentoId
             }
         })
         return resp

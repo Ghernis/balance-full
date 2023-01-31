@@ -20,7 +20,7 @@ const SignUp=()=>{
         contacto:'',
         tel:'',
         mail:'',
-        tipo:'select'
+        tipo: 'Distribuidora'
     })
 
     useEffect(()=>{
@@ -41,7 +41,7 @@ const SignUp=()=>{
     },[users.status])
 
     const onRegister=()=>{
-        if(user.nombre=='' || user.contacto=='' || user.tel=='' || user.mail=='' || user.tipo=='select'){
+        if(user.nombre=='' || user.contacto=='' || user.tel=='' || user.mail==''){
             toast.error('El formulario no esta completo',{
                 position: toast.POSITION.TOP_RIGHT
             })
@@ -114,7 +114,6 @@ const SignUp=()=>{
                         value={user.tipo ?? 'select'}
                         onChange={(e)=>setUser({...user,tipo:e.target.value})}
                     >
-                            <option value='select'>Seleccionar...</option>
                             <option value="Distribuidora">Distribuidora</option>
                             <option value="Cooperativa">Cooperativa</option>
                             <option value="Autoproductor">Autoproductor</option>

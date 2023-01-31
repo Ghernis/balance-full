@@ -24,6 +24,15 @@ const FormCentral=(props)=>{
     const update_central = trpc.central.useMutation({
         onSuccess(){
             utils.central_id.invalidate({empresaId:central.empresaId,nemo:central.nemo})
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+            setDisabled(!disa)
+        },
+        onError(e){
+            toast.error(e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
         }
     })
 
@@ -52,24 +61,6 @@ const FormCentral=(props)=>{
             }
         }
     }
-
-    useEffect(()=>{
-        if(update_central.isError){
-            const errorObj=JSON.parse(update_central.error.message)[0]
-            const errorMes=errorObj.message+' en campo: '+errorObj.path
-            //console.log(errorMes)
-            toast.error(errorMes,{
-                position: toast.POSITION.TOP_RIGHT
-            })
-        }
-        if(update_central.isSuccess){
-            toast.success('Se actualizo la informacion',{
-                position: toast.POSITION.TOP_RIGHT
-            })
-            setDisabled(!disa)
-        }
-        //setEmpresa(props.empresa)
-    },[update_central.status])
 
     if(!deptos.data || !nemos.data){
         return <div>loading...</div>

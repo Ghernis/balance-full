@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import { trpc } from '../utils/trpc';
 
@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+
+import {toast} from 'react-toastify'
 
 const FormUsuarios=(props)=>{
     const utils = trpc.useContext()
@@ -18,8 +20,24 @@ const FormUsuarios=(props)=>{
     })
     const altaEmpresa = trpc.alta_empresa.useMutation()
 
-
     const [usuario,setUsuario]=useState(empresa)
+
+    useEffect(()=>{
+        if(updateUser.isError){
+            const errorObj=updateUser.error
+            const errorMes=errorObj.message
+            //console.log(errorMes)
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+        if(updateUser.isSuccess){
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+
+    },[updateUser.status])
 
     const toggleBools=(val:Boolean)=>{
         return !val

@@ -19,7 +19,8 @@ const SignUp=()=>{
         nombre:'',
         contacto:'',
         tel:'',
-        mail:''
+        mail:'',
+        tipo:'select'
     })
 
     useEffect(()=>{
@@ -40,7 +41,7 @@ const SignUp=()=>{
     },[users.status])
 
     const onRegister=()=>{
-        if(user.nombre=='' || user.contacto=='' || user.tel=='' || user.mail==''){
+        if(user.nombre=='' || user.contacto=='' || user.tel=='' || user.mail=='' || user.tipo=='select'){
             toast.error('El formulario no esta completo',{
                 position: toast.POSITION.TOP_RIGHT
             })
@@ -106,6 +107,19 @@ const SignUp=()=>{
                             />
                     </InputGroup>
                 </Col>
+                
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text id="basic-addon1">Tipo de empresa</InputGroup.Text>
+                        <Form.Select aria-label="Destino"
+                        value={user.tipo ?? 'select'}
+                        onChange={(e)=>setUser({...user,tipo:e.target.value})}
+                    >
+                            <option value='select'>Seleccionar...</option>
+                            <option value="Distribuidora">Distribuidora</option>
+                            <option value="Cooperativa">Cooperativa</option>
+                            <option value="Autoproductor">Autoproductor</option>
+                        </Form.Select>
+                    </InputGroup>
             </Row>
             <Button size='sm' onClick={onRegister}>Registrarse</Button>
             <Row>

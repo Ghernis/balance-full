@@ -36,7 +36,7 @@ const SignUp=()=>{
             toast.success('Se genero un pedido de alta. A la brevedad se comunicaran con usted',{
                 position: toast.POSITION.TOP_RIGHT
             })
-            router.push('/')
+            //router.push('/')
         }
     },[users.status])
 

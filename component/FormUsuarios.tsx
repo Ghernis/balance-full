@@ -16,28 +16,30 @@ const FormUsuarios=(props)=>{
     const updateUser = trpc.update_usuario.useMutation({
         onSuccess(){
             utils.usuario.invalidate({id:empresa.id})
-        }
-    })
-    const altaEmpresa = trpc.alta_empresa.useMutation()
-
-    const [usuario,setUsuario]=useState(empresa)
-
-    useEffect(()=>{
-        if(updateUser.isError){
-            const errorObj=updateUser.error
-            const errorMes=errorObj.message
-            //console.log(errorMes)
-            toast.error(errorMes,{
-                position: toast.POSITION.TOP_RIGHT
-            })
-        }
-        if(updateUser.isSuccess){
             toast.success('Se actualizo la informacion',{
                 position: toast.POSITION.TOP_RIGHT
             })
+        },
+        onError(e){
+            toast.error('Error en cambios:'+e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
         }
+    })
+    const altaEmpresa = trpc.alta_empresa.useMutation({
+        onSuccess(){
+            toast.success('Se dio de alta la empresa.',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        },
+        onError(e){
+            toast.error('Error en alta:'+e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+    })
 
-    },[updateUser.status])
+    const [usuario,setUsuario]=useState(empresa)
 
     const toggleBools=(val:Boolean)=>{
         return !val

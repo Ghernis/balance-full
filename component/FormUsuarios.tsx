@@ -116,8 +116,8 @@ const FormUsuarios=(props)=>{
                 <Form.Check 
                     type='checkbox'
                     label='Informacion entregada'
-                    checked={usuario.informacion}
-                    onChange={()=>setUsuario({...usuario,informacion:toggleBools(usuario.informacion)})}
+                    checked={empresa.informacion}
+                    onChange={()=>updateUser.mutate({...empresa,informacion:toggleBools(empresa.informacion)})}
                     />
                 <Form.Check 
                     type='checkbox'
@@ -128,12 +128,12 @@ const FormUsuarios=(props)=>{
                 <Form.Check 
                     type='checkbox'
                     label='Habilitar para carga'
-                    checked={usuario.habilitado}
-                    onChange={()=>setUsuario({...usuario,habilitado:toggleBools(usuario.habilitado)})}
+                    checked={empresa.habilitado}
+                    onChange={()=>updateUser.mutate({...empresa,habilitado:toggleBools(empresa.habilitado)})}
                     />
             </Row>
             <Button 
-                disabled={!usuario.verificada}
+                disabled={!empresa.verificada}
                 onClick={()=>crearEmpresa()}
             >Dar de alta Empresa</Button>
         </div>

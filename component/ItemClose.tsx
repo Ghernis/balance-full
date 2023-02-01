@@ -24,11 +24,11 @@ const ItemClose=(props)=>{
                                 <Row className='mx-4'>
                                     <Col>
                                         <strong>
-                                            {l}
+                                            {l.provincia}
                                         </strong>
                                     </Col>
                                     <Col className='text-center'>
-                                        {l}
+                                        {l.departamento}
                                     </Col>
                                     <Col className='text-end'>
                                         <CloseButton onClick={()=>delEl(i)} /> 

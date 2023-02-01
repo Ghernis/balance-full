@@ -14,7 +14,10 @@ import Col from 'react-bootstrap/Col';
 const ListaDeptos=()=>{
     const [carga,setCarga]=useState(false)
     const [listaCarga,setListaCarga]=useState<any[]>([])
-    const [selected,setSelected]=useState('')
+    const [selected,setSelected]=useState({
+        provincia:'',
+        departamento:''
+    })
     const deptos = trpc.departamentos.useQuery()
     useEffect(()=>{
         console.log(listaCarga)
@@ -25,8 +28,19 @@ const ListaDeptos=()=>{
     const addDepto=()=>{
         setListaCarga([...listaCarga,selected])
     }
-    const setterItem=(lista)=>{
-        setListaCarga(lista)
+    const addLista=(e)=>{
+        console.log(e.target.value)
+        const res = deptos.data.filter(d=>{
+            return d.nombre==e.target.value
+        })
+        if(res.length>0){
+            console.log(res)
+            const aux = {
+                departamento:res[0].nombre,
+                provincia:res[0].provincia
+            }
+            setSelected(aux)
+        }
 
     }
     return (
@@ -44,7 +58,7 @@ const ListaDeptos=()=>{
                         <Col xl={10}>
                             <InputGroup className="mb-3">
                                 <InputGroup.Text id="basic-addon1">Departamento</InputGroup.Text>
-                                <Form.Select aria-label="Destino" onChange={(e)=>setSelected(e.target.value)}>
+                                <Form.Select aria-label="Destino" onChange={addLista}>
                                     <option>Seleccionar...</option>
                                     {
                                         deptos.data.map((dep:any)=>{

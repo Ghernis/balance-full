@@ -11,52 +11,6 @@ const FormFacturado=(props)=>{
         departamento:string,
         provincia:string
     }]}=props
-
-    const data =[
-        {
-        departamento:'Comuna 04',
-        facturado:[
-            {
-                concepto:'Residencial',
-                cantUser:1,
-                kwh:1.1
-            },
-            {
-                concepto:'Comencial',
-                cantUser:1,
-                kwh:1
-            },
-            {
-                concepto:'Industrial',
-                cantUser:1,
-                kwh:1
-            },
-        ]
-    },
-        {
-        departamento:'Bariloche',
-        facturado:[
-            {
-                concepto:'Residencial',
-                cantUser:2,
-                kwh:2
-            },
-            {
-                concepto:'Comencial',
-                cantUser:2,
-                kwh:2
-            },
-            {
-                concepto:'Industrial',
-                cantUser:2,
-                kwh:2
-            },
-        ]
-    },
-    ]
-    const [csv,setCsv]=useState(data)
-    const [depaCargando, setDepaCargando]=useState(departamentos[0])
-    const [indexDepa, setIndexDepa]=useState(0)
     const conceptos=[
         'Residencial',
         'Comercial',
@@ -69,6 +23,27 @@ const FormFacturado=(props)=>{
         'Otros',
         'Traccion'
     ]
+
+    let auxFacturado:any[]=conceptos.map(c=>{
+        const aux = {
+            concepto:c,
+            cantUser:0,
+            kwh:0.0
+        }
+        return aux
+    })
+    //let data:[{departamento:string,facturado:any[]}]=departamentos.map(d=>{
+    let data:any[]=departamentos.map(d=>{
+        const aux = {
+            departamento:d.departamento,
+            facturado: auxFacturado.map(x=>Object.assign({},x))
+        }
+        return aux
+
+    })
+    const [csv,setCsv]=useState(data)
+    const [depaCargando, setDepaCargando]=useState(departamentos[0])
+    const [indexDepa, setIndexDepa]=useState(0)
 
     useEffect(()=>{
         console.log(csv)
@@ -121,7 +96,9 @@ const FormFacturado=(props)=>{
                                             aux[indexDepa].facturado[i].cantUser=input
                                             setCsv(aux)
                                         }}
-                                        value={c.cantUser} plaintext className='text-center' type='number' placeholder='' /></td>
+                                        value={c.cantUser} plaintext className='text-center' type='number' placeholder='' 
+                                    />
+                                </td>
                                 <td><Form.Control 
                                         onChange={(e)=>{
                                             let aux=[...csv]

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import TextCSV from './TextCSV';
 
@@ -11,7 +11,50 @@ const FormFacturado=(props)=>{
         departamento:string,
         provincia:string
     }]}=props
-    const [csv,setCsv]=useState()
+
+    const data =[
+        {
+        departamento:'Comuna 04',
+        facturado:[
+            {
+                concepto:'Residencial',
+                cantUser:1,
+                kwh:1.1
+            },
+            {
+                concepto:'Comencial',
+                cantUser:1,
+                kwh:1
+            },
+            {
+                concepto:'Industrial',
+                cantUser:1,
+                kwh:1
+            },
+        ]
+    },
+        {
+        departamento:'Bariloche',
+        facturado:[
+            {
+                concepto:'Residencial',
+                cantUser:2,
+                kwh:2
+            },
+            {
+                concepto:'Comencial',
+                cantUser:2,
+                kwh:2
+            },
+            {
+                concepto:'Industrial',
+                cantUser:2,
+                kwh:2
+            },
+        ]
+    },
+    ]
+    const [csv,setCsv]=useState(data)
     const [depaCargando, setDepaCargando]=useState(departamentos[0])
     const [indexDepa, setIndexDepa]=useState(0)
     const conceptos=[
@@ -26,6 +69,10 @@ const FormFacturado=(props)=>{
         'Otros',
         'Traccion'
     ]
+
+    useEffect(()=>{
+        console.log(csv)
+    },[csv])
     const nextDepa=()=>{
         if(indexDepa<departamentos.length-1){
             setIndexDepa(indexDepa+1)
@@ -43,7 +90,8 @@ const FormFacturado=(props)=>{
     return (
         <div className='container'>
             <TextCSV x={2} y={10} handler={hand} />
-            <h4 className='my-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa].departamento}</h4>
+            <h4 className='mt-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa].departamento}</h4>
+            <label>Usar '.' como decimal</label>
             <Table bordered hover size="sm">
                 <thead>
                     <tr>
@@ -59,12 +107,32 @@ const FormFacturado=(props)=>{
                 </thead>
                 <tbody>
                     {
-                    conceptos.map((c,i)=>{
+                    csv[indexDepa].facturado.map((c,i)=>{
                         return(
-                            <tr key={c}>
-                                <td>{c}</td>
-                                <td><Form.Control value={csv && csv[i][0]} plaintext className='text-center' type='text' placeholder='algo' /></td>
-                                <td><Form.Control value={csv && csv[i][1]} plaintext className='text-center' type='text' placeholder='algo' /></td>
+                            <tr key={c.concepto}>
+                                <td>{c.concepto}</td>
+                                <td><Form.Control 
+                                        onChange={(e)=>{
+                                            let aux=[...csv]
+                                            let input:number = parseInt(e.target.value)
+                                            if(isNaN(input)){
+                                                input=0
+                                            }
+                                            aux[indexDepa].facturado[i].cantUser=input
+                                            setCsv(aux)
+                                        }}
+                                        value={c.cantUser} plaintext className='text-center' type='number' placeholder='' /></td>
+                                <td><Form.Control 
+                                        onChange={(e)=>{
+                                            let aux=[...csv]
+                                            let input:number=parseFloat(e.target.value)
+                                            if(isNaN(input)){
+                                                input=0
+                                            }
+                                            aux[indexDepa].facturado[i].kwh=input
+                                            setCsv(aux)
+                                        }}
+                                        value={c.kwh} plaintext className='text-center' type='number' placeholder='' /></td>
                                 {/*
                                 <td><Form.Control value={csv && csv[i][2]} plaintext className='text-center' type='text' placeholder='algo' /></td>
                                 <td><Form.Control value={csv && csv[i][3]} plaintext className='text-center' type='text' placeholder='algo' /></td>

@@ -12,16 +12,29 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
+type tipo = 'Distribuidora' | 'Cooperativa' | 'Autoproductor'
+type role = 'USER' | 'ADMIN' | 'MOD'
+
+type Usuario={
+    nombre: string,
+    mail:string,
+    tipo: tipo,
+    contacto:string,
+    tel:string,
+}
+
 const SignUp=()=>{
+
     const router = useRouter()
     const users = trpc.new_user.useMutation()
-    const [user, setUser]=useState({
+    const init: Usuario ={
         nombre:'',
         contacto:'',
         tel:'',
         mail:'',
         tipo: 'Distribuidora'
-    })
+    }
+    const [user, setUser]=useState(init)
 
     useEffect(()=>{
         if(users.isError){
@@ -111,8 +124,8 @@ const SignUp=()=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Tipo de empresa</InputGroup.Text>
                         <Form.Select aria-label="Destino"
-                        value={user.tipo ?? 'select'}
-                        onChange={(e)=>setUser({...user,tipo:e.target.value})}
+                        value={user.tipo ?? 'Distribuidora'}
+                        onChange={(e)=>setUser({...user,tipo:e.target.value as tipo})}
                     >
                             <option value="Distribuidora">Distribuidora</option>
                             <option value="Cooperativa">Cooperativa</option>

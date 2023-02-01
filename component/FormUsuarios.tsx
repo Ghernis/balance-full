@@ -10,9 +10,27 @@ import Button from 'react-bootstrap/Button';
 
 import {toast} from 'react-toastify'
 
-const FormUsuarios=(props)=>{
+type tipo = 'Distribuidora' | 'Cooperativa' | 'Autoproductor'
+type role = 'USER' | 'ADMIN' | 'MOD'
+
+type Usuario={
+    id:number,
+    nombre: string,
+    nombreId: string,
+    role:role,
+    mail:string,
+    tipo: tipo,
+    contacto:string,
+    tel:string,
+    password:string,
+    habilitado: boolean,
+    verificada:boolean,
+    informacion:boolean
+}
+
+const FormUsuarios=({empresa}:{empresa:Usuario})=>{
     const utils = trpc.useContext()
-    const {empresa} = props
+    //const {empresa}:Usuario = props
     const updateUser = trpc.update_usuario.useMutation({
         onSuccess(){
             utils.usuario.invalidate({id:empresa.id})
@@ -39,7 +57,7 @@ const FormUsuarios=(props)=>{
         }
     })
 
-    const [usuario,setUsuario]=useState(empresa)
+    const [usuario,setUsuario]=useState<Usuario>(empresa)
 
     const toggleBools=(val:Boolean)=>{
         return !val
@@ -123,10 +141,9 @@ const FormUsuarios=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Tipo de empresa</InputGroup.Text>
                         <Form.Select aria-label="Destino"
-                        value={usuario.tipo ?? 'select'}
-                        onChange={(e)=>setUsuario({...usuario,tipo:e.target.value})}
+                        value={usuario.tipo ?? 'Distribuidora'}
+                        onChange={(e)=>setUsuario({...usuario,tipo:e.target.value as tipo})}
                     >
-                            <option value='select'>Seleccionar...</option>
                             <option value="Distribuidora">Distribuidora</option>
                             <option value="Cooperativa">Cooperativa</option>
                             <option value="Autoproductor">Autoproductor</option>

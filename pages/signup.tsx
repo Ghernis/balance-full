@@ -26,7 +26,21 @@ type Usuario={
 const SignUp=()=>{
 
     const router = useRouter()
-    const users = trpc.new_user.useMutation()
+    const users = trpc.new_user.useMutation({
+        onSuccess(){
+            toast.success('Se genero un pedido de alta. A la brevedad se comunicaran con usted',{
+                position: toast.POSITION.TOP_RIGHT,
+                onClose:()=>{
+                    router.push('/')
+                }
+            })
+        },
+        onError(e){
+            toast.error(e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+    })
     const init: Usuario ={
         nombre:'',
         contacto:'',
@@ -35,23 +49,6 @@ const SignUp=()=>{
         tipo: 'Distribuidora'
     }
     const [user, setUser]=useState(init)
-
-    useEffect(()=>{
-        if(users.isError){
-            const errorObj=JSON.parse(users.error.message)[0]
-            const errorMes=errorObj.message+' en campo: '+errorObj.path
-            //console.log(errorMes)
-            toast.error(errorMes,{
-                position: toast.POSITION.TOP_RIGHT
-            })
-        }
-        if(users.isSuccess){
-            toast.success('Se genero un pedido de alta. A la brevedad se comunicaran con usted',{
-                position: toast.POSITION.TOP_RIGHT
-            })
-            //router.push('/')
-        }
-    },[users.status])
 
     const onRegister=()=>{
         if(user.nombre=='' || user.contacto=='' || user.tel=='' || user.mail==''){

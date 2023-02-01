@@ -26,47 +26,49 @@ const ListaDeptos=()=>{
     return (
         <>
             {
-            !carga ? (
-                <Row>
+                !carga ? (
                     <Row>
+                        <Row>
 
-                <Alert variant='info' className='my-4'>
-                    <strong>Nota: </strong>Seccion departamentos. Si existe declaracion previa, los departamentos seran los mismos que la declaracion anterior.
+                            <Alert variant='info' className='my-4'>
+                                <strong>Nota: </strong>Seccion departamentos. Si existe declaracion previa, los departamentos seran los mismos que la declaracion anterior.
 
-                </Alert>
-                    </Row>
-                    <Col xl={10}>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text id="basic-addon1">Departamento</InputGroup.Text>
-                            <Form.Select aria-label="Destino" onChange={(e)=>setSelected(e.target.value)}>
-                                <option>Seleccionar...</option>
-                                {
-                                deptos.data.map((dep:any)=>{
-                                    return (
-                                        <option key={dep.id} value={dep.nombre}>{dep.nombre} - {dep.provincia}</option>
-                                    )
+                            </Alert>
+                        </Row>
+                        <Col xl={10}>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text id="basic-addon1">Departamento</InputGroup.Text>
+                                <Form.Select aria-label="Destino" onChange={(e)=>setSelected(e.target.value)}>
+                                    <option>Seleccionar...</option>
+                                    {
+                                        deptos.data.map((dep:any)=>{
+                                            return (
+                                                <option key={dep.id} value={dep.nombre}>{dep.nombre} - {dep.provincia}</option>
+                                            )
+                                        })
+                                    }
+                                </Form.Select>
+                            </InputGroup>
+                        </Col>
+                        <Col xl={2} className='text-center'>
+                            <Button onClick={()=>addDepto()}>Agregar</Button>
+                        </Col>
+                        <Row>
+                            {
+                                listaCarga.map(l=>{
+                                    return <div>{l}</div>
                                 })
                             }
-                         </Form.Select>
-                        </InputGroup>
-                    </Col>
-                    <Col xl={2} className='text-center'>
-                        <Button onClick={()=>addDepto()}>Agregar</Button>
-                    </Col>
-                    <Row>
-                    {
-                        listaCarga.map(l=>{
-                            return <div>{l}</div>
-                        })
-                    }
-                    </Row>
-                    <Row>
-                        <Button onClick={()=>setCarga(true)}>Comenzar carga</Button>
-                    </Row>
-                </Row>)
-                : <FormFacturado departamentos={listaCarga}/>
-        }
-            </>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Button onClick={()=>setCarga(true)}>Comenzar carga</Button>
+                            </Col>
+                        </Row>
+                    </Row>)
+                    : <FormFacturado departamentos={listaCarga}/>
+            }
+        </>
     )
 }
 

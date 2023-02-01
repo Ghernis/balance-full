@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import { trpc } from '../utils/trpc';
 
@@ -8,18 +8,56 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
-const FormUsuarios=(props)=>{
+import {toast} from 'react-toastify'
+
+type tipo = 'Distribuidora' | 'Cooperativa' | 'Autoproductor'
+type role = 'USER' | 'ADMIN' | 'MOD'
+
+type Usuario={
+    id:number,
+    nombre: string,
+    nombreId: string,
+    role:role,
+    mail:string,
+    tipo: tipo,
+    contacto:string,
+    tel:string,
+    password:string,
+    habilitado: boolean,
+    verificada:boolean,
+    informacion:boolean
+}
+
+const FormUsuarios=({empresa}:{empresa:Usuario})=>{
     const utils = trpc.useContext()
-    const {empresa} = props
+    //const {empresa}:Usuario = props
     const updateUser = trpc.update_usuario.useMutation({
         onSuccess(){
             utils.usuario.invalidate({id:empresa.id})
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        },
+        onError(e){
+            toast.error('Error en cambios:'+e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
         }
     })
-    const altaEmpresa = trpc.alta_empresa.useMutation()
+    const altaEmpresa = trpc.alta_empresa.useMutation({
+        onSuccess(){
+            toast.success('Se dio de alta la empresa.',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        },
+        onError(e){
+            toast.error('Error en alta:'+e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+    })
 
-
-    const [usuario,setUsuario]=useState(empresa)
+    const [usuario,setUsuario]=useState<Usuario>(empresa)
 
     const toggleBools=(val:Boolean)=>{
         return !val
@@ -103,10 +141,9 @@ const FormUsuarios=(props)=>{
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">Tipo de empresa</InputGroup.Text>
                         <Form.Select aria-label="Destino"
-                        value={usuario.tipo ?? 'select'}
-                        onChange={(e)=>setUsuario({...usuario,tipo:e.target.value})}
+                        value={usuario.tipo ?? 'Distribuidora'}
+                        onChange={(e)=>setUsuario({...usuario,tipo:e.target.value as tipo})}
                     >
-                            <option value='select'>Seleccionar...</option>
                             <option value="Distribuidora">Distribuidora</option>
                             <option value="Cooperativa">Cooperativa</option>
                             <option value="Autoproductor">Autoproductor</option>
@@ -116,8 +153,8 @@ const FormUsuarios=(props)=>{
                 <Form.Check 
                     type='checkbox'
                     label='Informacion entregada'
-                    checked={usuario.informacion}
-                    onChange={()=>setUsuario({...usuario,informacion:toggleBools(usuario.informacion)})}
+                    checked={empresa.informacion}
+                    onChange={()=>updateUser.mutate({...empresa,informacion:toggleBools(empresa.informacion)})}
                     />
                 <Form.Check 
                     type='checkbox'
@@ -128,12 +165,12 @@ const FormUsuarios=(props)=>{
                 <Form.Check 
                     type='checkbox'
                     label='Habilitar para carga'
-                    checked={usuario.habilitado}
-                    onChange={()=>setUsuario({...usuario,habilitado:toggleBools(usuario.habilitado)})}
+                    checked={empresa.habilitado}
+                    onChange={()=>updateUser.mutate({...empresa,habilitado:toggleBools(empresa.habilitado)})}
                     />
             </Row>
             <Button 
-                disabled={!usuario.verificada}
+                disabled={!empresa.verificada}
                 onClick={()=>crearEmpresa()}
             >Dar de alta Empresa</Button>
         </div>

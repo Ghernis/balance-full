@@ -34,6 +34,7 @@ const FormFacturado=(props)=>{
         }
     }
     const hand=(data)=>{
+        console.log(data)
         setCsv(data)
     }
     return (

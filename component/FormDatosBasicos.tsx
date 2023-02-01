@@ -22,26 +22,19 @@ const FormDatosBasicos=(props)=>{
     const put_emp= trpc.put_empresas.useMutation({
         onSuccess(){
             utils.empresa_id.invalidate()
-        }
-    })
-
-    useEffect(()=>{
-        if(put_emp.isError){
-            const errorObj=JSON.parse(put_emp.error.message)[0]
-            const errorMes=errorObj.message+' en campo: '+errorObj.path
-            //console.log(errorMes)
-            toast.error(errorMes,{
-                position: toast.POSITION.TOP_RIGHT
-            })
-        }
-        if(put_emp.isSuccess){
             toast.success('Se actualizo la informacion',{
                 position: toast.POSITION.TOP_RIGHT
             })
             setDisabled(!disabled)
+        },
+        onError(e){
+            const errorMes=e.message
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+
         }
-        //setEmpresa(props.empresa)
-    },[put_emp.status])
+    })
 
     if(deptos.isLoading){
         return <div>loading...</div>

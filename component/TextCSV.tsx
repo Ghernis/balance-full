@@ -13,7 +13,7 @@ const TextCSV=(props)=>{
             const cols =l.split('\t') 
             res.push(cols)
         })
-        console.log(res)
+        //console.log(res)
         if(!res || res.length != y || res[0].length != x){
             console.log('mal'+res.length+' '+res[0].length)
         }

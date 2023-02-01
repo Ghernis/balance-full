@@ -23,6 +23,7 @@ model Usuario {
   nombre      String
   role        Role     @default(USER)
   mail        String
+  tipo        TipoEmpresa
   contacto    String
   tel         String
   password    String?

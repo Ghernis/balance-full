@@ -17,7 +17,8 @@ export const appRouter = router({
             nombre:z.string(),
             contacto:z.string(),
             tel:z.string(),
-            mail:z.string().email()
+            mail:z.string().email(),
+            tipo: z.enum(TipoEnums)
         })
     )
     .mutation(async({input})=>{
@@ -58,7 +59,8 @@ export const appRouter = router({
             tel: z.string(),
             informacion: z.boolean(),
             verificada: z.boolean(),
-            habilitado: z.boolean()
+            habilitado: z.boolean(),
+            tipo: z.string()
         })
     )
     .mutation(async({input})=>{

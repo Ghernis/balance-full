@@ -111,6 +111,19 @@ const Empresa =(props:any)=>{
     //if(empresa.isLoading || deptos.isLoading){
     //    return <div>loading</div>
     //}
+
+    const makeBadge=(id)=>{
+        const depa = deptos.data.filter((d:any)=>{
+            return id==d.id
+        })
+        let resp = 'nani'
+        if(depa.length>0){
+            resp = depa[0].nombre + ' - ' + depa[0].provincia
+        }
+        return resp
+    }
+
+
     if(!empresa.data || !deptos.data) return <div>loading...</div>
 
     return (
@@ -138,7 +151,7 @@ const Empresa =(props:any)=>{
                                             key={emp.nemo}
                                             titulo={emp.nombre}
                                             subtitulo={emp.nemo}
-                                            badge={emp.destino}
+                                            badge={makeBadge(emp.departamentoId)}
                                             link={'/central/'+emp.nemo}
                                             />
                                     })

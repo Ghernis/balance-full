@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Concepto" ALTER COLUMN "facSin" DROP NOT NULL,
+ALTER COLUMN "facCon" DROP NOT NULL,
+ALTER COLUMN "precioMedCon" DROP NOT NULL;

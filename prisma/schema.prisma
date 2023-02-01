@@ -293,9 +293,9 @@ enum TipoConcepto {
 model Concepto {
   cantUsr      Int
   kwh          Float
-  facSin       Float
-  facCon       Float
-  precioMedCon Float
+  facSin       Float?
+  facCon       Float?
+  precioMedCon Float?
   tipo         TipoConcepto
 
   facturado Facturado @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])

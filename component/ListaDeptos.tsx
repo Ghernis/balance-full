@@ -19,9 +19,9 @@ const ListaDeptos=()=>{
         departamento:''
     })
     const deptos = trpc.departamentos.useQuery()
-    useEffect(()=>{
-        console.log(listaCarga)
-    },[listaCarga])
+    //useEffect(()=>{
+    //    console.log(listaCarga)
+    //},[listaCarga])
     if(deptos.isLoading){
         return <div>loading...</div>
     }
@@ -29,12 +29,10 @@ const ListaDeptos=()=>{
         setListaCarga([...listaCarga,selected])
     }
     const addLista=(e)=>{
-        console.log(e.target.value)
         const res = deptos.data.filter(d=>{
             return d.nombre==e.target.value
         })
         if(res.length>0){
-            console.log(res)
             const aux = {
                 departamento:res[0].nombre,
                 provincia:res[0].provincia

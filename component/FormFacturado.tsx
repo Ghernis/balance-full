@@ -7,7 +7,10 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 const FormFacturado=(props)=>{
-    const {departamentos}=props
+    const {departamentos}:{departamentos:[{
+        departamento:string,
+        provincia:string
+    }]}=props
     const [csv,setCsv]=useState()
     const [depaCargando, setDepaCargando]=useState(departamentos[0])
     const [indexDepa, setIndexDepa]=useState(0)
@@ -40,7 +43,7 @@ const FormFacturado=(props)=>{
     return (
         <div className='container'>
             <TextCSV x={2} y={10} handler={hand} />
-            <h4 className='my-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa]}</h4>
+            <h4 className='my-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa].departamento}</h4>
             <Table bordered hover size="sm">
                 <thead>
                     <tr>

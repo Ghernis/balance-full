@@ -31,7 +31,6 @@ const ListaDeptos=()=>{
     }
     return (
         <>
-            <ItemClose lista={listaCarga} seter={setListaCarga}/>
             {
                 !carga ? (
                     <Row>
@@ -60,12 +59,8 @@ const ListaDeptos=()=>{
                         <Col xl={2} className='text-center'>
                             <Button onClick={()=>addDepto()}>Agregar</Button>
                         </Col>
-                        <Row>
-                            {
-                                listaCarga.map(l=>{
-                                    return <div>{l}</div>
-                                })
-                            }
+                        <Row className='my-4'>
+                            <ItemClose lista={listaCarga} seter={setListaCarga}/>
                         </Row>
                         <Row>
                             <Col>

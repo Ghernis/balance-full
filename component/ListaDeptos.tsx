@@ -1,6 +1,8 @@
 import { trpc } from '../utils/trpc'
 import { useState,useEffect } from 'react'
+
 import FormFacturado from './FormFacturado';
+import ItemClose from './ItemClose';
 
 import Alert from 'react-bootstrap/Alert'
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -23,8 +25,13 @@ const ListaDeptos=()=>{
     const addDepto=()=>{
         setListaCarga([...listaCarga,selected])
     }
+    const setterItem=(lista)=>{
+        setListaCarga(lista)
+
+    }
     return (
         <>
+            <ItemClose lista={listaCarga} seter={setListaCarga}/>
             {
                 !carga ? (
                     <Row>

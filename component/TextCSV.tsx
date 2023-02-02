@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 const TextCSV=(props)=>{
     const { x, y, handler } = props
     const [data,setData]=useState('')
-    const [proce,setProce]=useState([[]])
     //const [pros, setPros]=useState('')
     
     useEffect(()=>{
@@ -19,12 +18,9 @@ const TextCSV=(props)=>{
             console.log('mal'+res.length+' '+res[0].length)
         }
         else{
-            //setProce(res)
-            console.log('paso res por handler')
             handler(res)
         }
-        //setPros(data)
-    },[data,proce])
+    },[data])
 
     return (
         <Form>

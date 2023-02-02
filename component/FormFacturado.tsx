@@ -63,9 +63,6 @@ const FormFacturado=(props)=>{
                 updateTabla(inputCantU,i,'cantUser')
                 updateTabla(inputKwh,i,'kwh')
             })
-            console.log('setcsv en useeffect')
-            console.log(auxCsv)
-            //setCsv(auxCsv)
         }
 
     },[indexDepa,dataTabla])

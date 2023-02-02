@@ -2,6 +2,8 @@ import {useState,useEffect} from 'react';
 
 import Form from 'react-bootstrap/Form';
 
+import {toast} from 'react-toastify'
+
 const TextCSV=(props)=>{
     const { x, y, handler } = props
     const [data,setData]=useState('')
@@ -14,8 +16,12 @@ const TextCSV=(props)=>{
             const cols =l.split('\t') 
             res.push(cols)
         })
-        if(!res || res.length != y || res[0].length != x){
+        if(res.length>0 && (res.length != y || res[0].length != x)){
             console.log('mal'+res.length+' '+res[0].length)
+           // const errorMes='Pegaste '+res.length+' filas x '+ res[0].length+' columnas. Esta tabla es de '+x+'x'+y
+           // toast.error(errorMes,{
+           //     position: toast.POSITION.TOP_RIGHT
+           // })
         }
         else{
             handler(res)

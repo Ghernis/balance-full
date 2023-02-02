@@ -1,5 +1,7 @@
 import { useState,useEffect } from 'react'
 
+import { trpc } from '../utils/trpc';
+
 import TextCSV from './TextCSV';
 
 import Form from 'react-bootstrap/Form';
@@ -11,7 +13,11 @@ const FormFacturado=(props)=>{
         departamento:string,
         provincia:string
     }]}=props
-    const conceptos=[
+
+    const createFacturado=trpc.facturado.useMutation()
+
+    type tipoConcepto= 'Residencial'| 'Comercial'| 'Industrial'| 'ServicioSanitario'| 'Alumbrado'| 'Riego' | 'Oficial'| 'Rural'| 'Otros'| 'Traccion'
+    const conceptos:tipoConcepto[]=[
         'Residencial',
         'Comercial',
         'Industrial',
@@ -23,9 +29,10 @@ const FormFacturado=(props)=>{
         'Otros',
         'Traccion'
     ]
+    type tipoFact={concepto:tipoConcepto,cantUser:number,kwh:number}
 
-    let auxFacturado:any[]=conceptos.map(c=>{
-        const aux = {
+    let auxFacturado:tipoFact[]=conceptos.map(c=>{
+        const aux:{concepto:tipoConcepto,cantUser:number,kwh:number} = {
             concepto:c,
             cantUser:0,
             kwh:0.0
@@ -33,7 +40,7 @@ const FormFacturado=(props)=>{
         return aux
     })
     //let data:[{departamento:string,facturado:any[]}]=departamentos.map(d=>{
-    let data:any[]=departamentos.map(d=>{
+    let data:{departamento:string,facturado:tipoFact[]}[]=departamentos.map(d=>{
         const aux = {
             departamento:d.departamento,
             facturado: auxFacturado.map(x=>Object.assign({},x))
@@ -95,6 +102,13 @@ const FormFacturado=(props)=>{
     }
     const saveFacturacion=()=>{
         console.log(csv)
+        const createReg={
+            empresaId:'',
+            anio:1,
+            mes:1,
+            data:csv
+        }
+        //createFacturado.mutate(createReg)
     }
     
 

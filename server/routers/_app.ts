@@ -273,17 +273,17 @@ export const appRouter = router({
             },
             update:input,
             create:{
-                    nombre:input.nombre,
-                    nemo:input.nemo,
-                    direccion:input.direccion,
-                    localidad:input.localidad,
-                    partido:input.partido,
-                    notas:input.notas,
-                    sistema:input.sistema,
-                    destino:input.destino,
-                    actividad:input.actividad,
-                    empresaId: input.empresaId,
-                    departamentoId: input.departamentoId
+                nombre:input.nombre,
+                nemo:input.nemo,
+                direccion:input.direccion,
+                localidad:input.localidad,
+                partido:input.partido,
+                notas:input.notas,
+                sistema:input.sistema,
+                destino:input.destino,
+                actividad:input.actividad,
+                empresaId: input.empresaId,
+                departamentoId: input.departamentoId
             }
         })
         return resp
@@ -412,11 +412,38 @@ export const appRouter = router({
             empresaId: z.string(),
             anio:z.number(),
             mes:z.number(),
+            data: z.array(
+                z.object({
+                    departamento: z.string(),
+                    facturado: z.array(
+                        z.object({
+                            concepto:z.string(),
+                            cantUser:z.number(),
+                            kwh:z.number()
+
+                        })
+                    )
+
+                })
+            )
         })
     )
     .mutation(async({input})=>{
-        const resp = await prisma.facturado.create({
-            data: input
+        const regs:any[]=[]
+        input.data.forEach(f=>{
+            const reg={
+                empresaId:input.empresaId,
+                anio:input.anio,
+                mes:input.mes,
+                //tipo:f.concepto,
+                //cantUsr:f.cantUser,
+                //kwh:f.kwh
+            }
+            regs.push(reg)
+
+        })
+        const resp = await prisma.concepto.create({
+            data: regs
         })
         return { resp }
     }),

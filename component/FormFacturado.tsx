@@ -39,17 +39,22 @@ const FormFacturado=(props)=>{
         }
         return aux
     })
+    const areaBox:string[]=[]
+    const initTabla:any[]=[]
     //let data:[{departamento:string,facturado:any[]}]=departamentos.map(d=>{
     let data:{departamento:string,facturado:tipoFact[]}[]=departamentos.map(d=>{
         const aux = {
             departamento:d.departamento,
             facturado: auxFacturado.map(x=>Object.assign({},x))
         }
+        areaBox.push('')
+        initTabla.push([])
         return aux
 
     })
+    const [areas,setAreas]=useState(areaBox)
     const [csv,setCsv]=useState(data)
-    const [dataTabla,setDataTabla]=useState([[]])
+    const [dataTabla,setDataTabla]=useState(initTabla)
     const [depaCargando, setDepaCargando]=useState(departamentos[0])
     const [showSave,setShowSave]=useState(false)
     const [indexDepa, setIndexDepa]=useState(0)
@@ -62,14 +67,15 @@ const FormFacturado=(props)=>{
             setShowSave(false)
         }
 
-        if(dataTabla[0].length>0){
+        if(dataTabla[indexDepa].length>0){
             const auxCsv = csv
             auxCsv[indexDepa].facturado.forEach((c,i)=>{
-                const inputCantU=parseInt(dataTabla[i][0])
-                const inputKwh=parseFloat(dataTabla[i][1])
-                updateTabla(inputCantU,i,'cantUser')
-                updateTabla(inputKwh,i,'kwh')
+                const inputCantU=parseInt(dataTabla[indexDepa][i][0])
+                const inputKwh=parseFloat(dataTabla[indexDepa][i][1])
+                updateCSV(inputCantU,i,'cantUser')
+                updateCSV(inputKwh,i,'kwh')
             })
+
         }
 
     },[indexDepa,dataTabla])
@@ -83,7 +89,7 @@ const FormFacturado=(props)=>{
             setIndexDepa(indexDepa-1)
         }
     }
-    const updateTabla=(input:number,i:number,tipo:string)=>{
+    const updateCSV=(input:number,i:number,tipo:string)=>{
         let aux=[...csv]
         if(isNaN(input)){
             input=0
@@ -96,10 +102,7 @@ const FormFacturado=(props)=>{
         }
         setCsv(aux)
     }
-    const hand=(data)=>{
-        setDataTabla(data)
-        console.log(dataTabla)
-    }
+
     const saveFacturacion=()=>{
         console.log(csv)
         const createReg={
@@ -110,11 +113,19 @@ const FormFacturado=(props)=>{
         }
         //createFacturado.mutate(createReg)
     }
-    
 
     return (
         <div className='container'>
-            <TextCSV x={2} y={10} handler={setDataTabla} />
+            <TextCSV x={2} y={10} handler={(v)=>{
+                let aux = [...dataTabla]
+                aux[indexDepa]=v
+                setDataTabla(aux)
+            }} texto={areas[indexDepa]} setTexto={(val:string)=>{
+                    let aux = [...areas]
+                    aux[indexDepa]=val
+                    setAreas(aux)
+                }
+            } />
             <h4 className='mt-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa].departamento}</h4>
             <label>Usar '.' como punto decimal</label>
             <Table bordered hover size="sm">
@@ -139,7 +150,7 @@ const FormFacturado=(props)=>{
                                 <td><Form.Control 
                                         onChange={(e)=>{
                                             const input:number = parseInt(e.target.value) 
-                                            updateTabla(input,i,'cantUser')
+                                            updateCSV(input,i,'cantUser')
                                         }}
                                         value={c.cantUser} plaintext className='text-center' type='number' placeholder='' 
                                     />
@@ -147,7 +158,7 @@ const FormFacturado=(props)=>{
                                 <td><Form.Control 
                                         onChange={(e)=>{
                                             const input:number = parseFloat(e.target.value) 
-                                            updateTabla(input,i,'kwh')
+                                            updateCSV(input,i,'kwh')
                                         }}
                                         value={c.kwh} plaintext className='text-center' type='number' placeholder='' /></td>
                                 {/*

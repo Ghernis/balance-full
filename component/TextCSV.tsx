@@ -5,34 +5,35 @@ import Form from 'react-bootstrap/Form';
 import {toast} from 'react-toastify'
 
 const TextCSV=(props)=>{
-    const { x, y, handler } = props
+    const { x, y, handler, texto,setTexto } = props
     const [data,setData]=useState('')
     //const [pros, setPros]=useState('')
     
     useEffect(()=>{
-        const lines = data.trimEnd().split(/\r?\n/);
-        let res:any[] = []
-        lines.forEach(l=>{
-            const cols =l.split('\t') 
-            res.push(cols)
-        })
-        if(res.length>0 && (res.length != y || res[0].length != x)){
-            console.log('mal'+res.length+' '+res[0].length)
-           // const errorMes='Pegaste '+res.length+' filas x '+ res[0].length+' columnas. Esta tabla es de '+x+'x'+y
-           // toast.error(errorMes,{
-           //     position: toast.POSITION.TOP_RIGHT
-           // })
+        if(texto!=undefined){
+            const textoFormat = texto.replace(',','').replace(' ','').trimEnd()
+            const lines = textoFormat.split(/\r?\n/);
+            setTexto(textoFormat)
+            let matris:any[] = []
+            lines.forEach(l=>{
+                const cols =l.split('\t') 
+                matris.push(cols)
+            })
+            if(matris.length>0 && (matris.length != y || matris[0].length != x)){
+                console.log('mal'+matris.length+' '+matris[0].length)
+                handler('')
+            }
+            else{
+                handler(matris)
+            }
         }
-        else{
-            handler(res)
-        }
-    },[data])
+    },[texto])
 
     return (
         <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Copia y Pega desde excel</Form.Label>
-                <Form.Control as="textarea" rows={4} className='h-100' onChange={(e)=>setData(e.target.value)}/>
+                <Form.Control as="textarea" value={texto} rows={4} className='h-100' onChange={(e)=>setTexto(e.target.value)}/>
             </Form.Group>
         </Form>
     )

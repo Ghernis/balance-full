@@ -1,5 +1,7 @@
 import { useState,useEffect } from 'react'
 
+import { trpc } from '../utils/trpc';
+
 import TextCSV from './TextCSV';
 
 import Form from 'react-bootstrap/Form';
@@ -11,7 +13,11 @@ const FormFacturado=(props)=>{
         departamento:string,
         provincia:string
     }]}=props
-    const conceptos=[
+
+    const createFacturado=trpc.facturado.useMutation()
+
+    type tipoConcepto= 'Residencial'| 'Comercial'| 'Industrial'| 'ServicioSanitario'| 'Alumbrado'| 'Riego' | 'Oficial'| 'Rural'| 'Otros'| 'Traccion'
+    const conceptos:tipoConcepto[]=[
         'Residencial',
         'Comercial',
         'Industrial',
@@ -23,31 +29,56 @@ const FormFacturado=(props)=>{
         'Otros',
         'Traccion'
     ]
+    type tipoFact={concepto:tipoConcepto,cantUser:number,kwh:number}
 
-    let auxFacturado:any[]=conceptos.map(c=>{
-        const aux = {
+    let auxFacturado:tipoFact[]=conceptos.map(c=>{
+        const aux:{concepto:tipoConcepto,cantUser:number,kwh:number} = {
             concepto:c,
             cantUser:0,
             kwh:0.0
         }
         return aux
     })
+    const areaBox:string[]=[]
+    const initTabla:any[]=[]
     //let data:[{departamento:string,facturado:any[]}]=departamentos.map(d=>{
-    let data:any[]=departamentos.map(d=>{
+    let data:{departamento:string,facturado:tipoFact[]}[]=departamentos.map(d=>{
         const aux = {
             departamento:d.departamento,
             facturado: auxFacturado.map(x=>Object.assign({},x))
         }
+        areaBox.push('')
+        initTabla.push([])
         return aux
 
     })
+    const [areas,setAreas]=useState(areaBox)
     const [csv,setCsv]=useState(data)
+    const [dataTabla,setDataTabla]=useState(initTabla)
     const [depaCargando, setDepaCargando]=useState(departamentos[0])
+    const [showSave,setShowSave]=useState(false)
     const [indexDepa, setIndexDepa]=useState(0)
 
     useEffect(()=>{
-        console.log(csv)
-    },[csv])
+        if(indexDepa==departamentos.length-1){
+            setShowSave(true)
+        }
+        else{
+            setShowSave(false)
+        }
+
+        if(dataTabla[indexDepa].length>0){
+            const auxCsv = csv
+            auxCsv[indexDepa].facturado.forEach((c,i)=>{
+                const inputCantU=parseInt(dataTabla[indexDepa][i][0])
+                const inputKwh=parseFloat(dataTabla[indexDepa][i][1])
+                updateCSV(inputCantU,i,'cantUser')
+                updateCSV(inputKwh,i,'kwh')
+            })
+
+        }
+
+    },[indexDepa,dataTabla])
     const nextDepa=()=>{
         if(indexDepa<departamentos.length-1){
             setIndexDepa(indexDepa+1)
@@ -58,15 +89,45 @@ const FormFacturado=(props)=>{
             setIndexDepa(indexDepa-1)
         }
     }
-    const hand=(data)=>{
-        console.log(data)
-        setCsv(data)
+    const updateCSV=(input:number,i:number,tipo:string)=>{
+        let aux=[...csv]
+        if(isNaN(input)){
+            input=0
+        }
+        if(tipo=='cantUser'){
+            aux[indexDepa].facturado[i].cantUser=input
+        }
+        else{
+            aux[indexDepa].facturado[i].kwh=input
+        }
+        setCsv(aux)
     }
+
+    const saveFacturacion=()=>{
+        console.log(csv)
+        const createReg={
+            empresaId:'',
+            anio:1,
+            mes:1,
+            data:csv
+        }
+        //createFacturado.mutate(createReg)
+    }
+
     return (
         <div className='container'>
-            <TextCSV x={2} y={10} handler={hand} />
+            <TextCSV x={2} y={10} handler={(v)=>{
+                let aux = [...dataTabla]
+                aux[indexDepa]=v
+                setDataTabla(aux)
+            }} texto={areas[indexDepa]} setTexto={(val:string)=>{
+                    let aux = [...areas]
+                    aux[indexDepa]=val
+                    setAreas(aux)
+                }
+            } />
             <h4 className='mt-4'>Facturado en departamento {indexDepa+1}/{departamentos.length}: {departamentos[indexDepa].departamento}</h4>
-            <label>Usar '.' como decimal</label>
+            <label>Usar '.' como punto decimal</label>
             <Table bordered hover size="sm">
                 <thead>
                     <tr>
@@ -88,26 +149,16 @@ const FormFacturado=(props)=>{
                                 <td>{c.concepto}</td>
                                 <td><Form.Control 
                                         onChange={(e)=>{
-                                            let aux=[...csv]
-                                            let input:number = parseInt(e.target.value)
-                                            if(isNaN(input)){
-                                                input=0
-                                            }
-                                            aux[indexDepa].facturado[i].cantUser=input
-                                            setCsv(aux)
+                                            const input:number = parseInt(e.target.value) 
+                                            updateCSV(input,i,'cantUser')
                                         }}
                                         value={c.cantUser} plaintext className='text-center' type='number' placeholder='' 
                                     />
                                 </td>
                                 <td><Form.Control 
                                         onChange={(e)=>{
-                                            let aux=[...csv]
-                                            let input:number=parseFloat(e.target.value)
-                                            if(isNaN(input)){
-                                                input=0
-                                            }
-                                            aux[indexDepa].facturado[i].kwh=input
-                                            setCsv(aux)
+                                            const input:number = parseFloat(e.target.value) 
+                                            updateCSV(input,i,'kwh')
                                         }}
                                         value={c.kwh} plaintext className='text-center' type='number' placeholder='' /></td>
                                 {/*
@@ -125,8 +176,13 @@ const FormFacturado=(props)=>{
                 <div className='col'>
                     <Button onClick={()=>prevDepa()}>Anterior</Button>
                 </div>
-                <div className='col'>
+                <div className='col text-center'>
                     <Button onClick={()=>nextDepa()}>Siguiente</Button>
+                </div>
+                <div className='col text-end'>
+                    {
+                        showSave && <Button variant='success'  onClick={()=>saveFacturacion()}>Guardar Facturacion</Button>
+                    }
                 </div>
             </div>
         </div>

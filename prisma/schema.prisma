@@ -272,9 +272,10 @@ model Facturado {
   anio      Int
   mes       Int
 
-  departamentos FacturadoDepartamento[]
+  departamento Departamento @relation(fields:[departamentoId],references:[id])
+  departamentoId Int
 
-  @@id([empresaId, anio, mes])
+  @@id([empresaId, anio, mes,departamentoId])
 }
 
 enum TipoConcepto {
@@ -298,24 +299,25 @@ model Concepto {
   precioMedCon Float?
   tipo         TipoConcepto
 
-  facturado Facturado @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
+  facturado Facturado @relation(fields: [empresaId, anio, mes, departamentoId], references: [empresaId, anio, mes, departamentoId])
   empresaId String
   anio      Int
   mes       Int
-
-  @@id([tipo, anio, mes, empresaId])
-}
-
-model FacturadoDepartamento {
-  facturado      Facturado    @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
-  empresaId      String
-  anio           Int
-  mes            Int
-  departamento   Departamento @relation(fields: [departamentoId], references: [codigo_depto])
   departamentoId Int
-
-  @@id([empresaId, anio, mes, departamentoId])
+ 
+  @@id([tipo, anio, mes, empresaId,departamentoId])
 }
+
+//model FacturadoDepartamento {
+//  facturado      Facturado    @relation(fields: [empresaId, anio, mes], references: [empresaId, anio, mes])
+//  empresaId      String
+//  anio           Int
+//  mes            Int
+//  departamento   Departamento @relation(fields: [departamentoId], references: [codigo_depto])
+//  departamentoId Int
+//
+//  @@id([empresaId, anio, mes, departamentoId])
+//}
 
 model Departamento {
   id           Int    @id @default(autoincrement())
@@ -328,5 +330,5 @@ model Departamento {
   empresas  Empresa[]
   centrales Central[]
 
-  facturados FacturadoDepartamento[]
+  facturados Facturado[]
 }

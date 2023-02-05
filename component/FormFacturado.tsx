@@ -2,6 +2,8 @@ import { useState,useEffect } from 'react'
 
 import { trpc } from '../utils/trpc';
 
+import {toast} from 'react-toastify'
+
 import TextCSV from './TextCSV';
 
 import Form from 'react-bootstrap/Form';
@@ -9,12 +11,26 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 const FormFacturado=(props)=>{
+    const utils = trpc.useContext()
     const {departamentos}:{departamentos:[{
         departamento:string,
         provincia:string
     }]}=props
 
-    const createFacturado=trpc.facturado.useMutation()
+    const createFacturado=trpc.facturado.useMutation({
+        onSuccess(){
+            toast.success('Se guardaron datos de Facturacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        },
+        onError(e){
+            const errorMes=e.message
+            toast.error(errorMes,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+    })
+    const depas = trpc.departamentos.useQuery()
 
     type tipoConcepto= 'Residencial'| 'Comercial'| 'Industrial'| 'ServicioSanitario'| 'Alumbrado'| 'Riego' | 'Oficial'| 'Rural'| 'Otros'| 'Traccion'
     const conceptos:tipoConcepto[]=[
@@ -104,14 +120,32 @@ const FormFacturado=(props)=>{
     }
 
     const saveFacturacion=()=>{
-        console.log(csv)
-        const createReg={
-            empresaId:'',
-            anio:1,
-            mes:1,
-            data:csv
-        }
-        //createFacturado.mutate(createReg)
+        const facturado:any[]=[]
+        csv.forEach(f=>{
+            const dId=depas.data.filter(d=>{
+                return d.nombre==f.departamento
+            })
+            if(dId.length>0){
+                const createReg={
+                    empresaId:'ej1',
+                    anio:2023,
+                    mes:2,
+                    departamentoId:dId[0].id,
+                    concepto:f.facturado.map(con=>{return {
+                        tipo:con.concepto,
+                        cantUsr: con.cantUser,
+                        kwh:con.kwh,
+                    }})
+                }
+                facturado.push(createReg)
+            }
+        })
+        console.log(facturado)
+        createFacturado.mutate(facturado)
+    }
+
+    if(!depas.data){
+        return <div>loading</div>
     }
 
     return (

@@ -408,44 +408,40 @@ export const appRouter = router({
     }),
     facturado: procedure
     .input(
-        z.object({
-            empresaId: z.string(),
-            anio:z.number(),
-            mes:z.number(),
-            data: z.array(
-                z.object({
-                    departamento: z.string(),
-                    facturado: z.array(
-                        z.object({
-                            concepto:z.string(),
-                            cantUser:z.number(),
-                            kwh:z.number()
-
-                        })
-                    )
-
-                })
-            )
-        })
+        z.array(
+            z.object({
+                empresaId: z.string(),
+                anio:z.number(),
+                mes:z.number(),
+                departamentoId: z.number(),
+                concepto: z.array(
+                    z.object({
+                        tipo:z.enum(ConceptoEnums),
+                        cantUsr:z.number(),
+                        kwh:z.number(),
+                    })
+                )
+            })
+        )
     )
     .mutation(async({input})=>{
-        const regs:any[]=[]
-        input.data.forEach(f=>{
-            const reg={
-                empresaId:input.empresaId,
-                anio:input.anio,
-                mes:input.mes,
-                //tipo:f.concepto,
-                //cantUsr:f.cantUser,
-                //kwh:f.kwh
-            }
-            regs.push(reg)
+        return input.map(async i=>{
+            const r = await prisma.facturado.create({
+                data: {
+                    empresaId:i.empresaId,
+                    anio:i.anio,
+                    mes:i.mes,
+                    departamentoId:i.departamentoId,
+                    concepto:{
+                        createMany:{
+                            data:i.concepto
+                        }
+                    }
 
+                },
+            })
+            return r
         })
-        const resp = await prisma.concepto.create({
-            data: regs
-        })
-        return { resp }
     }),
     facturadoDepto: procedure
     .input(

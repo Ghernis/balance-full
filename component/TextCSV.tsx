@@ -33,6 +33,8 @@ const TextCSV=(props)=>{
         <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Copia y Pega desde excel</Form.Label>
+                <br />
+                <Form.Text>Prestar atencion de que la tabla a copiar sea de {y}x{x}. Simpre tomara precedente este cuadro que el input manual.</Form.Text>
                 <Form.Control as="textarea" value={texto} rows={4} className='h-100' onChange={(e)=>setTexto(e.target.value)}/>
             </Form.Group>
         </Form>

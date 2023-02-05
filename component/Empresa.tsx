@@ -29,26 +29,22 @@ const Empresa =(props:any)=>{
 
     const deptos = trpc.departamentos.useQuery()
     const empresa = trpc.empresa_id.useQuery({nombreId:nombreId})
-    const newVariable = trpc.new_variable.useMutation()
-
-    //const [empresa_id,setEmpresa] = useState(empresa.data)
-
-    useEffect(()=>{
-        if(newVariable.isError){
-            const errorObj=newVariable.error.message
+    const newVariable = trpc.new_variable.useMutation({
+        onSuccess(){
+            toast.success('Se creo una nueva declaracion vacia',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        },
+        onError(e){
+            const errorObj=e.message
             //const errorMes=errorObj.message+' en campo: '+errorObj.path
             //console.log(errorMes)
             toast.error(errorObj,{
                 position: toast.POSITION.TOP_RIGHT
             })
         }
-        if(newVariable.isSuccess){
-            toast.success('Se creo una nueva declaracion vacia',{
-                position: toast.POSITION.TOP_RIGHT
-            })
-        }
+    })
 
-    },[newVariable.status])
     const nuevoVariable=()=>{
         newVariable.mutate({
             anio:fecha.anio,

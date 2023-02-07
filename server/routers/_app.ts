@@ -366,19 +366,21 @@ export const appRouter = router({
     }),
     intercambio: procedure
     .input(
-        z.object({
-            anio:z.number(),
-            mes:z.number(),
-            ente:z.string(),
-            quien:z.string(),
-            energia:z.number(),
-            tension:z.number(),
-            empresaId:z.string(),
-            tipo:z.enum(TipoIntercambio),
-        })
+        z.array(
+            z.object({
+                anio:z.number(),
+                mes:z.number(),
+                ente:z.string(),
+                quien:z.string(),
+                energia:z.number(),
+                tension:z.number(),
+                empresaId:z.string(),
+                tipo:z.enum(TipoIntercambio),
+            })
+        )
     )
     .mutation(async({input}) =>{
-        const resp = await prisma.intercambio.create({
+        const resp = await prisma.intercambio.createMany({
             data: input
         })
 

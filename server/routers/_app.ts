@@ -425,8 +425,8 @@ export const appRouter = router({
         )
     )
     .mutation(async({input})=>{
-        return input.map(async i=>{
-            const r = await prisma.facturado.create({
+        const r = await prisma.$transaction(
+            input.map(i=>{return prisma.facturado.create({
                 data: {
                     empresaId:i.empresaId,
                     anio:i.anio,
@@ -440,8 +440,9 @@ export const appRouter = router({
 
                 },
             })
-            return r
-        })
+            })
+        )
+        return r
     }),
     facturadoDepto: procedure
     .input(

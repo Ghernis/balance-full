@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Link from 'next/link';
 import {useSession} from 'next-auth/react'
 
+import { trpc } from '../utils/trpc';
+
 import ListaDeptos from './ListaDeptos';
 import Intercambio from './Intercambio';
 import Balance from './Balance';
@@ -14,6 +16,10 @@ import Button from 'react-bootstrap/Button'
 const Variable=()=>{
     const {status,data} = useSession()
     const [key,setKey] = useState('facturado')
+    const centrales = trpc.centrales.useQuery({empresaId:'ej1'})
+    if(!centrales.data){ 
+        return <div>loading...</div>
+    }
     return (
         <>
             <div className='container'>
@@ -38,7 +44,7 @@ const Variable=()=>{
                         <Intercambio />
                     </Tab>
                     <Tab eventKey="centrales" title="Centrales">
-                        <CentralVariable />
+                        <CentralVariable centrales={centrales.data} />
                     </Tab>
                     <Tab eventKey="balance" title="Balance">
                         <Balance />

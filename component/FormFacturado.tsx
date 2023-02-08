@@ -71,7 +71,6 @@ const FormFacturado=(props)=>{
     const [areas,setAreas]=useState(areaBox)
     const [csv,setCsv]=useState(data)
     const [dataTabla,setDataTabla]=useState(initTabla)
-    const [depaCargando, setDepaCargando]=useState(departamentos[0])
     const [showSave,setShowSave]=useState(false)
     const [indexDepa, setIndexDepa]=useState(0)
 

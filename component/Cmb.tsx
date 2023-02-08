@@ -6,11 +6,7 @@ import TextCSV from './TextCSV';
 const Cmb=(props)=>{
     const {data,setData,index}=props
     const tipos=['Gas Oil','Fuel Oil','Gas Natural','Carbon','Otros 1','Otros 2']
-    const [csv,setCsv]=useState([['','',''],['','',''],['','',''],['','',''],['','',''],['','','']])
-    const hand=(d)=>{
-        //console.log(data)
-        setCsv(d)
-    }
+
     return (
         <>
             {/*

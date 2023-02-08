@@ -17,7 +17,9 @@ const Cmb=()=>{
     }
     return (
         <>
+            {/*
         <TextCSV x={3} y={6} handler={hand} />
+        */}
 
         <label>Combutible</label>
         <Table bordered hover size="sm">
@@ -35,9 +37,16 @@ const Cmb=()=>{
                     return (
                 <tr key={c}>
                     <td>{c}</td>
-                    <td><Form.Control onChange={(e)=>changeHandler(e,0,i)} plaintext value={csv[i][0]} className='text-center' type='text' placeholder='algo' /></td>
-                    <td><Form.Control onChange={(e)=>changeHandler(e,1,i)} plaintext value={csv[i][1]} className='text-center' type='text' placeholder='algo' /></td>
-                    <td><Form.Control onChange={(e)=>changeHandler(e,2,i)} plaintext value={csv[i][2]} className='text-center' type='text' placeholder='algo' /></td>
+                    <td><Form.Select onChange={(e)=>changeHandler(e,0,i)} value={csv[i][0]} className='text-center'>
+                            <option>Lts</option>
+                            <option>Kgs</option>
+                            <option>Libras</option>
+                            <option>Lts</option>
+                    </Form.Select>
+
+                    </td>
+                    <td><Form.Control onChange={(e)=>changeHandler(e,1,i)} plaintext value={csv[i][1]} className='text-center' type='text' placeholder='' /></td>
+                    <td><Form.Control onChange={(e)=>changeHandler(e,2,i)} plaintext value={csv[i][2]} className='text-center' type='text' placeholder='' /></td>
                 </tr>)
                     })
                 }

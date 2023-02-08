@@ -92,6 +92,7 @@ model Variable {
   mes        Int
   empresa    Empresa       @relation(fields: [empresaId], references: [nombreId])
   empresaId  String
+  completa   Boolean  @default(false)
   enComprada Intercambio[]
   balEnergia Balance?
   facturado  Facturado[]
@@ -184,7 +185,7 @@ model Combustible {
   cmb       String
   unidad    String
   vol       Float
-  claseProd String
+  claseProd String?
 
   variableCentral VariableCentral @relation(fields: [anio, mes, centralId, empresaId], references: [anio, mes, centralId, empresaId])
   centralId       String
@@ -236,7 +237,7 @@ model Intercambio {
   variable  Variable @relation(fields: [anio, mes, empresaId], references: [anio, mes, empresaId])
   empresaId String
 
-  @@id([id, anio, mes, tipo, empresaId])
+  @@id([anio, mes, tipo, empresaId,tension])
 }
 
 enum TipoIntercambio {

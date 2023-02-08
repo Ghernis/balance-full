@@ -318,16 +318,22 @@ export const appRouter = router({
         return resp
     }),
     centrales: procedure
-    .query(async()=>{
+    .input(
+        z.object({
+            empresaId:z.string()
+        })
+    )
+    .query(async({input})=>{
         const resp = await prisma.central.findMany({
+            where:{
+                empresaId:input.empresaId
+            },
             select:{
                 nombre:true,
                 nemo:true,
-                sistema:true,
-                maquinas:true
             }
         })
-        return { resp }
+        return resp
     }),
     new_variable: procedure
     .input(

@@ -12,12 +12,17 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const Intercambio=()=>{
-    const [tipo, setTipo] = useState('Compra')
-    const [ente,setEnte] = useState('')
-    const [quien,setQuien] = useState('')
-    const [energia,setEnergia]=useState(0)
-    const [tension,setTension]=useState(0)
-
+    
+    const [intercambio,setIntercambio] =useState({
+        tipo:'Compra',
+        ente:'',
+        quien:'',
+        energia:0,
+        tension:0,
+        empresaId:'ej1',
+        anio:2023,
+        mes:2
+    })
     const [interLista, setInterList]=useState<any[]>([])
 
     const saveIntercambio = trpc.intercambio.useMutation({
@@ -35,17 +40,7 @@ const Intercambio=()=>{
     })
 
     const addRegistro=()=>{
-        const aux={
-            empresaId:'ej1',
-            anio:2023,
-            mes:2,
-            tipo:tipo,
-            ente:ente,
-            quien:quien,
-            energia:energia,
-            tension:tension
-        }
-        setInterList([...interLista,aux])
+        setInterList([...interLista,intercambio])
     }
     const saveRegistro=()=>{
         saveIntercambio.mutate(interLista)
@@ -80,7 +75,7 @@ const Intercambio=()=>{
 
             <InputGroup>
                 <FloatingLabel controlId="floatingSelect" label="Tipo de intercambio">
-                    <Form.Select aria-label="" value={tipo} onChange={(e)=>setTipo(e.target.value)}>
+                    <Form.Select aria-label="" value={intercambio.tipo} onChange={(e)=>setIntercambio({...intercambio,tipo:e.target.value})}>
                         <option value="Compra">Compra</option>
                         <option value="Venta">Venta</option>
                     </Form.Select>
@@ -91,26 +86,26 @@ const Intercambio=()=>{
                     className="mb-3"
                 >
                     <Form.Control type="text" placeholder="" aria-describedby='basic-addon1'
-                        value={ente}
-                        onChange={(e)=>setEnte(e.target.value)}
+                        value={intercambio.ente}
+                        onChange={(e)=>setIntercambio({...intercambio,ente:e.target.value})}
                         />
                 </FloatingLabel>
-                <FloatingLabel controlId="floatingPassword" label={tipo=='Compra' ? 'Central o Sistema que Provee' : 'Localidad y/o Departamento'}>
+                <FloatingLabel controlId="floatingPassword" label={intercambio.tipo=='Compra' ? 'Central o Sistema que Provee' : 'Localidad y/o Departamento'}>
                     <Form.Control type="text" placeholder="Password"
-                        value={quien}
-                        onChange={(e)=>setQuien(e.target.value)}
+                        value={intercambio.quien}
+                        onChange={(e)=>setIntercambio({...intercambio,quien:e.target.value})}
                         />
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingPassword" label="Energia">
                     <Form.Control type="number" placeholder="Password"
-                        value={energia}
-                        onChange={(e)=>setEnergia(parseFloat(e.target.value))}
+                        value={intercambio.energia}
+                        onChange={(e)=>setIntercambio({...intercambio,energia:parseFloat(e.target.value)})}
                         />
                 </FloatingLabel>
                 <FloatingLabel controlId="floatingPassword" label="Tension">
                     <Form.Control type="number" placeholder="Password"
-                        value={tension}
-                        onChange={(e)=>setTension(parseFloat(e.target.value))}
+                        value={intercambio.tension}
+                        onChange={(e)=>setIntercambio({...intercambio,tension:parseFloat(e.target.value)})}
                         />
                 </FloatingLabel>
             </InputGroup>

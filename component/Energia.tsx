@@ -13,7 +13,7 @@ import Form from 'react-bootstrap/Form';
 const Energia=()=>{
     return (
         <>
-            <label>Energia</label>
+            <label>Energia en kwh</label>
             <Table bordered hover size="sm">
                 <thead>
                     <tr>
@@ -27,12 +27,12 @@ const Energia=()=>{
                 </thead>
                 <tbody>
                     <tr >
-                        <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                        <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                        <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                        <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                        <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
-                        <td><Form.Control plaintext className='text-center' type='text' placeholder='algo' /></td>
+                        <td><Form.Control plaintext className='text-center' type='text' placeholder='' /></td>
+                        <td><Form.Control plaintext className='text-center' type='text' placeholder='' /></td>
+                        <td><Form.Control plaintext className='text-center' type='text' placeholder='' /></td>
+                        <td><Form.Control plaintext className='text-center' type='text' placeholder='' /></td>
+                        <td><Form.Control plaintext className='text-center' type='text' placeholder='' /></td>
+                        <td><Form.Control plaintext className='text-center' type='text' placeholder='' /></td>
                     </tr>
                 </tbody>
             </Table>

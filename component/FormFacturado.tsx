@@ -11,7 +11,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 const FormFacturado=(props)=>{
-    const utils = trpc.useContext()
+    //const utils = trpc.useContext()
     const {departamentos}:{departamentos:[{
         departamento:string,
         provincia:string

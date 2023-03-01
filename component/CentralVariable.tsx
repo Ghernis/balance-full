@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 const CentralVariable=(props)=>{
     //const centrales=['central test 1','central test 2','central test 3']
+    const variableCentral = trpc.variable_central.useMutation()
     const {centrales}=props
     const [index,setIndex]=useState(0)
     const [showSave,setShowSave]=useState(false)
@@ -37,8 +38,12 @@ const CentralVariable=(props)=>{
         }
         return aux
     })
+    // TODO change hardcode empresaID with session
+    //
     let auxData=centrales.map((c:any)=>{
         const aux={
+            anio:2023,
+            mes:1,
             centralId:c.nemo,
             empresaId:'ej1',
             cmb: auxCmb.map(x=>Object.assign({},x)),
@@ -69,6 +74,8 @@ const CentralVariable=(props)=>{
     }
     const saveData=()=>{
         console.log(datos)
+        variableCentral.mutate(datos);
+        
     }
     return (
         <>

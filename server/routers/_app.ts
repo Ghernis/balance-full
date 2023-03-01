@@ -512,17 +512,39 @@ export const appRouter = router({
     }),
     variable_central: procedure
     .input(
-        z.object({
+            z.object({}).catchall(
+            z.object({
             anio: z.number(),
-            mes: z.number(),
-            centralId: z.number()
-        })
+                mes: z.number(),
+                centralId: z.string(),
+                empresaId: z.string(),
+                cmb: z.array(
+                    z.object({
+                        claseProd: z.string(),
+                        cmb: z.string(),
+                        unidad: z.string(),
+                        vol: z.number()
+                    })
+                ),
+                tecs: z.object({
+                    diesel: z.number(),
+                    eolico: z.number(),
+                    hidro: z.number(),
+                    solar: z.number(),
+                    tg: z.number(),
+                    tv: z.number()
+                })
+                })
+                )
     )
     .mutation(async({input})=>{
-        const resp = await prisma.variableCentral.create({
-            data:input
-        })
-        return { resp }
+        console.log(input)
+        //const r = await prisma.$transaction(
+        //prisma.variableCentral.create({
+        //    data:input
+        //})
+        //)
+        //return r;
     }),
     combustible: procedure
     .input(
@@ -533,8 +555,8 @@ export const appRouter = router({
             unidad:z.string(),
             vol: z.number(),
             claseProd: z.string(),
-            centralId: z.number()
-
+            centralId: z.string(),
+            empresaId: z.string()
         })
     )
     .mutation(async({input})=>{

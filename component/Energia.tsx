@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 const Energia=(props)=>{
     const {data,setData,index}=props
-    console.log(data)
+    //console.log(data)
     return (
         <>
             <label>Energia en kwh</label>

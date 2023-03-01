@@ -18,8 +18,8 @@ const Cmb=(props)=>{
                 <thead>
                     <tr>
                         <th>Combustible</th>
-                        <th className='text-center'>Unidad</th>
                         <th className='text-center'>Volumen</th>
+                        <th className='text-center'>Unidad</th>
                         <th className='text-center'>Clase de Produccion</th>
                     </tr>
                 </thead>
@@ -29,6 +29,20 @@ const Cmb=(props)=>{
                             return (
                                 <tr key={c}>
                                     <td>{c}</td>
+                                    <td><Form.Control 
+                                        onChange={
+                                            (e)=>{
+                                                let aux={...data}
+                                                aux[index].cmb[i].vol=parseFloat(e.target.value)
+                                                setData(aux)
+                                            }
+                                        } 
+                                        plaintext 
+                                        value={data[index].cmb[i].vol} 
+                                        className='text-center' 
+                                        type='number' 
+                                        placeholder=''/>
+                                    </td>
                                     <td><Form.Select 
                                         onChange={
                                             (e)=>{
@@ -44,20 +58,6 @@ const Cmb=(props)=>{
                                         <option value='lts'>lts</option>
                                     </Form.Select>
 
-                                    </td>
-                                    <td><Form.Control 
-                                        onChange={
-                                            (e)=>{
-                                                let aux={...data}
-                                                aux[index].cmb[i].vol=e.target.value
-                                                setData(aux)
-                                            }
-                                        } 
-                                        plaintext 
-                                        value={data[index].cmb[i].vol} 
-                                        className='text-center' 
-                                        type='number' 
-                                        placeholder=''/>
                                     </td>
                                     <td><Form.Control 
                                         onChange={

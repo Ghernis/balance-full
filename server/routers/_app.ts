@@ -557,19 +557,6 @@ export const appRouter = router({
                 },
             })
             }),
-            //input.forEach(c=>{
-            //    c.cmb.map(cm=>{
-            //        return prisma.combustible.create({
-            //            data:{
-            //                empresaId:c.empresaId,
-            //                anio:c.anio,
-            //                mes:c.mes,
-            //                centralId:c.centralId,
-
-            //            }
-            //        })
-            //    })
-            //})
         )
         return r
     }),

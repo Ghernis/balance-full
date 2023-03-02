@@ -351,24 +351,52 @@ export const appRouter = router({
 
     }),
     variables: procedure
-    .query(async()=>{
-        const resp = await prisma.variable.findMany({
+    .input(
+        z.object({
+            anio:z.number(),
+            mes:z.number(),
+            empresaId:z.string(),
+        })
+    )
+    .query(async({input})=>{
+        const resp = await prisma.variable.findFirst({
+            where:{
+                anio:input.anio,
+                mes:input.mes,
+                empresaId:input.empresaId,
+            },
             select:{
-                anio:true,
-                mes: true,
-                empresaId: true,
+                completa:true,
                 enComprada:true,
                 balEnergia:true,
-                facturado:{
-                    select:{
-                        departamentos:true
-                    }
-
-                }
-
+                facturado:true,
             }
         })
-        return { resp }
+        return resp
+    }),
+    cerrar_declaracion: procedure
+    .input(
+        z.object({
+            anio:z.number(),
+            mes:z.number(),
+            empresaId:z.string(),
+            completa:z.boolean()
+        })
+    )
+    .mutation(async({input})=>{
+        const resp = await prisma.variable.update({
+            where:{
+                anio_mes_empresaId:{ 
+                    anio: input.anio,
+                    mes: input.mes,
+                    empresaId: input.empresaId
+                }
+            },
+            data:{
+                completa:input.completa
+            }
+        })
+        return resp
     }),
     intercambio: procedure
     .input(

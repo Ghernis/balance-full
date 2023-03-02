@@ -2,6 +2,8 @@ import { useState,useEffect } from 'react'
 
 import { trpc } from '../utils/trpc';
 
+import {toast} from 'react-toastify'
+
 import Cmb from './Cmb';
 import Energia from './Energia';
 
@@ -9,10 +11,23 @@ import Button from 'react-bootstrap/Button'
 
 const CentralVariable=(props)=>{
     //const centrales=['central test 1','central test 2','central test 3']
-    const variableCentral = trpc.variable_central.useMutation()
     const {centrales}=props
     const [index,setIndex]=useState(0)
     const [showSave,setShowSave]=useState(false)
+
+    const variableCentral = trpc.variable_central.useMutation({
+        onSuccess(){
+            toast.success('Se actualizo la informacion',{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        },
+        onError(e){
+            toast.error(e.message,{
+                position: toast.POSITION.TOP_RIGHT
+            })
+        }
+    })
+
     const cmbs=[
         'Gas Oil',
         'Fuel Oil',

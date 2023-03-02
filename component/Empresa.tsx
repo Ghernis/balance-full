@@ -166,7 +166,7 @@ const Empresa =(props:any)=>{
                         <Accordion.Body>
                             {
                                 listaVariables.data.map(v=>{
-                                    return <div key={v.mes+'-'+v.anio}>{v.mes+'-'+v.anio}</div>
+                                    return <div key={v.mes+'-'+v.anio}>{v.mes+'-'+v.anio+' Cerrada: '+(v.completa ? 'Si' : 'No')}</div>
                                 })
 
                             }

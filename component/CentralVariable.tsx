@@ -73,9 +73,8 @@ const CentralVariable=(props)=>{
         }
     }
     const saveData=()=>{
-        console.log(datos)
-        variableCentral.mutate(datos);
-        
+        console.log(Object.values(datos))
+        variableCentral.mutate(Object.values(datos));
     }
     return (
         <>

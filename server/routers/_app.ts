@@ -512,9 +512,9 @@ export const appRouter = router({
     }),
     variable_central: procedure
     .input(
-            z.object({}).catchall(
+        z.array(
             z.object({
-            anio: z.number(),
+                anio: z.number(),
                 mes: z.number(),
                 centralId: z.string(),
                 empresaId: z.string(),
@@ -534,17 +534,44 @@ export const appRouter = router({
                     tg: z.number(),
                     tv: z.number()
                 })
-                })
-                )
+            })
+        )
     )
     .mutation(async({input})=>{
         console.log(input)
-        //const r = await prisma.$transaction(
-        //prisma.variableCentral.create({
-        //    data:input
-        //})
-        //)
-        //return r;
+        const r = await prisma.$transaction(
+            input.map(i=>{return prisma.variableCentral.create({
+                data: {
+                    empresaId:i.empresaId,
+                    anio:i.anio,
+                    mes:i.mes,
+                    centralId:i.centralId,
+                    combustible: {
+                        createMany:{
+                            data:i.cmb,
+                        }
+                    },
+                    energiaBruto:{
+                        create: i.tecs
+                    }
+                },
+            })
+            }),
+            //input.forEach(c=>{
+            //    c.cmb.map(cm=>{
+            //        return prisma.combustible.create({
+            //            data:{
+            //                empresaId:c.empresaId,
+            //                anio:c.anio,
+            //                mes:c.mes,
+            //                centralId:c.centralId,
+
+            //            }
+            //        })
+            //    })
+            //})
+        )
+        return r
     }),
     combustible: procedure
     .input(

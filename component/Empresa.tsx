@@ -28,7 +28,9 @@ const Empresa =(props:any)=>{
     const {nombreId} = props
 
     const deptos = trpc.departamentos.useQuery()
+    const listaVariables = trpc.list_variable.useQuery({empresaId:nombreId})
     const empresa = trpc.empresa_id.useQuery({nombreId:nombreId})
+    console.log(listaVariables.data)
     const newVariable = trpc.new_variable.useMutation({
         onSuccess(){
             toast.success('Se creo una nueva declaracion vacia',{
@@ -120,7 +122,7 @@ const Empresa =(props:any)=>{
     }
 
 
-    if(!empresa.data || !deptos.data) return <div>loading...</div>
+    if(!empresa.data || !deptos.data || !listaVariables.data) return <div>loading...</div>
 
     return (
         <div>
@@ -162,6 +164,12 @@ const Empresa =(props:any)=>{
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>Declaraciones Variable</Accordion.Header>
                         <Accordion.Body>
+                            {
+                                listaVariables.data.map(v=>{
+                                    return <div key={v.mes+'-'+v.anio}>{v.mes+'-'+v.anio}</div>
+                                })
+
+                            }
                             <Button onClick={nuevoVariable} className='my-4' variant='primary'>Nueva declaracion</Button>
                         </Accordion.Body>
                     </Accordion.Item>

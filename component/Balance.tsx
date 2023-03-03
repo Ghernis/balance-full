@@ -1,11 +1,16 @@
+import {useContext } from 'react'
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+
+import {VariableContext } from '../context/variable.context'
 
 import {toast} from 'react-toastify'
 
 import { trpc } from '../utils/trpc';
 
 const Balance=()=>{
+    const {variable,setVariable} = useContext(VariableContext)
+    console.log(variable)
     const utils = trpc.useContext()
     const variables = trpc.variables.useQuery({anio:2023,mes:2,empresaId:'ej1'});
     const cierre = trpc.cerrar_declaracion.useMutation({
@@ -23,9 +28,9 @@ const Balance=()=>{
     })
     const cerrarDeclaracion=()=>{
         cierre.mutate({
-            anio:2023,
-            mes:2,
-            empresaId:'ej1',
+            anio:variable.anio,
+            mes:variable.mes,
+            empresaId:variable.empresaId,
             completa:true
         })
 

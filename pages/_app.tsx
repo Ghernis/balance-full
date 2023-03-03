@@ -9,6 +9,8 @@ import 'ar-poncho/dist/css/poncho.min.css';
 
 import { trpc } from '../utils/trpc';
 
+import {VariableProvider} from '../context/variable.context';
+
 import NavBar from '../component/nav';
 import Footer from '../component/Footer';
 import Toaster from '../component/Toaster'
@@ -27,7 +29,9 @@ const MyApp: AppType = ({
             <SessionProvider session={pageProps.session}>
             <NavBar />
             <Toaster />
+            <VariableProvider>
             <Component {...pageProps} />
+            </VariableProvider>
             <Footer />
             <ReactQueryDevtools initialIsOpen={false} />
             </SessionProvider>

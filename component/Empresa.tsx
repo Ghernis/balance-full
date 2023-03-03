@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
 import { trpc } from '../utils/trpc'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 
 import {toast} from 'react-toastify'
+
+import { VariableContext } from '../context/variable.context'
 
 import CartaLista from '../component/CartaList'
 import FormDatosBasicos from '../component/FormDatosBasicos'
@@ -16,6 +18,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 
 const Empresa =(props:any)=>{
+    const {variable,setVariable} = useContext(VariableContext)
     const router = useRouter()
     const dia = new Date()
     const fecha = {
@@ -48,6 +51,9 @@ const Empresa =(props:any)=>{
     })
 
     const nuevoVariable=()=>{
+
+        setVariable({anio:fecha.anio,men:fecha.mes,empresaId:nombreId})
+
         newVariable.mutate({
             anio:fecha.anio,
             mes:fecha.mes,
@@ -142,22 +148,22 @@ const Empresa =(props:any)=>{
                         <Accordion.Body>
                             {
                                 empresa.data.centrales.length!=0 &&
-                                <ListGroup as="ol">
-                                    {
-                                    empresa.data.centrales.map((emp:any)=>{
-                                        return <CartaLista
-                                            key={emp.nemo}
-                                            titulo={emp.nombre}
-                                            subtitulo={emp.nemo}
-                                            badge={makeBadge(emp.departamentoId)}
-                                            link={'/central/'+emp.nemo}
-                                            />
-                                    })
-                                }
-                                </ListGroup>
+                                    <ListGroup as="ol">
+                                        {
+                                            empresa.data.centrales.map((emp:any)=>{
+                                                return <CartaLista
+                                                    key={emp.nemo}
+                                                    titulo={emp.nombre}
+                                                    subtitulo={emp.nemo}
+                                                    badge={makeBadge(emp.departamentoId)}
+                                                    link={'/central/'+emp.nemo}
+                                                />
+                                            })
+                                        }
+                                    </ListGroup>
                             }
                             <Link legacyBehavior href='/central/new'>
-                            <Button className='my-4' variant='primary'>Agregar</Button>
+                                <Button className='my-4' variant='primary'>Agregar</Button>
                             </Link>
                         </Accordion.Body>
                     </Accordion.Item>
@@ -165,12 +171,25 @@ const Empresa =(props:any)=>{
                         <Accordion.Header>Declaraciones Variable</Accordion.Header>
                         <Accordion.Body>
                             {
-                                listaVariables.data.map(v=>{
-                                    return <div key={v.mes+'-'+v.anio}>{v.mes+'-'+v.anio+' Cerrada: '+(v.completa ? 'Si' : 'No')}</div>
-                                })
+                                listaVariables.data.length!=0 &&
+                                    <ListGroup as='ol'>
+                                        {
+                                            listaVariables.data.map(v=>{
+                                                return <CartaLista 
+                                                    key={v.mes+'-'+v.anio}
+                                                    titulo={'Anio ' + v.anio}
+                                                    subtitulo={v.mes}
+                                                    badge={v.completa ? 'Cerrada' : 'Abierta'}
+                                                    link={'#'}
+                                                />
+                                            })
+
+                                        }
+                                    </ListGroup>
 
                             }
-                            <Button onClick={nuevoVariable} className='my-4' variant='primary'>Nueva declaracion</Button>
+                            <Button onClick={nuevoVariable} className='my-4' variant='primary'>Nueva declaracion periodo actual</Button>
+                            <Button onClick={nuevoVariable} className='m-4' variant='secondary'>Nueva declaracion seleccionar periodo</Button>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

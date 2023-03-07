@@ -5,6 +5,8 @@ import FormFacturado from './FormFacturado';
 import ItemClose from './ItemClose';
 
 import Alert from 'react-bootstrap/Alert'
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -12,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const ListaDeptos=()=>{
+    const [checked,setChecked]=useState(true)
     const [carga,setCarga]=useState(false)
     const [listaCarga,setListaCarga]=useState<any[]>([])
     const [selected,setSelected]=useState({
@@ -52,6 +55,16 @@ const ListaDeptos=()=>{
                                 <strong>Nota: </strong>Seccion departamentos. Si existe declaracion previa, los departamentos seran los mismos que la declaracion anterior.
 
                             </Alert>
+                            <Form>
+                                <Form.Check 
+                                    type="switch"
+                                    id="custom-switch"
+                                    label={checked ? "Sumatoria" : "Por departamento"}
+                                    checked={checked}
+                                    onChange={(e)=>setChecked(e.currentTarget.checked)}
+                                />
+                                <label>Si se marca 'sumatoria' los datos se cargaran en el departamento de la empresa</label>
+                            </Form>
                         </Row>
                         <Col xl={10}>
                             <InputGroup className="mb-3">
@@ -69,7 +82,10 @@ const ListaDeptos=()=>{
                             </InputGroup>
                         </Col>
                         <Col xl={2} className='text-center'>
-                            <Button onClick={()=>addDepto()}>Agregar</Button>
+                            <Button 
+                                onClick={()=>addDepto()}
+                                disabled={checked}
+                            >Agregar</Button>
                         </Col>
                         <Row className='my-4'>
                             <ItemClose lista={listaCarga} seter={setListaCarga}/>

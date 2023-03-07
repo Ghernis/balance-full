@@ -49,10 +49,15 @@ const Empresa =(props:any)=>{
             })
         }
     })
+    const checkoutVariable=(anio,mes)=>{
+        //console.log('testooo')
+        setVariable({anio:anio,mes:mes,empresaId:nombreId})
+
+    }
 
     const nuevoVariable=()=>{
 
-        setVariable({anio:fecha.anio,men:fecha.mes,empresaId:nombreId})
+        setVariable({anio:fecha.anio,mes:fecha.mes,empresaId:nombreId})
 
         newVariable.mutate({
             anio:fecha.anio,
@@ -177,10 +182,13 @@ const Empresa =(props:any)=>{
                                             listaVariables.data.map(v=>{
                                                 return <CartaLista 
                                                     key={v.mes+'-'+v.anio}
+                                                    onClick={()=>checkoutVariable()}
                                                     titulo={'Anio ' + v.anio}
-                                                    subtitulo={v.mes}
+                                                    subtitulo={'Mes '+v.mes}
                                                     badge={v.completa ? 'Cerrada' : 'Abierta'}
-                                                    link={'#'}
+                                                    link={'../variable'}
+                                                    click={()=>checkoutVariable(v.anio,v.mes)}
+                                                    //varContext={{anio:2023,mes:3,empresaId:'ej1'}}
                                                 />
                                             })
 

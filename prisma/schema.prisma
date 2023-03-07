@@ -96,6 +96,7 @@ model Variable {
   enComprada Intercambio[]
   balEnergia Balance?
   facturado  Facturado[]
+  isAgrupado Boolean @default(true)
 
   @@id([anio, mes, empresaId])
 }

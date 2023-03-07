@@ -13,10 +13,14 @@ const EmpresaId=()=>{
         if(status==='unauthenticated') Router.replace('/auth/signin')
     },[status])
 
-    if(status ==='authenticated' && data.user?.name==empresaid){
+    if(status ==='authenticated' && (data.user?.name==empresaid || data.user?.role=='ADMIN')){
         return (
             <>
-                <Empresa nombreId={data.user?.name} />
+                {
+                data.user?.role=='ADMIN' 
+                ? <Empresa nombreId={empresaid} />
+                : <Empresa nombreId={data.user?.name} />
+                }
             </>
         )
     }

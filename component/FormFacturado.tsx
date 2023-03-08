@@ -1,8 +1,10 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useContext } from 'react'
 
 import { trpc } from '../utils/trpc';
 
 import {toast} from 'react-toastify'
+
+import {VariableContext } from '../context/variable.context'
 
 import TextCSV from './TextCSV';
 
@@ -11,7 +13,8 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 const FormFacturado=(props)=>{
-    //const utils = trpc.useContext()
+    const utils = trpc.useContext()
+    const {variable} = useContext(VariableContext)
     const {departamentos}:{departamentos:[{
         departamento:string,
         provincia:string
@@ -22,6 +25,7 @@ const FormFacturado=(props)=>{
             toast.success('Se guardaron datos de Facturacion',{
                 position: toast.POSITION.TOP_RIGHT
             })
+            utils.variables.invalidate(variable)
         },
         onError(e){
             const errorMes=e.message
@@ -126,9 +130,9 @@ const FormFacturado=(props)=>{
             })
             if(dId.length>0){
                 const createReg={
-                    empresaId:'ej1',
-                    anio:2023,
-                    mes:2,
+                    empresaId:variable.empresaId,
+                    anio:variable.anio,
+                    mes:variable.mes,
                     departamentoId:dId[0].id,
                     concepto:f.facturado.map(con=>{return {
                         tipo:con.concepto,

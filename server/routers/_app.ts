@@ -384,7 +384,11 @@ export const appRouter = router({
                 completa:true,
                 enComprada:true,
                 balEnergia:true,
-                facturado:true,
+                facturado:{
+                    select:{
+                        concepto:true
+                    }
+                },
             }
         })
         return resp

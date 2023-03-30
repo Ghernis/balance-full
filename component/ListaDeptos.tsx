@@ -14,7 +14,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const ListaDeptos=()=>{
-    const [checked,setChecked]=useState(true)
+    const [checked,setChecked]=useState(false)
     const [carga,setCarga]=useState(false)
     const [listaCarga,setListaCarga]=useState<any[]>([])
     const [selected,setSelected]=useState({
@@ -61,7 +61,7 @@ const ListaDeptos=()=>{
                                     id="custom-switch"
                                     label={checked ? "Sumatoria" : "Por departamento"}
                                     checked={checked}
-                                    onChange={(e)=>setChecked(e.currentTarget.checked)}
+                                    onChange={(e)=>setChecked(false)}
                                 />
                                 <label>Si se marca 'sumatoria' los datos se cargaran en el departamento de la empresa</label>
                             </Form>
@@ -92,7 +92,7 @@ const ListaDeptos=()=>{
                         </Row>
                         <Row>
                             <Col>
-                                <Button onClick={()=>setCarga(true)}>Comenzar carga</Button>
+                                <Button disabled={listaCarga.length==0} onClick={()=>setCarga(true)}>Comenzar carga</Button>
                             </Col>
                         </Row>
                     </Row>)

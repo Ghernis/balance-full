@@ -1,6 +1,8 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useContext } from 'react'
 
 import { trpc } from '../utils/trpc';
+
+import {VariableContext } from '../context/variable.context'
 
 import {toast} from 'react-toastify'
 
@@ -11,6 +13,7 @@ import Button from 'react-bootstrap/Button'
 
 const CentralVariable=(props)=>{
     //const centrales=['central test 1','central test 2','central test 3']
+    const {variable} = useContext(VariableContext)
     const {centrales}=props
     const [index,setIndex]=useState(0)
     const [showSave,setShowSave]=useState(false)
@@ -57,10 +60,10 @@ const CentralVariable=(props)=>{
     //
     let auxData=centrales.map((c:any)=>{
         const aux={
-            anio:2023,
-            mes:1,
+            anio:variable.anio,
+            mes:variable.mes,
             centralId:c.nemo,
-            empresaId:'ej1',
+            empresaId:variable.empresaId,
             cmb: auxCmb.map(x=>Object.assign({},x)),
             tecs: {...auxTec}
         }

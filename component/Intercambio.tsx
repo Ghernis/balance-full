@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 
 import { trpc } from '../utils/trpc';
 
@@ -6,12 +6,16 @@ import {toast} from 'react-toastify'
 
 import Cuadro from './Cuadro';
 
+import {VariableContext } from '../context/variable.context'
+
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const Intercambio=()=>{
+
+    const {variable} = useContext(VariableContext)
     
     const [intercambio,setIntercambio] =useState({
         tipo:'Compra',
@@ -19,9 +23,9 @@ const Intercambio=()=>{
         quien:'',
         energia:0,
         tension:0,
-        empresaId:'ej1',
-        anio:2023,
-        mes:2
+        empresaId:variable.empresaId,
+        anio:variable.anio,
+        mes:variable.mes
     })
     const [interLista, setInterList]=useState<any[]>([])
 

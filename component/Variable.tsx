@@ -16,7 +16,7 @@ import Button from 'react-bootstrap/Button'
 const Variable=()=>{
     const {status,data} = useSession()
     const [key,setKey] = useState('facturado')
-    const centrales = trpc.centrales.useQuery({empresaId:data.user?.name})
+    const centrales = trpc.centrales.useQuery({empresaId:data?.user?.name || ''})
     if(!centrales.data){ 
         return <div>loading...</div>
     }

@@ -182,7 +182,7 @@ const Empresa =(props:any)=>{
                                             listaVariables.data.map(v=>{
                                                 return <CartaLista 
                                                     key={v.mes+'-'+v.anio}
-                                                    onClick={()=>checkoutVariable()}
+                                                    onClick={()=>checkoutVariable(v.anio,v.mes)}
                                                     titulo={'Anio ' + v.anio}
                                                     subtitulo={'Mes '+v.mes}
                                                     badge={v.completa ? 'Cerrada' : 'Abierta'}

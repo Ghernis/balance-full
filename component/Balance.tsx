@@ -11,8 +11,8 @@ import Cuadro from './Cuadro'
 import { trpc } from '../utils/trpc';
 
 const Balance=()=>{
-    const {variable,setVariable} = useContext(VariableContext)
-    console.log(variable)
+    const {variable,setVariable}= useContext(VariableContext)
+    //console.log(variable)
     const utils = trpc.useContext()
     const variables = trpc.variables.useQuery(variable);
     const cierre = trpc.cerrar_declaracion.useMutation({

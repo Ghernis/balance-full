@@ -84,10 +84,20 @@ const Balance=()=>{
         'Traccion'
     ]
         const aux = conceptos.map(c=>{
-            return {
-                tipo: c,
-                cantUsr:data[c].cantUsr,
-                kwh:data[c].kwh
+            if(data[c]){
+                return {
+                    tipo: c,
+                    cantUsr:data[c].cantUsr,
+                    kwh:data[c].kwh
+                }
+            }
+            else{
+                return {
+                    tipo: c,
+                    cantUsr:0,
+                    kwh:0
+
+                }
             }
         })
         return aux
